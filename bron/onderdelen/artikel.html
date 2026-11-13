@@ -3,7 +3,7 @@
 {{> kop}}
 </div>
 <div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(48px,6vw,88px);display:flex;flex-direction:column;gap:24px;max-width:1100px">
-<div class="crumb"><a href="kennisbank.html">Kennisbank</a><span aria-hidden="true">/</span><span class="ktag" style="background:#1F3B37;color:#ECE8DD">{{artikel.categorie}}</span></div>
+<nav class="crumb" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="kennisbank.html">Kennisbank</a><span aria-hidden="true">/</span><span class="ktag" style="background:#1F3B37;color:#ECE8DD">{{artikel.categorie}}</span></nav>
 <h1 class="disp" style="margin:0;font-size:clamp(36px,calc(var(--u)*.056),84px);line-height:1.04;color:#ECE8DD;max-width:20ch">{{artikel.titel}}</h1>
 <p class="lead" style="color:#D5DCD3;max-width:60ch">{{artikel.beschrijving}}</p>
 </div>
@@ -12,7 +12,7 @@
 <section class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
 <div class="art">
-{{#if artikel.beeld}}<div class="rr art-beeld"><img class="cover" src="{{artikel.beeld}}" alt="Beeld bij het artikel: {{artikel.titel}}"></div>
+{{#if artikel.beeld}}<div class="rr art-beeld"><img class="cover" src="{{artikel.beeld}}" alt="" decoding="async"></div>
 {{/if}}{{#if artikel.spotify}}<iframe class="art-speler" src="{{artikel.spotify}}" title="Beluister {{artikel.titel}} op Spotify" height="232" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 {{/if}}{{{artikel_tekst}}}
 </div>

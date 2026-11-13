@@ -1,0 +1,8 @@
+<div class="verdiep-blok">
+<p class="verdiep-kop">Zelf lezen of luisteren</p>
+<div class="kgrid">
+{{#each kennis.uitgelicht}}<a class="kcard" href="{{dit.url}}"><div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">Artikel · {{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3></div><span class="kmore">Lees het artikel</span></a>
+{{/each}}{{#each kennis.recentste_aflevering}}<a class="kcard" href="{{dit.url}}"><div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">CoachCabin Podcast</span><h3 class="disp">{{dit.titel}}</h3></div><span class="kmore">Naar de aflevering</span></a>
+{{/each}}<a class="kcard" href="kennisbank.html"><div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">Kennisbank</span><h3 class="disp">Alle artikels en afleveringen</h3></div><span class="kmore">Naar de Kennisbank</span></a>
+</div>
+</div>
