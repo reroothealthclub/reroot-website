@@ -15,7 +15,7 @@ cd pad/naar/reroot-website
 |---|---|
 | Prijzen, openingsuren, adres, telefoon, e-mail, alle links, coaches, reviews, merch, artikels | `gegevens/site.json` |
 | Tekst en opbouw per pagina | `bron/paginas/` (één bestand per pagina) |
-| Menu bovenaan en voettekst (op elke pagina hetzelfde) | `bron/onderdelen/kop.html` en `bron/onderdelen/voet.html` |
+| Menu bovenaan (blijft vast in beeld) en voettekst, op elke pagina hetzelfde | `bron/onderdelen/kop.html` en `bron/onderdelen/voet.html` |
 | Coachkaarten, ervaringen, de drie stappen, contactformulier | `bron/onderdelen/` |
 | Foto's en logo | `bron/assets/` |
 | Kleuren, lettertypes, opmaak | `bron/stijl.css` |
@@ -29,6 +29,7 @@ Alles hieronder staat in `gegevens/site.json`. Bewaar het bestand en herlaad de 
 
 | Ik wil ... | Zoek in `site.json` naar |
 |---|---|
+| de tekst van de intakeknop wijzigen | `"intakegesprek"` → `"knoptekst"` |
 | een prijs wijzigen | `"aanbod"` → het traject → `"prijs"` |
 | de openingsuren wijzigen | `"openingsuren"` → `"dagen"` |
 | telefoon of e-mail wijzigen | `"contact"` |
@@ -78,11 +79,12 @@ De foto's van de homepage:
 
 | Plek | Bestand in `bron/assets/` |
 |---|---|
-| Opening (het eerste scherm) | `hchero.webp` (liggend, 2000 pixels breed) |
-| Clubscène: vrije gewichten | `club-gewichten.jpg` (staand, 1000 × 1250) |
-| Clubscène: krachttoestellen | `legext.webp` (staand) |
-| Clubscène: sprinttrack | `club-sprinttrack.jpg` (staand, 1000 × 1250) |
+| Opening (de foto in de boog) | `hero.webp` (staand, 1300 × 1696) |
+| Pijler Beweging | `pijler-beweging.jpg` (staand, 1100 × 1650) |
+| Pijler Voeding | `pijler-voeding.jpg` (staand) |
+| Pijler Levensstijl | `pijler-levensstijl.jpg` (staand) |
 | Coachingvoorbeeld | `intake.webp` (staand) |
+| De gevel (contactpagina en "Je eerste keer") | `gevel.jpg` (liggend, 1400 breed) |
 | Beeld bij het delen van een link | `deelbeeld.jpg` (1200 × 630) |
 
 De teksten bij die beelden staan in `bron/paginas/index.html`. Foto's rechtstreeks van je telefoon zijn te zwaar en bevatten gegevens over je toestel: verklein ze eerst (bijvoorbeeld in Voorvertoning: Extra → Pas grootte aan) en exporteer ze opnieuw.

@@ -1,4 +1,5 @@
-<header class="hero-head">
+<header class="kop">
+<div class="hero-head">
 <a href="index.html" class="logo-link"><img class="logo" src="assets/logo.svg" width="72" height="68" alt="Reroot, naar de startpagina"></a>
 <nav class="hero-nav" aria-label="Hoofdmenu">
 <a href="index.html" class="ln"{{#if actief.index}} aria-current="page"{{/if}}>Home</a>
@@ -11,8 +12,9 @@
 </nav>
 <div class="hdr-right">
 {{#if links.ledenapp_url}}<a href="{{links.ledenapp_url}}" target="_blank" rel="noopener" class="ln hdr-app">{{links.ledenapp_knoptekst}}</a>
-{{/if}}<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint" style="min-height:48px;padding:0 24px">{{aanbod.open_gym.actie_tekst}}</a>
+{{/if}}<a href="{{kennismaking.url}}" class="btn b-mint" style="min-height:48px;padding:0 24px">{{kennismaking.knoptekst}}</a>
 </div>
+<a href="{{kennismaking.url}}" class="btn b-mint hdr-kort">{{kennismaking.knoptekst_kort}}<span class="sr">: {{kennismaking.knoptekst}}</span></a>
 <details class="mnav">
 <summary><span class="bars" aria-hidden="true"></span>Menu</summary>
 <nav class="mnav-panel" aria-label="Hoofdmenu mobiel">
@@ -25,9 +27,10 @@
 <a class="ml" href="contact.html"{{#if actief.contact}} aria-current="page"{{/if}}>Contact</a>
 {{#if links.ledenapp_url}}<a class="ml" href="{{links.ledenapp_url}}" target="_blank" rel="noopener" style="color:#C9D2CB">{{links.ledenapp_knoptekst}}</a>
 {{/if}}<div class="mnav-cta">
-<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint">{{aanbod.open_gym.actie_tekst}}</a>
-<a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-ghost-d">{{aanbod.open_gym.actie_tekst}}</a>
 </div>
 </nav>
 </details>
+</div>
 </header>

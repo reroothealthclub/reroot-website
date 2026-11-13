@@ -23,15 +23,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap">
-<link rel="stylesheet" href="stijl.css?v=016352cd">
+<link rel="stylesheet" href="stijl.css?v=1d0663a5">
 </head>
-<body>
+<body class="p-health-club">
 <a class="skip" href="#main">Naar de inhoud</a>
-<main id="main">
-<!-- HERO -->
-<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
-<div style="max-width:1440px;margin:0 auto">
-<header class="hero-head">
+<header class="kop">
+<div class="hero-head">
 <a href="index.html" class="logo-link"><img class="logo" src="assets/logo.svg" width="72" height="68" alt="Reroot, naar de startpagina"></a>
 <nav class="hero-nav" aria-label="Hoofdmenu">
 <a href="index.html" class="ln">Home</a>
@@ -43,8 +40,9 @@
 <a href="contact.html" class="ln">Contact</a>
 </nav>
 <div class="hdr-right">
-<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-mint" style="min-height:48px;padding:0 24px">Word lid</a>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint" style="min-height:48px;padding:0 24px">Boek je intakegesprek nu</a>
 </div>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint hdr-kort">Boek intake<span class="sr">: Boek je intakegesprek nu</span></a>
 <details class="mnav">
 <summary><span class="bars" aria-hidden="true"></span>Menu</summary>
 <nav class="mnav-panel" aria-label="Hoofdmenu mobiel">
@@ -56,14 +54,16 @@
 <a class="ml" href="kennisbank.html">Kennisbank</a>
 <a class="ml" href="contact.html">Contact</a>
 <div class="mnav-cta">
-<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-mint">Word lid</a>
-<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-d">Vraag een kennismaking aan</a>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint">Boek je intakegesprek nu</a>
+<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-ghost-d">Word lid</a>
 </div>
 </nav>
 </details>
-</header>
-
 </div>
+</header>
+<main id="main">
+<!-- HERO -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
 <div class="hc-hero">
 <h1 class="disp hc-word"><span class="mask"><span class="rise">Health Club</span></span></h1>
 <div class="dome-wrap"><div class="dome unveil"><img class="cover" src="assets/hchero.webp" fetchpriority="high" alt="De trainingsruimte van Reroot Health Club met toestellen en vrije gewichten" style="object-position:50% 60%">
@@ -175,10 +175,11 @@
 <h2 class="disp h-l" style="color:#1F3B37">Je eerste keer bij Reroot.</h2>
 <p class="lead" style="color:#3F4E47">Zo weet je wat je kunt verwachten voor je de deur opentrekt.</p>
 </div>
+<div class="rr" style="aspect-ratio:3/2;max-width:900px"><img class="cover" loading="lazy" decoding="async" src="assets/gevel.jpg" width="1400" height="933" alt="De ingang van Reroot Health Club in de Slachthuisstraat, met de twee coaches voor de deur"></div>
 <ol class="eerste">
 <li><h3 class="disp">Waar je moet zijn</h3><p>Slachthuisstraat 35a, 3680 Maaseik. <a href="https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z" target="_blank" rel="noopener">Plan je route</a></p></li>
 <li><h3 class="disp">Binnenkomen</h3><p>Na je inschrijving kom je binnen met de app, elke dag van 06:00 tot 23:00.</p></li>
-<li><h3 class="disp">Eerst komen kijken</h3><p>Wil je de club zien voor je beslist? <a href="contact.html?onderwerp=kennismaking#formulier">Vraag een kennismaking aan</a>. We spreken een moment af en tonen je de ruimte.</p></li>
+<li><h3 class="disp">Eerst komen kijken</h3><p>Wil je de club zien voor je beslist? <a href="contact.html?onderwerp=kennismaking#formulier">Boek je intakegesprek nu</a>. We spreken een moment af en tonen je de ruimte.</p></li>
 <li><h3 class="disp">Hulp nodig</h3><p>Bel <a href="tel:+32465076797">0465 07 67 97</a> of mail naar <a href="mailto:hallo@rerootcoaching.com" style="overflow-wrap:anywhere">hallo@rerootcoaching.com</a>. Een van de coaches antwoordt je persoonlijk.</p></li>
 </ol>
 </div>
@@ -201,12 +202,31 @@
 </div>
 <div>
 <h3 class="disp h-m" style="margin:0;color:#ECE8DD">Je twijfelt nog</h3>
-<p style="margin:0;max-width:34ch;font-size:18px;line-height:1.6;color:#C9D2CB">In een vrijblijvende kennismaking bekijken we samen wat bij je past.</p>
-<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-d">Vraag een kennismaking aan</a>
+<p style="margin:0;max-width:34ch;font-size:18px;line-height:1.6;color:#C9D2CB">In een vrijblijvend intakegesprek bekijken we samen wat bij je past.</p>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-d">Boek je intakegesprek nu</a>
 </div>
 </div>
 </div>
 </section>
+
+<section class="sec dk iband" style="background:#1F3B37;color:#ECE8DD">
+<div class="in iband-in">
+<div class="iband-t">
+<h2 class="disp h-l" style="color:#ECE8DD">Begin met een intakegesprek.</h2>
+<p class="lead" style="color:#D5DCD3">Vrijblijvend, met een van onze coaches. Na het gesprek weet je precies wat je volgende stap is.</p>
+<div class="knoppen">
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint btn-xl">Boek je intakegesprek nu</a>
+<a href="tel:+32465076797" class="tlink" style="color:#ECE8DD">Of bel 0465 07 67 97</a>
+</div>
+</div>
+<ol class="iband-l">
+<li><b>We bespreken je doel</b><span>En je trainingsverleden en hoe je week eruitziet.</span></li>
+<li><b>Je weet welk traject bij je past</b><span>Zelfstandig trainen, online coaching of personal training.</span></li>
+<li><b>Jij beslist</b><span>Het gesprek verplicht je tot niets.</span></li>
+</ol>
+</div>
+</section>
+
 
 <!-- FAQ -->
 <section class="sec" style="background:#F6F2EA;color:#1F3B37">
@@ -283,6 +303,6 @@
 </section>
 
 </main>
-<script src="site.js?v=4d785fcb" defer></script>
+<script src="site.js?v=253bb67a" defer></script>
 </body>
 </html>

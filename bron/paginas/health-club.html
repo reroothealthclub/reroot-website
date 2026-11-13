@@ -4,9 +4,6 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 ---
 <!-- HERO -->
 <section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
-<div style="max-width:1440px;margin:0 auto">
-{{> kop}}
-</div>
 <div class="hc-hero">
 <h1 class="disp hc-word"><span class="mask"><span class="rise">Health Club</span></span></h1>
 <div class="dome-wrap"><div class="dome unveil"><img class="cover" src="assets/hchero.webp" fetchpriority="high" alt="De trainingsruimte van Reroot Health Club met toestellen en vrije gewichten" style="object-position:50% 60%">
@@ -112,6 +109,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 <h2 class="disp h-l" style="color:#1F3B37">Je eerste keer bij Reroot.</h2>
 <p class="lead" style="color:#3F4E47">Zo weet je wat je kunt verwachten voor je de deur opentrekt.</p>
 </div>
+<div class="rr" style="aspect-ratio:3/2;max-width:900px"><img class="cover" loading="lazy" decoding="async" src="assets/gevel.jpg" width="1400" height="933" alt="De ingang van Reroot Health Club in de Slachthuisstraat, met de twee coaches voor de deur"></div>
 <ol class="eerste">
 <li><h3 class="disp">Waar je moet zijn</h3><p>{{adres.straat}}, {{adres.postcode}} {{adres.gemeente}}.{{#if club.eerste_keer.ingang}} {{club.eerste_keer.ingang}}{{/if}} <a href="{{adres.route_url}}" target="_blank" rel="noopener">Plan je route</a></p></li>
 <li><h3 class="disp">Binnenkomen</h3><p>Na je inschrijving kom je binnen met de app, {{uren.zin_klein}}.{{#if club.eerste_keer.toegang_na_inschrijving}} {{club.eerste_keer.toegang_na_inschrijving}}{{/if}}</p></li>
@@ -139,12 +137,14 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 </div>
 <div>
 <h3 class="disp h-m" style="margin:0;color:#ECE8DD">Je twijfelt nog</h3>
-<p style="margin:0;max-width:34ch;font-size:18px;line-height:1.6;color:#C9D2CB">In een vrijblijvende kennismaking bekijken we samen wat bij je past.</p>
+<p style="margin:0;max-width:34ch;font-size:18px;line-height:1.6;color:#C9D2CB">In een vrijblijvend intakegesprek bekijken we samen wat bij je past.</p>
 <a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>
 </div>
 </div>
 </div>
 </section>
+
+{{> intakeband}}
 
 <!-- FAQ -->
 <section class="sec" style="background:#F6F2EA;color:#1F3B37">

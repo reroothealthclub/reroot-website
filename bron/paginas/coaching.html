@@ -4,9 +4,6 @@ beschrijving: Coaching bij Reroot in Maaseik: App Coaching, Monthly Online Coach
 ---
 <!-- HERO -->
 <section class="ph dk" style="background:#0F1614;position:relative;z-index:2;overflow:hidden">
-<div style="max-width:1440px;margin:0 auto">
-{{> kop}}
-</div>
 <div class="co-hero">
 <div class="co-top"><h1 class="disp co-word"><span class="mask"><span class="rise">Coaching</span></span></h1></div>
 <div class="co-arch"><div class="arch45 unveil" style="aspect-ratio:46/60;border-radius:50% 50% 0 0 / 38.33% 38.33% 0 0"><img class="cover" src="assets/coachhero.webp" fetchpriority="high" alt="Een coach begeleidt een klant tijdens een squat in de Health Club" style="object-position:50% 40%">
@@ -46,7 +43,7 @@ beschrijving: Coaching bij Reroot in Maaseik: App Coaching, Monthly Online Coach
 <!-- TRAJECT -->
 <section class="sec dk" style="background:#1F3B37;color:#ECE8DD">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
-<div class="rr" style="aspect-ratio:21/9;border-radius:18px"><img class="cover" loading="lazy" decoding="async" src="assets/intakewide.webp" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant" style="object-position:50% 45%"></div>
+<div class="rr" style="aspect-ratio:16/9;border-radius:18px;max-width:980px"><img class="cover" loading="lazy" decoding="async" src="assets/intakewide.webp" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant" style="object-position:50% 45%"></div>
 <h2 class="disp h-l" style="color:#ECE8DD;max-width:18ch">Zo verloopt je traject.</h2>
 <div class="steps steps-rij">
 {{> stappen}}
@@ -106,7 +103,7 @@ beschrijving: Coaching bij Reroot in Maaseik: App Coaching, Monthly Online Coach
 </div>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
-<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">{{aanbod.personal_training.prijs_detail}}. Twijfel je tussen twee trajecten? Dan kiezen we samen tijdens een kennismaking.</p>
+<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">{{aanbod.personal_training.prijs_detail}}. Twijfel je tussen twee trajecten? Dan kiezen we samen tijdens een intakegesprek.</p>
 <div class="knoppen"><a href="{{kennismaking.url}}" class="btn b-forest">{{kennismaking.knoptekst}}</a><a href="tarieven.html#vergelijk" class="btn b-ghost-l">Vergelijk alle formules</a></div>
 </div>
 </div>
@@ -145,12 +142,12 @@ beschrijving: Coaching bij Reroot in Maaseik: App Coaching, Monthly Online Coach
 <div class="in two">
 <h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
 <div class="faq">
-<details><summary>Wat gebeurt er tijdens de kennismaking?</summary><p class="ans">We bespreken je doel, je trainingsverleden en hoe je week eruitziet. Daarna weet je welk traject bij je past. De kennismaking is vrijblijvend.</p></details>
+<details><summary>Wat gebeurt er tijdens het intakegesprek?</summary><p class="ans">We bespreken je doel, je trainingsverleden en hoe je week eruitziet. Daarna weet je welk traject bij je past. Het intakegesprek is vrijblijvend.</p></details>
 <details><summary>Voor wie is coaching?</summary><p class="ans">Voor wie duurzaam wil werken aan training, voeding en gedrag. Van spieropbouw en vetverlies tot sportgerichte begeleiding.</p></details>
 <details><summary>Wat is het verschil tussen de trajecten?</summary><p class="ans">Bij {{aanbod.app_coaching.naam}} heb je elke week een check-up via de app. Bij {{aanbod.monthly_coaching.naam}} is één check-up per maand live, de andere weken via de app. Bij {{aanbod.personal_training.naam}} train je één keer per week live met een coach in de gym, met een 10-beurtenkaart. Bekijk de <a href="tarieven.html#vergelijk">vergelijking</a>.</p></details>
 <details><summary>Zit toegang tot de Health Club in mijn coaching?</summary><p class="ans">Nee. Wil je zelfstandig in de club trainen, dan neem je daarnaast een <a href="health-club.html#lidmaatschap">{{aanbod.open_gym.naam}}-lidmaatschap</a> van € {{aanbod.open_gym.prijs}} {{aanbod.open_gym.eenheid}}.</p></details>
 <details><summary>Werken jullie ook sportgericht?</summary><p class="ans">Ja. Sportgerichte begeleiding is een van de domeinen waar we je mee helpen.</p></details>
-<details><summary>Hoe start ik?</summary><p class="ans"><a href="{{kennismaking.url}}">Vraag een kennismaking aan</a> via het contactformulier. Weet je al welk traject je wil, dan kun je het <a href="#trajecten">hierboven</a> ook meteen starten.</p></details>
+<details><summary>Hoe start ik?</summary><p class="ans"><a href="{{kennismaking.url}}">Boek je intakegesprek</a> via het contactformulier. Weet je al welk traject je wil, dan kun je het <a href="#trajecten">hierboven</a> ook meteen starten.</p></details>
 </div>
 </div>
 </section>

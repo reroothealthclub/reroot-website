@@ -15,12 +15,31 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 | 3 | **Domein en DNS** | Ik weet niet waar je domeinen geregistreerd zijn. `www.reroothealthclub.com` gaf bij mijn controle geen antwoord (de naam werd niet gevonden). Niets aan DNS of domeinen is aangeraakt. |
 | 4 | **Plug&Pay-teksten** | Op `checkout.rerootcoaching.com/rerootcoaching` staat nog "maximum van 200 Leden" en "Reroot Online Coaching". Zelf aanpassen: 150 leden en "Reroot Monthly Online Coaching". |
 
+## Het intakegesprek als hoofdknop
+
+"Boek je intakegesprek nu" is nu de hoofdknop van de site: in de menubalk (op mobiel als "Boek intake"), in het mobiele menu, in elk slotblok en in een eigen oproepband op de homepage, de clubpagina en de tarievenpagina. "Word lid" staat er als gewone link naast. Het woord "kennismaking" is overal "intakegesprek" geworden.
+
+Twee dingen om te weten:
+
+- **De knop zegt "boek", maar er is geen boekingssysteem.** De bezoeker komt op het formulier "Boek je intakegesprek" en leest daar dat een coach contact opneemt om een moment vast te leggen. Dat is eerlijk, maar het is geen directe boeking.
+- **Het formulier is de zwakke schakel van deze funnel.** Zonder formulierdienst zet het alleen een mail klaar. Wie die mail niet verstuurt, laat geen gegevens achter en jij ziet die persoon nooit. Wil je dat elke aanvraag binnenkomt, dan heb je een formulierdienst of een afsprakentool nodig. Dat is één regel in `site.json` zodra je er een kiest.
+
+Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoegd.
+
+## Laatste ronde (13 november, avond)
+
+- Koppen "Twee manieren..." en "De drie pijlers..." lopen over de volle breedte.
+- De foto's van de pijlers zijn niet meer bijgesneden; Voeding toont de foto waarop je proeft.
+- De wortels groeien in drie golven mee met het scrollen en verkleuren van mintgroen naar bosgroen.
+- De oproepband voor het intakegesprek is bosgroen in plaats van mintgroen, zodat de site bij het oorspronkelijke palet blijft (inktzwart, bosgroen, gebroken wit, mint alleen als accent).
+- "Word lid" staat niet meer in de menubalk. De link staat nog in het mobiele menu, in de kaart "Health Club" en op de clubpagina.
+
 ## Blokkeert niets, maar vraagt je antwoord
 
 | # | Onderwerp | Toelichting |
 |---|---|---|
 | 5 | **Je eerste keer bij Reroot** | Het blok op de clubpagina toont nu alleen wat bevestigd is: adres, binnenkomen met de app, kennismaking en contact. Drie velden staan leeg en verschijnen pas als je ze invult bij `club` → `eerste_keer`: waar de ingang precies is, hoe een nieuw lid toegang krijgt na inschrijving, en wat je meebrengt. |
-| 6 | **Coachingvoorbeeld op de homepage** | Het voorbeeld (drie keer per week kunnen trainen, schema voor vijf dagen) is door mij geschreven en duidelijk gelabeld als "Voorbeeld ter illustratie, geen echte klant". Lees het na: klopt dit met hoe jullie zo'n situatie aanpakken? Een echt, geanonimiseerd praktijkvoorbeeld is sterker. |
+| 6 | **Coachingvoorbeeld op de homepage** | Herschreven op je vraag: het koppelt nu slaap (ploegenwerk), voeding (eiwitverdeling, maaltijd vóór de training) en training (tijdelijk drie sessies) aan elkaar. Het blijft door mij geschreven en gelabeld als "Voorbeeld ter illustratie, geen echte klant". Lees de inhoud na: klopt dit met wat jullie in zo'n gesprek zouden beslissen? |
 | 7 | **Teksten in de clubscène** | "Een volledige rij dumbbells" en "voor sledewerk, sprints en loopoefeningen" zijn afgeleid van je eigen foto's. Laat weten als je er cijfers bij wil (zwaarste dumbbell, lengte van de track). |
 | 8 | **Formulierdienst** | Niet gekozen, dus niets toegevoegd. Het formulier zet een mail klaar. Kies je een dienst, dan is het één regel in `site.json`. |
 | 9 | **Knop naar de app** | Blijft onzichtbaar tot `ledenapp_url` ingevuld is. |
@@ -28,7 +47,7 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 
 ## Kan later
 
-- **Video voor de opening.** Er is geen geschikte, gemonteerde video in de projectmap, en ik kan hier geen video monteren. De opening is een afgewerkte fotohero. Shots die je kunt opnemen (liggend, vanaf statief, 5 tot 8 seconden elk, zonder geluid): breed beeld vanaf de ingang; een hand die een schijf op de stang schuift; iemand midden in een set; een kort coachmoment. Ook een staand shot vanaf de ingang richting de sprinttrack voor mobiel.
+- **Video voor de opening.** Er is geen geschikte, gemonteerde video in de projectmap, en ik kan hier geen video monteren. De opening gebruikt een foto. Shots die je kunt opnemen (liggend, vanaf statief, 5 tot 8 seconden elk, zonder geluid): breed beeld vanaf de ingang; een hand die een schijf op de stang schuift; iemand midden in een set; een kort coachmoment. Ook een staand shot vanaf de ingang richting de sprinttrack voor mobiel.
 - **Scrollgestuurde video in de clubscène.** Pas zinvol met drie eigen clips. De scène werkt nu met beeldwissels.
 - **Lettertypes lokaal zetten.** Ze komen nu van Google Fonts. Lokaal is sneller en vermijdt een verbinding met Google bij elk bezoek. Daarvoor moet ik de lettertypebestanden downloaden; dat doe ik op je vraag.
 - **Kleinere versie van de openingsfoto voor mobiel.** De foto weegt 125 kB; een aparte mobiele uitsnede bespaart weinig, dus nog niet gedaan.
@@ -45,7 +64,9 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 
 ## Wat veranderd is in deze ronde
 
-- **Homepage:** nieuwe opening met een breed beeld van de eigen trainingsruimte; "De club, in drie beelden" (vrije gewichten, krachttoestellen, sprinttrack) met op desktop één vast beeldvlak dat wisselt tijdens het scrollen; een concreet coachingvoorbeeld (situatie, beslissing, waarom); "Sterker worden begint met begrijpen" linkt nu naar een echt artikel en de recentste aflevering.
+- **Na je feedback van 13 november:** de vorige opening (woordmerk, boog en wortels) staat terug, nu met beweging die het scrollen volgt: het woordmerk schuift weg, de foto zoomt licht in en de wortels groeien de volgende sectie in. De menubalk blijft op elke pagina bovenaan vast. De kop is "Twee manieren om jouw fysieke transformatie te realiseren". Op de coachingpagina is het woord "Coaching" niet meer afgesneden, zijn de trajectknoppen even breed en is de intakefoto minder ingezoomd.
+- **De drie pijlers:** de scrollscène toont nu Beweging, Voeding en Levensstijl in plaats van drie clubbeelden, met de boodschap dat de drie altijd samen horen. De drie beelden zijn je eigen foto's (aangeleverd op 13 november). Op de voedingsfoto zijn merken zichtbaar (Alpro, Arla, Myprotein); laat weten als je dat liever niet hebt. De foto van de gevel staat op de contactpagina en bij "Je eerste keer". De vijfde foto (proeven aan het aanrecht) is niet gebruikt en staat in `aangeleverd/`. De pijlers staan nu één keer op de homepage, niet meer ook in het blok "Sterker worden begint met begrijpen".
+- **Homepage:** (eerste voorstel, vervangen door het bovenstaande) nieuwe opening met een breed beeld van de eigen trainingsruimte; "De club, in drie beelden" (vrije gewichten, krachttoestellen, sprinttrack) met op desktop één vast beeldvlak dat wisselt tijdens het scrollen; een concreet coachingvoorbeeld (situatie, beslissing, waarom); "Sterker worden begint met begrijpen" linkt nu naar een echt artikel en de recentste aflevering.
 - **Kennismaking:** de kop van het formulier volgt het onderwerp; uitleg dat de knop je mailprogramma opent; kopieerbaar bericht voor wie geen mailprogramma heeft.
 - **Clubpagina:** blok "Je eerste keer bij Reroot".
 - **Coachingpagina:** links naar een artikel en een aflevering.

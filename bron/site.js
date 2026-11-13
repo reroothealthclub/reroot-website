@@ -10,7 +10,37 @@
     'over-reroot': 'over-reroot.html', 'contact': 'contact.html', 'kennisbank': 'kennisbank.html',
     'podcast': 'kennisbank.html#podcast', 'home': 'index.html' };
   var hash = (location.hash || '').slice(1);
-  if (document.querySelector('.opening') && oud[hash]) { location.replace(oud[hash]); return; }
+  if (document.querySelector('.hero-word') && oud[hash]) { location.replace(oud[hash]); return; }
+
+  // 1b. vaste menubalk: doorzichtig bovenaan de pagina, donker zodra je scrolt
+  var balk = document.querySelector('.kop .hero-head');
+  // 1c. opening van de homepage: beweging gekoppeld aan het scrollen.
+  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift; --r laat de wortels groeien.
+  var opening = document.querySelector('.hero');
+  var beweeg = opening && opening.querySelector('.hero-word') &&
+    !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (beweeg) opening.classList.add('hero-scroll');
+  var bezig = false;
+  var bijScroll = function () {
+    bezig = false;
+    var y = window.pageYOffset || 0;
+    if (balk) balk.classList.toggle('bovenaan', y < 8 && !document.querySelector('details.mnav[open]'));
+    if (beweeg) {
+      var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
+      opening.style.setProperty('--p', p.toFixed(3));
+      var groei = function (start, tempo) { return Math.min(1, Math.max(0, 1 - (p - start) * tempo)).toFixed(3); };
+      opening.style.setProperty('--r1', groei(0.10, 2.2));
+      opening.style.setProperty('--r2', groei(0.28, 2.4));
+      opening.style.setProperty('--r3', groei(0.46, 2.8));
+      opening.style.setProperty('--k', Math.min(1, Math.max(0, (p - 0.15) * 1.5)).toFixed(3));
+    }
+  };
+  window.addEventListener('scroll', function () {
+    if (!bezig) { bezig = true; window.requestAnimationFrame(bijScroll); }
+  }, { passive: true });
+  var mnav = document.querySelector('details.mnav');
+  if (mnav) mnav.addEventListener('toggle', bijScroll);
+  bijScroll();
 
   // 2. menu
   document.addEventListener('keydown', function (e) {
@@ -121,8 +151,8 @@
     if (!kop || !intro) return;
     var w = keuze.value, naam = keuze.options[keuze.selectedIndex].text;
     if (w === 'kennismaking') {
-      kop.textContent = 'Vraag een kennismaking aan';
-      intro.textContent = 'Laat je naam en e-mailadres achter. Een van de coaches neemt persoonlijk contact op om een moment af te spreken. De kennismaking is vrijblijvend.';
+      kop.textContent = 'Boek je intakegesprek';
+      intro.textContent = 'Laat je gegevens achter. Een van de coaches neemt persoonlijk contact op om een moment vast te leggen. Het gesprek is vrijblijvend.';
     } else if (w && w !== 'anders') {
       kop.textContent = 'Je vraag over ' + naam;
       intro.textContent = 'Stel je vraag of vertel kort wat je zoekt. Een van de coaches antwoordt je persoonlijk.';

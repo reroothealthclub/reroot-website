@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact | Reroot Health Club &amp; Coaching Maaseik</title>
-<meta name="description" content="Neem contact op met Reroot in Maaseik of vraag een vrijblijvende kennismaking aan. Slachthuisstraat 35a, 3680 Maaseik.">
+<meta name="description" content="Neem contact op met Reroot in Maaseik of boek een vrijblijvend intakegesprek. Slachthuisstraat 35a, 3680 Maaseik.">
 <meta name="theme-color" content="#0F1614">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="nl_BE">
 <meta property="og:site_name" content="Reroot Health Club &amp; Coaching">
 <meta property="og:title" content="Contact | Reroot Health Club &amp; Coaching Maaseik">
-<meta property="og:description" content="Neem contact op met Reroot in Maaseik of vraag een vrijblijvende kennismaking aan. Slachthuisstraat 35a, 3680 Maaseik.">
+<meta property="og:description" content="Neem contact op met Reroot in Maaseik of boek een vrijblijvend intakegesprek. Slachthuisstraat 35a, 3680 Maaseik.">
 <meta property="og:url" content="https://reroothealthclub.github.io/reroot-website/contact.html">
 <meta property="og:image" content="https://reroothealthclub.github.io/reroot-website/assets/deelbeeld.jpg">
 <meta property="og:image:width" content="1200">
@@ -23,15 +23,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap">
-<link rel="stylesheet" href="stijl.css?v=016352cd">
+<link rel="stylesheet" href="stijl.css?v=1d0663a5">
 </head>
-<body>
+<body class="p-contact">
 <a class="skip" href="#main">Naar de inhoud</a>
-<main id="main">
-<!-- HERO + FORMULIER -->
-<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
-<div style="max-width:1440px;margin:0 auto">
-<header class="hero-head">
+<header class="kop">
+<div class="hero-head">
 <a href="index.html" class="logo-link"><img class="logo" src="assets/logo.svg" width="72" height="68" alt="Reroot, naar de startpagina"></a>
 <nav class="hero-nav" aria-label="Hoofdmenu">
 <a href="index.html" class="ln">Home</a>
@@ -43,8 +40,9 @@
 <a href="contact.html" class="ln" aria-current="page">Contact</a>
 </nav>
 <div class="hdr-right">
-<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-mint" style="min-height:48px;padding:0 24px">Word lid</a>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint" style="min-height:48px;padding:0 24px">Boek je intakegesprek nu</a>
 </div>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint hdr-kort">Boek intake<span class="sr">: Boek je intakegesprek nu</span></a>
 <details class="mnav">
 <summary><span class="bars" aria-hidden="true"></span>Menu</summary>
 <nav class="mnav-panel" aria-label="Hoofdmenu mobiel">
@@ -56,19 +54,21 @@
 <a class="ml" href="kennisbank.html">Kennisbank</a>
 <a class="ml" href="contact.html" aria-current="page">Contact</a>
 <div class="mnav-cta">
-<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-mint">Word lid</a>
-<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-d">Vraag een kennismaking aan</a>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-mint">Boek je intakegesprek nu</a>
+<a href="https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete" target="_blank" rel="noopener" class="btn b-ghost-d">Word lid</a>
 </div>
 </nav>
 </details>
-</header>
-
 </div>
+</header>
+<main id="main">
+<!-- HERO + FORMULIER -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
 <div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(64px,8vw,120px)">
 <div class="two">
 <div class="col">
 <h1 class="disp" style="margin:0;font-size:clamp(44px,calc(var(--u)*.075),108px);line-height:1;color:#ECE8DD"><span class="mask"><span class="rise">Neem contact op.</span></span></h1>
-<p class="lead" style="color:#D5DCD3;max-width:40ch">Een vraag over de Health Club of coaching, of wil je een kennismaking aanvragen? Laat het ons weten. Een van de coaches antwoordt je persoonlijk.</p>
+<p class="lead" style="color:#D5DCD3;max-width:40ch">Een vraag over de Health Club of coaching, of wil je een intakegesprek boeken? Laat het ons weten. Een van de coaches antwoordt je persoonlijk.</p>
 <div class="cinfo">
 <div><span class="k">Adres</span><span class="v">Reroot Health Club<br>Slachthuisstraat 35a, 3680 Maaseik</span></div>
 <div><span class="k">Telefoon</span><a href="tel:+32465076797">0465 07 67 97</a></div>
@@ -95,7 +95,7 @@
 <div class="fld"><label for="ond">Waarover gaat je bericht?</label>
 <select id="ond" name="onderwerp" required aria-describedby="ond-err">
 <option value="" selected disabled>Kies een optie</option>
-<option value="kennismaking">Een kennismaking</option>
+<option value="kennismaking">Een intakegesprek</option>
 <option value="open-gym">Open Gym</option>
 <option value="app-coaching">App Coaching</option>
 <option value="monthly-coaching">Monthly Online Coaching</option>
@@ -142,17 +142,17 @@
 <div class="in two" style="align-items:center">
 <div class="col">
 <h2 class="disp h-l" style="color:#1F3B37">Kom langs in Maaseik.</h2>
-<p class="lead" style="color:#3F4E47">Wil je de club eerst zien? Vraag een kennismaking aan, dan spreken we een moment af, tonen we je de ruimte en bespreken we wat je zoekt.</p>
+<p class="lead" style="color:#3F4E47">Wil je de club eerst zien? Boek je intakegesprek, dan spreken we een moment af, tonen we je de ruimte en bespreken we wat je zoekt.</p>
 <div class="lblk" style="gap:6px">
 <span style="font-size:19px;font-weight:700">Reroot Health Club</span>
 <span style="font-size:18px;line-height:1.5;color:#3F4E47">Slachthuisstraat 35a<br>3680 Maaseik, België</span>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z" target="_blank" rel="noopener" class="btn b-forest">Plan je route</a>
-<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-l">Vraag een kennismaking aan</a>
+<a href="contact.html?onderwerp=kennismaking#formulier" class="btn b-ghost-l">Boek je intakegesprek nu</a>
 </div>
 </div>
-<div class="rr" style="aspect-ratio:4/3;border-radius:18px"><img class="cover" loading="lazy" decoding="async" src="assets/gym.webp" alt="De trainingsruimte van Reroot Health Club met vrije gewichten, toestellen en een grote spiegel" style="object-position:50% 50%"></div>
+<div class="rr" style="aspect-ratio:3/2;border-radius:18px"><img class="cover" loading="lazy" decoding="async" src="assets/gevel.jpg" width="1400" height="933" alt="De ingang van Reroot Health Club in de Slachthuisstraat, met de twee coaches voor de deur"></div>
 </div>
 </section>
 
@@ -228,6 +228,6 @@
 </section>
 
 </main>
-<script src="site.js?v=4d785fcb" defer></script>
+<script src="site.js?v=253bb67a" defer></script>
 </body>
 </html>
