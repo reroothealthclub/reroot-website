@@ -15,7 +15,7 @@ cd pad/naar/reroot-website
 |---|---|
 | Prijzen, openingsuren, adres, telefoon, e-mail, alle links, coaches, reviews, merch, artikels | `gegevens/site.json` |
 | Tekst en opbouw per pagina | `bron/paginas/` (één bestand per pagina) |
-| Menu bovenaan en voettekst (op elke pagina hetzelfde) | `bron/onderdelen/kop.html` en `bron/onderdelen/voet.html` |
+| Menu bovenaan (blijft vast in beeld) en voettekst, op elke pagina hetzelfde | `bron/onderdelen/kop.html` en `bron/onderdelen/voet.html` |
 | Coachkaarten, ervaringen, de drie stappen, contactformulier | `bron/onderdelen/` |
 | Foto's en logo | `bron/assets/` |
 | Kleuren, lettertypes, opmaak | `bron/stijl.css` |
@@ -78,7 +78,7 @@ De foto's van de homepage:
 
 | Plek | Bestand in `bron/assets/` |
 |---|---|
-| Opening (het eerste scherm) | `hchero.webp` (liggend, 2000 pixels breed) |
+| Opening (de foto in de boog) | `hero.webp` (staand, 1300 × 1696) |
 | Clubscène: vrije gewichten | `club-gewichten.jpg` (staand, 1000 × 1250) |
 | Clubscène: krachttoestellen | `legext.webp` (staand) |
 | Clubscène: sprinttrack | `club-sprinttrack.jpg` (staand, 1000 × 1250) |

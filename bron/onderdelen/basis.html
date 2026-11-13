@@ -27,9 +27,9 @@
 <link rel="stylesheet" href="stijl.css?v={{versie.css}}">
 {{#if pagina.ld}}<script type="application/ld+json">{{{pagina.ld}}}</script>
 {{/if}}</head>
-<body>
+<body class="p-{{pagina.sleutel}}">
 <a class="skip" href="#main">Naar de inhoud</a>
-<main id="main">
+{{> kop}}<main id="main">
 {{{inhoud}}}
 </main>
 <script src="site.js?v={{versie.js}}" defer></script>

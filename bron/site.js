@@ -10,7 +10,33 @@
     'over-reroot': 'over-reroot.html', 'contact': 'contact.html', 'kennisbank': 'kennisbank.html',
     'podcast': 'kennisbank.html#podcast', 'home': 'index.html' };
   var hash = (location.hash || '').slice(1);
-  if (document.querySelector('.opening') && oud[hash]) { location.replace(oud[hash]); return; }
+  if (document.querySelector('.hero-word') && oud[hash]) { location.replace(oud[hash]); return; }
+
+  // 1b. vaste menubalk: doorzichtig bovenaan de pagina, donker zodra je scrolt
+  var balk = document.querySelector('.kop .hero-head');
+  // 1c. opening van de homepage: beweging gekoppeld aan het scrollen.
+  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift; --r laat de wortels groeien.
+  var opening = document.querySelector('.hero');
+  var beweeg = opening && opening.querySelector('.hero-word') &&
+    !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (beweeg) opening.classList.add('hero-scroll');
+  var bezig = false;
+  var bijScroll = function () {
+    bezig = false;
+    var y = window.pageYOffset || 0;
+    if (balk) balk.classList.toggle('bovenaan', y < 8 && !document.querySelector('details.mnav[open]'));
+    if (beweeg) {
+      var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
+      opening.style.setProperty('--p', p.toFixed(3));
+      opening.style.setProperty('--r', Math.min(1, Math.max(0, 1 - (p - 0.12) * 1.7)).toFixed(3));
+    }
+  };
+  window.addEventListener('scroll', function () {
+    if (!bezig) { bezig = true; window.requestAnimationFrame(bijScroll); }
+  }, { passive: true });
+  var mnav = document.querySelector('details.mnav');
+  if (mnav) mnav.addEventListener('toggle', bijScroll);
+  bijScroll();
 
   // 2. menu
   document.addEventListener('keydown', function (e) {

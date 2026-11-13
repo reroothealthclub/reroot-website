@@ -544,35 +544,6 @@ button:focus-visible{outline:3px solid #1F3B37;outline-offset:3px}
    Homepage: opening, de club in drie beelden, coachingvoorbeeld
    ===================================================================== */
 
-/* Scène 01 · opening. Tekst en knoppen staan er meteen; alleen de foto komt rustig tot stilstand. */
-.opening{position:relative;z-index:2;overflow:hidden;background:#0F1614;color:#ECE8DD}
-.opening-img{position:absolute;top:0;left:0;width:100%;height:58%;object-fit:cover;object-position:22% 50%;animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both}
-@keyframes settle{from{transform:scale(1.06)}to{transform:none}}
-.opening-tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,22,20,.7) 0%,rgba(15,22,20,.12) 16%,rgba(15,22,20,.1) 30%,rgba(15,22,20,.82) 47%,#0F1614 58%)}
-.opening-in{position:relative;z-index:3;display:flex;flex-direction:column;max-width:1440px;margin:0 auto;min-height:640px;min-height:max(600px,min(100svh,880px))}
-.opening-txt{margin-top:auto;padding:0 clamp(20px,5vw,64px) 26px}
-.opening-h{margin:0 0 16px;display:flex;flex-direction:column;gap:10px;font-weight:400}
-.opening-h .hero-loc{margin:0;text-shadow:0 1px 12px rgba(15,22,20,.9)}
-.opening-word{font-size:clamp(44px,13vw,76px);line-height:.98;color:#ECE8DD}
-.opening-word em{display:block;font-style:normal;color:#8DB5A2}
-.opening .hero-line{margin-bottom:22px}
-.opening-facts{display:flex;justify-content:space-between;gap:14px;margin:0 clamp(20px,5vw,64px);padding:16px 0 22px;border-top:1px solid rgba(236,232,221,.2)}
-.of{display:flex;flex-direction:column;gap:3px;min-width:0;font-size:14px;line-height:1.35;color:#C9D2CB;text-decoration:none}
-.of .disp{font-size:21px;line-height:1.1;color:#ECE8DD;white-space:nowrap}
-a.of:hover span:last-child{text-decoration:underline;text-underline-offset:4px}
-@media (min-width:1100px){
-  .opening-img{height:100%;object-position:50% 58%}
-  .opening-tint{background:linear-gradient(to top,rgba(15,22,20,.88) 0%,rgba(15,22,20,.42) 30%,rgba(15,22,20,0) 58%),linear-gradient(to right,rgba(15,22,20,.8) 0%,rgba(15,22,20,.42) 40%,rgba(15,22,20,0) 72%),linear-gradient(to bottom,rgba(15,22,20,.6) 0%,rgba(15,22,20,0) 22%)}
-  .opening-in{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:0 48px;min-height:max(680px,min(100svh,900px));padding:0 clamp(20px,5vw,64px) clamp(40px,5vw,64px)}
-  .opening-txt{margin:0;padding:0;max-width:680px}
-  .opening-word{font-size:clamp(84px,calc(var(--u)*.078),116px)}
-  .opening .hero-line{max-width:44ch;font-size:20px}
-  .opening-facts{flex-direction:column;justify-content:flex-end;gap:0;margin:0;padding:0;border:0;min-width:250px}
-  .of{padding:16px 0;border-top:1px solid rgba(236,232,221,.28);font-size:16px}
-  .of:last-child{border-bottom:1px solid rgba(236,232,221,.28)}
-  .of .disp{font-size:34px}
-}
-
 /* twee routes: compacte kaarten zonder foto, de beelden volgen in de clubscène */
 #groeien .way-body{gap:18px}
 
@@ -642,14 +613,44 @@ a.of:hover span:last-child{text-decoration:underline;text-underline-offset:4px}
 @media (min-width:900px){.eerste{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 40px}}
 
 @media (prefers-reduced-motion:reduce){
-  .opening-img{animation:none}
   .scene-fig,.scene-item{transition:none!important}
 }
 
-.opening-h .hero-loc>span:not(.sr):not(.punt){display:block}
-.opening-h .punt{display:none}
-@media (min-width:600px){.opening-h .hero-loc>span:not(.sr):not(.punt){display:inline}.opening-h .punt{display:inline}}
 
 /* lange woorden in koppen breken netjes af op smalle schermen */
 h1,h2,h3{overflow-wrap:break-word}
 .ph h1{hyphens:auto}
+
+/* ---------- vaste menubalk ---------- */
+.kop{height:78px}
+.kop .hero-head{position:fixed;top:0;left:0;right:0;z-index:50;padding:12px max(clamp(20px,5vw,64px),calc((100vw - 1440px)/2 + 64px));background:rgba(15,22,20,.94);box-shadow:0 1px 0 rgba(236,232,221,.12);transition:background-color .25s ease,box-shadow .25s ease}
+.kop .hero-head.bovenaan{background:transparent;box-shadow:none}
+.kop .mnav-panel{max-height:calc(100vh - 78px);overflow-y:auto;overscroll-behavior:contain}
+.kop .logo{height:54px}
+[id]{scroll-margin-top:100px}
+@media (min-width:1100px){
+  .kop{height:92px}
+  .kop .hero-head{padding-top:12px;padding-bottom:12px}
+  .kop .logo{height:68px}
+  .p-index .kop{height:0}
+}
+@media (prefers-reduced-motion:reduce){.kop .hero-head{transition:none}}
+
+/* ---------- opening: beweging gekoppeld aan het scrollen (site.js zet --p en --r) ---------- */
+.hero-scroll .hero-word{transform:translateY(calc(var(--p,0)*-70px));opacity:calc(1 - var(--p,0)*1.15)}
+.hero-scroll .hero-arch .unveil img{transform:scale(calc(1 + var(--p,0)*.22));transform-origin:50% 60%;will-change:transform}
+.hero-scroll .hero-arch::before{transform:scale(calc(1 + var(--p,0)*.05));transform-origin:50% 100%}
+.hero-scroll .hero-left,.hero-scroll .hero-right{transform:translateY(calc(var(--p,0)*-28px))}
+.hero-scroll .root{animation:none;stroke-dashoffset:var(--r,1)}
+
+/* coachingpagina: het woord mag over de boog lopen, trajectknoppen even breed */
+@media (min-width:900px){
+  .co-top{grid-column:1/-1!important;grid-row:1;position:relative;z-index:4;pointer-events:none}
+  .co-text{grid-row:2}
+  .fnd .offer-cta{align-items:stretch;text-align:left}
+  .fnd .offer-cta .btn{width:100%;box-sizing:border-box;min-height:56px;padding:0 20px}
+  .fnd .offer-cta .tlink{align-self:flex-start}
+}
+.kop{position:relative;z-index:50;background:#0F1614}
+.kop .hero-head{color:#ECE8DD}
+.kop a:focus-visible,.kop summary:focus-visible{outline-color:#8DB5A2}

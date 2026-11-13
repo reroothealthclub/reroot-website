@@ -28,7 +28,7 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 
 ## Kan later
 
-- **Video voor de opening.** Er is geen geschikte, gemonteerde video in de projectmap, en ik kan hier geen video monteren. De opening is een afgewerkte fotohero. Shots die je kunt opnemen (liggend, vanaf statief, 5 tot 8 seconden elk, zonder geluid): breed beeld vanaf de ingang; een hand die een schijf op de stang schuift; iemand midden in een set; een kort coachmoment. Ook een staand shot vanaf de ingang richting de sprinttrack voor mobiel.
+- **Video voor de opening.** Er is geen geschikte, gemonteerde video in de projectmap, en ik kan hier geen video monteren. De opening gebruikt een foto. Shots die je kunt opnemen (liggend, vanaf statief, 5 tot 8 seconden elk, zonder geluid): breed beeld vanaf de ingang; een hand die een schijf op de stang schuift; iemand midden in een set; een kort coachmoment. Ook een staand shot vanaf de ingang richting de sprinttrack voor mobiel.
 - **Scrollgestuurde video in de clubscène.** Pas zinvol met drie eigen clips. De scène werkt nu met beeldwissels.
 - **Lettertypes lokaal zetten.** Ze komen nu van Google Fonts. Lokaal is sneller en vermijdt een verbinding met Google bij elk bezoek. Daarvoor moet ik de lettertypebestanden downloaden; dat doe ik op je vraag.
 - **Kleinere versie van de openingsfoto voor mobiel.** De foto weegt 125 kB; een aparte mobiele uitsnede bespaart weinig, dus nog niet gedaan.
@@ -45,7 +45,8 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 
 ## Wat veranderd is in deze ronde
 
-- **Homepage:** nieuwe opening met een breed beeld van de eigen trainingsruimte; "De club, in drie beelden" (vrije gewichten, krachttoestellen, sprinttrack) met op desktop één vast beeldvlak dat wisselt tijdens het scrollen; een concreet coachingvoorbeeld (situatie, beslissing, waarom); "Sterker worden begint met begrijpen" linkt nu naar een echt artikel en de recentste aflevering.
+- **Na je feedback van 13 november:** de vorige opening (woordmerk, boog en wortels) staat terug, nu met beweging die het scrollen volgt: het woordmerk schuift weg, de foto zoomt licht in en de wortels groeien de volgende sectie in. De menubalk blijft op elke pagina bovenaan vast. De kop is "Twee manieren om jouw fysieke transformatie te realiseren". Op de coachingpagina is het woord "Coaching" niet meer afgesneden, zijn de trajectknoppen even breed en is de intakefoto minder ingezoomd.
+- **Homepage:** (eerste voorstel, vervangen door het bovenstaande) nieuwe opening met een breed beeld van de eigen trainingsruimte; "De club, in drie beelden" (vrije gewichten, krachttoestellen, sprinttrack) met op desktop één vast beeldvlak dat wisselt tijdens het scrollen; een concreet coachingvoorbeeld (situatie, beslissing, waarom); "Sterker worden begint met begrijpen" linkt nu naar een echt artikel en de recentste aflevering.
 - **Kennismaking:** de kop van het formulier volgt het onderwerp; uitleg dat de knop je mailprogramma opent; kopieerbaar bericht voor wie geen mailprogramma heeft.
 - **Clubpagina:** blok "Je eerste keer bij Reroot".
 - **Coachingpagina:** links naar een artikel en een aflevering.

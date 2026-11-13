@@ -213,6 +213,7 @@ def main():
     check(links('index.html', 'Zelfstandig trainen', 'health-club.html'), 'home: knop "Zelfstandig trainen" gaat naar de Health Club')
     check(links('index.html', 'Trainen met een coach', 'coaching.html'), 'home: knop "Trainen met een coach" gaat naar Coaching')
     check('Fitnessclub in %s' % g['adres']['gemeente'] in thuis.ruw and 'Verandering' in thuis.ruw, 'home: plaats en merkzin staan in de opening')
+    check('class="kop"' in thuis.ruw, 'home: vaste menubalk aanwezig')
     check(thuis.ruw.count('class="scene-item"') == 3, 'home: de clubscène telt drie onderdelen')
     check(thuis.ruw.count('fetchpriority="high"') == 1, 'home: precies één beeld krijgt laadprioriteit')
     check('ter illustratie' in thuis.ruw, 'home: het coachingvoorbeeld is als illustratief gelabeld')
