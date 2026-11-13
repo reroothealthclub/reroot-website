@@ -95,6 +95,18 @@ python3 bouw.py
 
 De map `publiek/` bevat daarna de volledige site. Die map zet je online: upload de **inhoud** van `publiek/` naar je webhosting. De site bestaat uit gewone HTML-bestanden en werkt bij elke hostingpartij.
 
+## Online zetten via GitHub
+
+De site staat op GitHub in het project `reroothealthclub/reroot-website`. Telkens je een bewaarde versie doorstuurt, test en bouwt GitHub de site en zet het ze online op het testadres <https://reroothealthclub.github.io/reroot-website/>. Dat duurt een minuut of twee.
+
+```bash
+git push
+```
+
+Mislukt een test, dan blijft de vorige versie online staan. De uitslag zie je op <https://github.com/reroothealthclub/reroot-website/actions>.
+
+Zolang `"zoekmachines_toelaten"` in `gegevens/site.json` op `false` staat, neemt Google het testadres niet op. Zet dat op `true` op de dag dat de site op je echte domein komt.
+
 ## Een versie bewaren
 
 Bewaar elke werkende versie, zodat je altijd terug kunt:

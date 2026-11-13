@@ -6,6 +6,7 @@
 <title>{{pagina.titel}}</title>
 <meta name="description" content="{{pagina.beschrijving}}">
 <meta name="theme-color" content="#0F1614">
+{{#if publicatie.zoekmachines_toelaten}}{{else}}<meta name="robots" content="noindex, nofollow">{{/if}}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_BE">
 <meta property="og:site_name" content="{{bedrijf.naam}}">

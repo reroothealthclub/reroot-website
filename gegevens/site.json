@@ -1,4 +1,9 @@
 {
+  "publicatie": {
+    "zoekmachines_toelaten": false,
+    "uitleg": "Zolang de site op een testadres staat, blijft dit false: Google neemt ze dan niet op. Zet op true op de dag dat de site op je echte domein komt."
+  },
+
   "bedrijf": {
     "naam": "Reroot Health Club & Coaching",
     "juridische_naam": "Reroot Coaching",
