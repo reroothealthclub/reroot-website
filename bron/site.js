@@ -20,6 +20,60 @@
   var beweeg = opening && opening.querySelector('.hero-word') &&
     !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (beweeg) opening.classList.add('hero-scroll');
+  // De wortels: elke lijn groeit volgens de plaats van de tekening in beeld.
+  // Hoofdwortels krijgen extra lagen (dik aan de stam, dun aan het uiteinde) en een lichtpunt op de groeiende top.
+  var wortelSvg = beweeg ? opening.querySelector('.roots') : null;
+  var wortels = [];
+  if (wortelSvg && wortelSvg.createSVGPoint) {
+    var NS = 'http://www.w3.org/2000/svg';
+    var plan = { r1: { start: 0, duur: 0.55, lagen: [[0.3, 'root-dik'], [0.62, 'root-mid']] },
+                 r2: { start: 0.28, duur: 0.45, lagen: [[0.45, 'root-mid']] },
+                 r3: { start: 0.55, duur: 0.45, lagen: [] } };
+    Object.keys(plan).forEach(function (groep) {
+      var g = wortelSvg.querySelector('.' + groep);
+      if (!g) return;
+      Array.prototype.slice.call(g.querySelectorAll('.root')).forEach(function (pad, nr) {
+        var start = plan[groep].start + (nr % 4) * 0.035;
+        var top = null, gloed = null;
+        if (groep !== 'r3') {
+          gloed = document.createElementNS(NS, 'circle'); gloed.setAttribute('r', '9'); gloed.setAttribute('class', 'root-gloed');
+          top = document.createElementNS(NS, 'circle'); top.setAttribute('r', '3'); top.setAttribute('class', 'root-top');
+          wortelSvg.appendChild(gloed); wortelSvg.appendChild(top);
+        }
+        wortels.push({ el: pad, len: 1, start: start, duur: plan[groep].duur, top: top, gloed: gloed, totaal: pad.getTotalLength() });
+        plan[groep].lagen.forEach(function (laag) {
+          var kopie = pad.cloneNode(false);
+          kopie.setAttribute('class', 'root ' + laag[1]);
+          g.insertBefore(kopie, pad);
+          wortels.push({ el: kopie, len: laag[0], start: start, duur: plan[groep].duur });
+        });
+      });
+    });
+    wortels.forEach(function (w) { w.el.style.strokeDasharray = w.len + ' 2'; });
+  }
+  var groeiWortels = function () {
+    if (!wortels.length) return;
+    var r = wortelSvg.getBoundingClientRect();
+    if (!r.height) return;
+    var vh = window.innerHeight || 1;
+    var g = Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (r.height * 0.9)));
+    opening.style.setProperty('--k', Math.min(1, Math.max(0, (g - 0.35) * 1.6)).toFixed(3));
+    wortels.forEach(function (w) {
+      var lokaal = Math.min(1, Math.max(0, (g - w.start) / w.duur));
+      w.el.style.strokeDashoffset = (w.len - Math.min(w.len, lokaal)).toFixed(4);
+      if (w.top) {
+        var groeit = lokaal > 0.01 && lokaal < 0.995;
+        if (groeit) {
+          var punt = w.el.getPointAtLength(lokaal * w.totaal);
+          w.top.setAttribute('cx', punt.x); w.top.setAttribute('cy', punt.y);
+          w.gloed.setAttribute('cx', punt.x); w.gloed.setAttribute('cy', punt.y);
+        }
+        w.top.style.opacity = groeit ? '1' : '0';
+        w.gloed.style.opacity = groeit ? '.28' : '0';
+      }
+    });
+  };
+
   var bezig = false;
   var bijScroll = function () {
     bezig = false;
@@ -28,11 +82,7 @@
     if (beweeg) {
       var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
       opening.style.setProperty('--p', p.toFixed(3));
-      var groei = function (start, tempo) { return Math.min(1, Math.max(0, 1 - (p - start) * tempo)).toFixed(3); };
-      opening.style.setProperty('--r1', groei(0.10, 2.2));
-      opening.style.setProperty('--r2', groei(0.28, 2.4));
-      opening.style.setProperty('--r3', groei(0.46, 2.8));
-      opening.style.setProperty('--k', Math.min(1, Math.max(0, (p - 0.15) * 1.5)).toFixed(3));
+      groeiWortels();
     }
   };
   window.addEventListener('scroll', function () {
