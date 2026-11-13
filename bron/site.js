@@ -34,6 +34,8 @@
         if (items[0].isIntersecting) { kijker.disconnect(); laad(); }
       }, { rootMargin: '600px' });
       kijker.observe(live);
+      // vangnet: laad de widget hoe dan ook kort nadat de pagina klaar is
+      window.addEventListener('load', function () { setTimeout(laad, 3500); });
     } else { laad(); }
   }
 
