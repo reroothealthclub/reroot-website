@@ -647,10 +647,14 @@ h1,h2,h3{overflow-wrap:break-word}
 .r3 .root{stroke-width:.8}
 .r2 .root{animation-delay:.5s}
 .r3 .root{animation-delay:1s}
-.hero-scroll .root{animation:none;stroke:color-mix(in srgb,#1F3B37 calc(var(--k,0)*100%),#8DB5A2)}
-.hero-scroll .r1 .root{stroke-dashoffset:var(--r1,1)}
-.hero-scroll .r2 .root{stroke-dashoffset:var(--r2,1)}
-.hero-scroll .r3 .root{stroke-dashoffset:var(--r3,1)}
+/* met site.js: de wortels groeien terwijl ze in beeld schuiven. Elke hoofdwortel bestaat uit lagen
+   (dik aan de stam, dun aan het uiteinde); een lichtpunt volgt de groeiende top. */
+.hero-scroll .root{animation:none;stroke-dashoffset:1;stroke:color-mix(in srgb,#1F3B37 calc(var(--k,0)*100%),#8DB5A2)}
+.root-dik{stroke-width:5;stroke-opacity:.9}
+.root-mid{stroke-width:3;stroke-opacity:.9}
+.r2 .root-mid{stroke-width:2}
+.root-top{fill:#8DB5A2;opacity:0;transition:opacity .25s ease}
+.root-gloed{fill:#8DB5A2;opacity:0;transition:opacity .25s ease}
 
 /* coachingpagina: het woord mag over de boog lopen, trajectknoppen even breed */
 @media (min-width:900px){
