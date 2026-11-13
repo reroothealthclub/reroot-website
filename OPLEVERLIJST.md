@@ -26,12 +26,20 @@ Twee dingen om te weten:
 
 Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoegd.
 
+## Laatste ronde (13 november, avond)
+
+- Koppen "Twee manieren..." en "De drie pijlers..." lopen over de volle breedte.
+- De foto's van de pijlers zijn niet meer bijgesneden; Voeding toont de foto waarop je proeft.
+- De wortels groeien in drie golven mee met het scrollen en verkleuren van mintgroen naar bosgroen.
+- De oproepband voor het intakegesprek is bosgroen in plaats van mintgroen, zodat de site bij het oorspronkelijke palet blijft (inktzwart, bosgroen, gebroken wit, mint alleen als accent).
+- "Word lid" staat niet meer in de menubalk. De link staat nog in het mobiele menu, in de kaart "Health Club" en op de clubpagina.
+
 ## Blokkeert niets, maar vraagt je antwoord
 
 | # | Onderwerp | Toelichting |
 |---|---|---|
 | 5 | **Je eerste keer bij Reroot** | Het blok op de clubpagina toont nu alleen wat bevestigd is: adres, binnenkomen met de app, kennismaking en contact. Drie velden staan leeg en verschijnen pas als je ze invult bij `club` → `eerste_keer`: waar de ingang precies is, hoe een nieuw lid toegang krijgt na inschrijving, en wat je meebrengt. |
-| 6 | **Coachingvoorbeeld op de homepage** | Het voorbeeld (drie keer per week kunnen trainen, schema voor vijf dagen) is door mij geschreven en duidelijk gelabeld als "Voorbeeld ter illustratie, geen echte klant". Lees het na: klopt dit met hoe jullie zo'n situatie aanpakken? Een echt, geanonimiseerd praktijkvoorbeeld is sterker. |
+| 6 | **Coachingvoorbeeld op de homepage** | Herschreven op je vraag: het koppelt nu slaap (ploegenwerk), voeding (eiwitverdeling, maaltijd vóór de training) en training (tijdelijk drie sessies) aan elkaar. Het blijft door mij geschreven en gelabeld als "Voorbeeld ter illustratie, geen echte klant". Lees de inhoud na: klopt dit met wat jullie in zo'n gesprek zouden beslissen? |
 | 7 | **Teksten in de clubscène** | "Een volledige rij dumbbells" en "voor sledewerk, sprints en loopoefeningen" zijn afgeleid van je eigen foto's. Laat weten als je er cijfers bij wil (zwaarste dumbbell, lengte van de track). |
 | 8 | **Formulierdienst** | Niet gekozen, dus niets toegevoegd. Het formulier zet een mail klaar. Kies je een dienst, dan is het één regel in `site.json`. |
 | 9 | **Knop naar de app** | Blijft onzichtbaar tot `ledenapp_url` ingevuld is. |

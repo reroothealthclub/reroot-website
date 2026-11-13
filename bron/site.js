@@ -28,7 +28,11 @@
     if (beweeg) {
       var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
       opening.style.setProperty('--p', p.toFixed(3));
-      opening.style.setProperty('--r', Math.min(1, Math.max(0, 1 - (p - 0.12) * 1.7)).toFixed(3));
+      var groei = function (start, tempo) { return Math.min(1, Math.max(0, 1 - (p - start) * tempo)).toFixed(3); };
+      opening.style.setProperty('--r1', groei(0.10, 2.2));
+      opening.style.setProperty('--r2', groei(0.28, 2.4));
+      opening.style.setProperty('--r3', groei(0.46, 2.8));
+      opening.style.setProperty('--k', Math.min(1, Math.max(0, (p - 0.15) * 1.5)).toFixed(3));
     }
   };
   window.addEventListener('scroll', function () {
