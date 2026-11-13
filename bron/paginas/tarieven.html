@@ -1,0 +1,74 @@
+---
+titel: Tarieven | Reroot Health Club & Coaching Maaseik
+beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly Coaching en Personal Training. Wat je krijgt per formule, inclusief btw.
+---
+<!-- HERO -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
+<div style="max-width:1440px;margin:0 auto">
+{{> kop}}
+</div>
+<div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(56px,7vw,104px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
+<h1 class="disp" style="margin:0;font-size:calc(var(--u)*.14);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Tarieven</span></span></h1>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:440px;padding-bottom:12px">
+<p class="lead" style="color:#D5DCD3;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Kies de formule die past bij hoeveel begeleiding je wil. Weet je het nog niet? Vraag een kennismaking aan, dan kiezen we samen.</p>
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+<div class="pidx">
+{{#each aanbod_lijst}}<a href="#vergelijk"><span class="nm">{{dit.naam}}</span><span class="disp am">€ {{dit.prijs}}</span><span class="un">{{dit.eenheid}}</span></a>
+{{/each}}</div>
+</div>
+</section>
+
+<!-- VERGELIJK -->
+<section id="vergelijk" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
+<div style="max-width:760px;display:flex;flex-direction:column;gap:20px">
+<h2 class="disp h-l" style="color:#1F3B37">Vergelijk de formules.</h2>
+<p class="lead" style="color:#4F5D55">Van zelfstandig trainen tot een coach naast je in de gym. Alle prijzen zijn inclusief btw.</p>
+</div>
+<div class="cmp">
+{{#each aanbod_lijst}}<div class="plan" id="formule-{{dit.sleutel}}">
+<div class="cell hd"><h3 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.026),40px);line-height:1.05;color:#F6F2EA">{{dit.naam}}</h3><span class="sub">{{dit.ondertitel}}</span></div>
+<div class="cell"><span class="disp" style="font-size:clamp(44px,calc(var(--u)*.04),60px);line-height:1;color:#1F3B37;white-space:nowrap">€ {{dit.prijs}}</span><span class="v" style="color:#5A6860;font-size:16px">{{dit.eenheid}}</span><span class="det">{{dit.prijs_detail}}</span></div>
+<div class="cell"><span class="l">Voor wie</span><span class="v">{{dit.voor_wie}}</span></div>
+<div class="cell"><span class="l">Wat je krijgt</span><span class="v">{{dit.wat_je_krijgt}}</span></div>
+<div class="cell"><span class="l">Contact met je coach</span><span class="v">{{dit.contact_met_coach}}</span></div>
+<div class="cell"><span class="l">Goed om te weten</span><span class="v">{{dit.goed_om_te_weten}}</span></div>
+<div class="cell cta"><a href="{{dit.actie_url}}"{{{dit.actie_attr}}} class="btn b-forest">{{dit.actie_tekst}}</a>{{#if dit.kan_kopen}}<a href="{{dit.aanvraag_url}}" class="tlink">Of stel eerst je vraag</a>{{/if}}</div>
+</div>{{/each}}
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
+<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">De knoppen brengen je naar onze betaalpagina. De <a href="{{links.algemene_voorwaarden}}" target="_blank" rel="noopener" style="color:#1F3B37">algemene voorwaarden</a> lees je vooraf na.</p>
+<a href="{{kennismaking.url}}" class="btn b-ghost-l">Twijfel je? {{kennismaking.knoptekst}}</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in two">
+<h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
+<div class="faq">
+<details><summary>Wat is het verschil tussen {{aanbod.app_coaching.naam}} en {{aanbod.monthly_coaching.naam}}?</summary><p class="ans">Bij {{aanbod.app_coaching.naam}} krijg je elke week feedback op je training, voeding en levensstijl via de app. {{aanbod.monthly_coaching.naam}} gaat dieper: je houdt een dagboek bij dat je coach wekelijks opvolgt, met een maandelijkse check-up.</p></details>
+<details><summary>Kan ik eerst kennismaken?</summary><p class="ans">Ja. <a href="{{kennismaking.url}}">Vraag een kennismaking aan</a>, dan bespreken we je doel en kiezen we samen wat bij je past. Dat gesprek is vrijblijvend.</p></details>
+<details><summary>Hoe schrijf ik me in?</summary><p class="ans">Met de knop bij de formule van je keuze. Die brengt je naar onze betaalpagina, waar je je gegevens invult en de inschrijving afrondt. Liever eerst praten? Vraag dan een kennismaking aan.</p></details>
+<details><summary>Wat kost een Personal Training-sessie?</summary><p class="ans">Een sessie kost € {{aanbod.personal_training.prijs}}. Je koopt ze per tien ({{aanbod.personal_training.prijs_detail}}).</p></details>
+<details><summary>Heb je een vraag over wat erin zit?</summary><p class="ans">Stuur ons gerust een bericht via de <a href="contact.html">contactpagina</a>, dan antwoorden we je persoonlijk.</p></details>
+</div>
+</div>
+</section>
+
+<section id="slot-tarieven" class="sec dk" style="background:#0F1614;color:#ECE8DD;padding-bottom:clamp(48px,6vw,80px)">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
+<h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Kies wat bij je past.</h2>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-ghost-d btn-xl">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+{{> voet}}
+</div>
+</section>

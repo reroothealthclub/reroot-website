@@ -1,0 +1,167 @@
+---
+titel: Coaching | Personal training en online coaching in Maaseik | Reroot
+beschrijving: Coaching bij Reroot in Maaseik: App Coaching, Monthly Coaching of Personal Training. Eén plan voor training, voeding en gedrag, met opvolging door je coach.
+---
+<!-- HERO -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2;overflow:hidden">
+<div style="max-width:1440px;margin:0 auto">
+{{> kop}}
+</div>
+<div class="co-hero">
+<div class="co-top"><h1 class="disp co-word"><span class="mask"><span class="rise">Coaching</span></span></h1></div>
+<div class="co-arch"><div class="arch45 unveil" style="aspect-ratio:46/60;border-radius:50% 50% 0 0 / 38.33% 38.33% 0 0"><img class="cover" src="assets/coachhero.webp" fetchpriority="high" alt="Een coach begeleidt een klant tijdens een squat in de Health Club" style="object-position:50% 40%">
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,22,20,.5) 0%,rgba(15,22,20,0) 40%)"></div></div></div>
+<div class="co-text">
+<p class="lead" style="color:#D5DCD3;max-width:44ch;font-size:clamp(20px,calc(var(--u)*.0165),24px)">Een coach die naar je doel, je niveau en je week kijkt, en je plan bijstuurt terwijl je bezig bent. Online via de app of live in de gym.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+<a href="#trajecten" class="btn b-ghost-d">Vergelijk de trajecten</a>
+</div>
+{{#if reviews.google_score_tonen}}<a href="{{links.google_reviews_lezen}}" target="_blank" rel="noopener" class="rate" style="padding:0;text-decoration:none;gap:10px 14px">
+<span class="disp" style="font-size:44px;line-height:1;color:#ECE8DD">{{reviews.google_score}}</span>
+{{> sterren}}
+<span style="font-size:17px;color:#C9D2CB">{{reviews.google_aantal}} reviews op Google</span>
+</a>{{/if}}
+</div>
+</div>
+</section>
+
+<!-- AANPAK -->
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
+<div style="max-width:820px;display:flex;flex-direction:column;gap:20px">
+<h2 class="disp h-l" style="color:#1F3B37">Eén plan, vier onderdelen.</h2>
+<p class="lead" style="color:#4F5D55">Training, voeding en gedrag werken pas als ze op elkaar zijn afgestemd. Daarom werken we ze samen uit, rond jouw doel.</p>
+</div>
+<div class="pill4">
+<div><h3 class="disp h-m" style="margin:0;color:#1F3B37">Training</h3><p style="margin:0;max-width:30ch;font-size:18px;line-height:1.6;color:#4F5D55">Een schema op jouw niveau, met krachttraining als basis en aandacht voor je techniek.</p></div>
+<div><h3 class="disp h-m" style="margin:0;color:#1F3B37">Voeding</h3><p style="margin:0;max-width:30ch;font-size:18px;line-height:1.6;color:#4F5D55">Je leert wat je eet en waarom, zodat je zelf kunt bijsturen als je week anders loopt.</p></div>
+<div><h3 class="disp h-m" style="margin:0;color:#1F3B37">Gedrag en levensstijl</h3><p style="margin:0;max-width:30ch;font-size:18px;line-height:1.6;color:#4F5D55">Slaap, planning en gewoontes bepalen of je het volhoudt. Die nemen we mee in je plan.</p></div>
+<div><h3 class="disp h-m" style="margin:0;color:#1F3B37">Opvolging</h3><p style="margin:0;max-width:30ch;font-size:18px;line-height:1.6;color:#4F5D55">Je houdt bij wat je doet. Je coach leest mee, geeft feedback en past aan.</p></div>
+</div>
+</div>
+</section>
+
+<!-- TRAJECT -->
+<section class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+<div class="rr" style="aspect-ratio:21/9;border-radius:18px"><img class="cover" loading="lazy" decoding="async" src="assets/intakewide.webp" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant" style="object-position:50% 45%"></div>
+<h2 class="disp h-l" style="color:#ECE8DD;max-width:18ch">Zo verloopt je traject.</h2>
+<div class="steps steps-rij">
+{{> stappen}}
+</div>
+<div><a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a></div>
+</div>
+</section>
+
+<!-- TRAJECTKIEZER -->
+<section id="trajecten" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in fnd" style="display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)">
+<div style="display:flex;flex-direction:column;gap:20px;max-width:760px">
+<h2 class="disp h-l" style="color:#1F3B37">Welk traject past bij jou?</h2>
+<p class="lead" style="color:#4F5D55">Kies wat je het meest nodig hebt. We tonen het traject dat daarbij hoort.</p>
+</div>
+<div class="opts" role="radiogroup" aria-label="Welk traject past bij jou?">
+<label class="opt"><input class="rd" type="radio" name="traject" id="fa"><b>Ik wil sturing, maar train zelf</b><span>App Coaching, online begeleiding</span></label>
+<label class="opt"><input class="rd" type="radio" name="traject" id="fb"><b>Ik wil een vast plan en opvolging</b><span>Monthly Coaching, met wekelijkse opvolging</span></label>
+<label class="opt"><input class="rd" type="radio" name="traject" id="fc"><b>Ik wil live begeleiding in de gym</b><span>Personal Training, met een 10-beurtenkaart</span></label>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E4DED0;border-radius:18px;overflow:hidden">
+<div class="offer p-a">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px">
+<span class="badge">Past bij jou</span><h3 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.026),40px);line-height:1.05;color:#1F3B37">{{aanbod.app_coaching.naam}}</h3>
+<span style="font-size:16px;font-weight:500;color:#5A6860">{{aanbod.app_coaching.ondertitel}}</span>
+</div>
+<p style="margin:0;max-width:48ch;font-size:18px;line-height:1.6">{{aanbod.app_coaching.beschrijving}}</p>
+<div class="offer-cta">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span class="disp amt">€ {{aanbod.app_coaching.prijs}}</span><span style="font-size:16px;color:#5A6860">{{aanbod.app_coaching.eenheid}}, {{aanbod.app_coaching.prijs_detail}}</span></div>
+<a href="{{aanbod.app_coaching.actie_url}}"{{{aanbod.app_coaching.actie_attr}}} class="btn b-forest">{{aanbod.app_coaching.actie_tekst}}</a>
+{{#if aanbod.app_coaching.kan_kopen}}<a href="{{aanbod.app_coaching.aanvraag_url}}" class="tlink">Of stel eerst je vraag</a>{{/if}}
+</div>
+</div>
+<div class="offer p-b">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px">
+<span class="badge">Past bij jou</span><h3 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.026),40px);line-height:1.05;color:#1F3B37">{{aanbod.monthly_coaching.naam}}</h3>
+<span style="font-size:16px;font-weight:500;color:#5A6860">{{aanbod.monthly_coaching.ondertitel}}</span>
+</div>
+<p style="margin:0;max-width:48ch;font-size:18px;line-height:1.6">{{aanbod.monthly_coaching.beschrijving}}</p>
+<div class="offer-cta">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span class="disp amt">€ {{aanbod.monthly_coaching.prijs}}</span><span style="font-size:16px;color:#5A6860">{{aanbod.monthly_coaching.eenheid}}, {{aanbod.monthly_coaching.prijs_detail}}</span></div>
+<a href="{{aanbod.monthly_coaching.actie_url}}"{{{aanbod.monthly_coaching.actie_attr}}} class="btn b-forest">{{aanbod.monthly_coaching.actie_tekst}}</a>
+{{#if aanbod.monthly_coaching.kan_kopen}}<a href="{{aanbod.monthly_coaching.aanvraag_url}}" class="tlink">Of stel eerst je vraag</a>{{/if}}
+</div>
+</div>
+<div class="offer p-c">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px">
+<span class="badge">Past bij jou</span><h3 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.026),40px);line-height:1.05;color:#1F3B37">{{aanbod.personal_training.naam}}</h3>
+<span style="font-size:16px;font-weight:500;color:#5A6860">{{aanbod.personal_training.ondertitel}}</span>
+</div>
+<p style="margin:0;max-width:48ch;font-size:18px;line-height:1.6">{{aanbod.personal_training.beschrijving}}</p>
+<div class="offer-cta">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span class="disp amt">€ {{aanbod.personal_training.prijs}}</span><span style="font-size:16px;color:#5A6860">{{aanbod.personal_training.eenheid}}</span></div>
+<a href="{{aanbod.personal_training.actie_url}}"{{{aanbod.personal_training.actie_attr}}} class="btn b-forest">{{aanbod.personal_training.actie_tekst}}</a>
+{{#if aanbod.personal_training.kan_kopen}}<a href="{{aanbod.personal_training.aanvraag_url}}" class="tlink">Of stel eerst je vraag</a>{{/if}}
+</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
+<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">{{aanbod.personal_training.prijs_detail}}. Twijfel je tussen twee trajecten? Dan kiezen we samen tijdens een kennismaking.</p>
+<div class="knoppen"><a href="{{kennismaking.url}}" class="btn b-forest">{{kennismaking.knoptekst}}</a><a href="tarieven.html#vergelijk" class="btn b-ghost-l">Vergelijk alle formules</a></div>
+</div>
+</div>
+</section>
+
+<!-- DOMEINEN -->
+<section class="sec dk" style="background:#0F1614;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
+<h2 class="disp h-l" style="color:#ECE8DD;max-width:16ch">Waar we je mee helpen.</h2>
+<div class="brands disp" style="font-size:inherit;color:#ECE8DD">
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px)">Spieropbouw</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px);color:#8DB5A2">Vetverlies</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px)">Krachtontwikkeling</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px);color:#8DB5A2">Conditie</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px)">Algemene gezondheid</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px);color:#8DB5A2">Voedingsbegeleiding</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px)">Duurzame gedragsverandering</span>
+<span style="font-size:clamp(30px,calc(var(--u)*.05),72px);color:#8DB5A2">Sportgerichte begeleiding</span>
+</div>
+</div>
+</section>
+
+<!-- COACHES -->
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+<h2 class="disp h-xl" style="color:#1F3B37">Twee coaches, één aanpak</h2>
+{{> coaches}}
+<div><a href="over-reroot.html" class="btn b-forest">Leer ons kennen</a></div>
+</div>
+</section>
+
+{{> ervaringen}}
+
+<!-- FAQ -->
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in two">
+<h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
+<div class="faq">
+<details><summary>Wat gebeurt er tijdens de kennismaking?</summary><p class="ans">We bespreken je doel, je trainingsverleden en hoe je week eruitziet. Daarna weet je welk traject bij je past. De kennismaking is vrijblijvend.</p></details>
+<details><summary>Voor wie is coaching?</summary><p class="ans">Voor wie duurzaam wil werken aan training, voeding en gedrag. Van spieropbouw en vetverlies tot sportgerichte begeleiding.</p></details>
+<details><summary>Wat is het verschil tussen de trajecten?</summary><p class="ans">Bij {{aanbod.app_coaching.naam}} krijg je elke week feedback via de app. Bij {{aanbod.monthly_coaching.naam}} hou je een dagboek bij dat je coach wekelijks opvolgt, met een maandelijkse check-up. Bij {{aanbod.personal_training.naam}} train je live met een coach in de gym, met een 10-beurtenkaart. Bekijk de <a href="tarieven.html#vergelijk">vergelijking</a>.</p></details>
+<details><summary>Werken jullie ook sportgericht?</summary><p class="ans">Ja. Sportgerichte begeleiding is een van de domeinen waar we je mee helpen.</p></details>
+<details><summary>Hoe start ik?</summary><p class="ans"><a href="{{kennismaking.url}}">Vraag een kennismaking aan</a> via het contactformulier. Weet je al welk traject je wil, dan kun je het <a href="#trajecten">hierboven</a> ook meteen starten.</p></details>
+</div>
+</div>
+</section>
+
+<section id="slot-coaching" class="sec dk" style="background:#0F1614;color:#ECE8DD;padding-bottom:clamp(48px,6vw,80px)">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
+<h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Jouw verandering begint met een gesprek.</h2>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+<a href="{{kennismaking.url}}" class="btn b-mint btn-xl">{{kennismaking.knoptekst}}</a>
+<a href="contact.html" class="btn b-ghost-d btn-xl">Neem contact op</a>
+</div>
+</div>
+{{> voet}}
+</div>
+</section>

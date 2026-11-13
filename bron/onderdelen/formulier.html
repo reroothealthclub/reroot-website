@@ -1,0 +1,38 @@
+<div class="form" id="formulier" data-verzend-url="{{formulier.verzend_url}}" data-email="{{contact.email}}">
+<div class="fields" style="display:flex;flex-direction:column;gap:24px">
+<h2 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.028),42px);line-height:1.1;color:#1F3B37">Stuur ons een bericht</h2>
+<form id="contactformulier" action="mailto:{{contact.email}}" method="post" enctype="text/plain" novalidate style="display:flex;flex-direction:column;gap:24px">
+<div class="fgrid">
+<div class="fld"><label for="vn">Voornaam</label><input id="vn" name="voornaam" type="text" autocomplete="given-name" required aria-describedby="vn-err"><span class="err" id="vn-err">Vul je voornaam in.</span></div>
+<div class="fld"><label for="em">E-mailadres</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="em-err"><span class="err" id="em-err">Vul een geldig e-mailadres in, zoals naam@voorbeeld.be.</span></div>
+</div>
+<div class="fgrid">
+<div class="fld"><label for="tel">Telefoonnummer <span class="opt-t">(optioneel)</span></label><input id="tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel"></div>
+<div class="fld"><label for="ond">Waarover gaat je bericht?</label>
+<select id="ond" name="onderwerp" required aria-describedby="ond-err">
+<option value="" selected disabled>Kies een optie</option>
+{{#each onderwerpen}}<option value="{{dit.sleutel}}">{{dit.tekst}}</option>
+{{/each}}</select><span class="err" id="ond-err">Kies waarover je bericht gaat.</span></div>
+</div>
+<div class="fld"><label for="ber">Je vraag of je doel <span class="opt-t">(optioneel)</span></label><textarea id="ber" name="bericht" rows="5" aria-describedby="ber-hint" placeholder="Bijvoorbeeld: ik wil sterker worden en weet niet welk traject bij me past."></textarea><span class="hint" id="ber-hint">Deel hier geen medische gegevens. Als die van belang zijn, bespreken we ze persoonlijk.</span></div>
+<div class="hp" aria-hidden="true"><label for="web">Laat dit veld leeg</label><input id="web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+<div class="melding mis" id="melding-fout" role="alert">
+<h3>Je bericht is niet verstuurd.</h3>
+<p>Er ging iets mis bij het verzenden. Probeer het opnieuw, of bereik ons rechtstreeks: mail naar <a href="mailto:{{contact.email}}">{{contact.email}}</a> of bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>.</p>
+</div>
+<div class="melding info" id="melding-mail" role="status">
+<h3>Je bericht staat klaar in je mailprogramma.</h3>
+<p>Het is pas verstuurd als je daar op verzenden drukt. Ging er geen mailprogramma open? Mail dan zelf naar <a href="mailto:{{contact.email}}">{{contact.email}}</a> of bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+<button type="submit" class="btn b-forest" id="verzendknop" style="min-height:56px;padding:0 36px;font-size:18px">{{#if formulier.verzend_url}}Verstuur je bericht{{else}}Zet mijn bericht klaar in e-mail{{/if}}</button>
+<a href="tel:{{contact.telefoon_link}}" class="tlink" style="color:#1F3B37">Of bel {{contact.telefoon}}</a>
+</div>
+<p style="margin:0;max-width:52ch;font-size:15px;line-height:1.5;color:#5A6860">We gebruiken je gegevens alleen om je vraag te beantwoorden. Lees ons <a href="{{links.privacybeleid}}" target="_blank" rel="noopener" style="color:#1F3B37">privacybeleid</a>.</p>
+</form>
+</div>
+<div class="melding ok" id="melding-ok" role="status" tabindex="-1">
+<h2 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.028),42px);line-height:1.1">Bedankt, je bericht is aangekomen.</h2>
+<p>We nemen persoonlijk contact met je op.</p>
+</div>
+</div>

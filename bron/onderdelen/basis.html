@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{pagina.titel}}</title>
+<meta name="description" content="{{pagina.beschrijving}}">
+<meta name="theme-color" content="#0F1614">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="{{bedrijf.naam}}">
+<meta property="og:title" content="{{pagina.titel}}">
+<meta property="og:description" content="{{pagina.beschrijving}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap">
+<link rel="stylesheet" href="stijl.css?v={{versie.css}}">
+{{#if pagina.is_home}}<script type="application/ld+json">{{{structured_data}}}</script>
+{{/if}}</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<main id="main">
+{{{inhoud}}}
+</main>
+<script src="site.js?v={{versie.js}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+---
+titel: Contact | Reroot Health Club & Coaching Maaseik
+beschrijving: Neem contact op met Reroot in Maaseik of vraag een vrijblijvende kennismaking aan. Slachthuisstraat 35a, 3680 Maaseik.
+---
+<!-- HERO + FORMULIER -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
+<div style="max-width:1440px;margin:0 auto">
+{{> kop}}
+</div>
+<div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(64px,8vw,120px)">
+<div class="two">
+<div class="col">
+<h1 class="disp" style="margin:0;font-size:clamp(44px,calc(var(--u)*.075),108px);line-height:1;color:#ECE8DD"><span class="mask"><span class="rise">Neem contact op.</span></span></h1>
+<p class="lead" style="color:#D5DCD3;max-width:40ch">Een vraag over de Health Club of coaching, of wil je een kennismaking aanvragen? Laat het ons weten. Een van de coaches antwoordt je persoonlijk.</p>
+<div class="cinfo">
+<div><span class="k">Adres</span><span class="v">{{adres.naam_locatie}}<br>{{adres.straat}}, {{adres.postcode}} {{adres.gemeente}}</span></div>
+<div><span class="k">Telefoon</span><a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a></div>
+<div><span class="k">E-mail</span><a href="mailto:{{contact.email}}">{{contact.email}}</a></div>
+<div><span class="k">Health Club open</span><span class="v">{{uren.zin}}</span></div>
+</div>
+<div class="soc">
+<a href="{{links.instagram}}" target="_blank" rel="noopener">Instagram</a>
+<a href="{{links.tiktok}}" target="_blank" rel="noopener">TikTok</a>
+</div>
+</div>
+
+{{> formulier}}
+</div>
+</div>
+</section>
+
+<!-- KOM LANGS -->
+<section class="sec" style="background:#E3E8DC;color:#1F3B37">
+<div class="in two" style="align-items:center">
+<div class="col">
+<h2 class="disp h-l" style="color:#1F3B37">Kom langs in Maaseik.</h2>
+<p class="lead" style="color:#3F4E47">Wil je de club eerst zien? Vraag een kennismaking aan, dan spreken we een moment af, tonen we je de ruimte en bespreken we wat je zoekt.</p>
+<div class="lblk" style="gap:6px">
+<span style="font-size:19px;font-weight:700">Reroot Health Club</span>
+<span style="font-size:18px;line-height:1.5;color:#3F4E47">{{adres.straat}}<br>{{adres.postcode}} {{adres.gemeente}}, België</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="{{adres.route_url}}" target="_blank" rel="noopener" class="btn b-forest">Plan je route</a>
+<a href="{{kennismaking.url}}" class="btn b-ghost-l">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+<div class="rr" style="aspect-ratio:4/3;border-radius:18px"><img class="cover" loading="lazy" decoding="async" src="assets/gym.webp" alt="De trainingsruimte van Reroot Health Club met vrije gewichten, toestellen en een grote spiegel" style="object-position:50% 50%"></div>
+</div>
+</section>
+
+<!-- MEER WETEN -->
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<h2 class="disp h-l" style="color:#1F3B37;max-width:16ch">Liever eerst meer weten?</h2>
+<div>
+<a class="lnk" href="health-club.html"><span class="disp t">Health Club</span><span class="a" aria-hidden="true"></span></a>
+<a class="lnk" href="coaching.html"><span class="disp t">Coaching</span><span class="a" aria-hidden="true"></span></a>
+<a class="lnk" href="tarieven.html"><span class="disp t">Tarieven</span><span class="a" aria-hidden="true"></span></a>
+<a class="lnk" href="over-reroot.html"><span class="disp t">Over Reroot</span><span class="a" aria-hidden="true"></span></a>
+</div>
+</div>
+</section>
+
+<section id="slot-contact" class="sec dk" style="background:#0F1614;color:#ECE8DD;padding-bottom:clamp(48px,6vw,80px)">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
+<h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Tot snel in Maaseik.</h2>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
+<a href="{{adres.route_url}}" target="_blank" rel="noopener" class="btn b-ghost-d btn-xl">Plan je route</a>
+</div>
+</div>
+{{> voet}}
+</div>
+</section>

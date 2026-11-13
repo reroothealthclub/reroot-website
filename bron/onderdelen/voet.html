@@ -1,0 +1,45 @@
+<footer>
+<div class="foot-grid">
+<div class="foot-col">
+<span class="k">Adres</span>
+<span class="disp" style="font-size:24px;line-height:1.25;letter-spacing:-.01em">{{adres.naam_locatie}}<br>{{adres.straat}}<br>{{adres.postcode}} {{adres.gemeente}}, {{adres.land}}</span>
+</div>
+<div class="foot-col">
+<span class="k">Contact</span>
+<a href="tel:{{contact.telefoon_link}}" class="ln">{{contact.telefoon}}</a>
+<a href="mailto:{{contact.email}}" class="ln" style="overflow-wrap:anywhere">{{contact.email}}</a>
+</div>
+<div class="foot-col">
+<span class="k">Openingsuren</span>
+<span class="v">{{uren.zin}}</span>
+<a href="health-club.html#uren" class="ln" style="color:#C9D2CB">Bekijk de uren per dag</a>
+</div>
+<div class="foot-col">
+<span class="k">Volg ons</span>
+<a href="{{links.instagram}}" target="_blank" rel="noopener" class="ln">Instagram</a>
+<a href="{{links.tiktok}}" target="_blank" rel="noopener" class="ln">TikTok</a>
+</div>
+</div>
+<div class="foot-grid" style="margin-top:0">
+<div class="foot-col" style="border-top:0;padding-top:8px">
+<span class="k">Ontdek</span>
+<div style="display:flex;flex-wrap:wrap;gap:0 24px">
+<a href="health-club.html" class="ln">Health Club</a>
+<a href="coaching.html" class="ln">Coaching</a>
+<a href="tarieven.html" class="ln">Tarieven</a>
+<a href="over-reroot.html" class="ln">Over Reroot</a>
+<a href="kennisbank.html" class="ln">Kennisbank</a>
+<a href="kennisbank.html#podcast" class="ln">CoachCabin Podcast</a>
+<a href="contact.html" class="ln">Contact</a>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:28px;padding-top:clamp(40px,5vw,72px);text-align:center">
+<img src="assets/logo.svg" width="240" height="228" loading="lazy" alt="Reroot" style="display:block;width:min(240px,60%);height:auto">
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 28px;font-size:15px;line-height:1.5;color:#9AA79F">
+<span style="display:inline-flex;align-items:center;min-height:32px">© {{jaar}} {{bedrijf.juridische_naam}}. Ondernemingsnummer {{bedrijf.ondernemingsnummer}}</span>
+<a href="{{links.privacybeleid}}" target="_blank" rel="noopener" class="ln" style="display:inline-flex;align-items:center;min-height:32px;color:#9AA79F">Privacybeleid</a>
+<a href="{{links.algemene_voorwaarden}}" target="_blank" rel="noopener" class="ln" style="display:inline-flex;align-items:center;min-height:32px;color:#9AA79F">Algemene voorwaarden</a>
+</div>
+</div>
+</footer>

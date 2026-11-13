@@ -1,0 +1,253 @@
+{
+  "bedrijf": {
+    "naam": "Reroot Health Club & Coaching",
+    "juridische_naam": "Reroot Coaching",
+    "merkzin": "Verandering naar beter",
+    "ondernemingsnummer": "BE 0754.790.454"
+  },
+
+  "adres": {
+    "naam_locatie": "Reroot Health Club",
+    "straat": "Slachthuisstraat 35a",
+    "postcode": "3680",
+    "gemeente": "Maaseik",
+    "land": "België",
+    "route_url": "https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z"
+  },
+
+  "contact": {
+    "telefoon": "0465 07 67 97",
+    "telefoon_link": "+32465076797",
+    "email": "hallo@rerootcoaching.com"
+  },
+
+  "formulier": {
+    "verzend_url": "",
+    "uitleg_verzend_url": "Leeg = het formulier zet een e-mail klaar in het mailprogramma van de bezoeker. Vul hier het adres van je formulierdienst in zodra je er een gekozen hebt; dan verstuurt de site zelf en toont ze pas succes nadat de dienst de aanvraag heeft aanvaard."
+  },
+
+  "openingsuren": {
+    "uitleg": "Pas de uren per dag aan. Laat 'open' en 'sluit' leeg voor een sluitingsdag. De zinnen op de site ('Elke dag van ... tot ...') worden hieruit afgeleid.",
+    "dagen": [
+      { "dag": "Maandag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Dinsdag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Woensdag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Donderdag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Vrijdag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Zaterdag", "open": "06:00", "sluit": "23:00" },
+      { "dag": "Zondag", "open": "06:00", "sluit": "23:00" }
+    ]
+  },
+
+  "club": {
+    "oppervlakte": "250 m²",
+    "toegang": "Toegang via de app",
+    "merken": ["Nautilus", "Panatta", "ATX", "Technogym", "StairMaster"],
+    "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"]
+  },
+
+  "links": {
+    "ledenapp_url": "",
+    "uitleg_ledenapp_url": "Leeg = de knop 'Mijn Reroot' wordt niet getoond. Vul de URL van de ledenapp in om hem te tonen.",
+    "instagram": "https://www.instagram.com/rerootcoaching/",
+    "tiktok": "https://www.tiktok.com/@simon.dirkx",
+    "podcast_spotify": "https://open.spotify.com/show/3LQY25TWVlkJxHMbRcqCDq",
+    "google_reviews_lezen": "https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z",
+    "google_review_schrijven": "https://g.page/r/CXanDYNvS7tdEBE/review",
+    "privacybeleid": "https://www.rerootcoaching.com/privacybeleid",
+    "algemene_voorwaarden": "https://www.rerootcoaching.com/algemene-voorwaarden"
+  },
+
+  "aanbod_uitleg": "checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
+  "aanbod": {
+    "open_gym": {
+      "naam": "Open Gym",
+      "ondertitel": "Zelfstandig trainen",
+      "prijs": "35",
+      "eenheid": "per maand",
+      "prijs_detail": "incl. 6% btw",
+      "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete",
+      "knoptekst_kopen": "Word lid",
+      "beschrijving": "Toegang tot de Health Club, zeven dagen per week. Voor wie zijn eigen schema volgt en daar een rustige, goed uitgeruste plek voor zoekt.",
+      "voor_wie": "Je traint zelfstandig en zoekt een goed uitgeruste club.",
+      "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren.",
+      "contact_met_coach": "Geen persoonlijke opvolging. Wil je die later toch, dan stap je over naar coaching.",
+      "goed_om_te_weten": "Maandelijks abonnement, zonder jaarcontract."
+    },
+    "app_coaching": {
+      "naam": "App Coaching",
+      "ondertitel": "Online begeleiding",
+      "prijs": "99",
+      "eenheid": "per maand",
+      "prijs_detail": "incl. 21% btw",
+      "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-appcoaching-21",
+      "knoptekst_kopen": "Start App Coaching",
+      "beschrijving": "Je coach stuurt je training, voeding en levensstijl bij via de app. Voor wie richting wil, zonder vaste afspraken in de gym.",
+      "voor_wie": "Je traint zelf, maar wil dat iemand meekijkt en bijstuurt.",
+      "wat_je_krijgt": "Feedback op je training, voeding en levensstijl, via de app.",
+      "contact_met_coach": "Wekelijkse feedback van je coach, online.",
+      "goed_om_te_weten": "Maandelijks abonnement."
+    },
+    "monthly_coaching": {
+      "naam": "Monthly Coaching",
+      "ondertitel": "Persoonlijke coaching",
+      "prijs": "185",
+      "eenheid": "per maand",
+      "prijs_detail": "incl. 21% btw",
+      "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-onlinetraject-21",
+      "knoptekst_kopen": "Start Monthly Coaching",
+      "beschrijving": "Persoonlijke coaching waarbij je een dagboek bijhoudt en je coach daar elke week op terugkomt. Voor wie een vast plan en nauwe opvolging wil.",
+      "voor_wie": "Je wil een vast plan en een coach die je van dichtbij opvolgt.",
+      "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek dat je coach opvolgt.",
+      "contact_met_coach": "Wekelijkse feedback op je dagboek en een maandelijkse check-up.",
+      "goed_om_te_weten": "Maandelijks abonnement."
+    },
+    "personal_training": {
+      "naam": "Personal Training",
+      "ondertitel": "10-beurtenkaart",
+      "prijs": "64",
+      "eenheid": "per sessie",
+      "prijs_detail": "10-beurtenkaart: € 640, incl. btw",
+      "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-personal-640",
+      "knoptekst_kopen": "Koop een 10-beurtenkaart",
+      "beschrijving": "Tien sessies met een coach in de gym, één-op-één of in een kleine groep. Voor wie live begeleiding wil, ingepland rond de eigen week.",
+      "voor_wie": "Je wil live begeleiding van een coach, in de gym.",
+      "wat_je_krijgt": "Tien sessies die je invult volgens wat je nodig hebt: training, voedingsadvies, techniekanalyse of een gesprek over je levensstijl.",
+      "contact_met_coach": "Tijdens elke sessie, één-op-één of in een kleine groep.",
+      "goed_om_te_weten": "Je koopt een kaart van tien beurten."
+    }
+  },
+
+  "coaches": [
+    {
+      "naam": "Simon",
+      "volledige_naam": "Simon Dirkx",
+      "focus": "Ontwikkeling als geheel",
+      "bio": "Simon kijkt naar je hele ontwikkeling, met als doel dat lichaam en hoofd ook later bestand zijn tegen wat er op je pad komt. Hij stelt je huidige aanpak in vraag en helpt je gerichte keuzes te maken.",
+      "foto": "assets/simon.webp",
+      "foto_alt": "Simon Dirkx, coach bij Reroot, in de gym",
+      "sociale_links": [
+        { "tekst": "Simon op TikTok", "url": "https://www.tiktok.com/@simon.dirkx" }
+      ]
+    },
+    {
+      "naam": "Kevin",
+      "volledige_naam": "Kevin Fret",
+      "focus": "Zichtbare resultaten",
+      "bio": "Kevin haalt op een onderbouwde manier het maximum uit je lichaam. Hij is de stok achter de deur voor wie discipline en hard werk wil volhouden.",
+      "foto": "assets/kevin.webp",
+      "foto_alt": "Kevin Fret, coach bij Reroot",
+      "sociale_links": [
+        { "tekst": "Kevin op Instagram", "url": "https://www.instagram.com/kevinnfret/" },
+        { "tekst": "Kevin op TikTok", "url": "https://www.tiktok.com/@kevinfret97" }
+      ]
+    }
+  ],
+
+  "reviews": {
+    "uitleg": "google_score_tonen staat op false tot je de score en het aantal zelf hebt nagekeken op Google. Zet 'tonen' op false bij een citaat om het te verbergen.",
+    "google_score_tonen": false,
+    "google_score": "4,9",
+    "google_aantal": "58",
+    "citaten": [
+      {
+        "tekst": "Hij neemt echt de tijd voor je en laat jezelf ontwikkelen op de manier die het beste bij je past.",
+        "naam": "Naomi Van Rulo",
+        "tonen": true
+      },
+      {
+        "tekst": "De coaching is heel persoonlijk en echt op je eigen lichaam gericht.",
+        "naam": "Leentje Beckers",
+        "tonen": true
+      },
+      {
+        "tekst": "Hij luistert naar wat je te zeggen hebt en kijkt dan samen met jou naar hoe je optimaal kan groeien.",
+        "naam": "Shana Laenen",
+        "tonen": true
+      },
+      {
+        "tekst": "…begeleiding die volledig wordt afgestemd op jou als persoon.",
+        "naam": "Steff Knoors",
+        "tonen": false
+      },
+      {
+        "tekst": "Hij let supergoed op je techniek en corrigeert waar nodig…",
+        "naam": "Annabelle Vandooren",
+        "tonen": false
+      },
+      {
+        "tekst": "…een personal coach die verder gaat dan alleen training.",
+        "naam": "Peter Koolen",
+        "tonen": false
+      }
+    ]
+  },
+
+  "merch": {
+    "tonen": true,
+    "intro": "T-shirts en petten uit de eerste Reroot Health Club-drop. Voor in de gym en erbuiten.",
+    "artikels": [
+      {
+        "naam": "Zwart T-shirt",
+        "prijs": "25",
+        "beschrijving": "Oversized, met ‘Verandering naar beter’ vooraan en het clublogo op de rug.",
+        "foto": "assets/teeblack.webp",
+        "foto_alt": "Zwart Reroot Health Club T-shirt op een kledingrek",
+        "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-t-shirt-zwart"
+      },
+      {
+        "naam": "Beige T-shirt",
+        "prijs": "25",
+        "beschrijving": "Oversized en off-white, met de opdruk in bosgroen.",
+        "foto": "assets/teewhite.webp",
+        "foto_alt": "Beige Reroot Health Club T-shirt met de tekst Verandering naar beter op een kledingrek",
+        "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-t-shirt-beige"
+      },
+      {
+        "naam": "Reroot-pet",
+        "prijs": "25",
+        "beschrijving": "Beige met groene klep en geborduurde details.",
+        "foto": "assets/caps.webp",
+        "foto_alt": "Reroot-petten met geborduurd logo",
+        "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-pet-beige-groen"
+      }
+    ]
+  },
+
+  "kennisbank": {
+    "artikels": [
+      {
+        "titel": "Wat moet je weten over koolhydraten en vetopslag?",
+        "categorie": "Voeding",
+        "url": "https://www.rerootcoaching.com/content/wat-moet-je-weten-over-koolhydraten-en-vetopslag"
+      },
+      {
+        "titel": "Hoe je controle houdt over je dieet na een competitie",
+        "categorie": "Sportgericht",
+        "url": "https://www.rerootcoaching.com/content/hoe-je-controle-houdt-over-je-dieet-na-een-competitie"
+      },
+      {
+        "titel": "Energiebalans: de ultieme gids voor gewichtsverandering",
+        "categorie": "Voeding",
+        "url": "https://www.rerootcoaching.com/content/energiebalans-de-ultieme-gids-voor-gewichtsverandering"
+      },
+      {
+        "titel": "Waarom zijn eiwitten zo belangrijk voor ons lichaam?",
+        "categorie": "Voeding",
+        "url": "https://www.rerootcoaching.com/content/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam"
+      },
+      {
+        "titel": "De waarheid over vetten en hun effect op je fysieke gezondheid",
+        "categorie": "Voeding",
+        "url": "https://www.rerootcoaching.com/content/de-waarheid-over-vetten-en-hun-effect-op-je-fysieke-gezondheid"
+      }
+    ],
+    "podcast_afleveringen": [
+      { "titel": "CoachCabin Podcast, aflevering 5", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-5" },
+      { "titel": "CoachCabin Podcast, aflevering 4", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-4" },
+      { "titel": "CoachCabin Podcast, aflevering 3", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-3" },
+      { "titel": "CoachCabin Podcast, aflevering 2", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-2" },
+      { "titel": "CoachCabin Podcast, aflevering 1", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-1" }
+    ]
+  }
+}

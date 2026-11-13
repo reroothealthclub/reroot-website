@@ -1,0 +1,33 @@
+<header class="hero-head">
+<a href="index.html" class="logo-link"><img class="logo" src="assets/logo.svg" width="72" height="68" alt="Reroot, naar de startpagina"></a>
+<nav class="hero-nav" aria-label="Hoofdmenu">
+<a href="index.html" class="ln"{{#if actief.index}} aria-current="page"{{/if}}>Home</a>
+<a href="health-club.html" class="ln"{{#if actief.health_club}} aria-current="page"{{/if}}>Health Club</a>
+<a href="coaching.html" class="ln"{{#if actief.coaching}} aria-current="page"{{/if}}>Coaching</a>
+<a href="tarieven.html" class="ln"{{#if actief.tarieven}} aria-current="page"{{/if}}>Tarieven</a>
+<a href="over-reroot.html" class="ln"{{#if actief.over_reroot}} aria-current="page"{{/if}}>Over Reroot</a>
+<a href="kennisbank.html" class="ln"{{#if actief.kennisbank}} aria-current="page"{{/if}}>Kennisbank</a>
+<a href="contact.html" class="ln"{{#if actief.contact}} aria-current="page"{{/if}}>Contact</a>
+</nav>
+<div class="hdr-right">
+{{#if links.ledenapp_url}}<a href="{{links.ledenapp_url}}" target="_blank" rel="noopener" class="ln hdr-app">Mijn Reroot</a>
+{{/if}}<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint" style="min-height:48px;padding:0 24px">{{aanbod.open_gym.actie_tekst}}</a>
+</div>
+<details class="mnav">
+<summary><span class="bars" aria-hidden="true"></span>Menu</summary>
+<nav class="mnav-panel" aria-label="Hoofdmenu mobiel">
+<a class="ml" href="index.html"{{#if actief.index}} aria-current="page"{{/if}}>Home</a>
+<a class="ml" href="health-club.html"{{#if actief.health_club}} aria-current="page"{{/if}}>Health Club</a>
+<a class="ml" href="coaching.html"{{#if actief.coaching}} aria-current="page"{{/if}}>Coaching</a>
+<a class="ml" href="tarieven.html"{{#if actief.tarieven}} aria-current="page"{{/if}}>Tarieven</a>
+<a class="ml" href="over-reroot.html"{{#if actief.over_reroot}} aria-current="page"{{/if}}>Over Reroot</a>
+<a class="ml" href="kennisbank.html"{{#if actief.kennisbank}} aria-current="page"{{/if}}>Kennisbank</a>
+<a class="ml" href="contact.html"{{#if actief.contact}} aria-current="page"{{/if}}>Contact</a>
+{{#if links.ledenapp_url}}<a class="ml" href="{{links.ledenapp_url}}" target="_blank" rel="noopener" style="color:#C9D2CB">Mijn Reroot</a>
+{{/if}}<div class="mnav-cta">
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint">{{aanbod.open_gym.actie_tekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>
+</div>
+</nav>
+</details>
+</header>

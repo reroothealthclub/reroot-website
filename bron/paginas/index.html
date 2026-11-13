@@ -1,0 +1,314 @@
+---
+titel: Reroot Health Club & Coaching | Fitnessclub in Maaseik
+beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroot Health Club of werk met een coach aan je eigen doel. Elke dag open, duidelijke tarieven.
+---
+<!-- HERO -->
+<section class="hero dk">
+<div class="hero-in">
+
+{{> kop}}
+
+<h1 class="disp hero-word" aria-label="Reroot Health Club"><span class="mask"><span class="rise">Reroot</span></span><span class="mask"><span class="rise" style="animation-delay:.16s">Health Club</span></span></h1>
+
+<div class="hero-arch">
+<div class="unveil" style="position:relative;aspect-ratio:46/60;border-radius:50% 50% 0 0 / 38.33% 38.33% 0 0;overflow:hidden;background:#17211E">
+<img src="assets/hero.webp" width="1300" height="1696" fetchpriority="high" alt="Een coach begeleidt een klant bij een rekoefening op de mat in de Health Club" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%">
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,22,20,.62) 0%,rgba(15,22,20,0) 46%)"></div>
+</div>
+<svg class="roots" viewBox="0 0 1200 520" aria-hidden="true" focusable="false">
+<g stroke-width="1.8">
+<path class="root" pathLength="1" style="animation-delay:1.5s" d="M600,0 C600,60 596,110 580,170 C566,222 530,262 486,296 C440,332 380,352 330,392 C296,420 270,452 248,500"/>
+<path class="root" pathLength="1" style="animation-delay:1.6s" d="M600,0 C602,70 612,120 640,176 C668,230 716,262 770,290 C826,320 884,340 930,384 C962,414 984,452 996,500"/>
+<path class="root" pathLength="1" style="animation-delay:1.7s" d="M598,40 C596,120 604,200 598,280 C594,340 606,400 600,470 C598,490 600,505 602,518"/>
+</g>
+<g stroke-width="1.3">
+<path class="root" pathLength="1" style="animation-delay:2.1s" d="M580,170 C540,190 480,186 420,206 C366,224 322,256 280,262"/>
+<path class="root" pathLength="1" style="animation-delay:2.2s" d="M486,296 C470,340 476,392 458,452 C452,474 450,492 446,516"/>
+<path class="root" pathLength="1" style="animation-delay:2.2s" d="M640,176 C690,190 740,184 800,196 C860,208 920,236 976,232 C1020,229 1060,210 1100,214"/>
+<path class="root" pathLength="1" style="animation-delay:2.3s" d="M770,290 C780,338 760,388 786,440 C796,462 800,490 798,514"/>
+<path class="root" pathLength="1" style="animation-delay:2.4s" d="M930,384 C968,380 1010,392 1050,420 C1076,438 1094,466 1104,500"/>
+<path class="root" pathLength="1" style="animation-delay:2.4s" d="M330,392 C290,386 240,394 196,420 C168,438 150,466 140,500"/>
+</g>
+<g stroke-width="0.9">
+<path class="root" pathLength="1" style="animation-delay:2.9s" d="M420,206 C400,184 380,170 352,164"/>
+<path class="root" pathLength="1" style="animation-delay:2.9s" d="M800,196 C820,170 846,156 880,152"/>
+<path class="root" pathLength="1" style="animation-delay:3s" d="M1050,420 C1060,440 1056,470 1064,498"/>
+<path class="root" pathLength="1" style="animation-delay:3s" d="M196,420 C176,410 150,408 128,396"/>
+</g>
+</svg>
+</div>
+
+<div class="hero-left">
+<p class="hero-loc">Fitnessclub in {{adres.gemeente}}</p>
+<p class="disp hero-sub"><span class="mask"><span class="rise" style="color:#ECE8DD;animation-delay:.5s">Verandering</span></span><span class="mask"><span class="rise" style="animation-delay:.64s">naar beter.</span></span></p>
+<div class="fade">
+<p class="hero-line">Train zelfstandig in onze Health Club in {{adres.gemeente}}, of werk met een coach aan je eigen doel.</p>
+<div class="hero-cta">
+<a href="health-club.html" class="btn b-mint">Zelfstandig trainen</a>
+<a href="coaching.html" class="btn b-ghost-d">Trainen met een coach</a>
+</div>
+</div>
+</div>
+
+<div class="hero-right">
+<div class="fade hero-facts">
+{{#if reviews.google_score_tonen}}
+<div class="rate">
+<span class="disp" style="font-size:clamp(56px,calc(var(--u)*.05),72px);line-height:.9;color:#ECE8DD">{{reviews.google_score}}</span>
+{{> sterren}}
+<a href="#ervaringen">{{reviews.google_aantal}} reviews op Google</a>
+</div>
+{{/if}}
+<span>{{uren.zin_open}}</span>
+<span>Circa {{club.oppervlakte}} trainingsruimte, toegang via de app</span>
+<span>Begeleiding door {{coach_namen}}</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- TWEE ROUTES: zelfstandig of met een coach -->
+<section id="groeien" style="background:#F6F2EA;color:#1F3B37">
+<div class="sec" style="position:relative;z-index:3;padding-top:clamp(64px,8vw,120px)">
+<div class="in">
+<div class="ways-head">
+<h2 class="disp h-l halo" style="color:#1F3B37">Twee manieren om te trainen</h2>
+<p class="lead halo" style="color:#4F5D55">Je kiest zelf hoeveel begeleiding je wil. Van de Open Gym overstappen naar coaching kan altijd.</p>
+</div>
+
+<div class="ways">
+
+<article class="way dk" style="background:#1F3B37;color:#ECE8DD">
+<div class="way-media" style="background:#17211E">
+<img class="cover" loading="lazy" decoding="async" src="assets/gym.webp" alt="De trainingsruimte van Reroot Health Club met vrije gewichten, toestellen en een grote spiegel">
+</div>
+<div class="way-body">
+<div>
+<h3 class="disp way-h">Health Club</h3>
+<span class="way-sub">{{aanbod.open_gym.naam}}: zelfstandig trainen</span>
+</div>
+<p>Circa {{club.oppervlakte}} met vrije gewichten en toestellen van {{club.merken_zin}}. {{uren.zin_open}}.</p>
+<div class="way-price">
+<span class="disp">€ {{aanbod.open_gym.prijs}}</span>
+<span>{{aanbod.open_gym.eenheid}}</span>
+</div>
+<div class="way-links">
+<a href="health-club.html" class="btn b-mint">Bekijk de Health Club</a>
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="tlink">{{aanbod.open_gym.actie_tekst}}</a>
+</div>
+</div>
+</article>
+
+<article class="way dk" style="background:#0F1614;color:#ECE8DD">
+<div class="way-media" style="background:#17211E">
+<img class="cover" loading="lazy" decoding="async" src="assets/pc.webp" alt="Een coach begeleidt een klant bij een squat in de gym">
+</div>
+<div class="way-body">
+<div>
+<h3 class="disp way-h">Coaching</h3>
+<span class="way-sub">Met een coach, online of in de gym</span>
+</div>
+<p>Je coach vertrekt van een intake, bouwt je plan voor training en voeding en stuurt bij op basis van wat jij bijhoudt.</p>
+<div class="way-price">
+<span>Vanaf</span>
+<span class="disp">€ {{aanbod.app_coaching.prijs}}</span>
+<span>{{aanbod.app_coaching.eenheid}}, of € {{aanbod.personal_training.prijs}} {{aanbod.personal_training.eenheid}}</span>
+</div>
+<div class="way-links">
+<a href="coaching.html#trajecten" class="btn b-mint">Vergelijk de trajecten</a>
+<a href="{{kennismaking.url}}" class="tlink">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+</article>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- HEALTH CLUB -->
+<section id="home-hc" class="sec" style="background:#E3E8DC;color:#1F3B37">
+<div class="in hc">
+
+<div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h2 class="disp h-l" style="color:#1F3B37">Serieus trainen, zonder je bekeken te voelen.</h2>
+<p class="lead" style="color:#3F4E47">Reroot Health Club is een Open Gym op mensenmaat. Je komt er om te trainen, in je eigen tempo, op toestellen die gekozen zijn op hoe goed ze werken.</p>
+</div>
+
+<div style="display:flex;flex-direction:column">
+<div class="frow">
+<span class="disp frow-n">{{uren.kort}}</span>
+<span class="frow-l">{{uren.kort_bijschrift}}</span>
+</div>
+<div class="frow">
+<span class="disp frow-n">{{club.oppervlakte}}</span>
+<span class="frow-l">Circa, trainingsruimte</span>
+</div>
+<div class="frow" style="border-bottom:1px solid rgba(31,59,55,.25)">
+<span class="disp frow-n">€ {{aanbod.open_gym.prijs}}</span>
+<span class="frow-l">{{aanbod.open_gym.eenheid}}, zonder jaarcontract</span>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<h3 class="disp" style="margin:0;font-size:clamp(26px,calc(var(--u)*.022),32px);line-height:1.1;color:#1F3B37">Wat je er vindt</h3>
+<div class="merken-l disp">
+{{#each club.merken}}<span>{{dit}}</span>
+{{/each}}</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+{{#each club.uitrusting}}<span class="pill pill-l">{{dit}}</span>
+{{/each}}</div>
+</div>
+
+<div class="knoppen">
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-forest">{{aanbod.open_gym.actie_tekst}}</a>
+<a href="health-club.html" class="btn b-ghost-l">Meer over de club</a>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="position:relative;aspect-ratio:4/5;border-radius:50% 50% 0 0 / 40% 40% 0 0;overflow:hidden;background:#17211E">
+<img class="cover" loading="lazy" decoding="async" src="assets/hcarch.webp" alt="De sprinttrack in de Health Club">
+</div>
+<div style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#17211E">
+<img class="cover" loading="lazy" decoding="async" src="assets/hcwide.webp" alt="Een lid traint op de beenpers naast de sprinttrack">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- COACHING: hoe we begeleiden -->
+<section id="home-coaching" class="sec dk" style="background:#0F1614;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px 48px">
+<h2 class="disp h-l" style="max-width:16ch;color:#ECE8DD">Begeleiding die verder gaat dan een trainingsschema.</h2>
+<div style="display:flex;flex-direction:column;gap:24px;max-width:400px">
+<p style="margin:0;font-size:19px;line-height:1.6;color:#C9D2CB">Je coach kijkt naar je doel, je niveau en hoe je week eruitziet. Daar bouwen we één plan op, en dat plan sturen we samen bij.</p>
+<div class="knoppen">
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+<a href="coaching.html#trajecten" class="btn b-ghost-d">Vergelijk de trajecten</a>
+</div>
+</div>
+</div>
+
+<div class="cgrid">
+<div class="cimg">
+<img class="cover" loading="lazy" decoding="async" src="assets/intake.webp" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant">
+</div>
+<div class="steps">
+{{> stappen}}
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- COACHES -->
+<section id="coaches" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+<h2 class="disp h-xl" style="color:#1F3B37">Twee coaches, één aanpak</h2>
+{{> coaches}}
+<div><a href="over-reroot.html" class="btn b-forest">Leer ons kennen</a></div>
+</div>
+</section>
+
+{{> ervaringen}}
+
+<!-- FILOSOFIE -->
+<section id="filosofie" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in">
+<div class="phi">
+<div class="phi-t">
+<h2 class="disp h-l" style="color:#1F3B37">Sterker worden begint met begrijpen.</h2>
+<p class="lead" style="color:#3F4E47">Wie weet waarom hij iets doet, houdt het langer vol. Daarom leggen we uit wat we van je vragen, en steunt onze begeleiding op wat de wetenschap over training, voeding en gedrag weet.</p>
+</div>
+<div class="phi-i">
+<img class="cover" loading="lazy" decoding="async" src="assets/phi.webp" alt="Een coach bladert door een naslagwerk over spieren en blessures">
+</div>
+</div>
+
+<div class="stm stm-a">
+<h3 class="disp h-xl ww" style="color:#1F3B37">Beweging</h3>
+<p class="pp">Training met richting. Krachttraining vormt de basis, met een programma dat past bij je niveau, je doel en je week.</p>
+</div>
+<div class="stm stm-b">
+<h3 class="disp h-xl ww" style="color:#1F3B37">Voeding</h3>
+<p class="pp">Eten dat past bij je doel en je leven. Je leert wat je eet en waarom, zodat je zelf kunt bijsturen.</p>
+</div>
+<div class="stm stm-a" style="border-bottom:1px solid rgba(31,59,55,.2)">
+<h3 class="disp h-xl ww" style="color:#1F3B37">Gedrag</h3>
+<p class="pp">Verandering houdt stand als je haar zelf draagt. Je leert bewust kiezen en gewoontes opbouwen die in je week passen.</p>
+</div>
+
+<div class="verdiep">
+<p>Meer lezen of luisteren over training, voeding en gedrag?</p>
+<div class="knoppen">
+<a href="kennisbank.html" class="btn b-ghost-l">Naar de Kennisbank</a>
+<a href="kennisbank.html#podcast" class="btn b-ghost-l">CoachCabin Podcast</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TARIEVEN: kort overzicht, details staan op de tarievenpagina -->
+<section id="home-tarieven" class="sec dk" style="background:#0F1614;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 48px">
+<h2 class="disp h-l" style="color:#ECE8DD">Duidelijke tarieven</h2>
+<p style="margin:0;max-width:40ch;font-size:19px;line-height:1.6;color:#C9D2CB">Vier formules, van zelfstandig trainen tot een coach naast je in de gym. Wat er telkens in zit, lees je op de tarievenpagina.</p>
+</div>
+<div class="pidx">
+{{#each aanbod_lijst}}<a href="tarieven.html#vergelijk"><span class="nm">{{dit.naam}}</span><span class="disp am">€ {{dit.prijs}}</span><span class="un">{{dit.eenheid}}</span></a>
+{{/each}}</div>
+<div class="knoppen">
+<a href="tarieven.html" class="btn b-mint">Vergelijk de formules</a>
+<a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+</section>
+
+{{#if merch.zichtbaar}}
+<!-- MERCH -->
+<section id="merch" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
+<h2 class="disp h-l" style="color:#ECE8DD">Draag Reroot.</h2>
+<p style="margin:0;max-width:400px;font-size:19px;line-height:1.6;color:#C9D2CB">{{merch.intro}}</p>
+</div>
+<div class="mgrid">
+{{#each merch.artikels}}
+<article class="mcard mcard-{{nummer}}">
+<div class="mi"><img class="cover" loading="lazy" decoding="async" src="{{dit.foto}}" alt="{{dit.foto_alt}}"></div>
+<div class="mtxt">
+<h3>{{dit.naam}}</h3>
+<span class="disp mprice">€ {{dit.prijs}}</span>
+<p>{{dit.beschrijving}}</p>
+{{#if dit.checkout_url}}<a href="{{dit.checkout_url}}" target="_blank" rel="noopener" class="tlink">Bestel<span class="sr"> {{dit.naam}}</span></a>{{/if}}
+</div>
+</article>
+{{/each}}
+</div>
+</div>
+</section>
+{{/if}}
+
+<!-- SLOT-CTA + FOOTER -->
+<section id="slot-home" class="sec dk" style="background:#0F1614;color:#ECE8DD;padding-bottom:clamp(48px,6vw,80px)">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+
+<div class="slot">
+<h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Jouw verandering begint met een keuze.</h2>
+<div class="knoppen" style="justify-content:center">
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-ghost-d btn-xl">{{kennismaking.knoptekst}}</a>
+</div>
+</div>
+
+{{> voet}}
+
+</div>
+</section>
