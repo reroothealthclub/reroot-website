@@ -516,3 +516,7 @@ button:focus-visible{outline:3px solid #1F3B37;outline-offset:3px}
   .foot-col a{min-height:44px}
   .cinfo a{display:inline-flex;align-items:center;min-height:44px}
 }
+
+/* de boodschap en de twee knoppen in de hero verschijnen snel, ook op een trage verbinding */
+.hero-left .fade{animation-delay:.3s;animation-duration:.6s}
+.hero-right .fade{animation-delay:.6s}
