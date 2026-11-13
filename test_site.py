@@ -265,7 +265,7 @@ def main():
     km = g['kennismaking']
     for naam, p in paginas.items():
         for a in p.links:
-            if 'kennismaking' in a['tekst'].lower():
+            if 'kennismaking' in a['tekst'].lower() or 'intake' in a['tekst'].lower():
                 check(a['href'].startswith('contact.html?onderwerp=kennismaking'),
                       '%s: "%s" gaat naar het aanvraagformulier' % (naam, a['tekst']))
                 check('plan een' not in a['tekst'].lower(), '%s: knop belooft geen directe boeking ("%s")' % (naam, a['tekst']))

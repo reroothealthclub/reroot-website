@@ -8,7 +8,7 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
 <h1 class="disp" style="margin:0;font-size:calc(var(--u)*.14);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Tarieven</span></span></h1>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:440px;padding-bottom:12px">
-<p class="lead" style="color:#D5DCD3;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Kies de formule die past bij hoeveel begeleiding je wil. Weet je het nog niet? Vraag een kennismaking aan, dan kiezen we samen.</p>
+<p class="lead" style="color:#D5DCD3;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Kies de formule die past bij hoeveel begeleiding je wil. Weet je het nog niet? Boek je intakegesprek, dan kiezen we samen.</p>
 <a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
 </div>
 </div>
@@ -43,14 +43,16 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 </div>
 </section>
 
+{{> intakeband}}
+
 <!-- FAQ -->
 <section class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in two">
 <h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
 <div class="faq">
 <details><summary>Wat is het verschil tussen {{aanbod.app_coaching.naam}} en {{aanbod.monthly_coaching.naam}}?</summary><p class="ans">Bij allebei heb je elke week een check-up met je coach. Bij {{aanbod.app_coaching.naam}} verloopt die altijd via de app. Bij {{aanbod.monthly_coaching.naam}} is één check-up per maand live. Toegang tot de Health Club zit in geen van beide.</p></details>
-<details><summary>Kan ik eerst kennismaken?</summary><p class="ans">Ja. <a href="{{kennismaking.url}}">Vraag een kennismaking aan</a>, dan bespreken we je doel en kiezen we samen wat bij je past. Dat gesprek is vrijblijvend.</p></details>
-<details><summary>Hoe schrijf ik me in?</summary><p class="ans">Met de knop bij de formule van je keuze. Die brengt je naar onze betaalpagina, waar je je gegevens invult en de inschrijving afrondt. Liever eerst praten? Vraag dan een kennismaking aan.</p></details>
+<details><summary>Kan ik eerst kennismaken?</summary><p class="ans">Ja. <a href="{{kennismaking.url}}">Boek je intakegesprek</a>, dan bespreken we je doel en kiezen we samen wat bij je past. Dat gesprek is vrijblijvend.</p></details>
+<details><summary>Hoe schrijf ik me in?</summary><p class="ans">Met de knop bij de formule van je keuze. Die brengt je naar onze betaalpagina, waar je je gegevens invult en de inschrijving afrondt. Liever eerst praten? Vraag dan een intakegesprek aan.</p></details>
 <details><summary>Wat kost een Personal Training-sessie?</summary><p class="ans">Een sessie kost € {{aanbod.personal_training.prijs}}. Je koopt ze per tien ({{aanbod.personal_training.prijs_detail}}). {{aanbod.personal_training.goed_om_te_weten}}</p></details>
 <details><summary>Heb je een vraag over wat erin zit?</summary><p class="ans">Stuur ons gerust een bericht via de <a href="contact.html">contactpagina</a>, dan antwoorden we je persoonlijk.</p></details>
 </div>

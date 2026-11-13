@@ -147,8 +147,8 @@
     if (!kop || !intro) return;
     var w = keuze.value, naam = keuze.options[keuze.selectedIndex].text;
     if (w === 'kennismaking') {
-      kop.textContent = 'Vraag een kennismaking aan';
-      intro.textContent = 'Laat je naam en e-mailadres achter. Een van de coaches neemt persoonlijk contact op om een moment af te spreken. De kennismaking is vrijblijvend.';
+      kop.textContent = 'Boek je intakegesprek';
+      intro.textContent = 'Laat je gegevens achter. Een van de coaches neemt persoonlijk contact op om een moment vast te leggen. Het gesprek is vrijblijvend.';
     } else if (w && w !== 'anders') {
       kop.textContent = 'Je vraag over ' + naam;
       intro.textContent = 'Stel je vraag of vertel kort wat je zoekt. Een van de coaches antwoordt je persoonlijk.';

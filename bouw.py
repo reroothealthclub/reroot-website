@@ -145,12 +145,13 @@ def verrijk(g):
         lijst.append(a)
         onderwerpen.append({'sleutel': a['sleutel'], 'tekst': a['naam']})
     g['aanbod_lijst'] = lijst
-    onderwerpen.insert(0, {'sleutel': 'kennismaking', 'tekst': 'Een kennismaking'})
+    onderwerpen.insert(0, {'sleutel': 'kennismaking', 'tekst': 'Een intakegesprek'})
     onderwerpen.append({'sleutel': 'anders', 'tekst': 'Ik weet het nog niet / iets anders'})
     g['onderwerpen'] = onderwerpen
     g['kennismaking'] = {
         'url': 'contact.html?onderwerp=kennismaking#formulier',
-        'knoptekst': 'Vraag een kennismaking aan',
+        'knoptekst': g.get('intakegesprek', {}).get('knoptekst', 'Boek je intakegesprek nu'),
+        'knoptekst_kort': g.get('intakegesprek', {}).get('knoptekst_kort', 'Boek intake'),
     }
 
     # --- links

@@ -29,6 +29,7 @@ Alles hieronder staat in `gegevens/site.json`. Bewaar het bestand en herlaad de 
 
 | Ik wil ... | Zoek in `site.json` naar |
 |---|---|
+| de tekst van de intakeknop wijzigen | `"intakegesprek"` → `"knoptekst"` |
 | een prijs wijzigen | `"aanbod"` → het traject → `"prijs"` |
 | de openingsuren wijzigen | `"openingsuren"` → `"dagen"` |
 | telefoon of e-mail wijzigen | `"contact"` |
@@ -79,10 +80,11 @@ De foto's van de homepage:
 | Plek | Bestand in `bron/assets/` |
 |---|---|
 | Opening (de foto in de boog) | `hero.webp` (staand, 1300 × 1696) |
-| Pijler Beweging | `coachhero.webp` (staand) |
-| Pijler Voeding | `artikels/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam.webp` (staand) |
-| Pijler Levensstijl | `intake.webp` (staand) |
-| Coachingvoorbeeld | `legext.webp` (staand) |
+| Pijler Beweging | `pijler-beweging.jpg` (staand, 1100 × 1650) |
+| Pijler Voeding | `pijler-voeding.jpg` (staand) |
+| Pijler Levensstijl | `pijler-levensstijl.jpg` (staand) |
+| Coachingvoorbeeld | `intake.webp` (staand) |
+| De gevel (contactpagina en "Je eerste keer") | `gevel.jpg` (liggend, 1400 breed) |
 | Beeld bij het delen van een link | `deelbeeld.jpg` (1200 × 630) |
 
 De teksten bij die beelden staan in `bron/paginas/index.html`. Foto's rechtstreeks van je telefoon zijn te zwaar en bevatten gegevens over je toestel: verklein ze eerst (bijvoorbeeld in Voorvertoning: Extra → Pas grootte aan) en exporteer ze opnieuw.

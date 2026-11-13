@@ -15,6 +15,17 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 | 3 | **Domein en DNS** | Ik weet niet waar je domeinen geregistreerd zijn. `www.reroothealthclub.com` gaf bij mijn controle geen antwoord (de naam werd niet gevonden). Niets aan DNS of domeinen is aangeraakt. |
 | 4 | **Plug&Pay-teksten** | Op `checkout.rerootcoaching.com/rerootcoaching` staat nog "maximum van 200 Leden" en "Reroot Online Coaching". Zelf aanpassen: 150 leden en "Reroot Monthly Online Coaching". |
 
+## Het intakegesprek als hoofdknop
+
+"Boek je intakegesprek nu" is nu de hoofdknop van de site: in de menubalk (op mobiel als "Boek intake"), in het mobiele menu, in elk slotblok en in een eigen oproepband op de homepage, de clubpagina en de tarievenpagina. "Word lid" staat er als gewone link naast. Het woord "kennismaking" is overal "intakegesprek" geworden.
+
+Twee dingen om te weten:
+
+- **De knop zegt "boek", maar er is geen boekingssysteem.** De bezoeker komt op het formulier "Boek je intakegesprek" en leest daar dat een coach contact opneemt om een moment vast te leggen. Dat is eerlijk, maar het is geen directe boeking.
+- **Het formulier is de zwakke schakel van deze funnel.** Zonder formulierdienst zet het alleen een mail klaar. Wie die mail niet verstuurt, laat geen gegevens achter en jij ziet die persoon nooit. Wil je dat elke aanvraag binnenkomt, dan heb je een formulierdienst of een afsprakentool nodig. Dat is één regel in `site.json` zodra je er een kiest.
+
+Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoegd.
+
 ## Blokkeert niets, maar vraagt je antwoord
 
 | # | Onderwerp | Toelichting |
@@ -46,7 +57,7 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 ## Wat veranderd is in deze ronde
 
 - **Na je feedback van 13 november:** de vorige opening (woordmerk, boog en wortels) staat terug, nu met beweging die het scrollen volgt: het woordmerk schuift weg, de foto zoomt licht in en de wortels groeien de volgende sectie in. De menubalk blijft op elke pagina bovenaan vast. De kop is "Twee manieren om jouw fysieke transformatie te realiseren". Op de coachingpagina is het woord "Coaching" niet meer afgesneden, zijn de trajectknoppen even breed en is de intakefoto minder ingezoomd.
-- **De drie pijlers:** de scrollscène toont nu Beweging, Voeding en Levensstijl in plaats van drie clubbeelden, met de boodschap dat de drie altijd samen horen. De foto bij Voeding (eieren) komt van je bestaande artikel over eiwitten en is geen foto uit de club; vervang ze gerust door een eigen beeld. De pijlers staan nu één keer op de homepage, niet meer ook in het blok "Sterker worden begint met begrijpen".
+- **De drie pijlers:** de scrollscène toont nu Beweging, Voeding en Levensstijl in plaats van drie clubbeelden, met de boodschap dat de drie altijd samen horen. De drie beelden zijn je eigen foto's (aangeleverd op 13 november). Op de voedingsfoto zijn merken zichtbaar (Alpro, Arla, Myprotein); laat weten als je dat liever niet hebt. De foto van de gevel staat op de contactpagina en bij "Je eerste keer". De vijfde foto (proeven aan het aanrecht) is niet gebruikt en staat in `aangeleverd/`. De pijlers staan nu één keer op de homepage, niet meer ook in het blok "Sterker worden begint met begrijpen".
 - **Homepage:** (eerste voorstel, vervangen door het bovenstaande) nieuwe opening met een breed beeld van de eigen trainingsruimte; "De club, in drie beelden" (vrije gewichten, krachttoestellen, sprinttrack) met op desktop één vast beeldvlak dat wisselt tijdens het scrollen; een concreet coachingvoorbeeld (situatie, beslissing, waarom); "Sterker worden begint met begrijpen" linkt nu naar een echt artikel en de recentste aflevering.
 - **Kennismaking:** de kop van het formulier volgt het onderwerp; uitleg dat de knop je mailprogramma opent; kopieerbaar bericht voor wie geen mailprogramma heeft.
 - **Clubpagina:** blok "Je eerste keer bij Reroot".

@@ -132,7 +132,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <div class="scene-stage"><span class="scene-count" aria-hidden="true"><b class="disp" data-scene-nr>01</b> / 03</span></div>
 <ol class="scene-list">
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/coachhero.webp" width="1300" height="1696" alt="Een coach begeleidt een klant tijdens een squat in de Health Club"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/pijler-beweging.jpg" width="1099" height="1650" alt="Een coach hurkt naast een klant en stuurt haar squat bij in de Health Club" style="object-position:50% 72%"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">01</span>
 <h3 class="disp">Beweging</h3>
@@ -140,7 +140,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 </div>
 </li>
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/artikels/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam.webp" alt="Een rij eieren in verschillende tinten op een stenen ondergrond"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/pijler-voeding.jpg" width="1099" height="1650" alt="Een coach doet blauwe bessen in een blender, met yoghurt en groenten op het aanrecht" style="object-position:50% 60%"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">02</span>
 <h3 class="disp">Voeding</h3>
@@ -148,7 +148,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 </div>
 </li>
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/intake.webp" width="1100" height="1375" alt="Een coach noteert tijdens een gesprek de doelen en gewoontes van een klant"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/pijler-levensstijl.jpg" width="1099" height="1650" alt="Coach Simon bladert lachend door een naslagwerk aan tafel" style="object-position:50% 30%"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">03</span>
 <h3 class="disp">Levensstijl</h3>
@@ -161,8 +161,8 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <div class="scene-foot">
 <p class="scene-slot">Waarom altijd samen? Wie hard traint maar te weinig eet of slecht slaapt, komt niet verder. Daarom stemmen we de drie pijlers op elkaar af.</p>
 <div class="knoppen">
-<a href="coaching.html" class="btn b-mint">Bekijk onze coaching</a>
-<a href="over-reroot.html" class="btn b-ghost-d">Onze aanpak</a>
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+<a href="coaching.html" class="btn b-ghost-d">Bekijk onze coaching</a>
 </div>
 </div>
 </div>
@@ -171,7 +171,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <!-- SCÈNE 03 · COACHING WORDT CONCREET -->
 <section id="home-coaching" class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in geval">
-<div class="geval-beeld"><img class="cover" loading="lazy" decoding="async" src="assets/legext.webp" width="1100" height="1375" alt="Een coach kijkt mee terwijl een klant op een beentoestel traint" style="object-position:40% 50%"></div>
+<div class="geval-beeld"><img class="cover" loading="lazy" decoding="async" src="assets/intake.webp" width="1100" height="1375" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant"></div>
 <div class="geval-txt">
 <h2 class="disp h-l" style="color:#1F3B37">Een plan dat in je week past.</h2>
 <p class="lead" style="color:#3F4E47">Wat verandert er als een coach meekijkt? Meestal niet de oefeningen, wel de keuzes eromheen.</p>
@@ -214,6 +214,8 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 
 {{> ervaringen}}
 
+{{> intakeband}}
+
 <!-- TARIEVEN: kort overzicht, details staan op de tarievenpagina -->
 <section id="home-tarieven" class="sec dk" style="background:#0F1614;color:#ECE8DD">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
@@ -225,8 +227,8 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 {{#each aanbod_lijst}}<a href="tarieven.html#vergelijk"><span class="nm">{{dit.naam}}</span><span class="disp am">€ {{dit.prijs}}</span><span class="un">{{dit.eenheid}}</span></a>
 {{/each}}</div>
 <div class="knoppen">
-<a href="tarieven.html" class="btn b-mint">Vergelijk de formules</a>
-<a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
+<a href="tarieven.html" class="btn b-ghost-d">Vergelijk de formules</a>
 </div>
 </div>
 </section>
@@ -263,8 +265,8 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <div class="slot">
 <h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Jouw verandering begint met een keuze.</h2>
 <div class="knoppen" style="justify-content:center">
-<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
-<a href="{{kennismaking.url}}" class="btn b-ghost-d btn-xl">{{kennismaking.knoptekst}}</a>
+<a href="{{kennismaking.url}}" class="btn b-mint btn-xl">{{kennismaking.knoptekst}}</a>
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-ghost-d btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
 </div>
 </div>
 

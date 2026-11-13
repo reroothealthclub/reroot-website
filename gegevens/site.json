@@ -23,6 +23,12 @@
     "coaching/sportspecifiek": "coaching.html"
   },
 
+  "intakegesprek": {
+    "uitleg": "De hoofdknop van de site. 'knoptekst' staat op alle knoppen, 'knoptekst_kort' in de menubalk op mobiel.",
+    "knoptekst": "Boek je intakegesprek nu",
+    "knoptekst_kort": "Boek intake"
+  },
+
   "bedrijf": {
     "naam": "Reroot Health Club & Coaching",
     "juridische_naam": "Reroot Coaching",
