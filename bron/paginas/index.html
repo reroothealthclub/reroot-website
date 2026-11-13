@@ -118,55 +118,51 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 </div>
 </section>
 
-<!-- SCÈNE 02 · DE CLUB IN DRIE BEELDEN
+<!-- DE DRIE PIJLERS
      Zonder JavaScript, op mobiel en bij 'minder beweging' zijn dit drie gewone beelden met tekst.
      Op desktop zet site.js de drie beelden in het vaste beeldvlak (.scene-stage) en wisselt ze tijdens het scrollen. -->
-<section id="club" class="sec dk scene" style="background:#0F1614;color:#ECE8DD">
+<section id="pijlers" class="sec dk scene" style="background:#0F1614;color:#ECE8DD">
 <div class="in">
 <div class="scene-head">
-<h2 class="disp h-l" style="color:#ECE8DD">De club, in drie beelden.</h2>
-<p class="lead" style="color:#C9D2CB">{{club.oppervlakte}} in {{adres.gemeente}}, ingericht om te trainen. Dit staat er.</p>
+<h2 class="disp h-l" style="color:#ECE8DD">De drie pijlers van onze Health Club.</h2>
+<p class="lead" style="color:#C9D2CB">Beweging, voeding en levensstijl. We houden ze altijd samen, op wetenschappelijke basis, omdat ze elkaar sturen. Verandering zien wij als het totaalplaatje, niet als één los onderdeel.</p>
 </div>
 
 <div class="scene-grid" data-scene>
-<div class="scene-stage" aria-hidden="true"><span class="scene-count"><b class="disp" data-scene-nr>01</b> / 03</span></div>
+<div class="scene-stage"><span class="scene-count" aria-hidden="true"><b class="disp" data-scene-nr>01</b> / 03</span></div>
 <ol class="scene-list">
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/club-gewichten.jpg" width="1000" height="1250" alt="Een halterstang en schijven in een rek, met de sprinttrack en de zaal op de achtergrond"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/coachhero.webp" width="1300" height="1696" alt="Een coach begeleidt een klant tijdens een squat in de Health Club"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">01</span>
-<h3 class="disp">Vrije gewichten</h3>
-<p>Rekken, halterstangen, schijven en een volledige rij dumbbells. Hier werk je je eigen schema af, op je eigen tempo.</p>
+<h3 class="disp">Beweging</h3>
+<p>Training met richting. Krachttraining vormt de basis, met een programma dat past bij je niveau, je doel en je week.</p>
 </div>
 </li>
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/legext.webp" width="1100" height="1375" alt="Een lid traint op een beentoestel voor de houten wand, terwijl een coach meekijkt"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/artikels/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam.webp" alt="Een rij eieren in verschillende tinten op een stenen ondergrond"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">02</span>
-<h3 class="disp">Krachttoestellen</h3>
-<p>Toestellen van onder meer {{club.merken_kort}}. Gekozen op hoe goed ze werken, niet op hoeveel het er zijn.</p>
+<h3 class="disp">Voeding</h3>
+<p>Eten dat je training ondersteunt en in je leven past. Je leert wat je eet en waarom, zodat je zelf kunt bijsturen.</p>
 </div>
 </li>
 <li class="scene-item">
-<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/club-sprinttrack.jpg" width="1000" height="1250" alt="De groene sprinttrack met genummerde vakken, dwars door de trainingsruimte"></figure>
+<figure class="scene-fig"><img loading="lazy" decoding="async" src="assets/intake.webp" width="1100" height="1375" alt="Een coach noteert tijdens een gesprek de doelen en gewoontes van een klant"></figure>
 <div class="scene-txt">
 <span class="disp scene-n" aria-hidden="true">03</span>
-<h3 class="disp">Sprinttrack</h3>
-<p>Een eigen baan van kunstgras, midden in de zaal. Voor sledewerk, sprints en loopoefeningen, zonder dat je iemand in de weg loopt.</p>
+<h3 class="disp">Levensstijl</h3>
+<p>Slaap, stress en gewoontes bepalen of je het volhoudt. Daarom nemen we ze mee in elk plan.</p>
 </div>
 </li>
 </ol>
 </div>
 
 <div class="scene-foot">
-<div class="scene-facts">
-<div><span class="disp">{{uren.kort}}</span><span>{{uren.kort_bijschrift}}</span></div>
-<div><span class="disp">{{club.max_leden}}</span><span>Leden, maximaal</span></div>
-<div><span class="disp">€ {{aanbod.open_gym.prijs}}</span><span>{{aanbod.open_gym.eenheid}}, zonder jaarcontract</span></div>
-</div>
+<p class="scene-slot">Waarom altijd samen? Wie hard traint maar te weinig eet of slecht slaapt, komt niet verder. Daarom stemmen we de drie pijlers op elkaar af.</p>
 <div class="knoppen">
-<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint">{{aanbod.open_gym.actie_tekst}}</a>
-<a href="health-club.html#eerste-keer" class="btn b-ghost-d">Je eerste keer bij Reroot</a>
+<a href="coaching.html" class="btn b-mint">Bekijk onze coaching</a>
+<a href="over-reroot.html" class="btn b-ghost-d">Onze aanpak</a>
 </div>
 </div>
 </div>
@@ -175,7 +171,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <!-- SCÈNE 03 · COACHING WORDT CONCREET -->
 <section id="home-coaching" class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in geval">
-<div class="geval-beeld"><img class="cover" loading="lazy" decoding="async" src="assets/intake.webp" width="1100" height="1375" alt="Een coach noteert tijdens een intakegesprek de doelen van een klant"></div>
+<div class="geval-beeld"><img class="cover" loading="lazy" decoding="async" src="assets/legext.webp" width="1100" height="1375" alt="Een coach kijkt mee terwijl een klant op een beentoestel traint" style="object-position:40% 50%"></div>
 <div class="geval-txt">
 <h2 class="disp h-l" style="color:#1F3B37">Een plan dat in je week past.</h2>
 <p class="lead" style="color:#3F4E47">Wat verandert er als een coach meekijkt? Meestal niet de oefeningen, wel de keuzes eromheen.</p>
@@ -200,13 +196,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
 <div class="phi-t">
 <h2 class="disp h-l" style="color:#1F3B37">Sterker worden begint met begrijpen.</h2>
-<p class="lead" style="color:#3F4E47">Wie weet waarom hij iets doet, houdt het langer vol. Daarom leggen we uit wat we van je vragen, en steunt onze begeleiding op wat de wetenschap over training, voeding en gedrag weet.</p>
-</div>
-
-<div class="drie">
-<div><h3 class="disp">Beweging</h3><p>Training met richting. Krachttraining vormt de basis, met een programma dat past bij je niveau, je doel en je week.</p></div>
-<div><h3 class="disp">Voeding</h3><p>Eten dat past bij je doel en je leven. Je leert wat je eet en waarom, zodat je zelf kunt bijsturen.</p></div>
-<div><h3 class="disp">Gedrag</h3><p>Verandering houdt stand als je haar zelf draagt. Je leert bewust kiezen en gewoontes opbouwen die in je week passen.</p></div>
+<p class="lead" style="color:#3F4E47">Wie weet waarom hij iets doet, houdt het langer vol. Daarom leggen we uit wat we van je vragen, en steunt onze begeleiding op wat de wetenschap over beweging, voeding en levensstijl weet.</p>
 </div>
 
 {{> verdiep}}

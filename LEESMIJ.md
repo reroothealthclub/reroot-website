@@ -79,10 +79,10 @@ De foto's van de homepage:
 | Plek | Bestand in `bron/assets/` |
 |---|---|
 | Opening (de foto in de boog) | `hero.webp` (staand, 1300 × 1696) |
-| Clubscène: vrije gewichten | `club-gewichten.jpg` (staand, 1000 × 1250) |
-| Clubscène: krachttoestellen | `legext.webp` (staand) |
-| Clubscène: sprinttrack | `club-sprinttrack.jpg` (staand, 1000 × 1250) |
-| Coachingvoorbeeld | `intake.webp` (staand) |
+| Pijler Beweging | `coachhero.webp` (staand) |
+| Pijler Voeding | `artikels/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam.webp` (staand) |
+| Pijler Levensstijl | `intake.webp` (staand) |
+| Coachingvoorbeeld | `legext.webp` (staand) |
 | Beeld bij het delen van een link | `deelbeeld.jpg` (1200 × 630) |
 
 De teksten bij die beelden staan in `bron/paginas/index.html`. Foto's rechtstreeks van je telefoon zijn te zwaar en bevatten gegevens over je toestel: verklein ze eerst (bijvoorbeeld in Voorvertoning: Extra → Pas grootte aan) en exporteer ze opnieuw.
