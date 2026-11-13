@@ -61,7 +61,7 @@ def _slug(sleutel):
 def verrijk(g):
     """Controleert de gegevens en leidt er alles uit af wat de sjablonen nodig hebben."""
     for groep in ('bedrijf', 'adres', 'contact', 'formulier', 'openingsuren', 'club', 'links',
-                  'aanbod', 'coaches', 'reviews', 'merch', 'kennisbank'):
+                  'aanbod', 'coaches', 'reviews', 'merch'):
         if groep not in g:
             raise Bouwfout('In gegevens/site.json ontbreekt het onderdeel "%s".' % groep)
 
@@ -324,6 +324,48 @@ def _voorblad(tekst, naam):
     return meta, tekst[m.end():]
 
 
+# ---------------------------------------------------------------- artikels
+
+def lees_artikels():
+    """Leest bron/artikels/*.html. Elk bestand begint met een blokje tussen --- met
+    titel, beschrijving, soort (artikel of podcast), categorie, volgorde, beeld en spotify."""
+    map_artikels = os.path.join(BRON, 'artikels')
+    lijst = []
+    if not os.path.isdir(map_artikels):
+        return lijst
+    for bestand in sorted(os.listdir(map_artikels)):
+        if not bestand.endswith('.html'):
+            continue
+        naam = 'bron/artikels/' + bestand
+        with open(os.path.join(map_artikels, bestand), encoding='utf-8') as f:
+            meta, tekst = _voorblad(f.read(), naam)
+        soort = meta.get('soort', 'artikel')
+        if soort not in ('artikel', 'podcast'):
+            raise Bouwfout('%s: "soort" moet artikel of podcast zijn.' % naam)
+        beeld = meta.get('beeld', '')
+        if beeld:
+            _controleer_foto(beeld, 'artikel "%s"' % meta['titel'])
+        spotify = meta.get('spotify', '')
+        if spotify and not spotify.startswith('https://open.spotify.com/embed/'):
+            raise Bouwfout('%s: "spotify" moet beginnen met https://open.spotify.com/embed/' % naam)
+        kort = meta['beschrijving']
+        if len(kort) > 180:
+            kort = kort[:177].rsplit(' ', 1)[0] + '…'
+        try:
+            volgorde = int(meta.get('volgorde', '999'))
+        except ValueError:
+            raise Bouwfout('%s: "volgorde" moet een getal zijn.' % naam)
+        lijst.append({
+            'bronbestand': bestand, 'url': 'kennisbank-' + bestand,
+            'titel': meta['titel'], 'beschrijving': meta['beschrijving'], 'beschrijving_kort': kort,
+            'soort': soort, 'is_podcast': soort == 'podcast',
+            'categorie': meta.get('categorie', '') or ('Podcast' if soort == 'podcast' else 'Artikel'),
+            'volgorde': volgorde, 'beeld': beeld, 'spotify': spotify, 'tekst': tekst,
+        })
+    lijst.sort(key=lambda a: (a['volgorde'], a['titel']))
+    return lijst
+
+
 # ---------------------------------------------------------------- bouwen
 
 def _hash(pad):
@@ -343,6 +385,12 @@ def bouw(uit=UIT, stil=False):
                     ignore=shutil.ignore_patterns('.DS_Store'))
     for bestand in ('stijl.css', 'site.js'):
         shutil.copy(os.path.join(BRON, bestand), os.path.join(uit, bestand))
+
+    artikels = lees_artikels()
+    g['kennis'] = {
+        'artikels': [a for a in artikels if a['soort'] != 'podcast'],
+        'afleveringen': [a for a in artikels if a['soort'] == 'podcast'],
+    }
 
     map_paginas = os.path.join(BRON, 'paginas')
     gebouwd = []
@@ -365,6 +413,24 @@ def bouw(uit=UIT, stil=False):
         with open(os.path.join(uit, bestand), 'w', encoding='utf-8') as f:
             f.write(volledig)
         gebouwd.append(bestand)
+    # elk artikel en elke podcastaflevering krijgt een eigen pagina
+    for a in artikels:
+        naam = 'bron/artikels/' + a['bronbestand']
+        andere = [x for x in artikels if x is not a and x['soort'] == a['soort']][:2]
+        pagina = {
+            'sleutel': 'kennisbank', 'bestand': a['url'],
+            'titel': '%s | Kennisbank | Reroot' % a['titel'],
+            'beschrijving': a['beschrijving_kort'], 'is_home': False,
+        }
+        scopes = [g, {'pagina': pagina, 'actief': {'kennisbank': True}, 'artikel': a, 'verder_lezen': andere}]
+        tekst_html = sj.toon(_ontleed(a['tekst'], naam), scopes, naam)
+        scopes.append({'artikel_tekst': tekst_html})
+        pagina_html = sj.toon(sj.onderdeel('artikel'), scopes, 'bron/onderdelen/artikel.html')
+        scopes.append({'inhoud': pagina_html})
+        volledig = sj.toon(sj.onderdeel('basis'), scopes, 'bron/onderdelen/basis.html')
+        with open(os.path.join(uit, a['url']), 'w', encoding='utf-8') as f:
+            f.write(volledig)
+        gebouwd.append(a['url'])
     if not stil:
         print('Klaar: %d pagina\'s gebouwd in de map "%s".' % (len(gebouwd), os.path.relpath(uit, HIER)))
     return gebouwd
@@ -373,7 +439,7 @@ def bouw(uit=UIT, stil=False):
 # ---------------------------------------------------------------- bekijken
 
 def _laatste_wijziging():
-    nieuwste = os.path.getmtime(GEGEVENS)
+    nieuwste = max(os.path.getmtime(GEGEVENS), os.path.getmtime(os.path.abspath(__file__)))
     for wortel, _, bestanden in os.walk(BRON):
         for b in bestanden:
             nieuwste = max(nieuwste, os.path.getmtime(os.path.join(wortel, b)))

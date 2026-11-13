@@ -40,7 +40,7 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 </div>{{/each}}
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
-<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">De knoppen brengen je naar onze betaalpagina. De <a href="{{links.algemene_voorwaarden}}" target="_blank" rel="noopener" style="color:#1F3B37">algemene voorwaarden</a> lees je vooraf na.</p>
+<p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#4F5D55">De knoppen brengen je naar onze betaalpagina.{{#if links.algemene_voorwaarden}} De <a href="{{links.algemene_voorwaarden}}" target="_blank" rel="noopener" style="color:#1F3B37">algemene voorwaarden</a> lees je vooraf na.{{/if}}</p>
 <a href="{{kennismaking.url}}" class="btn b-ghost-l">Twijfel je? {{kennismaking.knoptekst}}</a>
 </div>
 </div>

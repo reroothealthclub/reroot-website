@@ -57,8 +57,8 @@
     "podcast_spotify": "https://open.spotify.com/show/3LQY25TWVlkJxHMbRcqCDq",
     "google_reviews_lezen": "https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z",
     "google_review_schrijven": "https://g.page/r/CXanDYNvS7tdEBE/review",
-    "privacybeleid": "https://www.rerootcoaching.com/privacybeleid",
-    "algemene_voorwaarden": "https://www.rerootcoaching.com/algemene-voorwaarden"
+    "algemene_voorwaarden": "",
+    "uitleg_algemene_voorwaarden": "Leeg = er wordt nergens naar algemene voorwaarden verwezen. Vul het adres in zodra je echte voorwaarden online hebt staan."
   },
 
   "aanbod_uitleg": "checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
@@ -201,43 +201,6 @@
         "foto_alt": "Reroot-petten met geborduurd logo",
         "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-pet-beige-groen"
       }
-    ]
-  },
-
-  "kennisbank": {
-    "artikels": [
-      {
-        "titel": "Wat moet je weten over koolhydraten en vetopslag?",
-        "categorie": "Voeding",
-        "url": "https://www.rerootcoaching.com/content/wat-moet-je-weten-over-koolhydraten-en-vetopslag"
-      },
-      {
-        "titel": "Hoe je controle houdt over je dieet na een competitie",
-        "categorie": "Sportgericht",
-        "url": "https://www.rerootcoaching.com/content/hoe-je-controle-houdt-over-je-dieet-na-een-competitie"
-      },
-      {
-        "titel": "Energiebalans: de ultieme gids voor gewichtsverandering",
-        "categorie": "Voeding",
-        "url": "https://www.rerootcoaching.com/content/energiebalans-de-ultieme-gids-voor-gewichtsverandering"
-      },
-      {
-        "titel": "Waarom zijn eiwitten zo belangrijk voor ons lichaam?",
-        "categorie": "Voeding",
-        "url": "https://www.rerootcoaching.com/content/waarom-zijn-eiwitten-zo-belangrijk-voor-ons-lichaam"
-      },
-      {
-        "titel": "De waarheid over vetten en hun effect op je fysieke gezondheid",
-        "categorie": "Voeding",
-        "url": "https://www.rerootcoaching.com/content/de-waarheid-over-vetten-en-hun-effect-op-je-fysieke-gezondheid"
-      }
-    ],
-    "podcast_afleveringen": [
-      { "titel": "CoachCabin Podcast, aflevering 5", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-5" },
-      { "titel": "CoachCabin Podcast, aflevering 4", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-4" },
-      { "titel": "CoachCabin Podcast, aflevering 3", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-3" },
-      { "titel": "CoachCabin Podcast, aflevering 2", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-2" },
-      { "titel": "CoachCabin Podcast, aflevering 1", "url": "https://www.rerootcoaching.com/content/coachcabin-podcast-aflevering-1" }
     ]
   }
 }
