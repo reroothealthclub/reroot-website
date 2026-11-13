@@ -105,6 +105,23 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 </div>
 </section>
 
+<!-- JE EERSTE KEER -->
+<section id="eerste-keer" class="sec" style="background:#E3E8DC;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<div style="display:flex;flex-direction:column;gap:20px;max-width:760px">
+<h2 class="disp h-l" style="color:#1F3B37">Je eerste keer bij Reroot.</h2>
+<p class="lead" style="color:#3F4E47">Zo weet je wat je kunt verwachten voor je de deur opentrekt.</p>
+</div>
+<ol class="eerste">
+<li><h3 class="disp">Waar je moet zijn</h3><p>{{adres.straat}}, {{adres.postcode}} {{adres.gemeente}}.{{#if club.eerste_keer.ingang}} {{club.eerste_keer.ingang}}{{/if}} <a href="{{adres.route_url}}" target="_blank" rel="noopener">Plan je route</a></p></li>
+<li><h3 class="disp">Binnenkomen</h3><p>Na je inschrijving kom je binnen met de app, {{uren.zin_klein}}.{{#if club.eerste_keer.toegang_na_inschrijving}} {{club.eerste_keer.toegang_na_inschrijving}}{{/if}}</p></li>
+{{#if club.eerste_keer.meebrengen}}<li><h3 class="disp">Wat je meebrengt</h3><p>{{club.eerste_keer.meebrengen}}</p></li>
+{{/if}}<li><h3 class="disp">Eerst komen kijken</h3><p>Wil je de club zien voor je beslist? <a href="{{kennismaking.url}}">{{kennismaking.knoptekst}}</a>. We spreken een moment af en tonen je de ruimte.</p></li>
+<li><h3 class="disp">Hulp nodig</h3><p>Bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a> of mail naar <a href="mailto:{{contact.email}}" style="overflow-wrap:anywhere">{{contact.email}}</a>. Een van de coaches antwoordt je persoonlijk.</p></li>
+</ol>
+</div>
+</section>
+
 <!-- VOOR WIE -->
 <section class="sec dk" style="background:#0F1614;color:#ECE8DD">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">

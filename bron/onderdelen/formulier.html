@@ -1,6 +1,7 @@
 <div class="form" id="formulier" data-verzend-url="{{formulier.verzend_url}}" data-email="{{contact.email}}">
 <div class="fields" style="display:flex;flex-direction:column;gap:24px">
-<h2 class="disp" style="margin:0;font-size:clamp(30px,calc(var(--u)*.028),42px);line-height:1.1;color:#1F3B37">Stuur ons een bericht</h2>
+<h2 class="disp" id="form-kop" style="margin:0;font-size:clamp(30px,calc(var(--u)*.028),42px);line-height:1.1;color:#1F3B37">Stuur ons een bericht</h2>
+<p id="form-intro" hidden style="margin:-8px 0 0;max-width:52ch;font-size:17px;line-height:1.6;color:#3F4E47"></p>
 <form id="contactformulier" action="mailto:{{contact.email}}" method="post" enctype="text/plain" novalidate style="display:flex;flex-direction:column;gap:24px">
 <div class="fgrid">
 <div class="fld"><label for="vn">Voornaam</label><input id="vn" name="voornaam" type="text" autocomplete="given-name" required aria-describedby="vn-err"><span class="err" id="vn-err">Vul je voornaam in.</span></div>
@@ -22,12 +23,19 @@
 </div>
 <div class="melding info" id="melding-mail" role="status">
 <h3>Je bericht staat klaar in je mailprogramma.</h3>
-<p>Het is pas verstuurd als je daar op verzenden drukt. Ging er geen mailprogramma open? Mail dan zelf naar <a href="mailto:{{contact.email}}">{{contact.email}}</a> of bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>.</p>
+<p>Het is pas verstuurd als je daar op verzenden drukt. Ging er geen mailprogramma open? Kopieer dan je bericht hieronder en mail het naar <a href="mailto:{{contact.email}}">{{contact.email}}</a>, of bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>.</p>
+<label for="bericht-kopie" class="sr">Je bericht om te kopiëren</label>
+<textarea id="bericht-kopie" class="kopie" rows="7" readonly></textarea>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+<button type="button" class="btn b-ghost-l" id="kopieerknop" style="min-height:48px">Kopieer mijn bericht</button>
+<span id="kopie-status" role="status" style="font-size:16px;font-weight:700"></span>
+</div>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
 <button type="submit" class="btn b-forest" id="verzendknop" style="min-height:56px;padding:0 36px;font-size:18px">{{#if formulier.verzend_url}}Verstuur je bericht{{else}}Zet mijn bericht klaar in e-mail{{/if}}</button>
 <a href="tel:{{contact.telefoon_link}}" class="tlink" style="color:#1F3B37">Of bel {{contact.telefoon}}</a>
 </div>
+{{#if formulier.verzend_url}}{{else}}<p style="margin:-8px 0 0;max-width:52ch;font-size:15px;line-height:1.5;color:#5A6860">Deze knop opent je eigen mailprogramma met je bericht al ingevuld. Je verstuurt het daar zelf.</p>{{/if}}
 <p style="margin:0;max-width:52ch;font-size:15px;line-height:1.5;color:#5A6860">We gebruiken je gegevens alleen om je vraag te beantwoorden. Lees ons <a href="privacybeleid.html" style="color:#1F3B37">privacybeleid</a>.</p>
 </form>
 </div>

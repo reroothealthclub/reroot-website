@@ -1,7 +1,26 @@
 {
   "publicatie": {
+    "basis_url": "https://reroothealthclub.github.io/reroot-website/",
+    "uitleg_basis_url": "Het volledige adres waarop de site staat, met een / op het einde. Pas dit aan op de dag dat de site naar je eigen domein verhuist, bv. https://www.rerootcoaching.com/",
+    "deelbeeld": "assets/deelbeeld.jpg",
+    "uitleg_deelbeeld": "De foto die verschijnt als iemand een link naar de site deelt (1200 x 630 pixels).",
     "zoekmachines_toelaten": false,
     "uitleg": "Zolang de site op een testadres staat, blijft dit false: Google neemt ze dan niet op. Zet op true op de dag dat de site op je echte domein komt."
+  },
+
+  "omleidingen_uitleg": "Adressen van de vorige website (links) en de pagina waar ze nu naartoe moeten (rechts). De artikels en afleveringen onder content/ worden vanzelf omgeleid.",
+  "omleidingen": {
+    "about": "over-reroot.html",
+    "blog": "kennisbank.html",
+    "content": "kennisbank.html",
+    "podcast": "kennisbank.html#podcast",
+    "contact": "contact.html",
+    "intakeformulier": "contact.html?onderwerp=kennismaking#formulier",
+    "privacybeleid": "privacybeleid.html",
+    "coaching": "coaching.html",
+    "coaching/fysiek-welzijn": "coaching.html",
+    "coaching/prepcoaching": "coaching.html",
+    "coaching/sportspecifiek": "coaching.html"
   },
 
   "bedrijf": {
@@ -49,6 +68,12 @@
     "oppervlakte": "250 m²",
     "toegang": "Toegang via de app",
     "max_leden": "150",
+    "eerste_keer": {
+      "uitleg": "Extra uitleg voor het blok 'Je eerste keer bij Reroot' op de clubpagina. Wat je leeg laat, verschijnt niet.",
+      "ingang": "",
+      "toegang_na_inschrijving": "",
+      "meebrengen": ""
+    },
     "merken": ["Nautilus", "Panatta", "Technogym", "ATX", "Sterling", "Marbo Sport", "StairMaster", "Xebex"],
     "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"]
   },

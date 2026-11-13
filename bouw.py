@@ -19,6 +19,7 @@ import re
 import shutil
 import sys
 from datetime import date
+from urllib.parse import urlparse
 
 HIER = os.path.dirname(os.path.abspath(__file__))
 GEGEVENS = os.path.join(HIER, 'gegevens', 'site.json')
@@ -64,6 +65,16 @@ def verrijk(g):
                   'aanbod', 'coaches', 'reviews', 'merch'):
         if groep not in g:
             raise Bouwfout('In gegevens/site.json ontbreekt het onderdeel "%s".' % groep)
+
+    # --- publicatie: het adres waarop de site staat
+    pub = g.setdefault('publicatie', {})
+    basis = pub.get('basis_url', '')
+    if not basis.startswith('https://') or not basis.endswith('/'):
+        raise Bouwfout('publicatie.basis_url moet het volledige adres van de site zijn, '
+                       'beginnen met https:// en eindigen op een /. Bijvoorbeeld "https://www.rerootcoaching.com/".')
+    pub['basis_pad'] = urlparse(basis).path or '/'
+    pub['deelbeeld_url'] = basis + pub.get('deelbeeld', 'assets/deelbeeld.jpg')
+    _controleer_foto(pub.get('deelbeeld', 'assets/deelbeeld.jpg'), 'deelbeeld voor sociale media')
 
     # --- openingsuren
     dagen = g['openingsuren']['dagen']
@@ -175,6 +186,9 @@ def verrijk(g):
         '@context': 'https://schema.org',
         '@type': 'HealthClub',
         'name': g['bedrijf']['naam'],
+        'url': basis,
+        'image': pub['deelbeeld_url'],
+        'sameAs': [u for u in (g['links'].get('instagram'), g['links'].get('tiktok')) if u],
         'telephone': g['contact']['telefoon_link'],
         'email': g['contact']['email'],
         'address': {
@@ -190,9 +204,13 @@ def verrijk(g):
             if not d['gesloten']
         ],
     }
-    g['structured_data'] = json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
+    g['structured_data'] = _ld(ld)
     g['jaar'] = str(date.today().year)
     return g
+
+
+def _ld(gegevens):
+    return json.dumps(gegevens, ensure_ascii=False).replace('</', '<\\/')
 
 
 def _controleer_foto(pad, waar):
@@ -361,6 +379,7 @@ def lees_artikels():
             'soort': soort, 'is_podcast': soort == 'podcast',
             'categorie': meta.get('categorie', '') or ('Podcast' if soort == 'podcast' else 'Artikel'),
             'volgorde': volgorde, 'beeld': beeld, 'spotify': spotify, 'tekst': tekst,
+            'uitgelicht': meta.get('uitgelicht', '').lower() in ('ja', 'true', '1'),
         })
     lijst.sort(key=lambda a: (a['volgorde'], a['titel']))
     return lijst
@@ -373,8 +392,8 @@ def _hash(pad):
         return hashlib.md5(f.read()).hexdigest()[:8]
 
 
-def bouw(uit=UIT, stil=False):
-    g = verrijk(lees_gegevens())
+def bouw(uit=UIT, stil=False, gegevens=None):
+    g = verrijk(gegevens if gegevens is not None else lees_gegevens())
     sj = Sjablonen(os.path.join(BRON, 'onderdelen'))
     g['versie'] = {'css': _hash(os.path.join(BRON, 'stijl.css')), 'js': _hash(os.path.join(BRON, 'site.js'))}
 
@@ -391,6 +410,13 @@ def bouw(uit=UIT, stil=False):
         'artikels': [a for a in artikels if a['soort'] != 'podcast'],
         'afleveringen': [a for a in artikels if a['soort'] == 'podcast'],
     }
+    # voor de homepage en de coachingpagina: het uitgelichte artikel en de recentste aflevering
+    # (uitgelicht = het artikel met "uitgelicht: ja" bovenaan, anders het eerste in volgorde)
+    uitgelicht = [a for a in g['kennis']['artikels'] if a['uitgelicht']] or g['kennis']['artikels']
+    g['kennis']['uitgelicht'] = uitgelicht[:1]
+    g['kennis']['recentste_aflevering'] = g['kennis']['afleveringen'][:1]
+    basis = g['publicatie']['basis_url']
+    indexeren = bool(g['publicatie'].get('zoekmachines_toelaten'))
 
     map_paginas = os.path.join(BRON, 'paginas')
     gebouwd = []
@@ -404,8 +430,11 @@ def bouw(uit=UIT, stil=False):
         pagina = {
             'sleutel': sleutel, 'bestand': bestand,
             'titel': meta['titel'], 'beschrijving': meta['beschrijving'],
-            'is_home': sleutel == 'index',
+            'is_home': sleutel == 'index', 'is_404': sleutel == '404',
+            'url': basis + ('' if sleutel == 'index' else bestand),
+            'ld': g['structured_data'] if sleutel == 'index' else '',
         }
+        pagina['indexeren'] = indexeren and not pagina['is_404']
         scopes = [g, {'pagina': pagina, 'actief': {sleutel.replace('-', '_'): True}}]
         pagina_html = sj.toon(_ontleed(inhoud, naam), scopes, naam)
         scopes.append({'inhoud': pagina_html})
@@ -420,7 +449,12 @@ def bouw(uit=UIT, stil=False):
         pagina = {
             'sleutel': 'kennisbank', 'bestand': a['url'],
             'titel': '%s | Kennisbank | Reroot' % a['titel'],
-            'beschrijving': a['beschrijving_kort'], 'is_home': False,
+            'beschrijving': a['beschrijving_kort'], 'is_home': False, 'is_404': False,
+            'url': basis + a['url'], 'indexeren': indexeren,
+            'ld': _ld({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': basis},
+                {'@type': 'ListItem', 'position': 2, 'name': 'Kennisbank', 'item': basis + 'kennisbank.html'},
+                {'@type': 'ListItem', 'position': 3, 'name': a['titel'], 'item': basis + a['url']}]}),
         }
         scopes = [g, {'pagina': pagina, 'actief': {'kennisbank': True}, 'artikel': a, 'verder_lezen': andere}]
         tekst_html = sj.toon(_ontleed(a['tekst'], naam), scopes, naam)
@@ -431,9 +465,61 @@ def bouw(uit=UIT, stil=False):
         with open(os.path.join(uit, a['url']), 'w', encoding='utf-8') as f:
             f.write(volledig)
         gebouwd.append(a['url'])
+    # Oude adressen van de vorige site: een klein doorstuurbestand per adres.
+    # GitHub Pages kan zelf niet omleiden; dit werkt op elke eenvoudige webruimte.
+    omleidingen = dict(g.get('omleidingen', {}))
+    for a in artikels:
+        omleidingen['content/' + a['bronbestand'][:-5]] = a['url']
+    g['omleidingen_lijst'] = sorted(omleidingen.items())
+    for oud, nieuw in omleidingen.items():
+        doelbestand = nieuw.split('#')[0].split('?')[0]
+        if doelbestand not in gebouwd:
+            raise Bouwfout('Omleiding "%s": de pagina "%s" bestaat niet.' % (oud, doelbestand))
+        if not re.match(r'^[a-z0-9][a-z0-9/-]*$', oud):
+            raise Bouwfout('Omleiding "%s": gebruik alleen kleine letters, cijfers, - en /.' % oud)
+        doel_pad = html.escape(g['publicatie']['basis_pad'] + nieuw, quote=True)
+        os.makedirs(os.path.join(uit, oud), exist_ok=True)
+        with open(os.path.join(uit, oud, 'index.html'), 'w', encoding='utf-8') as f:
+            f.write('<!DOCTYPE html>\n<html lang="nl-BE">\n<head>\n<meta charset="utf-8">\n'
+                    '<title>Deze pagina is verhuisd | %s</title>\n'
+                    '<meta name="robots" content="noindex">\n'
+                    '<link rel="canonical" href="%s">\n'
+                    '<meta http-equiv="refresh" content="0; url=%s">\n</head>\n'
+                    '<body>\n<p>Deze pagina is verhuisd. <a href="%s">Ga verder naar de nieuwe pagina</a>.</p>\n</body>\n</html>\n'
+                    % (html.escape(g['bedrijf']['naam']), html.escape(basis + doelbestand, quote=True), doel_pad, doel_pad))
+
+    # Sitemap, robots.txt en llms.txt horen bij een site die gevonden mag worden.
+    # Op een testadres (zoekmachines_toelaten = false) maken we ze niet: daar zegt elke pagina zelf "noindex".
+    if indexeren:
+        vandaag = date.today().isoformat()
+        urls = [basis + ('' if b == 'index.html' else b) for b in gebouwd if b != '404.html']
+        with open(os.path.join(uit, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                    + ''.join('<url><loc>%s</loc><lastmod>%s</lastmod></url>\n' % (html.escape(u), vandaag) for u in urls)
+                    + '</urlset>\n')
+        with open(os.path.join(uit, 'robots.txt'), 'w', encoding='utf-8') as f:
+            f.write('User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n' % basis)
+        with open(os.path.join(uit, 'llms.txt'), 'w', encoding='utf-8') as f:
+            f.write(_llms(g, basis))
     if not stil:
         print('Klaar: %d pagina\'s gebouwd in de map "%s".' % (len(gebouwd), os.path.relpath(uit, HIER)))
     return gebouwd
+
+
+def _llms(g, basis):
+    """Korte, feitelijke samenvatting voor AI-assistenten. Alleen gegevens uit site.json."""
+    r = ['# %s' % g['bedrijf']['naam'], '',
+         '> Fitnessclub in %s. Zelfstandig trainen in de Open Gym of werken met een coach.' % g['adres']['gemeente'], '',
+         '- Adres: %s, %s %s, %s' % (g['adres']['straat'], g['adres']['postcode'], g['adres']['gemeente'], g['adres']['land']),
+         '- Telefoon: %s' % g['contact']['telefoon'], '- E-mail: %s' % g['contact']['email'],
+         '- Openingsuren Health Club: %s' % g['uren']['zin_klein'], '', '## Aanbod', '']
+    for a in g['aanbod_lijst']:
+        r.append('- %s: € %s %s. %s' % (a['naam'], a['prijs'], a['eenheid'], a['beschrijving']))
+    r += ['', '## Pagina\'s', '']
+    for naam, b in (('Health Club', 'health-club.html'), ('Coaching', 'coaching.html'), ('Tarieven', 'tarieven.html'),
+                    ('Over Reroot', 'over-reroot.html'), ('Kennisbank', 'kennisbank.html'), ('Contact', 'contact.html')):
+        r.append('- [%s](%s%s)' % (naam, basis, b))
+    return '\n'.join(r) + '\n'
 
 
 # ---------------------------------------------------------------- bekijken
@@ -462,9 +548,31 @@ def bekijk(poort=8000):
                 print('\nFOUT, de vorige versie blijft staan:\n%s\n' % e)
             staat['gebouwd'] = t
 
+    pad_prefix = lees_gegevens().get('publicatie', {}).get('basis_url', '')
+    pad_prefix = urlparse(pad_prefix).path.rstrip('/') if pad_prefix else ''
+
     class Handler(http.server.SimpleHTTPRequestHandler):
         def do_GET(self):
             herbouw_indien_nodig()
+            # de site werkt lokaal zowel op / als op het pad van het echte adres (bv. /reroot-website/)
+            if pad_prefix and (self.path == pad_prefix or self.path.startswith(pad_prefix + '/')):
+                self.path = self.path[len(pad_prefix):] or '/'
+            doel = self.translate_path(self.path)
+            if os.path.isdir(doel):
+                doel = os.path.join(doel, 'index.html')
+            if not os.path.isfile(doel):
+                # net als GitHub Pages: een onbekend adres toont 404.html
+                try:
+                    with open(os.path.join(UIT, '404.html'), 'rb') as f:
+                        inhoud = f.read()
+                except OSError:
+                    return super().do_GET()
+                self.send_response(404)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.send_header('Content-Length', str(len(inhoud)))
+                self.end_headers()
+                self.wfile.write(inhoud)
+                return
             super().do_GET()
 
         def end_headers(self):

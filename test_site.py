@@ -33,6 +33,7 @@ class Pagina(HTMLParser):
         self._a = None
         self._in_title = False
         self._skip = 0
+        self.koppen, self.meta, self.rels, self.base = [], {}, {}, ''
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -47,10 +48,20 @@ class Pagina(HTMLParser):
                 self.viewport = True
             if a.get('name') == 'description':
                 self.desc = a.get('content', '')
+            sleutel = a.get('property') or a.get('name')
+            if sleutel:
+                self.meta[sleutel] = a.get('content', '')
+        elif tag == 'link':
+            self.rels[a.get('rel', '')] = a.get('href', '')
+        elif tag == 'base':
+            self.base = a.get('href', '')
+        elif tag in ('h2', 'h3', 'h4'):
+            self.koppen.append(int(tag[1]))
         elif tag == 'title':
             self._in_title = True
         elif tag == 'h1':
             self.h1 += 1
+            self.koppen.append(1)
         elif tag == 'img':
             self.imgs.append(a)
             if self._a is not None:
@@ -107,7 +118,7 @@ def main():
         paginas[b] = p
 
     verwacht = ['index.html', 'health-club.html', 'coaching.html', 'tarieven.html',
-                'over-reroot.html', 'kennisbank.html', 'contact.html']
+                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', '404.html']
     for v in verwacht:
         check(v in paginas, 'pagina %s bestaat' % v)
 
@@ -130,7 +141,20 @@ def main():
         for img in p.imgs:
             src = img.get('src', '')
             check(os.path.isfile(os.path.join(uit, src)), '%s: beeld %s bestaat' % (naam, src))
-            check(bool(img.get('alt')), '%s: beeld %s heeft een alt-tekst' % (naam, src))
+            check('alt' in img, '%s: beeld %s heeft een alt-attribuut (leeg mag alleen bij decoratie)' % (naam, src))
+
+        # koppen: geen niveau overslaan (h2 -> h4)
+        vorige = 0
+        for niveau in p.koppen:
+            check(niveau <= vorige + 1, '%s: koppen slaan geen niveau over (h%d na h%d)' % (naam, niveau, vorige))
+            vorige = niveau
+        # metadata voor delen en zoeken
+        check(p.meta.get('og:image', '').startswith('https://'), '%s: deelbeeld (og:image) met volledig adres' % naam)
+        check(p.meta.get('og:url', '').startswith(g['publicatie']['basis_url']), '%s: og:url wijst naar het publicatieadres' % naam)
+        check(os.path.isfile(os.path.join(uit, p.rels.get('icon', 'x'))), '%s: favicon bestaat' % naam)
+        heeft_noindex = 'noindex' in p.meta.get('robots', '')
+        heeft_canoniek = 'canonical' in p.rels
+        check(heeft_noindex != heeft_canoniek, '%s: ofwel noindex (testadres) ofwel een canonieke link, nooit allebei' % naam)
 
         for a in p.links:
             href, t = a['href'], a['tekst']
@@ -183,6 +207,58 @@ def main():
             bestemmingen.add(a['actie_url'])
         else:
             check(a['actie_tekst'].startswith('Vraag '), 'route Coaching: zonder checkout belooft de knop van %s geen aankoop' % a['naam'])
+
+    # ---- homepage: opening en clubscène
+    thuis = paginas['index.html']
+    check(links('index.html', 'Zelfstandig trainen', 'health-club.html'), 'home: knop "Zelfstandig trainen" gaat naar de Health Club')
+    check(links('index.html', 'Trainen met een coach', 'coaching.html'), 'home: knop "Trainen met een coach" gaat naar Coaching')
+    check('Fitnessclub in %s' % g['adres']['gemeente'] in thuis.ruw and 'Verandering' in thuis.ruw, 'home: plaats en merkzin staan in de opening')
+    check(thuis.ruw.count('class="scene-item"') == 3, 'home: de clubscène telt drie onderdelen')
+    check(thuis.ruw.count('fetchpriority="high"') == 1, 'home: precies één beeld krijgt laadprioriteit')
+    check('ter illustratie' in thuis.ruw, 'home: het coachingvoorbeeld is als illustratief gelabeld')
+    check('eerste-keer' in paginas['health-club.html'].ids, 'clubpagina: blok "Je eerste keer bij Reroot" aanwezig')
+    for pag in ('index.html', 'coaching.html'):
+        check(any(a['href'].startswith('kennisbank-') for a in paginas[pag].links), '%s: linkt naar een artikel of aflevering uit de Kennisbank' % pag)
+
+    # ---- 404 en vindbaarheid
+    p404 = paginas['404.html']
+    check(p404.base == g['publicatie']['basis_pad'], '404: links werken vanaf elk adres (base = %s)' % g['publicatie']['basis_pad'])
+    check('noindex' in p404.meta.get('robots', ''), '404: wordt niet geïndexeerd')
+    check(links('404.html', href='index.html'), '404: terugroute naar de startpagina')
+    if not g['publicatie'].get('zoekmachines_toelaten'):
+        check(not os.path.exists(os.path.join(uit, 'sitemap.xml')), 'testadres: geen sitemap zolang zoekmachines niet toegelaten zijn')
+    # proefbouw met zoekmachines toegelaten: sitemap, robots.txt en canonieke links moeten kloppen
+    proef = bouw.lees_gegevens()
+    proef['publicatie']['zoekmachines_toelaten'] = True
+    uit2 = tempfile.mkdtemp(prefix='reroot-test-live-')
+    bestanden2 = bouw.bouw(uit=uit2, stil=True, gegevens=proef)
+    with open(os.path.join(uit2, 'sitemap.xml'), encoding='utf-8') as f:
+        sitemap = f.read()
+    for b in bestanden2:
+        adres = proef['publicatie']['basis_url'] + ('' if b == 'index.html' else b)
+        if b == '404.html':
+            check(adres not in sitemap, 'live-proef: 404 staat niet in de sitemap')
+            continue
+        check('<loc>%s</loc>' % adres in sitemap, 'live-proef: %s staat in de sitemap' % b)
+        with open(os.path.join(uit2, b), encoding='utf-8') as f:
+            ruw2 = f.read()
+        check('<link rel="canonical" href="%s">' % adres in ruw2 and 'noindex' not in ruw2, 'live-proef: %s heeft een canonieke link en geen noindex' % b)
+    check(os.path.isfile(os.path.join(uit2, 'robots.txt')), 'live-proef: robots.txt verwijst naar de sitemap')
+    # ---- oude adressen van de vorige site sturen door naar een bestaande pagina
+    omleidingen = dict(g.get('omleidingen', {}))
+    for art in bouw.lees_artikels():
+        omleidingen['content/' + art['bronbestand'][:-5]] = art['url']
+    for oud, nieuw in sorted(omleidingen.items()):
+        stub = os.path.join(uit, oud, 'index.html')
+        check(os.path.isfile(stub), 'omleiding: /%s heeft een doorstuurbestand' % oud)
+        check(nieuw.split('#')[0].split('?')[0] in paginas, 'omleiding: /%s -> %s bestaat' % (oud, nieuw))
+    check(len(omleidingen) >= 21, 'omleiding: alle bekende adressen van de vorige site zijn gedekt')
+
+    # ---- publieke map: geen ontwikkel- of geheime bestanden
+    for wortel, mappen, bestanden_uit in os.walk(uit):
+        for b in bestanden_uit + mappen:
+            check(not (b.startswith('.') or b.endswith(('.map', '.env', '.py', '.json', '.md'))),
+                  'publieke map: geen ontwikkelbestand %s' % b)
 
     # ---- route Kennismaking: aanvraag, geen "plan"
     km = g['kennismaking']
