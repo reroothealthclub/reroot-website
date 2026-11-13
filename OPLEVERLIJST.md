@@ -19,12 +19,15 @@
 
 | # | Onderwerp | Stand | Wat nodig is |
 |---|---|---|---|
-| 1 | **Google-reviews als citaat** | De citaten van de oude site zijn verwijderd. Er staan nu geen citaten, alleen de score en de link naar Google. Google Maps toonde mij de reviews niet, dus ik kon ze niet zelf overnemen. | Plak de reviews die je wil tonen (tekst en naam) in de chat, of bevestig dat de drie fragmenten in `site.json` (Steff Knoors, Annabelle Vandooren, Peter Koolen) letterlijk kloppen. |
-| 2 | **Betaalpagina's in Plug&Pay** | De site is aangepast, de betaalpagina's niet (daar kan en mag ik niet aan). | Zelf aanpassen: de naam "Reroot Online Coaching" wordt "Reroot Monthly Online Coaching", en de Open Gym-pagina's spreken nog van 200 leden en "nog 57 beschikbaar" in plaats van 150. |
-| 3 | **Foto's van Kevin** | De huidige foto is 520 pixels breed en oogt wazig op een groot scherm. | Nieuwe foto's volgen van Simon. |
-| 4 | **Merchfoto's** | De petfoto toont drie kleuren terwijl er één pet te koop is. | Nieuwe foto's volgen van Simon. |
-| 5 | **Merknaam Marbo** | Op de site staat "Marbo Sport", de officiële naam van het merk. Simon schreef "Marbo sports". | Laat weten als je de andere schrijfwijze wil. |
-| 6 | **Koppeling met de ledenapp** | Niet gebouwd. Simon wil bezoekers naar de app sturen; wat dat precies inhoudt, is nog niet afgesproken. | Zie de vraag in de chat. |
+| 1 | **Plug&Pay-verkooppagina** | Op `checkout.rerootcoaching.com/rerootcoaching` staat bij de blokken "Monthly Coaching" en "Open Gym" nog: "exclusieve open gym concept met een maximum van 200 Leden". De betaalpagina van het traject heet daar "Reroot Online Coaching". | Zelf aanpassen in Plug&Pay: 200 wordt 150, en de naam wordt "Reroot Monthly Online Coaching". |
+| 2 | **Knop naar de app** | Voorbereid, maar nog niet zichtbaar. De app in `Reroot-proef` draait alleen lokaal op je Mac en heeft nog geen publiek adres. | Zodra de app online staat: vul het adres in bij `ledenapp_url` in `gegevens/site.json`. De knop "Open de app" verschijnt dan in het menu en in de voettekst. |
+| 3 | **Merchfoto's** | De petfoto toont drie kleuren terwijl er één pet te koop is. | Nieuwe foto's volgen van Simon. |
+| 4 | **Merknaam Marbo** | Op de site staat "Marbo Sport", de officiële naam van het merk. Simon schreef "Marbo sports". | Laat weten als je de andere schrijfwijze wil. |
+
+## Sinds de vorige ronde verwerkt
+
+- **Live Google-reviews:** de site gebruikt nu dezelfde EmbedSocial-widget als je Plug&Pay-pagina. De reviews worden live geladen en vullen zichzelf aan. De widget laadt pas wanneer de bezoeker in de buurt van het blok komt. Let op: dit is een externe dienst die bij het laden contact maakt met EmbedSocial; vermeld dat in je privacybeleid.
+- **Foto van Kevin:** vervangen door een scherpe portretfoto. Alle tien aangeleverde foto's staan in `aangeleverd/kevin/`. Op enkele ervan is de naam van een andere gym zichtbaar; die heb ik niet gebruikt.
 
 ## Beslissingen die bij jou liggen
 

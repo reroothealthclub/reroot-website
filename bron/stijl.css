@@ -520,3 +520,11 @@ button:focus-visible{outline:3px solid #1F3B37;outline-offset:3px}
 /* de boodschap en de twee knoppen in de hero verschijnen snel, ook op een trage verbinding */
 .hero-left .fade{animation-delay:.3s;animation-duration:.6s}
 .hero-right .fade{animation-delay:.6s}
+
+/* live Google-reviews (EmbedSocial) op een licht vlak, zodat de widget leesbaar blijft */
+.rev-live{padding:clamp(12px,2vw,24px);border-radius:18px;background:#F6F2EA;color:#1F3B37;min-height:120px}
+.rev-live iframe{display:block;width:100%;border:0}
+.rev-live noscript p{margin:0;padding:16px;font-size:17px}
+/* de widget toont alle reviews onder elkaar: begrens de hoogte en laat binnenin scrollen */
+.rev-live{max-height:640px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (min-width:900px){.rev-live{max-height:760px}}

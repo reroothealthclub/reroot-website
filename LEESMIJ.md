@@ -48,7 +48,7 @@ Elk aanbod heeft een `"checkout_url"`.
 - **Ingevuld**: de knop is een koopknop (tekst uit `"knoptekst_kopen"`) en gaat naar die betaalpagina.
 - **Leeg** (`""`): de knop wordt automatisch "Vraag … aan" en gaat naar het contactformulier, met dat aanbod al gekozen.
 
-`"ledenapp_url"` onder `"links"` werkt op dezelfde manier: leeg is geen knop "Mijn Reroot", ingevuld is de knop zichtbaar.
+`"ledenapp_url"` onder `"links"` werkt op dezelfde manier: leeg is geen knop naar de app, ingevuld verschijnt de knop "Open de app" in het menu en in de voettekst.
 
 ## Een foto wijzigen
 
@@ -60,7 +60,7 @@ Elk aanbod heeft een `"checkout_url"`.
 
 Alles staat in `gegevens/site.json`:
 
-- **Reviews**: zet `"tonen"` op `true` of `false` per citaat. De Google-score verschijnt pas als je `"google_score_tonen"` op `true` zet.
+- **Reviews**: de Google-reviews komen live uit je EmbedSocial-widget (`"live_widget_embedsocial"`); daar hoef je niets voor te doen. Pas `"google_score"` en `"google_aantal"` aan als je score verandert.
 - **Coaches**: naam, focus, bio, foto en sociale links.
 - **Merch**: zet `"tonen": false` om het hele blok te verbergen, of pas de artikels aan.
 - **Kennisbank**: titels en links van artikels en podcastafleveringen.

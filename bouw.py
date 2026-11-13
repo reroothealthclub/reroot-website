@@ -144,7 +144,7 @@ def verrijk(g):
 
     # --- links
     for naam, url in g['links'].items():
-        if naam.startswith('uitleg'):
+        if naam.startswith('uitleg') or naam.endswith('knoptekst'):
             continue
         if not _url_ok(url):
             raise Bouwfout('De link "%s" moet beginnen met https:// of leeg zijn.' % naam)

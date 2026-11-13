@@ -196,11 +196,11 @@ def main():
 
     # ---- Mijn Reroot en merch
     for naam in paginas:
-        mijn = links(naam, 'Mijn Reroot')
+        mijn = links(naam, g['links']['ledenapp_knoptekst'])
         if g['links']['ledenapp_url']:
-            check(mijn and all(a['href'] == g['links']['ledenapp_url'] for a in mijn), '%s: Mijn Reroot gaat naar de ledenapp' % naam)
+            check(mijn and all(a['href'] == g['links']['ledenapp_url'] for a in mijn), '%s: de knop naar de app gaat naar de ingestelde URL' % naam)
         else:
-            check(not mijn, '%s: geen knop Mijn Reroot zolang de URL onbekend is' % naam)
+            check(not mijn, '%s: geen knop naar de app zolang de URL onbekend is' % naam)
     for m in g['merch']['artikels']:
         if g['merch']['zichtbaar'] and m.get('checkout_url'):
             check(links('index.html', href=m['checkout_url']), 'merch: "%s" linkt naar zijn eigen bestelpagina' % m['naam'])
@@ -214,6 +214,11 @@ def main():
     check('medische gegevens' in c.ruw, 'contact: formulier vraagt uitdrukkelijk geen medische gegevens')
     if not g['formulier']['verzend_url']:
         check('Verstuur je bericht' not in c.ruw, 'contact: zonder formulierdienst belooft de knop geen verzending')
+
+    # ---- live reviews: alleen als de widget is ingesteld
+    for pag in ('index.html', 'coaching.html'):
+        heeft = 'data-live-reviews' in paginas[pag].ruw
+        check(heeft == bool(g['reviews'].get('live_widget_embedsocial')), '%s: reviewwidget staat er alleen als hij is ingesteld' % pag)
 
     # ---- geen trackers of onverwachte externe scripts
     for naam, p in paginas.items():

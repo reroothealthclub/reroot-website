@@ -19,6 +19,24 @@
     if (m) { m.open = false; m.querySelector('summary').focus(); }
   });
 
+  // 2b. live Google-reviews: de widget wordt pas geladen als de bezoeker in de buurt komt
+  var live = document.querySelector('[data-live-reviews]');
+  if (live) {
+    var laad = function () {
+      if (document.getElementById('EmbedSocialHashtagScript')) return;
+      var js = document.createElement('script');
+      js.id = 'EmbedSocialHashtagScript';
+      js.src = 'https://embedsocial.com/cdn/ht.js';
+      document.head.appendChild(js);
+    };
+    if ('IntersectionObserver' in window) {
+      var kijker = new IntersectionObserver(function (items) {
+        if (items[0].isIntersecting) { kijker.disconnect(); laad(); }
+      }, { rootMargin: '600px' });
+      kijker.observe(live);
+    } else { laad(); }
+  }
+
   // 3. formulier
   var doos = document.getElementById('formulier');
   var form = document.getElementById('contactformulier');

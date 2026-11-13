@@ -10,7 +10,7 @@
 <a href="contact.html" class="ln"{{#if actief.contact}} aria-current="page"{{/if}}>Contact</a>
 </nav>
 <div class="hdr-right">
-{{#if links.ledenapp_url}}<a href="{{links.ledenapp_url}}" target="_blank" rel="noopener" class="ln hdr-app">Mijn Reroot</a>
+{{#if links.ledenapp_url}}<a href="{{links.ledenapp_url}}" target="_blank" rel="noopener" class="ln hdr-app">{{links.ledenapp_knoptekst}}</a>
 {{/if}}<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint" style="min-height:48px;padding:0 24px">{{aanbod.open_gym.actie_tekst}}</a>
 </div>
 <details class="mnav">
@@ -23,7 +23,7 @@
 <a class="ml" href="over-reroot.html"{{#if actief.over_reroot}} aria-current="page"{{/if}}>Over Reroot</a>
 <a class="ml" href="kennisbank.html"{{#if actief.kennisbank}} aria-current="page"{{/if}}>Kennisbank</a>
 <a class="ml" href="contact.html"{{#if actief.contact}} aria-current="page"{{/if}}>Contact</a>
-{{#if links.ledenapp_url}}<a class="ml" href="{{links.ledenapp_url}}" target="_blank" rel="noopener" style="color:#C9D2CB">Mijn Reroot</a>
+{{#if links.ledenapp_url}}<a class="ml" href="{{links.ledenapp_url}}" target="_blank" rel="noopener" style="color:#C9D2CB">{{links.ledenapp_knoptekst}}</a>
 {{/if}}<div class="mnav-cta">
 <a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint">{{aanbod.open_gym.actie_tekst}}</a>
 <a href="{{kennismaking.url}}" class="btn b-ghost-d">{{kennismaking.knoptekst}}</a>

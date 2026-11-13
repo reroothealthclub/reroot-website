@@ -50,7 +50,8 @@
 
   "links": {
     "ledenapp_url": "",
-    "uitleg_ledenapp_url": "Leeg = de knop 'Mijn Reroot' wordt niet getoond. Vul de URL van de ledenapp in om hem te tonen.",
+    "ledenapp_knoptekst": "Open de app",
+    "uitleg_ledenapp_url": "Leeg = er wordt geen knop naar de app getoond. Vul het publieke adres van de app in (begint met https://) en de knop verschijnt in het menu en in de voettekst.",
     "instagram": "https://www.instagram.com/rerootcoaching/",
     "tiktok": "https://www.tiktok.com/@simon.dirkx",
     "podcast_spotify": "https://open.spotify.com/show/3LQY25TWVlkJxHMbRcqCDq",
@@ -137,8 +138,8 @@
       "volledige_naam": "Kevin Fret",
       "focus": "Zichtbare resultaten",
       "bio": "Kevin haalt op een onderbouwde manier het maximum uit je lichaam. Hij is de stok achter de deur voor wie discipline en hard werk wil volhouden.",
-      "foto": "assets/kevin.webp",
-      "foto_alt": "Kevin Fret, coach bij Reroot",
+      "foto": "assets/kevin.jpg",
+      "foto_alt": "Kevin Fret, coach bij Reroot, in de gym",
       "sociale_links": [
         { "tekst": "Kevin op Instagram", "url": "https://www.instagram.com/kevinnfret/" },
         { "tekst": "Kevin op TikTok", "url": "https://www.tiktok.com/@kevinfret97" }
@@ -149,6 +150,8 @@
   "reviews": {
     "uitleg": "Citaten komen letterlijk uit Google-reviews. Zet 'tonen' op true om een citaat te tonen. Pas google_score en google_aantal aan als ze veranderen.",
     "google_score_tonen": true,
+    "live_widget_embedsocial": "d5dfbfa3d6b03dd6b5554bb76bc7248b3ab8085b",
+    "uitleg_live_widget": "De code van je EmbedSocial-widget, dezelfde als op je Plug&Pay-pagina. Die toont je Google-reviews live en vult ze vanzelf aan. Leeg = geen widget.",
     "google_score": "4,9",
     "google_aantal": "58",
     "citaten": [
