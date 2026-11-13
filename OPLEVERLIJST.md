@@ -24,6 +24,16 @@
 | 3 | **Merchfoto's** | De petfoto toont drie kleuren terwijl er één pet te koop is. | Nieuwe foto's volgen van Simon. |
 | 4 | **Merknaam Marbo** | Op de site staat "Marbo Sport", de officiële naam van het merk. Simon schreef "Marbo sports". | Laat weten als je de andere schrijfwijze wil. |
 
+## Dringend: algemene voorwaarden
+
+De pagina "Algemene voorwaarden" op je huidige site (`www.rerootcoaching.com/algemene-voorwaarden`) bevat geen voorwaarden maar Latijnse opvultekst van de websitebouwer. Je betaalpagina's en je oude site verwijzen daar wel naar. Ik heb die tekst niet overgenomen en de nieuwe site verwijst nergens meer naar algemene voorwaarden. Zodra je echte voorwaarden hebt, vul je het adres in bij `algemene_voorwaarden` in `gegevens/site.json` en verschijnen de links vanzelf opnieuw.
+
+## Overgezet van de huidige site
+
+- Vijf artikels en vijf podcastafleveringen staan nu als eigen pagina's in de nieuwe site (`bron/artikels/`), met hun beeld of Spotify-speler. De tekst is letterlijk overgenomen; lijstjes met bolletjes zijn echte lijsten geworden.
+- Het privacybeleid staat op een eigen pagina (`bron/paginas/privacybeleid.html`), letterlijk overgenomen. Het vermeldt nog niets over de reviewwidget van EmbedSocial, de lettertypes van Google en de Spotify-speler. Laat het nalezen en aanvullen.
+- Eén artikel had op de oude site de categorie "Topic 5" (opvulling); dat is "Voeding" geworden.
+
 ## Sinds de vorige ronde verwerkt
 
 - **Live Google-reviews:** de site gebruikt nu dezelfde EmbedSocial-widget als je Plug&Pay-pagina. De reviews worden live geladen en vullen zichzelf aan. De widget laadt pas wanneer de bezoeker in de buurt van het blok komt. Let op: dit is een externe dienst die bij het laden contact maakt met EmbedSocial; vermeld dat in je privacybeleid.
@@ -34,8 +44,6 @@
 | # | Onderwerp | Toelichting |
 |---|---|---|
 | 16 | **Formulierdienst** | Het contactformulier zet nu een e-mail klaar bij de bezoeker. Dat werkt zonder extra dienst, maar is minder vlot dan echt verzenden. Kies je een dienst, dan is het één regel in `site.json` (zie de handleiding). Ik heb niets toegevoegd waarvoor je moet betalen of een account nodig hebt. |
-| 17 | **Artikels en podcast** | De Kennisbank linkt naar de bestaande artikels en afleveringen op `www.rerootcoaching.com/content/...`. Vervangt deze site de huidige op hetzelfde domein, dan verdwijnen die pagina's. Dan moeten de artikels eerst overgezet worden (de opmaak voor een artikelpagina zit nog in `origineel/index.html`). |
-| 18 | **Privacybeleid en voorwaarden** | Linken ook nog naar de huidige site. Zelfde aandachtspunt als hierboven. |
 | 19 | **Lettertypes** | Worden van Google Fonts geladen, zoals in de preview. Wil je geen verbinding met Google bij elk bezoek, dan kunnen ze lokaal in de site gezet worden. |
 | 20 | **Hosting en domein** | Niet gekozen in dit project. De site bestaat uit gewone bestanden in `publiek/` en werkt overal. Er is niets live gezet. |
 | 21 | **Favicon en deelafbeelding** | Niet aanwezig. Kan uit het logo gemaakt worden zodra je een vierkante versie op een effen achtergrond aanlevert. |

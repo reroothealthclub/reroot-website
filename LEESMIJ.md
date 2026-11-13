@@ -63,7 +63,15 @@ Alles staat in `gegevens/site.json`:
 - **Reviews**: de Google-reviews komen live uit je EmbedSocial-widget (`"live_widget_embedsocial"`); daar hoef je niets voor te doen. Pas `"google_score"` en `"google_aantal"` aan als je score verandert.
 - **Coaches**: naam, focus, bio, foto en sociale links.
 - **Merch**: zet `"tonen": false` om het hele blok te verbergen, of pas de artikels aan.
-- **Kennisbank**: titels en links van artikels en podcastafleveringen.
+
+## Een artikel of podcastaflevering toevoegen
+
+1. Kopieer een bestaand bestand in `bron/artikels/` en geef het een nieuwe naam, zonder spaties of hoofdletters (bijvoorbeeld `slaap-en-herstel.html`).
+2. Pas bovenaan tussen de `---` de titel, beschrijving, soort (`artikel` of `podcast`), categorie en volgorde aan. Het laagste volgordenummer staat eerst.
+3. Zet een beeld in `bron/assets/artikels/` en verwijs ernaar bij `beeld`, of plak bij `spotify` het adres van de aflevering dat begint met `https://open.spotify.com/embed/`.
+4. Schrijf daaronder de tekst met `<p>` voor een alinea, `<h2>` voor een tussenkop en `<ul><li>` voor een lijst.
+
+Het artikel verschijnt vanzelf in de Kennisbank.
 
 ## Controleren vóór je iets online zet
 
