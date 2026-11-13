@@ -1,6 +1,6 @@
 ---
 titel: Health Club | Open Gym in Maaseik | Reroot
-beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar je zelfstandig traint. Elke dag open, maandelijks lidmaatschap zonder jaarcontract.
+beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maximaal 150 leden. Elke dag open, maandelijks lidmaatschap zonder jaarcontract.
 ---
 <!-- HERO -->
 <section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
@@ -13,7 +13,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,22,20,.55) 0%,rgba(15,22,20,0) 40%)"></div></div></div>
 <div class="hc-info">
 <div class="lblk">
-<p class="lead" style="color:#D5DCD3;max-width:46ch;font-size:clamp(20px,calc(var(--u)*.0165),24px)">Een Open Gym van circa {{club.oppervlakte}} in {{adres.gemeente}}. Je traint er zelfstandig, in je eigen tempo, op toestellen waar je op kunt rekenen.</p>
+<p class="lead" style="color:#D5DCD3;max-width:46ch;font-size:clamp(20px,calc(var(--u)*.0165),24px)">Een Open Gym van {{club.oppervlakte}} in {{adres.gemeente}}, voor maximaal {{club.max_leden}} leden. Je traint er zelfstandig, in je eigen tempo, op toestellen waar je op kunt rekenen.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint">{{aanbod.open_gym.actie_tekst}}</a>
 <a href="#lidmaatschap" class="btn b-ghost-d">Bekijk het lidmaatschap</a>
@@ -34,7 +34,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 <div class="arch45" style="max-width:560px;width:100%"><img class="cover" loading="lazy" decoding="async" src="assets/legext.webp" alt="Een coach begeleidt een klant op een beenmachine in de Health Club" style="object-position:50% 40%"></div>
 <div class="col" style="padding-top:clamp(0px,3vw,48px)">
 <h2 class="disp h-l" style="color:#1F3B37">Kwaliteit boven aantal.</h2>
-<p class="lead" style="color:#3F4E47">Reroot is een club op mensenmaat. Je komt er om te trainen, niet om bekeken te worden, en dat geldt voor iedereen die binnenstapt. De toestellen zijn gekozen op hoe goed ze werken, niet op hoeveel het er zijn.</p>
+<p class="lead" style="color:#3F4E47">Reroot laat maximaal {{club.max_leden}} leden toe. Je komt er om te trainen, niet om bekeken te worden, en dat geldt voor iedereen die binnenstapt. De toestellen zijn gekozen op hoe goed ze werken, niet op hoeveel het er zijn.</p>
 <p class="lead" style="color:#3F4E47">Wil je dat er iemand meekijkt? Dan kies je voor coaching: online via de app, of live met een coach in de gym.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="coaching.html" class="btn b-forest">Bekijk onze coaching</a>
@@ -48,7 +48,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
 <div style="display:flex;flex-direction:column;gap:20px;max-width:760px">
 <h2 class="disp h-l" style="color:#ECE8DD">Wat je er vindt.</h2>
-<p class="lead" style="color:#D5DCD3">Krachttoestellen van vijf merken, aangevuld met vrije gewichten, cardio en een sprinttrack.</p>
+<p class="lead" style="color:#D5DCD3">Krachttoestellen en cardio van de merken hieronder, aangevuld met vrije gewichten en een sprinttrack.</p>
 </div>
 <div class="brands disp" style="color:#ECE8DD">{{#each club.merken}}<span>{{dit}}</span>{{/each}}</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
@@ -66,7 +66,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 <div class="in two">
 <div class="col">
 <h2 class="disp h-l" style="color:#ECE8DD">{{uren.zin_open}}.</h2>
-<p class="lead" style="color:#C9D2CB">{{#if uren.elke_dag_gelijk}}Zeven dagen per week, vroeg of laat. Je komt binnen met de app en traint wanneer het in jouw dag past.{{else}}Je komt binnen met de app en traint wanneer het in jouw dag past.{{/if}}</p>
+<p class="lead" style="color:#C9D2CB">{{#if uren.elke_dag_gelijk}}Zeven dagen per week, ook op feestdagen. Je komt binnen met de app en traint wanneer het in jouw dag past. Coaching en personal training zijn altijd op afspraak.{{else}}Je komt binnen met de app en traint wanneer het in jouw dag past.{{/if}}</p>
 <div class="lblk" style="gap:6px">
 <span style="font-size:19px;font-weight:700;color:#ECE8DD">{{adres.naam_locatie}}</span>
 <span style="font-size:18px;line-height:1.5;color:#C9D2CB">{{adres.straat}}<br>{{adres.postcode}} {{adres.gemeente}}, {{adres.land}}</span>
@@ -94,7 +94,7 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 </div>
 <div class="lblk" style="gap:20px">
 <ul class="chk">
-<li>Zelfstandig trainen in de Health Club</li>
+<li>Zelfstandig trainen in een club met maximaal {{club.max_leden}} leden</li>
 <li>{{uren.zin_open}}, {{club.toegang}}</li>
 <li>Toestellen van {{club.merken_zin}}</li>
 <li>{{aanbod.open_gym.goed_om_te_weten}}</li>
@@ -134,11 +134,12 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van circa 250 m² waar
 <div class="in two">
 <h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
 <div class="faq">
-<details><summary>Wanneer is de Health Club open?</summary><p class="ans">{{uren.zin}}. Je komt binnen met de app.</p></details>
+<details><summary>Wanneer is de Health Club open?</summary><p class="ans">{{uren.zin}}, ook op feestdagen. Je komt binnen met de app. Coaching en personal training zijn op afspraak.</p></details>
 <details><summary>Wat kost een lidmaatschap?</summary><p class="ans">Open Gym kost € {{aanbod.open_gym.prijs}} {{aanbod.open_gym.eenheid}} ({{aanbod.open_gym.prijs_detail}}). {{aanbod.open_gym.goed_om_te_weten}} Alle tarieven vind je op de <a href="tarieven.html">tarievenpagina</a>.</p></details>
 <details><summary>Moet ik met een coach trainen?</summary><p class="ans">Nee. Met Open Gym train je zelfstandig. Wil je begeleiding, dan kies je voor <a href="coaching.html">coaching</a>.</p></details>
 <details><summary>Welke toestellen staan er?</summary><p class="ans">Toestellen van {{club.merken_zin}}, aangevuld met onder meer een belt squat, een roeimachine, een sprinttrack en vrije gewichten.</p></details>
 <details><summary>Hoe word ik lid?</summary><p class="ans">{{#if aanbod.open_gym.kan_kopen}}Via de knop ‘{{aanbod.open_gym.actie_tekst}}’ kom je op onze betaalpagina. Daar vul je je gegevens in en rond je je inschrijving af.{{else}}Vraag je lidmaatschap aan via het <a href="{{aanbod.open_gym.aanvraag_url}}">contactformulier</a>. We nemen daarna contact met je op.{{/if}}</p></details>
+<details><summary>Hoe zeg ik mijn lidmaatschap op?</summary><p class="ans">Er is geen jaarcontract. Opzeggen kan tot 10 dagen voor het einde van de maand.</p></details>
 <details><summary>Waar vind ik de voorwaarden?</summary><p class="ans">In onze <a href="{{links.algemene_voorwaarden}}" target="_blank" rel="noopener">algemene voorwaarden</a>.</p></details>
 </div>
 </div>

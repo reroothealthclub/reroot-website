@@ -105,6 +105,8 @@ def verrijk(g):
     # --- club
     merken = g['club']['merken']
     g['club']['merken_zin'] = (', '.join(merken[:-1]) + ' en ' + merken[-1]) if len(merken) > 1 else ''.join(merken)
+    kort = merken[:3]
+    g['club']['merken_kort'] = (', '.join(kort[:-1]) + ' en ' + kort[-1]) if len(kort) > 1 else ''.join(kort)
 
     # --- aanbod: elke knop krijgt een bestemming die bestaat
     onderwerpen = []

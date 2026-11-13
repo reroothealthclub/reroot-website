@@ -3,7 +3,8 @@
     "naam": "Reroot Health Club & Coaching",
     "juridische_naam": "Reroot Coaching",
     "merkzin": "Verandering naar beter",
-    "ondernemingsnummer": "BE 0754.790.454"
+    "ondernemingsnummer": "BE 0754.790.454",
+    "missie": "Een toegankelijke maar hoogwaardige omgeving voor mensen die bewust willen investeren in zichzelf."
   },
 
   "adres": {
@@ -42,7 +43,8 @@
   "club": {
     "oppervlakte": "250 m²",
     "toegang": "Toegang via de app",
-    "merken": ["Nautilus", "Panatta", "ATX", "Technogym", "StairMaster"],
+    "max_leden": "150",
+    "merken": ["Nautilus", "Panatta", "Technogym", "ATX", "Sterling", "Marbo Sport", "StairMaster", "Xebex"],
     "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"]
   },
 
@@ -72,7 +74,7 @@
       "voor_wie": "Je traint zelfstandig en zoekt een goed uitgeruste club.",
       "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren.",
       "contact_met_coach": "Geen persoonlijke opvolging. Wil je die later toch, dan stap je over naar coaching.",
-      "goed_om_te_weten": "Maandelijks abonnement, zonder jaarcontract."
+      "goed_om_te_weten": "Maandelijks abonnement, zonder jaarcontract en zonder inschrijfkosten. Opzeggen kan tot 10 dagen voor het einde van de maand."
     },
     "app_coaching": {
       "naam": "App Coaching",
@@ -85,36 +87,36 @@
       "beschrijving": "Je coach stuurt je training, voeding en levensstijl bij via de app. Voor wie richting wil, zonder vaste afspraken in de gym.",
       "voor_wie": "Je traint zelf, maar wil dat iemand meekijkt en bijstuurt.",
       "wat_je_krijgt": "Feedback op je training, voeding en levensstijl, via de app.",
-      "contact_met_coach": "Wekelijkse feedback van je coach, online.",
-      "goed_om_te_weten": "Maandelijks abonnement."
+      "contact_met_coach": "Elke week een check-up met je coach, via de app.",
+      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
     },
     "monthly_coaching": {
-      "naam": "Monthly Coaching",
+      "naam": "Monthly Online Coaching",
       "ondertitel": "Persoonlijke coaching",
       "prijs": "185",
       "eenheid": "per maand",
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-onlinetraject-21",
-      "knoptekst_kopen": "Start Monthly Coaching",
-      "beschrijving": "Persoonlijke coaching waarbij je een dagboek bijhoudt en je coach daar elke week op terugkomt. Voor wie een vast plan en nauwe opvolging wil.",
+      "knoptekst_kopen": "Start Monthly Online Coaching",
+      "beschrijving": "Persoonlijke coaching met elke week een check-up: één keer per maand live, de andere weken via de app. Voor wie een vast plan en nauwe opvolging wil.",
       "voor_wie": "Je wil een vast plan en een coach die je van dichtbij opvolgt.",
       "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek dat je coach opvolgt.",
-      "contact_met_coach": "Wekelijkse feedback op je dagboek en een maandelijkse check-up.",
-      "goed_om_te_weten": "Maandelijks abonnement."
+      "contact_met_coach": "Elke week een check-up: één keer per maand live, de andere weken via de app.",
+      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
     },
     "personal_training": {
       "naam": "Personal Training",
       "ondertitel": "10-beurtenkaart",
       "prijs": "64",
       "eenheid": "per sessie",
-      "prijs_detail": "10-beurtenkaart: € 640, incl. btw",
+      "prijs_detail": "10-beurtenkaart: € 640, incl. 6% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-personal-640",
       "knoptekst_kopen": "Koop een 10-beurtenkaart",
       "beschrijving": "Tien sessies met een coach in de gym, één-op-één of in een kleine groep. Voor wie live begeleiding wil, ingepland rond de eigen week.",
       "voor_wie": "Je wil live begeleiding van een coach, in de gym.",
       "wat_je_krijgt": "Tien sessies die je invult volgens wat je nodig hebt: training, voedingsadvies, techniekanalyse of een gesprek over je levensstijl.",
       "contact_met_coach": "Tijdens elke sessie, één-op-één of in een kleine groep.",
-      "goed_om_te_weten": "Je koopt een kaart van tien beurten."
+      "goed_om_te_weten": "Eén sessie per week. De kaart is één jaar geldig."
     }
   },
 
@@ -145,26 +147,11 @@
   ],
 
   "reviews": {
-    "uitleg": "google_score_tonen staat op false tot je de score en het aantal zelf hebt nagekeken op Google. Zet 'tonen' op false bij een citaat om het te verbergen.",
-    "google_score_tonen": false,
+    "uitleg": "Citaten komen letterlijk uit Google-reviews. Zet 'tonen' op true om een citaat te tonen. Pas google_score en google_aantal aan als ze veranderen.",
+    "google_score_tonen": true,
     "google_score": "4,9",
     "google_aantal": "58",
     "citaten": [
-      {
-        "tekst": "Hij neemt echt de tijd voor je en laat jezelf ontwikkelen op de manier die het beste bij je past.",
-        "naam": "Naomi Van Rulo",
-        "tonen": true
-      },
-      {
-        "tekst": "De coaching is heel persoonlijk en echt op je eigen lichaam gericht.",
-        "naam": "Leentje Beckers",
-        "tonen": true
-      },
-      {
-        "tekst": "Hij luistert naar wat je te zeggen hebt en kijkt dan samen met jou naar hoe je optimaal kan groeien.",
-        "naam": "Shana Laenen",
-        "tonen": true
-      },
       {
         "tekst": "…begeleiding die volledig wordt afgestemd op jou als persoon.",
         "naam": "Steff Knoors",

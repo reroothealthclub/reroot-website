@@ -60,7 +60,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 </div>
 {{/if}}
 <span>{{uren.zin_open}}</span>
-<span>Circa {{club.oppervlakte}} trainingsruimte, toegang via de app</span>
+<span>{{club.oppervlakte}} trainingsruimte, maximaal {{club.max_leden}} leden</span>
 <span>Begeleiding door {{coach_namen}}</span>
 </div>
 </div>
@@ -88,7 +88,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <h3 class="disp way-h">Health Club</h3>
 <span class="way-sub">{{aanbod.open_gym.naam}}: zelfstandig trainen</span>
 </div>
-<p>Circa {{club.oppervlakte}} met vrije gewichten en toestellen van {{club.merken_zin}}. {{uren.zin_open}}.</p>
+<p>{{club.oppervlakte}} met vrije gewichten en toestellen van onder meer {{club.merken_kort}}. {{uren.zin_open}}, voor maximaal {{club.max_leden}} leden.</p>
 <div class="way-price">
 <span class="disp">€ {{aanbod.open_gym.prijs}}</span>
 <span>{{aanbod.open_gym.eenheid}}</span>
@@ -134,7 +134,7 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 <div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
 <div style="display:flex;flex-direction:column;gap:20px">
 <h2 class="disp h-l" style="color:#1F3B37">Serieus trainen, zonder je bekeken te voelen.</h2>
-<p class="lead" style="color:#3F4E47">Reroot Health Club is een Open Gym op mensenmaat. Je komt er om te trainen, in je eigen tempo, op toestellen die gekozen zijn op hoe goed ze werken.</p>
+<p class="lead" style="color:#3F4E47">Reroot Health Club is een Open Gym met maximaal {{club.max_leden}} leden. Je komt er om te trainen, in je eigen tempo, op toestellen die gekozen zijn op hoe goed ze werken.</p>
 </div>
 
 <div style="display:flex;flex-direction:column">
@@ -144,7 +144,11 @@ beschrijving: Fitnessclub in Maaseik. Train zelfstandig in de Open Gym van Reroo
 </div>
 <div class="frow">
 <span class="disp frow-n">{{club.oppervlakte}}</span>
-<span class="frow-l">Circa, trainingsruimte</span>
+<span class="frow-l">Trainingsruimte</span>
+</div>
+<div class="frow">
+<span class="disp frow-n">{{club.max_leden}}</span>
+<span class="frow-l">Leden, maximaal</span>
 </div>
 <div class="frow" style="border-bottom:1px solid rgba(31,59,55,.25)">
 <span class="disp frow-n">€ {{aanbod.open_gym.prijs}}</span>
