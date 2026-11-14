@@ -19,6 +19,7 @@ cd pad/naar/reroot-website
 | Coachkaarten, ervaringen, de drie stappen, contactformulier | `bron/onderdelen/` |
 | Foto's en logo | `bron/assets/` |
 | Kleuren, lettertypes, opmaak | `bron/stijl.css` |
+| Het Freteffect (de bodybuildingafdeling van Kevin): tekst, foto's en logo's | `bron/paginas/freteffect.html` en `bron/assets/freteffect/`; de opmaak staat onderaan in `bron/stijl.css` onder "Het Freteffect" |
 | De gebouwde site die online komt | `publiek/` (niet met de hand aanpassen, wordt telkens opnieuw gemaakt) |
 | De versie waarmee we begonnen | `origineel/` |
 | Schermafbeeldingen vóór en na het herontwerp | `vergelijking/` |
