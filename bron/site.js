@@ -203,6 +203,9 @@
     if (w === 'kennismaking') {
       kop.textContent = 'Boek je intakegesprek';
       intro.textContent = 'Laat je gegevens achter. Een van de coaches neemt persoonlijk contact op om een moment vast te leggen. Het gesprek is vrijblijvend.';
+    } else if (w === 'freteffect') {
+      kop.textContent = 'Boek je intakegesprek bij Het Freteffect';
+      intro.textContent = 'Laat je gegevens achter en vertel kort waar je naartoe wil. We nemen persoonlijk contact op om een moment vast te leggen.';
     } else if (w && w !== 'anders') {
       kop.textContent = 'Je vraag over ' + naam;
       intro.textContent = 'Stel je vraag of vertel kort wat je zoekt. Een van de coaches antwoordt je persoonlijk.';

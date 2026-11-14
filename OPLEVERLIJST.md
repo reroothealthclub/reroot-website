@@ -15,6 +15,22 @@ Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde 
 | 3 | **Domein en DNS** | Ik weet niet waar je domeinen geregistreerd zijn. `www.reroothealthclub.com` gaf bij mijn controle geen antwoord (de naam werd niet gevonden). Niets aan DNS of domeinen is aangeraakt. |
 | 4 | **Plug&Pay-teksten** | Op `checkout.rerootcoaching.com/rerootcoaching` staat nog "maximum van 200 Leden" en "Reroot Online Coaching". Zelf aanpassen: 150 leden en "Reroot Monthly Online Coaching". |
 
+## Het Freteffect (toegevoegd op 14 november)
+
+Een eigen pagina voor Kevin, `freteffect.html`, met een aparte huisstijl: zwart en ivoor, de twee logo's van Team Freteffect, een schuin sportlettertype (Barlow Condensed, van Google Fonts) en schuin afgesneden vormen. De pagina is bereikbaar via het menu (op brede schermen en in het mobiele menu), de voettekst en de kaart van Kevin bij de coaches. Het formulier heeft een eigen onderwerp "Het Freteffect".
+
+Wat ik niet wist en daarom niet op de pagina staat. Vul aan of laat Kevin nalezen:
+
+| Onderwerp | Stand |
+|---|---|
+| **Prijzen** | Er staan geen prijzen op de pagina. Ik weet niet of Kevins online coaching en technieksessies dezelfde tarieven hebben als App Coaching (€ 99) en Personal Training (€ 64). Elke knop gaat naar het intakeformulier, niet naar een betaalpagina. |
+| **Wedstrijden en titels** | De foto's tonen een podium en een medaille, maar ik noem geen wedstrijd, categorie of plaats. Geef door wat erbij mag staan. |
+| **Wedstrijdvoorbereiding** | Niet vermeld. Je vorige site had een pagina "prepcoaching"; laat weten of Kevin dat aanbiedt. |
+| **Teksten** | De twee beschrijvingen (online coaching, technieksessies) heb ik geschreven op basis van jouw bericht. Kevins bio is dezelfde als op de rest van de site. |
+| **Rechten op de podiumfoto's** | Wedstrijdfoto's zijn meestal van een fotograaf. Controleer of jullie ze op de site mogen gebruiken. Op de achtergrond staan de logo's van de wedstrijdorganisatie. |
+| **Niet gebruikte foto's** | Drie foto's zijn niet gebruikt: twee podiumfoto's die sterk op andere lijken, en één gymfoto waarop de naam van een andere gym leesbaar is. Alles staat in `aangeleverd/freteffect/` (blijft op je Mac). |
+| **Logo's** | Je stuurde ze met een witte achtergrond. Ik heb die achtergrond doorzichtig gemaakt zodat ze op zwart passen. Heb je de originele bestanden met doorzichtige achtergrond (PNG of SVG), dan worden ze scherper. |
+
 ## Het intakegesprek als hoofdknop
 
 "Boek je intakegesprek nu" is nu de hoofdknop van de site: in de menubalk (op mobiel als "Boek intake"), in het mobiele menu, in elk slotblok en in een eigen oproepband op de homepage, de clubpagina en de tarievenpagina. "Word lid" staat er als gewone link naast. Het woord "kennismaking" is overal "intakegesprek" geworden.

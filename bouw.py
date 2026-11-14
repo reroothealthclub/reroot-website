@@ -146,6 +146,7 @@ def verrijk(g):
         onderwerpen.append({'sleutel': a['sleutel'], 'tekst': a['naam']})
     g['aanbod_lijst'] = lijst
     onderwerpen.insert(0, {'sleutel': 'kennismaking', 'tekst': 'Een intakegesprek'})
+    onderwerpen.append({'sleutel': 'freteffect', 'tekst': 'Het Freteffect (bodybuilding met Kevin)'})
     onderwerpen.append({'sleutel': 'anders', 'tekst': 'Ik weet het nog niet / iets anders'})
     g['onderwerpen'] = onderwerpen
     g['kennismaking'] = {
@@ -169,6 +170,7 @@ def verrijk(g):
         _controleer_foto(c['foto'], 'coach %s' % c['naam'])
         sociale.extend(c.get('sociale_links', []))
     g['coach_links'] = sociale
+    g['coach_op_naam'] = {c['naam'].lower(): c for c in g['coaches']}
     g['coach_namen'] = ' en '.join(c['naam'] for c in g['coaches'])
     g['merch']['artikels'] = [m for m in g['merch']['artikels']]
     for m in g['merch']['artikels']:

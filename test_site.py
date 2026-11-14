@@ -118,7 +118,7 @@ def main():
         paginas[b] = p
 
     verwacht = ['index.html', 'health-club.html', 'coaching.html', 'tarieven.html',
-                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', '404.html']
+                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', '404.html', 'freteffect.html']
     for v in verwacht:
         check(v in paginas, 'pagina %s bestaat' % v)
 
@@ -266,7 +266,7 @@ def main():
     for naam, p in paginas.items():
         for a in p.links:
             if 'kennismaking' in a['tekst'].lower() or 'intake' in a['tekst'].lower():
-                check(a['href'].startswith('contact.html?onderwerp=kennismaking'),
+                check(a['href'].startswith(('contact.html?onderwerp=kennismaking', 'contact.html?onderwerp=freteffect')),
                       '%s: "%s" gaat naar het aanvraagformulier' % (naam, a['tekst']))
                 check('plan een' not in a['tekst'].lower(), '%s: knop belooft geen directe boeking ("%s")' % (naam, a['tekst']))
     check(links('index.html', km['knoptekst']), 'route Kennismaking: knop staat op de homepage')
