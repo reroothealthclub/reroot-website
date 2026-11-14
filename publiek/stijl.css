@@ -757,3 +757,15 @@ h1,h2,h3{overflow-wrap:break-word}
 @media (min-width:1320px){.hero-nav a.nav-fe{display:inline-flex}}
 .coach-txt .tlink{align-self:flex-start;color:#ECE8DD}
 @media (prefers-reduced-motion:reduce){.fe-btn{transition:none}}
+
+/* Het Freteffect: logo op zwart (de zwarte achtergrond van het beeld valt weg) en het teamshirt */
+.fe-logo{mix-blend-mode:screen;width:min(100%,520px)}
+.fe-shirt{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.fe-shirt-t{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.fe-shirt-b{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fe-shirt-b figure{position:relative;margin:0;overflow:hidden;background:#111}
+.fe-shirt-b img{display:block;width:100%;height:100%;object-fit:cover}
+.fe-s1{aspect-ratio:536/700}
+.fe-s2{aspect-ratio:536/700}
+.fe-s3{grid-column:1/-1;aspect-ratio:1036/308}
+@media (min-width:1000px){.fe-shirt{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(48px,6vw,96px);align-items:center}}

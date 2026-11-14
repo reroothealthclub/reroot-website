@@ -29,7 +29,8 @@ Wat ik niet wist en daarom niet op de pagina staat. Vul aan of laat Kevin naleze
 | **Teksten** | De twee beschrijvingen (online coaching, technieksessies) heb ik geschreven op basis van jouw bericht. Kevins bio is dezelfde als op de rest van de site. |
 | **Rechten op de podiumfoto's** | Wedstrijdfoto's zijn meestal van een fotograaf. Controleer of jullie ze op de site mogen gebruiken. Op de achtergrond staan de logo's van de wedstrijdorganisatie. |
 | **Niet gebruikte foto's** | Drie foto's zijn niet gebruikt: twee podiumfoto's die sterk op andere lijken, en één gymfoto waarop de naam van een andere gym leesbaar is. Alles staat in `aangeleverd/freteffect/` (blijft op je Mac). |
-| **Logo's** | Je stuurde ze met een witte achtergrond. Ik heb die achtergrond doorzichtig gemaakt zodat ze op zwart passen. Heb je de originele bestanden met doorzichtige achtergrond (PNG of SVG), dan worden ze scherper. |
+| **Logo** | Vervangen door de versie op zwart die je op 14 november stuurde. Het kleine FF-teken komt nog uit de eerste zending. |
+| **Teamshirt** | Het blok "Het teamshirt" toont drie uitsneden uit het beeld dat je stuurde: de rug, het FF-logo van dichtbij en voor- en achterkant naast elkaar. Het beeld oogt als een ontwerpvoorstelling (mockup), geen foto van het echte shirt. Het deel met een gezicht heb ik weggelaten, omdat je eerder vroeg om geen gegenereerde gezichten; is het een echte foto, zeg het dan. Er staat geen prijs of bestelknop: ik weet niet wat het shirt kost en of het al te koop is. De link "Vraag naar het shirt" opent het formulier. |
 
 ## Het intakegesprek als hoofdknop
 
