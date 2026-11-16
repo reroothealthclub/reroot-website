@@ -34,8 +34,8 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 
 | # | Pagina | Vraag |
 |---|---|---|
-| A | Alle pagina's, contact | Is het intakegesprek kosteloos en vrijblijvend? Geldt dat ook voor Het Freteffect? Tot je het bevestigt, staat "vrijblijvend" nergens meer. |
-| B | Contact, intakeband | Met wie is het gesprek (Simon, Kevin, wie vrij is), waar (in de club, telefonisch, video) en hoe lang? Binnen welke termijn nemen jullie contact op na een aanvraag? |
+| A | ~~Alle pagina's~~ | **Bevestigd 16 november:** het intakegesprek is gratis en vrijblijvend, duurt 30 tot 60 minuten en kan online of in de studio in Maaseik. Staat nu op de site (zin in `site.json` → `intakegesprek` → `zin`). |
+| B | Contact, intakeband | Nog open: met wie is het gesprek (Simon, Kevin, wie vrij is) en binnen welke termijn nemen jullie contact op na een aanvraag? |
 | C | Tarieven, coaching | **App Coaching:** krijgt de klant bij de start een trainingsschema of voedingsplan, of alleen wekelijkse feedback op wat hij zelf doet? Nu staat alleen het laatste er. |
 | D | Tarieven, coaching | **App Coaching en Monthly Online Coaching:** volgt altijd dezelfde coach op? Kan de klant kiezen tussen Simon en Kevin? |
 | E | Tarieven, coaching | **Monthly Online Coaching:** waar vindt de maandelijkse live check-up plaats (in de club of via video) en hoe lang duurt die? |
@@ -44,12 +44,12 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 | H | Tarieven, coaching | **Personal Training:** hoe lang duurt een sessie? Kost een sessie in een kleine groep ook € 64? Hoort er opvolging buiten de sessies bij? Mag je met een beurtenkaart buiten je sessies zelfstandig trainen zonder Open Gym? Daarom is de rij "Niet inbegrepen" bij Personal Training nog leeg. |
 | I | Tarieven | Bestaat er een combinatiekorting voor coaching plus Open Gym? Nu staan de twee prijzen gewoon opgeteld. |
 | J | Health Club, tarieven | **Open Gym:** klopt "geen schema, geen voedingsbegeleiding, geen opvolging"? Krijgt een nieuw lid bij de start uitleg of een rondleiding? Dan vermelden we dat. |
-| K | Het Freteffect | Prijzen van Kevins online coaching en technieksessies; hoe vaak en via welk kanaal Kevin opvolgt; hoe lang een technieksessie duurt. Zonder prijs staat er geen bedrag en gaat elke knop naar het aanvraagformulier. |
-| L | Het Freteffect | **Foto's van de sporters:** zijn ze allemaal door Kevin begeleid en akkoord met publicatie op de site? Mogen namen, wedstrijden en klasseringen erbij? Op één foto staat het watermerk "JP" van een fotograaf en op de wedstrijdfoto's logo's van organisatoren en sponsors: hebben jullie het recht ze te gebruiken? De voor-en-nafoto met "Athlete: Frederik" toont een voornaam; is Frederik daarmee akkoord? |
+| K | Het Freteffect | **Bevestigd 16 november:** dezelfde prijzen. Online coaching staat op de pagina met de prijs van App Coaching (€ 99 per maand), technieksessies met die van Personal Training (€ 64 per sessie, 10-beurtenkaart € 640). Nog open: hoe vaak Kevin opvolgt bij online coaching en hoe lang een technieksessie duurt. |
+| L | Het Freteffect | **Bevestigd 16 november:** de sporters gaven toestemming (de foto's staan ook op Instagram en hangen in de gym); jullie vragen het nog eens na. |
 | M | Homepage, coaching, Over Reroot | Laat Simon en Kevin hun nieuwe profieltekst nalezen. Ik heb geen specialisaties toegevoegd, maar de beschrijving van hoe ze werken komt van mij. |
 | N | Homepage | Coachingvoorbeeld: klopt de beslissing (tijdelijk van vier naar drie trainingen, een vaste maaltijd twee à drie uur voor de training, na een paar weken opnieuw bekijken) met hoe jullie in zo'n geval beslissen? |
 | P | Health Club | **Toestellencirkel:** lees de 46 namen en uitlegzinnen na in `gegevens/site.json` → `club` → `toestellen`. Het minst zeker ben ik van: Belt squat (foto 7189), Hip thrust-toestel (7190), Lat pulldown met schijven (7186), Pullover (7208), Kuitentoestel zittend (7204), Bank voor hip thrusts (7216), Buikspierbank (7225) en Kabeltoren met bank (7220). Twee toestellen staan er nog niet in omdat ik ze niet kon benoemen: foto 7188 (zwarte ATX-bank met twee pressarmen erboven) en foto 7207 (toestel met zitje en een hendel met kussen laag achteraan). Geef hun naam door en ik voeg ze toe. Overzichtsfoto's, uitlegbordjes en dubbele foto's (meer dumbbells, schijven en de tweede curlbank) zijn weggelaten. |
-| Q | Kenniscentrum | **Recepten:** de vier recepten (overnight oats met skyr, rijstbowl met kip, omelet met spinazie en feta, platte kaas met banaan en noten) heb ik zelf geschreven als start. Eiwit en calorieën zijn schattingen op basis van gangbare productwaarden, en dat staat ook bij elk recept. Lees ze na, of vervang ze door jullie eigen recepten. Foto's zijn er nog niet. |
+| Q | Kenniscentrum | **Goedgekeurd 16 november:** de vier recepten blijven zo. |
 | R | Kenniscentrum | **Indeling:** Beweging en Levensstijl bevatten nu alleen podcastafleveringen; artikels over training en levensstijl zijn er nog niet. Klopt de indeling van de afleveringen (1, 3, 5 bij Beweging; 2, 4 bij Levensstijl)? |
 | O | Plug&Pay (buiten de site) | Nog altijd open: "maximum van 200 Leden" en "Reroot Online Coaching" op je verkooppagina wijken af van de site (150 leden, "Monthly Online Coaching"). |
 

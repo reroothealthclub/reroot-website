@@ -256,16 +256,18 @@
   // kop en uitleg passen zich aan het gekozen onderwerp aan
   var kop = document.getElementById('form-kop');
   var intro = document.getElementById('form-intro');
+  var formBlok = document.getElementById('formulier');
+  var intakeZin = (formBlok && formBlok.getAttribute('data-intake')) || '';
   var standaardKop = kop ? kop.textContent : '';
   function pasKopAan() {
     if (!kop || !intro) return;
     var w = keuze.value, naam = keuze.options[keuze.selectedIndex].text;
     if (w === 'kennismaking') {
       kop.textContent = 'Vraag een intakegesprek aan';
-      intro.textContent = 'Dit is een aanvraag, nog geen afspraak. Een van de coaches neemt contact met je op om een moment af te spreken. In het gesprek bespreken jullie je doel, je trainingservaring en hoe je week eruitziet.';
+      intro.textContent = intakeZin + ' Dit is een aanvraag, nog geen afspraak: een van de coaches neemt contact met je op om een moment af te spreken. In het gesprek bespreken jullie je doel, je trainingservaring en hoe je week eruitziet.';
     } else if (w === 'freteffect') {
       kop.textContent = 'Vraag een intakegesprek aan bij Het Freteffect';
-      intro.textContent = 'Vertel kort waar je nu staat en waar je naartoe wil. Dit is een aanvraag, nog geen afspraak: we nemen contact met je op om een moment af te spreken.';
+      intro.textContent = intakeZin + ' Vertel kort waar je nu staat en waar je naartoe wil. Dit is een aanvraag, nog geen afspraak: we nemen contact met je op om een moment af te spreken.';
     } else if (w && w !== 'anders') {
       kop.textContent = 'Je vraag over ' + naam;
       intro.textContent = 'Stel je vraag of vertel kort wat je zoekt. Een van de coaches antwoordt je persoonlijk.';

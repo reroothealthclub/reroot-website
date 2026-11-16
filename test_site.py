@@ -274,7 +274,7 @@ def main():
 
     # ---- redactieronde 16 november: afgekeurde of onbevestigde formuleringen komen niet terug
     verboden = ['fysieke transformatie', 'een plan dat in je week past', 'haal het maximum', 'zet vandaag de eerste stap',
-                'training met richting', 'boek je intakegesprek', 'vrijblijvend', 'kosteloos', 'gratis intake']
+                'training met richting', 'boek je intakegesprek']
     for naam, p in paginas.items():
         if naam.startswith('kennisbank-'):
             continue  # bestaande artikels en afleveringen herschrijven we niet

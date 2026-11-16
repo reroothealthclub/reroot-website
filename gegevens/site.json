@@ -26,7 +26,9 @@
   "intakegesprek": {
     "uitleg": "De hoofdknop van de site. Het formulier verstuurt een aanvraag, geen geboekte afspraak; houd de knoptekst daarom bij 'aanvragen'. 'knoptekst_kort' staat in de menubalk op mobiel.",
     "knoptekst": "Vraag een intake aan",
-    "knoptekst_kort": "Intake aanvragen"
+    "knoptekst_kort": "Intake aanvragen",
+    "zin": "Het gesprek is gratis en vrijblijvend, duurt 30 tot 60 minuten en kan online of in onze studio in Maaseik.",
+    "uitleg_zin": "Staat op de site overal waar het intakegesprek uitgelegd wordt, ook boven het formulier."
   },
 
   "bedrijf": {
