@@ -179,7 +179,7 @@
       f.className = 'art-speler';
       f.src = poort.getAttribute('data-poort-speler');
       f.title = poort.getAttribute('data-poort-titel');
-      f.height = '232';
+      f.height = poort.getAttribute('data-poort-hoogte') || '232';
       f.allow = 'clipboard-write; encrypted-media; fullscreen; picture-in-picture';
       poort.parentNode.replaceChild(f, poort);
       f.focus();
