@@ -90,14 +90,20 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 <div class="in two">
 <div class="col">
 <h2 class="disp h-l" style="color:#ECE8DD">CoachCabin Podcast</h2>
-<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom. De afleveringen staan hierboven bij hun onderwerp.</p>
+<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom. Alle afleveringen beluister je in de speler, de nieuwste bovenaan.</p>
 {{#if links.podcast_spotify}}<div><a href="{{links.podcast_spotify}}" target="_blank" rel="noopener" class="btn b-mint">Luister op Spotify</a></div>{{/if}}
 </div>
+<div style="display:flex;flex-direction:column;gap:28px">
+{{#if links.podcast_spotify_speler}}<div class="poort art-poort" data-poort-speler="{{links.podcast_spotify_speler}}" data-poort-titel="De CoachCabin Podcast op Spotify" data-poort-hoogte="352">
+<p>Alle afleveringen van de CoachCabin Podcast, de nieuwste eerst. De speler komt van Spotify, dat cookies kan plaatsen. Daarom laden we hem pas als je erom vraagt.</p>
+<button type="button" class="btn b-forest" data-poort-knop>Laad alle afleveringen</button>
+</div>{{/if}}
 <div>
 {{#each kennis.afleveringen}}<a class="prow" href="{{dit.url}}"><span class="play" aria-hidden="true"></span>
 <span class="disp ptitel">{{dit.titel}}</span>
 <span class="pmeer">{{dit.pijler}}</span></a>
 {{/each}}</div>
+</div>
 </div>
 </section>
 
