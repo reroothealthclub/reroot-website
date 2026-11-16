@@ -1,6 +1,6 @@
 ---
-titel: Kenniscentrum: voeding, beweging, levensstijl en recepten | Reroot Maaseik
-beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en recepten, ingedeeld volgens voeding, beweging en levensstijl.
+titel: Kenniscentrum: voeding, recepten en podcast | Reroot Maaseik
+beschrijving: Het Kenniscentrum van Reroot: artikels, recepten en de nieuwste aflevering van de CoachCabin Podcast.
 ---
 <!-- KENNISCENTRUM: vier delen. De artikels en afleveringen komen uit bron/artikels/ en worden ingedeeld met "pijler:"
      (Voeding, Beweging of Levensstijl) in hun voorblad. Recepten hebben "soort: recept". Het adres blijft kennisbank.html,
@@ -9,20 +9,21 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 <div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(48px,6vw,88px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
 <h1 class="disp" style="margin:0;font-size:min(calc(var(--u)*.11),150px);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Kenniscentrum</span></span></h1>
-<p class="lead" style="color:#D5DCD3;max-width:40ch;padding-bottom:12px;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Artikels, podcastafleveringen en recepten, ingedeeld volgens onze drie pijlers. Je leest hoe iets werkt en wat je er zelf mee kunt doen.</p>
+<p class="lead" style="color:#D5DCD3;max-width:40ch;padding-bottom:12px;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Artikels, recepten en de nieuwste aflevering van onze podcast. Je leest hoe iets werkt en wat je er zelf mee kunt doen.</p>
 </div>
 <nav class="kb-chips" aria-label="Delen van het Kenniscentrum">
-<a class="chip" href="#voeding">Voeding</a>
-<a class="chip" href="#beweging">Beweging</a>
-<a class="chip" href="#levensstijl">Levensstijl</a>
-<a class="chip" href="#recepten">Recepten</a>
+{{#if kennis.voeding}}<a class="chip" href="#voeding">Voeding</a>
+{{/if}}{{#if kennis.beweging}}<a class="chip" href="#beweging">Beweging</a>
+{{/if}}{{#if kennis.levensstijl}}<a class="chip" href="#levensstijl">Levensstijl</a>
+{{/if}}{{#if kennis.recepten}}<a class="chip" href="#recepten">Recepten</a>
+{{/if}}
 <a class="chip" href="#podcast">CoachCabin Podcast</a>
 </nav>
 </div>
 </section>
 
 <!-- VOEDING -->
-<section id="voeding" class="sec" style="background:#F6F2EA;color:#1F3B37">
+{{#if kennis.voeding}}<section id="voeding" class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div class="kc-kop">
 <h2 class="disp h-l" style="color:#1F3B37">Voeding</h2>
@@ -35,10 +36,10 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 </a>{{/each}}
 </div>
 </div>
-</section>
+</section>{{/if}}
 
 <!-- BEWEGING -->
-<section id="beweging" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+{{#if kennis.beweging}}<section id="beweging" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div class="kc-kop">
 <h2 class="disp h-l" style="color:#ECE8DD">Beweging</h2>
@@ -51,10 +52,10 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 </a>{{/each}}
 </div>
 </div>
-</section>
+</section>{{/if}}
 
 <!-- LEVENSSTIJL -->
-<section id="levensstijl" class="sec" style="background:#F6F2EA;color:#1F3B37">
+{{#if kennis.levensstijl}}<section id="levensstijl" class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div class="kc-kop">
 <h2 class="disp h-l" style="color:#1F3B37">Levensstijl</h2>
@@ -67,10 +68,10 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 </a>{{/each}}
 </div>
 </div>
-</section>
+</section>{{/if}}
 
 <!-- RECEPTEN -->
-<section id="recepten" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+{{#if kennis.recepten}}<section id="recepten" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div class="kc-kop">
 <h2 class="disp h-l" style="color:#ECE8DD">Recepten</h2>
@@ -83,26 +84,21 @@ beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en rec
 </a>{{/each}}
 </div>
 </div>
-</section>
+</section>{{/if}}
 
 <!-- PODCAST -->
 <section id="podcast" class="sec dk" style="background:#0F1614;color:#ECE8DD">
 <div class="in two">
 <div class="col">
 <h2 class="disp h-l" style="color:#ECE8DD">CoachCabin Podcast</h2>
-<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom. Alle afleveringen beluister je in de speler, de nieuwste bovenaan.</p>
+<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom. Elke zondag een nieuwe aflevering. Hieronder staat altijd de nieuwste; alle eerdere afleveringen vind je op Spotify.</p>
 {{#if links.podcast_spotify}}<div><a href="{{links.podcast_spotify}}" target="_blank" rel="noopener" class="btn b-mint">Luister op Spotify</a></div>{{/if}}
 </div>
 <div style="display:flex;flex-direction:column;gap:28px">
-{{#if links.podcast_spotify_speler}}<div class="poort art-poort" data-poort-speler="{{links.podcast_spotify_speler}}" data-poort-titel="De CoachCabin Podcast op Spotify" data-poort-hoogte="352">
-<p>Alle afleveringen van de CoachCabin Podcast, de nieuwste eerst. De speler komt van Spotify, dat cookies kan plaatsen. Daarom laden we hem pas als je erom vraagt.</p>
-<button type="button" class="btn b-forest" data-poort-knop>Laad alle afleveringen</button>
+{{#if links.podcast_spotify_speler}}<div class="poort art-poort" data-poort-speler="{{links.podcast_spotify_speler}}" data-poort-titel="De nieuwste aflevering van de CoachCabin Podcast op Spotify" data-poort-hoogte="352">
+<p>Beluister hier de nieuwste aflevering van de CoachCabin Podcast. De speler komt van Spotify, dat cookies kan plaatsen. Daarom laden we hem pas als je erom vraagt.</p>
+<button type="button" class="btn b-forest" data-poort-knop>Beluister de nieuwste aflevering</button>
 </div>{{/if}}
-<div>
-{{#each kennis.afleveringen}}<a class="prow" href="{{dit.url}}"><span class="play" aria-hidden="true"></span>
-<span class="disp ptitel">{{dit.titel}}</span>
-<span class="pmeer">{{dit.pijler}}</span></a>
-{{/each}}</div>
 </div>
 </div>
 </section>
