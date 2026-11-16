@@ -181,7 +181,7 @@ def verrijk(g):
             raise Bouwfout('formulier.web3forms_sleutel ziet er niet uit als een Web3Forms-sleutel '
                            '(een code als 1a2b3c4d-1a2b-1a2b-1a2b-1a2b3c4d5e6f).')
         if not g['formulier'].get('verzend_url'):
-            g['formulier']['verzend_url'] = 'https://api.web3forms.com/submit/' + sleutel
+            g['formulier']['verzend_url'] = 'https://api.web3forms.com/submit'
     if not _url_ok(g['formulier'].get('verzend_url', '')):
         raise Bouwfout('formulier.verzend_url moet beginnen met https:// of leeg zijn.')
 

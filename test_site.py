@@ -305,7 +305,7 @@ def main():
         check('Verstuur je bericht' not in c.ruw, 'contact: zonder formulierdienst belooft de knop geen verzending')
     sleutel = g['formulier'].get('web3forms_sleutel', '')
     if sleutel:
-        check(('data-verzend-url="https://api.web3forms.com/submit/%s"' % sleutel) in c.ruw,
+        check(('data-sleutel="%s"' % sleutel) in c.ruw and 'data-verzend-url="https://api.web3forms.com/submit"' in c.ruw,
               'contact: formulier verstuurt via Web3Forms met de ingestelde sleutel')
     check('name="achternaam"' in c.ruw and 'id="vk-vak"' in c.ruw, 'contact: velden achternaam en voorkeur voor het gesprek aanwezig')
 

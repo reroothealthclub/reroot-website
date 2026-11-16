@@ -55,7 +55,7 @@
   },
 
   "formulier": {
-    "web3forms_sleutel": "",
+    "web3forms_sleutel": "607ce40f-b1d4-4928-ad82-4e3eb97a1173",
     "uitleg_web3forms_sleutel": "De Access Key die Web3Forms je mailt (een lange code met streepjes). Ingevuld = elke aanvraag komt als mail binnen op het adres waarmee je de sleutel aanvroeg. Deze sleutel is niet geheim; hij mag in de site staan.",
     "verzend_url": "",
     "uitleg_verzend_url": "Leeg = het formulier zet een e-mail klaar in het mailprogramma van de bezoeker. Vul hier het adres van je formulierdienst in zodra je er een gekozen hebt; dan verstuurt de site zelf en toont ze pas succes nadat de dienst de aanvraag heeft aanvaard."

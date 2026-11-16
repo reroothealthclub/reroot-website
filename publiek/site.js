@@ -318,7 +318,7 @@
   }
 
   // Wat in de mail aan Reroot komt: dezelfde volgorde als het formulier, met leesbare namen.
-  function mailVoorReroot(d) {
+  function mailVoorReroot(d, sleutel) {
     var naam = d.voornaam + (d.achternaam ? ' ' + d.achternaam : '');
     var m = {
       subject: (d.intake ? 'Nieuwe intake-aanvraag: ' : 'Nieuw bericht via de website: ') + naam,
@@ -332,6 +332,7 @@
     if (d.voorkeur) m['Voorkeur gesprek'] = d.voorkeur;
     m['Vraag of doel'] = d.bericht || '-';
     m.botcheck = false;
+    if (sleutel) m.access_key = sleutel;
     return m;
   }
 
@@ -388,7 +389,7 @@
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(mailVoorReroot(d))
+      body: JSON.stringify(mailVoorReroot(d, doos.getAttribute('data-sleutel')))
     }).then(function (antwoord) {
       if (!antwoord.ok) throw new Error('status ' + antwoord.status);
       return antwoord.json().catch(function () { return {}; });
