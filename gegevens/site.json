@@ -1,10 +1,10 @@
 {
   "publicatie": {
-    "basis_url": "https://reroothealthclub.github.io/reroot-website/",
+    "basis_url": "https://www.rerootcoaching.com/",
     "uitleg_basis_url": "Het volledige adres waarop de site staat, met een / op het einde. Pas dit aan op de dag dat de site naar je eigen domein verhuist, bv. https://www.rerootcoaching.com/",
     "deelbeeld": "assets/deelbeeld.jpg",
     "uitleg_deelbeeld": "De foto die verschijnt als iemand een link naar de site deelt (1200 x 630 pixels).",
-    "zoekmachines_toelaten": false,
+    "zoekmachines_toelaten": true,
     "uitleg": "Zolang de site op een testadres staat, blijft dit false: Google neemt ze dan niet op. Zet op true op de dag dat de site op je echte domein komt."
   },
 
