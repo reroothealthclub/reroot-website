@@ -35,16 +35,16 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 | # | Pagina | Vraag |
 |---|---|---|
 | A | ~~Alle pagina's~~ | **Bevestigd 16 november:** het intakegesprek is gratis en vrijblijvend, duurt 30 tot 60 minuten en kan online of in de studio in Maaseik. Staat nu op de site (zin in `site.json` → `intakegesprek` → `zin`). |
-| B | Contact, intakeband | Nog open: met wie is het gesprek (Simon, Kevin, wie vrij is) en binnen welke termijn nemen jullie contact op na een aanvraag? |
+| B | Contact, intakeband | **Bevestigd 16 november:** het intakegesprek kan met Simon of met Kevin; dat hoeft niet op de site. Nog open: binnen welke termijn nemen jullie contact op na een aanvraag? (Staat nu nergens, dus er wordt niets beloofd.) |
 | C | Tarieven, coaching | **App Coaching:** krijgt de klant bij de start een trainingsschema of voedingsplan, of alleen wekelijkse feedback op wat hij zelf doet? Nu staat alleen het laatste er. |
 | D | Tarieven, coaching | **App Coaching en Monthly Online Coaching:** volgt altijd dezelfde coach op? Kan de klant kiezen tussen Simon en Kevin? |
-| E | Tarieven, coaching | **Monthly Online Coaching:** waar vindt de maandelijkse live check-up plaats (in de club of via video) en hoe lang duurt die? |
+| E | Tarieven, coaching | **Bevestigd 16 november:** dezelfde wekelijkse check-up als bij App Coaching, maar één keer per maand is die fysiek. Op de site staat nu overal "fysiek" in plaats van "live". Nog open, niet nodig voor de site: hoe lang duurt de fysieke check-up? |
 | F | Tarieven | **App Coaching en Monthly Online Coaching:** opzegtermijn en eventuele minimale looptijd. Nu staat er alleen "Maandelijks abonnement". |
 | G | Tarieven | **Monthly Online Coaching:** klopt "Niet inbegrepen: training met een coach in de gym"? |
 | H | Tarieven, coaching | **Personal Training:** hoe lang duurt een sessie? Kost een sessie in een kleine groep ook € 64? Hoort er opvolging buiten de sessies bij? Mag je met een beurtenkaart buiten je sessies zelfstandig trainen zonder Open Gym? Daarom is de rij "Niet inbegrepen" bij Personal Training nog leeg. |
 | I | Tarieven | Bestaat er een combinatiekorting voor coaching plus Open Gym? Nu staan de twee prijzen gewoon opgeteld. |
 | J | Health Club, tarieven | **Open Gym:** klopt "geen schema, geen voedingsbegeleiding, geen opvolging"? Krijgt een nieuw lid bij de start uitleg of een rondleiding? Dan vermelden we dat. |
-| K | Het Freteffect | **Bevestigd 16 november:** dezelfde prijzen. Online coaching staat op de pagina met de prijs van App Coaching (€ 99 per maand), technieksessies met die van Personal Training (€ 64 per sessie, 10-beurtenkaart € 640). Nog open: hoe vaak Kevin opvolgt bij online coaching en hoe lang een technieksessie duurt. |
+| K | Het Freteffect | **Bevestigd 16 november:** dezelfde prijzen; online coaching bij Kevin is een wekelijkse check-up via de app (staat nu op de pagina). Nog open: hoe lang duurt een technieksessie? |
 | L | Het Freteffect | **Bevestigd 16 november:** de sporters gaven toestemming (de foto's staan ook op Instagram en hangen in de gym); jullie vragen het nog eens na. |
 | M | Homepage, coaching, Over Reroot | Laat Simon en Kevin hun nieuwe profieltekst nalezen. Ik heb geen specialisaties toegevoegd, maar de beschrijving van hoe ze werken komt van mij. |
 | N | Homepage | Coachingvoorbeeld: klopt de beslissing (tijdelijk van vier naar drie trainingen, een vaste maaltijd twee à drie uur voor de training, na een paar weken opnieuw bekijken) met hoe jullie in zo'n geval beslissen? |
