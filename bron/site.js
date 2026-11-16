@@ -317,19 +317,19 @@
     };
   }
 
-  // Wat in de mail aan Reroot komt: dezelfde volgorde als het formulier, met leesbare namen.
+  // Wat in de mail aan Reroot komt: zo weinig mogelijk blokken, zodat alles in één oogopslag leesbaar is.
+  // Naam en telefoon staan ook in de onderwerpregel: zo zie je in je postvak meteen wie je moet bellen.
   function mailVoorReroot(d, sleutel) {
     var naam = d.voornaam + (d.achternaam ? ' ' + d.achternaam : '');
+    var soort = d.intake ? 'Intake' : 'Vraag';
     var m = {
-      subject: (d.intake ? 'Nieuwe intake-aanvraag: ' : 'Nieuw bericht via de website: ') + naam,
+      subject: soort + ': ' + naam + (d.telefoon ? ' · ' + d.telefoon : ''),
       from_name: 'Website Reroot',
-      'Voornaam': d.voornaam,
-      'Achternaam': d.achternaam || '-',
-      'Telefoon': d.telefoon || '-',
-      email: d.email,
-      'Onderwerp': d.onderwerp
+      replyto: d.email
     };
-    if (d.voorkeur) m['Voorkeur gesprek'] = d.voorkeur;
+    m['Contact'] = naam + ' · ' + (d.telefoon || 'geen telefoon') + ' · ' + d.email;
+    var wat = d.onderwerp.replace(/^Een /, '');
+    m['Aanvraag'] = wat.charAt(0).toUpperCase() + wat.slice(1) + (d.voorkeur ? ' · ' + d.voorkeur : '');
     m['Vraag of doel'] = d.bericht || '-';
     m.botcheck = false;
     if (sleutel) m.access_key = sleutel;
