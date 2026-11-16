@@ -28,6 +28,8 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 
 **Toestellencirkel op de clubpagina (16 november):** in "Wat je er vindt" draait een cirkel langs alle 46 toestellen uit je map `Gym` (bureaublad). Naast de cirkel staan de groep (Cardio, Rekken en vrije gewichten, Krachttoestellen, Functionele training), de naam en één of twee zinnen uitleg. Om de 4,5 seconden komt het volgende toestel. Een mintgroene boog rond de cirkel loopt vol tot het volgende toestel. Er zijn knoppen voor vorige, pauze en volgende; je kunt ook swipen of de pijltjestoetsen gebruiken. De cirkel pauzeert als je erop wijst en draait niet vanzelf bij "minder beweging". De foto's zijn vierkant uitgesneden en zonder camera- of locatiegegevens. Namen en volgorde pas je aan in `gegevens/site.json` → `club` → `toestellen`.
 
+**Kenniscentrum (16 november):** de Kennisbank heet nu Kenniscentrum, in het menu, de voettekst, het kruimelpad en alle verwijzingen. De pagina heeft vier delen met knoppen bovenaan: Voeding (de vijf artikels), Beweging (afleveringen 1, 3 en 5), Levensstijl (afleveringen 2 en 4) en Recepten (nieuw). De CoachCabin Podcast blijft onderaan met de Spotify-knop. Het adres blijft `kennisbank.html`, zodat gedeelde links blijven werken.
+
 ### Te bevestigen door Simon
 
 | # | Pagina | Vraag |
@@ -47,6 +49,8 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 | M | Homepage, coaching, Over Reroot | Laat Simon en Kevin hun nieuwe profieltekst nalezen. Ik heb geen specialisaties toegevoegd, maar de beschrijving van hoe ze werken komt van mij. |
 | N | Homepage | Coachingvoorbeeld: klopt de beslissing (tijdelijk van vier naar drie trainingen, een vaste maaltijd twee à drie uur voor de training, na een paar weken opnieuw bekijken) met hoe jullie in zo'n geval beslissen? |
 | P | Health Club | **Toestellencirkel:** lees de 46 namen en uitlegzinnen na in `gegevens/site.json` → `club` → `toestellen`. Het minst zeker ben ik van: Belt squat (foto 7189), Hip thrust-toestel (7190), Lat pulldown met schijven (7186), Pullover (7208), Kuitentoestel zittend (7204), Bank voor hip thrusts (7216), Buikspierbank (7225) en Kabeltoren met bank (7220). Twee toestellen staan er nog niet in omdat ik ze niet kon benoemen: foto 7188 (zwarte ATX-bank met twee pressarmen erboven) en foto 7207 (toestel met zitje en een hendel met kussen laag achteraan). Geef hun naam door en ik voeg ze toe. Overzichtsfoto's, uitlegbordjes en dubbele foto's (meer dumbbells, schijven en de tweede curlbank) zijn weggelaten. |
+| Q | Kenniscentrum | **Recepten:** de vier recepten (overnight oats met skyr, rijstbowl met kip, omelet met spinazie en feta, platte kaas met banaan en noten) heb ik zelf geschreven als start. Eiwit en calorieën zijn schattingen op basis van gangbare productwaarden, en dat staat ook bij elk recept. Lees ze na, of vervang ze door jullie eigen recepten. Foto's zijn er nog niet. |
+| R | Kenniscentrum | **Indeling:** Beweging en Levensstijl bevatten nu alleen podcastafleveringen; artikels over training en levensstijl zijn er nog niet. Klopt de indeling van de afleveringen (1, 3, 5 bij Beweging; 2, 4 bij Levensstijl)? |
 | O | Plug&Pay (buiten de site) | Nog altijd open: "maximum van 200 Leden" en "Reroot Online Coaching" op je verkooppagina wijken af van de site (150 leden, "Monthly Online Coaching"). |
 
 ### Wat ik gecontroleerd heb

@@ -1,56 +1,111 @@
 ---
-titel: Kennisbank en CoachCabin Podcast | Reroot Maaseik
-beschrijving: Artikels en podcastafleveringen van Reroot over training, voeding en herstel. Hoe iets werkt en wat je er zelf mee kunt doen.
+titel: Kenniscentrum: voeding, beweging, levensstijl en recepten | Reroot Maaseik
+beschrijving: Het Kenniscentrum van Reroot: artikels, podcastafleveringen en recepten, ingedeeld volgens voeding, beweging en levensstijl.
 ---
-<!-- HERO -->
-<section class="ph dk kb" style="background:#0F1614;position:relative;z-index:2">
+<!-- KENNISCENTRUM: vier delen. De artikels en afleveringen komen uit bron/artikels/ en worden ingedeeld met "pijler:"
+     (Voeding, Beweging of Levensstijl) in hun voorblad. Recepten hebben "soort: recept". Het adres blijft kennisbank.html,
+     zodat links die al gedeeld zijn blijven werken. -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
 <div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(48px,6vw,88px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
 <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
-<h1 class="disp" style="margin:0;font-size:calc(var(--u)*.13);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Kennisbank</span></span></h1>
-<p class="lead" style="color:#D5DCD3;max-width:40ch;padding-bottom:12px;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Artikels over training, voeding en herstel, en gesprekken uit de CoachCabin Podcast. Je leest hoe iets werkt en wat je er zelf mee kunt doen.</p>
+<h1 class="disp" style="margin:0;font-size:min(calc(var(--u)*.11),150px);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Kenniscentrum</span></span></h1>
+<p class="lead" style="color:#D5DCD3;max-width:40ch;padding-bottom:12px;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Artikels, podcastafleveringen en recepten, ingedeeld volgens onze drie pijlers. Je leest hoe iets werkt en wat je er zelf mee kunt doen.</p>
 </div>
-<div class="kb-chips" role="radiogroup" aria-label="Toon">
-<input class="rd" type="radio" name="kbf" id="k-all" checked><label class="chip" for="k-all">Alles</label>
-<input class="rd" type="radio" name="kbf" id="k-art" ><label class="chip" for="k-art">Artikels</label>
-<input class="rd" type="radio" name="kbf" id="k-pod" ><label class="chip" for="k-pod">Podcast</label>
+<nav class="kb-chips" aria-label="Delen van het Kenniscentrum">
+<a class="chip" href="#voeding">Voeding</a>
+<a class="chip" href="#beweging">Beweging</a>
+<a class="chip" href="#levensstijl">Levensstijl</a>
+<a class="chip" href="#recepten">Recepten</a>
+<a class="chip" href="#podcast">CoachCabin Podcast</a>
+</nav>
 </div>
-</div>
+</section>
 
-<!-- ARTIKELS (cream), binnen dezelfde .kb voor de filter -->
-<section id="artikels" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<!-- VOEDING -->
+<section id="voeding" class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
-<h2 class="disp h-l" style="color:#1F3B37">Artikels</h2>
+<div class="kc-kop">
+<h2 class="disp h-l" style="color:#1F3B37">Voeding</h2>
+<p class="lead" style="color:#4F5D55">Wat eiwitten, koolhydraten en vetten doen, hoe de energiebalans je gewicht bepaalt en hoe je na een wedstrijd weer grip krijgt op wat je eet.</p>
+</div>
 <div class="kgrid">
-{{#each kennis.artikels}}<a class="kcard" href="{{dit.url}}">
-<div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">{{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3></div>
-<span class="kmore">Lees het artikel</span>
+{{#each kennis.voeding}}<a class="kcard" href="{{dit.url}}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">{{#if dit.is_podcast}}Podcast{{else}}Artikel{{/if}} · {{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3></div>
+<span class="kmore">{{#if dit.is_podcast}}Naar de aflevering{{else}}Lees het artikel{{/if}}</span>
+</a>{{/each}}
+</div>
+</div>
+</section>
+
+<!-- BEWEGING -->
+<section id="beweging" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<div class="kc-kop">
+<h2 class="disp h-l" style="color:#ECE8DD">Beweging</h2>
+<p class="lead" style="color:#D5DCD3">Gesprekken over krachttraining, spieropbouw en bodybuilding, en over welke beweringen uit de fitnesswereld kloppen.</p>
+</div>
+<div class="kgrid">
+{{#each kennis.beweging}}<a class="kcard" href="{{dit.url}}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">{{#if dit.is_podcast}}Podcast{{else}}Artikel{{/if}} · {{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3></div>
+<span class="kmore">{{#if dit.is_podcast}}Naar de aflevering{{else}}Lees het artikel{{/if}}</span>
+</a>{{/each}}
+</div>
+</div>
+</section>
+
+<!-- LEVENSSTIJL -->
+<section id="levensstijl" class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<div class="kc-kop">
+<h2 class="disp h-l" style="color:#1F3B37">Levensstijl</h2>
+<p class="lead" style="color:#4F5D55">Over gezonde keuzes in je dagelijks leven, en over openstaan voor feedback en coaching.</p>
+</div>
+<div class="kgrid">
+{{#each kennis.levensstijl}}<a class="kcard" href="{{dit.url}}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">{{#if dit.is_podcast}}Podcast{{else}}Artikel{{/if}} · {{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3></div>
+<span class="kmore">{{#if dit.is_podcast}}Naar de aflevering{{else}}Lees het artikel{{/if}}</span>
+</a>{{/each}}
+</div>
+</div>
+</section>
+
+<!-- RECEPTEN -->
+<section id="recepten" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+<div class="in" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+<div class="kc-kop">
+<h2 class="disp h-l" style="color:#ECE8DD">Recepten</h2>
+<p class="lead" style="color:#D5DCD3">Eenvoudige maaltijden met genoeg eiwit, die passen in een week met training. Bij elk recept staat een schatting van het eiwit en de calorieën per portie.</p>
+</div>
+<div class="kgrid">
+{{#each kennis.recepten}}<a class="kcard" href="{{dit.url}}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px"><span class="ktag">Recept · {{dit.categorie}}</span><h3 class="disp">{{dit.titel}}</h3>{{#if dit.eiwit}}<span style="font-size:16px;color:#4F5D55">± {{dit.eiwit}} g eiwit per portie{{#if dit.tijd}} · {{dit.tijd}}{{/if}}</span>{{/if}}</div>
+<span class="kmore">Bekijk het recept</span>
 </a>{{/each}}
 </div>
 </div>
 </section>
 
 <!-- PODCAST -->
-<section id="podcast" class="sec dk" style="background:#1F3B37;color:#ECE8DD">
+<section id="podcast" class="sec dk" style="background:#0F1614;color:#ECE8DD">
 <div class="in two">
 <div class="col">
 <h2 class="disp h-l" style="color:#ECE8DD">CoachCabin Podcast</h2>
-<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom.</p>
+<p class="lead" style="color:#D5DCD3">Gesprekken tussen coaches over training en voeding: wat ze bij klanten zien, welke keuzes ze maken en waarom. De afleveringen staan hierboven bij hun onderwerp.</p>
 {{#if links.podcast_spotify}}<div><a href="{{links.podcast_spotify}}" target="_blank" rel="noopener" class="btn b-mint">Luister op Spotify</a></div>{{/if}}
 </div>
 <div>
 {{#each kennis.afleveringen}}<a class="prow" href="{{dit.url}}"><span class="play" aria-hidden="true"></span>
 <span class="disp ptitel">{{dit.titel}}</span>
-<span class="pmeer">Naar de aflevering</span></a>
+<span class="pmeer">{{dit.pijler}}</span></a>
 {{/each}}</div>
 </div>
-</section>
 </section>
 
 <!-- PERSOONLIJK ADVIES -->
 <section class="sec" style="background:#F6F2EA;color:#1F3B37">
 <div class="in" style="display:flex;flex-direction:column;align-items:flex-start;gap:28px;max-width:860px">
 <h2 class="disp h-l" style="color:#1F3B37">Liever persoonlijk advies?</h2>
-<p class="lead" style="color:#4F5D55">Een artikel kent jouw week niet. In een intakegesprek bekijken we wat dit voor jou betekent.</p>
+<p class="lead" style="color:#4F5D55">Een artikel of recept kent jouw week niet. In een intakegesprek bekijken we wat dit voor jou betekent.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="{{kennismaking.url}}" class="btn b-forest">{{kennismaking.knoptekst}}</a>
 <a href="coaching.html" class="btn b-ghost-l">Bekijk onze coaching</a>
@@ -63,8 +118,8 @@ beschrijving: Artikels en podcastafleveringen van Reroot over training, voeding 
 <div style="display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
 <h2 class="disp h-l" style="max-width:20ch;color:#ECE8DD">Een vraag over wat je las?</h2>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-mint btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
-<a href="contact.html" class="btn b-ghost-d btn-xl">Neem contact op</a>
+<a href="contact.html" class="btn b-mint btn-xl">Neem contact op</a>
+<a href="{{aanbod.open_gym.actie_url}}"{{{aanbod.open_gym.actie_attr}}} class="btn b-ghost-d btn-xl">{{aanbod.open_gym.actie_tekst}}</a>
 </div>
 </div>
 {{> voet}}

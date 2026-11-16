@@ -357,9 +357,14 @@ def _voorblad(tekst, naam):
 
 # ---------------------------------------------------------------- artikels
 
+PIJLERS = ('Voeding', 'Beweging', 'Levensstijl')
+
+
 def lees_artikels():
     """Leest bron/artikels/*.html. Elk bestand begint met een blokje tussen --- met
-    titel, beschrijving, soort (artikel of podcast), categorie, volgorde, beeld en spotify."""
+    titel, beschrijving, soort (artikel, podcast of recept), pijler (Voeding, Beweging of Levensstijl;
+    niet nodig bij een recept), categorie, volgorde, beeld en spotify. Een recept heeft ook porties, tijd,
+    eiwit en kcal (schattingen per portie)."""
     map_artikels = os.path.join(BRON, 'artikels')
     lijst = []
     if not os.path.isdir(map_artikels):
@@ -371,8 +376,11 @@ def lees_artikels():
         with open(os.path.join(map_artikels, bestand), encoding='utf-8') as f:
             meta, tekst = _voorblad(f.read(), naam)
         soort = meta.get('soort', 'artikel')
-        if soort not in ('artikel', 'podcast'):
-            raise Bouwfout('%s: "soort" moet artikel of podcast zijn.' % naam)
+        if soort not in ('artikel', 'podcast', 'recept'):
+            raise Bouwfout('%s: "soort" moet artikel, podcast of recept zijn.' % naam)
+        pijler = meta.get('pijler', '')
+        if soort != 'recept' and pijler not in PIJLERS:
+            raise Bouwfout('%s: "pijler" moet Voeding, Beweging of Levensstijl zijn.' % naam)
         beeld = meta.get('beeld', '')
         if beeld:
             _controleer_foto(beeld, 'artikel "%s"' % meta['titel'])
@@ -389,7 +397,9 @@ def lees_artikels():
         lijst.append({
             'bronbestand': bestand, 'url': 'kennisbank-' + bestand,
             'titel': meta['titel'], 'beschrijving': meta['beschrijving'], 'beschrijving_kort': kort,
-            'soort': soort, 'is_podcast': soort == 'podcast',
+            'soort': soort, 'is_podcast': soort == 'podcast', 'is_recept': soort == 'recept', 'pijler': pijler,
+            'porties': meta.get('porties', ''), 'tijd': meta.get('tijd', ''),
+            'eiwit': meta.get('eiwit', ''), 'kcal': meta.get('kcal', ''),
             'categorie': meta.get('categorie', '') or ('Podcast' if soort == 'podcast' else 'Artikel'),
             'volgorde': volgorde, 'beeld': beeld, 'spotify': spotify, 'tekst': tekst,
             'uitgelicht': meta.get('uitgelicht', '').lower() in ('ja', 'true', '1'),
@@ -420,9 +430,14 @@ def bouw(uit=UIT, stil=False, gegevens=None):
 
     artikels = lees_artikels()
     g['kennis'] = {
-        'artikels': [a for a in artikels if a['soort'] != 'podcast'],
+        'artikels': [a for a in artikels if a['soort'] == 'artikel'],
         'afleveringen': [a for a in artikels if a['soort'] == 'podcast'],
+        'recepten': [a for a in artikels if a['soort'] == 'recept'],
     }
+    # het Kenniscentrum is ingedeeld volgens de drie pijlers: eerst de artikels, dan de afleveringen
+    for pj in PIJLERS:
+        g['kennis'][pj.lower()] = ([a for a in g['kennis']['artikels'] if a['pijler'] == pj] +
+                                  [a for a in g['kennis']['afleveringen'] if a['pijler'] == pj])
     # voor de homepage en de coachingpagina: het uitgelichte artikel en de recentste aflevering
     # (uitgelicht = het artikel met "uitgelicht: ja" bovenaan, anders het eerste in volgorde)
     uitgelicht = [a for a in g['kennis']['artikels'] if a['uitgelicht']] or g['kennis']['artikels']
@@ -461,12 +476,12 @@ def bouw(uit=UIT, stil=False, gegevens=None):
         andere = [x for x in artikels if x is not a and x['soort'] == a['soort']][:2]
         pagina = {
             'sleutel': 'kennisbank', 'bestand': a['url'],
-            'titel': '%s | Kennisbank | Reroot' % a['titel'],
+            'titel': '%s | Kenniscentrum | Reroot' % a['titel'],
             'beschrijving': a['beschrijving_kort'], 'is_home': False, 'is_404': False,
             'url': basis + a['url'], 'indexeren': indexeren,
             'ld': _ld({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
                 {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': basis},
-                {'@type': 'ListItem', 'position': 2, 'name': 'Kennisbank', 'item': basis + 'kennisbank.html'},
+                {'@type': 'ListItem', 'position': 2, 'name': 'Kenniscentrum', 'item': basis + 'kennisbank.html'},
                 {'@type': 'ListItem', 'position': 3, 'name': a['titel'], 'item': basis + a['url']}]}),
         }
         scopes = [g, {'pagina': pagina, 'actief': {'kennisbank': True}, 'artikel': a, 'verder_lezen': andere}]
@@ -530,7 +545,7 @@ def _llms(g, basis):
         r.append('- %s: € %s %s. %s' % (a['naam'], a['prijs'], a['eenheid'], a['beschrijving']))
     r += ['', '## Pagina\'s', '']
     for naam, b in (('Health Club', 'health-club.html'), ('Coaching', 'coaching.html'), ('Tarieven', 'tarieven.html'),
-                    ('Over Reroot', 'over-reroot.html'), ('Kennisbank', 'kennisbank.html'), ('Contact', 'contact.html')):
+                    ('Over Reroot', 'over-reroot.html'), ('Kenniscentrum', 'kennisbank.html'), ('Contact', 'contact.html')):
         r.append('- [%s](%s%s)' % (naam, basis, b))
     return '\n'.join(r) + '\n'
 
