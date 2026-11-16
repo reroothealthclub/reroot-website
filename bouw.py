@@ -145,14 +145,24 @@ def verrijk(g):
         lijst.append(a)
         onderwerpen.append({'sleutel': a['sleutel'], 'tekst': a['naam']})
     g['aanbod_lijst'] = lijst
+    # totaalprijs als iemand coaching combineert met Open Gym (voor de tarievenpagina)
+    gym = g['aanbod'].get('open_gym')
+    if gym:
+        def _bedrag(x):
+            return float(x.replace(',', '.'))
+        def _toon(x):
+            return ('%d' % x) if x == int(x) else ('%.2f' % x).replace('.', ',')
+        for a in lijst:
+            if a is not gym and a.get('eenheid') == gym.get('eenheid'):
+                a['met_open_gym'] = _toon(_bedrag(a['prijs']) + _bedrag(gym['prijs']))
     onderwerpen.insert(0, {'sleutel': 'kennismaking', 'tekst': 'Een intakegesprek'})
     onderwerpen.append({'sleutel': 'freteffect', 'tekst': 'Het Freteffect (bodybuilding met Kevin)'})
     onderwerpen.append({'sleutel': 'anders', 'tekst': 'Ik weet het nog niet / iets anders'})
     g['onderwerpen'] = onderwerpen
     g['kennismaking'] = {
         'url': 'contact.html?onderwerp=kennismaking#formulier',
-        'knoptekst': g.get('intakegesprek', {}).get('knoptekst', 'Boek je intakegesprek nu'),
-        'knoptekst_kort': g.get('intakegesprek', {}).get('knoptekst_kort', 'Boek intake'),
+        'knoptekst': g.get('intakegesprek', {}).get('knoptekst', 'Vraag een intakegesprek aan'),
+        'knoptekst_kort': g.get('intakegesprek', {}).get('knoptekst_kort', 'Intake aanvragen'),
     }
 
     # --- links

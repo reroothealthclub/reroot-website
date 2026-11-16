@@ -270,6 +270,18 @@ def main():
                       '%s: "%s" gaat naar het aanvraagformulier' % (naam, a['tekst']))
                 check('plan een' not in a['tekst'].lower(), '%s: knop belooft geen directe boeking ("%s")' % (naam, a['tekst']))
     check(links('index.html', km['knoptekst']), 'route Kennismaking: knop staat op de homepage')
+    check('boek' not in km['knoptekst'].lower(), 'route Kennismaking: de knop zegt "aanvragen", geen "boeken" (er is geen boekingssysteem)')
+
+    # ---- redactieronde 16 november: afgekeurde of onbevestigde formuleringen komen niet terug
+    verboden = ['fysieke transformatie', 'een plan dat in je week past', 'haal het maximum', 'zet vandaag de eerste stap',
+                'training met richting', 'boek je intakegesprek', 'vrijblijvend', 'kosteloos', 'gratis intake']
+    for naam, p in paginas.items():
+        if naam.startswith('kennisbank-'):
+            continue  # bestaande artikels en afleveringen herschrijven we niet
+        tekst = ' '.join(p.tekst).lower()
+        for zin in verboden:
+            check(zin not in tekst, '%s: geen "%s" op de pagina' % (naam, zin))
+    check('Train zelfstandig of met een coach' in ' '.join(paginas['index.html'].tekst), 'homepage: kop "Train zelfstandig of met een coach"')
 
     # ---- Mijn Reroot en merch
     for naam in paginas:

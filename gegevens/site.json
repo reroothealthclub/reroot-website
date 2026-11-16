@@ -24,9 +24,9 @@
   },
 
   "intakegesprek": {
-    "uitleg": "De hoofdknop van de site. 'knoptekst' staat op alle knoppen, 'knoptekst_kort' in de menubalk op mobiel.",
-    "knoptekst": "Boek je intakegesprek nu",
-    "knoptekst_kort": "Boek intake"
+    "uitleg": "De hoofdknop van de site. Het formulier verstuurt een aanvraag, geen geboekte afspraak; houd de knoptekst daarom bij 'aanvragen'. 'knoptekst_kort' staat in de menubalk op mobiel.",
+    "knoptekst": "Vraag een intake aan",
+    "knoptekst_kort": "Intake aanvragen"
   },
 
   "bedrijf": {
@@ -97,7 +97,7 @@
     "uitleg_algemene_voorwaarden": "Leeg = er wordt nergens naar algemene voorwaarden verwezen. Vul het adres in zodra je echte voorwaarden online hebt staan."
   },
 
-  "aanbod_uitleg": "checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
+  "aanbod_uitleg": "niet_inbegrepen = wat de klant bij deze formule niet krijgt; leeg = de rij blijft leeg. checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
   "aanbod": {
     "open_gym": {
       "naam": "Open Gym",
@@ -107,39 +107,42 @@
       "prijs_detail": "incl. 6% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete",
       "knoptekst_kopen": "Word lid",
-      "beschrijving": "Toegang tot de Health Club, zeven dagen per week. Voor wie zijn eigen schema volgt en daar een rustige, goed uitgeruste plek voor zoekt.",
-      "voor_wie": "Je traint zelfstandig en zoekt een goed uitgeruste club.",
-      "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren.",
-      "contact_met_coach": "Geen persoonlijke opvolging. Wil je die later toch, dan stap je over naar coaching.",
+      "beschrijving": "Toegang tot de Health Club, zeven dagen per week. Je volgt je eigen schema. Een trainingsschema, voedingsbegeleiding of opvolging door een coach zit er niet in.",
+      "voor_wie": "Je weet hoe je wil trainen en zoekt een goed uitgeruste club om dat te doen.",
+      "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren, met alle toestellen en vrije gewichten.",
+      "contact_met_coach": "Geen. Je traint zelfstandig.",
+      "niet_inbegrepen": "Een trainingsschema, voedingsbegeleiding en opvolging door een coach. Wil je dat later wel, dan kun je coaching nemen.",
       "goed_om_te_weten": "Maandelijks abonnement, zonder jaarcontract en zonder inschrijfkosten. Opzeggen kan tot 10 dagen voor het einde van de maand."
     },
     "app_coaching": {
       "naam": "App Coaching",
-      "ondertitel": "Online begeleiding",
+      "ondertitel": "Wekelijkse opvolging via de app",
       "prijs": "99",
       "eenheid": "per maand",
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-appcoaching-21",
       "knoptekst_kopen": "Start App Coaching",
-      "beschrijving": "Je coach stuurt je training, voeding en levensstijl bij via de app. Voor wie richting wil, zonder vaste afspraken in de gym.",
-      "voor_wie": "Je traint zelf, maar wil dat iemand meekijkt en bijstuurt.",
-      "wat_je_krijgt": "Feedback op je training, voeding en levensstijl, via de app.",
-      "contact_met_coach": "Elke week een check-up met je coach, via de app.",
-      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
+      "beschrijving": "Je traint zelf. Elke week bekijkt je coach in de app hoe je training, voeding en levensstijl lopen, geeft feedback en stuurt bij waar het nodig is.",
+      "voor_wie": "Je traint al zelfstandig en wil dat een coach elke week meekijkt en bijstuurt.",
+      "wat_je_krijgt": "Elke week feedback van je coach op je training, voeding en levensstijl.",
+      "contact_met_coach": "Elke week een check-up, altijd via de app.",
+      "niet_inbegrepen": "Live check-ups en toegang tot de Health Club.",
+      "goed_om_te_weten": "Maandelijks abonnement. Wil je ook zelfstandig in de club trainen, dan neem je daarnaast Open Gym."
     },
     "monthly_coaching": {
       "naam": "Monthly Online Coaching",
-      "ondertitel": "Persoonlijke coaching",
+      "ondertitel": "Persoonlijk plan, ook live opgevolgd",
       "prijs": "185",
       "eenheid": "per maand",
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-onlinetraject-21",
       "knoptekst_kopen": "Start Monthly Online Coaching",
-      "beschrijving": "Persoonlijke coaching met elke week een check-up: één keer per maand live, de andere weken via de app. Voor wie een vast plan en nauwe opvolging wil.",
-      "voor_wie": "Je wil een vast plan en een coach die je van dichtbij opvolgt.",
-      "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek dat je coach opvolgt.",
+      "beschrijving": "Je krijgt een persoonlijk plan voor training, voeding en levensstijl en houdt een dagboek bij in de app. Elke week een check-up met je coach: één keer per maand live, de andere weken via de app.",
+      "voor_wie": "Je wil een plan dat voor jou gemaakt is, en een coach die je elke week opvolgt en je één keer per maand live spreekt.",
+      "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek in de app dat je coach opvolgt.",
       "contact_met_coach": "Elke week een check-up: één keer per maand live, de andere weken via de app.",
-      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
+      "niet_inbegrepen": "Toegang tot de Health Club en training met een coach in de gym.",
+      "goed_om_te_weten": "Maandelijks abonnement. Wil je ook zelfstandig in de club trainen, dan neem je daarnaast Open Gym."
     },
     "personal_training": {
       "naam": "Personal Training",
@@ -149,10 +152,11 @@
       "prijs_detail": "10-beurtenkaart: € 640, incl. 6% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-personal-640",
       "knoptekst_kopen": "Koop een 10-beurtenkaart",
-      "beschrijving": "Tien sessies met een coach in de gym, één-op-één of in een kleine groep. Voor wie live begeleiding wil, ingepland rond de eigen week.",
-      "voor_wie": "Je wil live begeleiding van een coach, in de gym.",
-      "wat_je_krijgt": "Tien sessies die je invult volgens wat je nodig hebt: training, voedingsadvies, techniekanalyse of een gesprek over je levensstijl.",
-      "contact_met_coach": "Tijdens elke sessie, één-op-één of in een kleine groep.",
+      "beschrijving": "Je traint in de Health Club met een coach naast je, één-op-één of in een kleine groep. Je koopt tien sessies en bepaalt per sessie wat je nodig hebt.",
+      "voor_wie": "Je wil dat een coach live naar je uitvoering kijkt en je in de gym begeleidt.",
+      "wat_je_krijgt": "Tien sessies met een coach in de gym. Per sessie kies je de inhoud: training, techniekanalyse, voedingsadvies of een gesprek over je levensstijl.",
+      "contact_met_coach": "Tijdens de sessies, één-op-één of in een kleine groep.",
+      "niet_inbegrepen": "",
       "goed_om_te_weten": "Eén sessie per week. De kaart is één jaar geldig."
     }
   },
@@ -161,8 +165,8 @@
     {
       "naam": "Simon",
       "volledige_naam": "Simon Dirkx",
-      "focus": "Ontwikkeling als geheel",
-      "bio": "Simon kijkt naar je hele ontwikkeling, met als doel dat lichaam en hoofd ook later bestand zijn tegen wat er op je pad komt. Hij stelt je huidige aanpak in vraag en helpt je gerichte keuzes te maken.",
+      "focus": "Training, voeding en herstel samen",
+      "bio": "Simon begint bij de vraag wat je nu het meest tegenhoudt. Hij legt je trainingen, je eetpatroon en je slaap naast elkaar, kiest wat eerst moet veranderen en legt uit waarom. Zo leer je zelf bijsturen.",
       "foto": "assets/simon.webp",
       "foto_alt": "Simon Dirkx, coach bij Reroot, in de gym",
       "sociale_links": [
@@ -172,8 +176,8 @@
     {
       "naam": "Kevin",
       "volledige_naam": "Kevin Fret",
-      "focus": "Zichtbare resultaten",
-      "bio": "Kevin haalt op een onderbouwde manier het maximum uit je lichaam. Hij is de stok achter de deur voor wie discipline en hard werk wil volhouden.",
+      "focus": "Spieropbouw en bodybuilding",
+      "bio": "Kevin werkt met wie spiermassa wil opbouwen. Hij kijkt hoe je een oefening uitvoert en of de juiste spier het werk doet, en stuurt je training bij op basis van wat je bijhoudt.",
       "foto": "assets/kevin.jpg",
       "foto_alt": "Kevin Fret, coach bij Reroot, in de gym",
       "pagina": "freteffect.html",

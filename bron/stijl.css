@@ -751,6 +751,12 @@ h1,h2,h3{overflow-wrap:break-word}
 @media (min-width:1000px){.fe-over{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(48px,6vw,96px);align-items:center}}
 .fe-slot-in{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
 .fe-klein{margin:8px 0 0;font-size:16px;color:var(--gr)}
+.fe-intro{margin-top:18px}
+.fe-vn-kop{margin-top:clamp(40px,5vw,72px)}
+.fe-vn{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:20px 0 12px}
+.fe-vn figure{margin:0;background:#111}
+.fe-vn img{display:block;width:100%;height:auto}
+@media (min-width:760px){.fe-vn{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
 .fe-klein a{color:var(--iv)}
 /* link naar Het Freteffect in het menu: pas zichtbaar als er plaats is */
 .hero-nav a.nav-fe{display:none}

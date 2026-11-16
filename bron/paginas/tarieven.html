@@ -8,7 +8,7 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
 <h1 class="disp" style="margin:0;font-size:calc(var(--u)*.14);line-height:.92;color:#ECE8DD"><span class="mask"><span class="rise">Tarieven</span></span></h1>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:440px;padding-bottom:12px">
-<p class="lead" style="color:#D5DCD3;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Kies de formule die past bij hoeveel begeleiding je wil. Weet je het nog niet? Boek je intakegesprek, dan kiezen we samen.</p>
+<p class="lead" style="color:#D5DCD3;font-size:clamp(19px,calc(var(--u)*.0145),22px)">Vier formules. Ze verschillen in hoeveel begeleiding je krijgt en of die via de app, live of in de gym gebeurt. Alle prijzen zijn inclusief btw.</p>
 <a href="{{kennismaking.url}}" class="btn b-mint">{{kennismaking.knoptekst}}</a>
 </div>
 </div>
@@ -23,7 +23,7 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
 <div style="max-width:760px;display:flex;flex-direction:column;gap:20px">
 <h2 class="disp h-l" style="color:#1F3B37">Vergelijk de formules.</h2>
-<p class="lead" style="color:#4F5D55">Van zelfstandig trainen tot een coach naast je in de gym. Alle prijzen zijn inclusief btw.</p>
+<p class="lead" style="color:#4F5D55">Per formule: voor wie ze bedoeld is, wat je krijgt, wat er niet in zit en wat je betaalt. Alle prijzen zijn inclusief btw.</p>
 </div>
 <div class="cmp">
 {{#each aanbod_lijst}}<div class="plan" id="formule-{{dit.sleutel}}">
@@ -31,7 +31,8 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 <div class="cell"><span class="disp" style="font-size:clamp(44px,calc(var(--u)*.04),60px);line-height:1;color:#1F3B37;white-space:nowrap">€ {{dit.prijs}}</span><span class="v" style="color:#5A6860;font-size:16px">{{dit.eenheid}}</span><span class="det">{{dit.prijs_detail}}</span></div>
 <div class="cell"><span class="l">Voor wie</span><span class="v">{{dit.voor_wie}}</span></div>
 <div class="cell"><span class="l">Wat je krijgt</span><span class="v">{{dit.wat_je_krijgt}}</span></div>
-<div class="cell"><span class="l">Contact met je coach</span><span class="v">{{dit.contact_met_coach}}</span></div>
+<div class="cell"><span class="l">Opvolging door een coach</span><span class="v">{{dit.contact_met_coach}}</span></div>
+<div class="cell">{{#if dit.niet_inbegrepen}}<span class="l">Niet inbegrepen</span><span class="v">{{dit.niet_inbegrepen}}</span>{{/if}}</div>
 <div class="cell"><span class="l">Goed om te weten</span><span class="v">{{dit.goed_om_te_weten}}</span></div>
 <div class="cell cta"><a href="{{dit.actie_url}}"{{{dit.actie_attr}}} class="btn b-forest">{{dit.actie_tekst}}</a>{{#if dit.kan_kopen}}<a href="{{dit.aanvraag_url}}" class="tlink">Of stel eerst je vraag</a>{{/if}}</div>
 </div>{{/each}}
@@ -50,11 +51,13 @@ beschrijving: De tarieven van Reroot in Maaseik: Open Gym, App Coaching, Monthly
 <div class="in two">
 <h2 class="disp h-l" style="color:#1F3B37;max-width:12ch">Veelgestelde vragen</h2>
 <div class="faq">
-<details><summary>Wat is het verschil tussen {{aanbod.app_coaching.naam}} en {{aanbod.monthly_coaching.naam}}?</summary><p class="ans">Bij allebei heb je elke week een check-up met je coach. Bij {{aanbod.app_coaching.naam}} verloopt die altijd via de app. Bij {{aanbod.monthly_coaching.naam}} is één check-up per maand live. Toegang tot de Health Club zit in geen van beide.</p></details>
-<details><summary>Kan ik eerst kennismaken?</summary><p class="ans">Ja. <a href="{{kennismaking.url}}">Boek je intakegesprek</a>, dan bespreken we je doel en kiezen we samen wat bij je past. Dat gesprek is vrijblijvend.</p></details>
+<details><summary>Wat is het verschil tussen {{aanbod.app_coaching.naam}} en {{aanbod.monthly_coaching.naam}}?</summary><p class="ans">Bij allebei heb je elke week een check-up met je coach. Bij {{aanbod.app_coaching.naam}} train je zelf en geeft je coach via de app feedback op je training, voeding en levensstijl; alle check-ups verlopen via de app. Bij {{aanbod.monthly_coaching.naam}} krijg je een persoonlijk plan en houd je een dagboek bij dat je coach opvolgt; één check-up per maand is live. Toegang tot de Health Club zit in geen van beide.</p></details>
+<details><summary>Wat betaal ik als ik coaching combineer met de Health Club?</summary><p class="ans">Je betaalt beide formules. {{aanbod.app_coaching.naam}} met {{aanbod.open_gym.naam}}: € {{aanbod.app_coaching.met_open_gym}} {{aanbod.app_coaching.eenheid}}. {{aanbod.monthly_coaching.naam}} met {{aanbod.open_gym.naam}}: € {{aanbod.monthly_coaching.met_open_gym}} {{aanbod.monthly_coaching.eenheid}}.</p></details>
+<details><summary>Kan ik eerst met een coach praten?</summary><p class="ans">Ja. <a href="{{kennismaking.url}}">Vraag een intakegesprek aan</a>. Een coach neemt contact op om een moment af te spreken. Je bespreekt je doel en je week, en hoort welke formule we aanraden en waarom.</p></details>
 <details><summary>Hoe schrijf ik me in?</summary><p class="ans">Met de knop bij de formule van je keuze. Die brengt je naar onze betaalpagina, waar je je gegevens invult en de inschrijving afrondt. Liever eerst praten? Vraag dan een intakegesprek aan.</p></details>
-<details><summary>Wat kost een Personal Training-sessie?</summary><p class="ans">Een sessie kost € {{aanbod.personal_training.prijs}}. Je koopt ze per tien ({{aanbod.personal_training.prijs_detail}}). {{aanbod.personal_training.goed_om_te_weten}}</p></details>
-<details><summary>Heb je een vraag over wat erin zit?</summary><p class="ans">Stuur ons gerust een bericht via de <a href="contact.html">contactpagina</a>, dan antwoorden we je persoonlijk.</p></details>
+<details><summary>Wat kost een Personal Training-sessie?</summary><p class="ans">Een sessie kost € {{aanbod.personal_training.prijs}}. Je koopt ze per tien ({{aanbod.personal_training.prijs_detail}}). {{aanbod.personal_training.goed_om_te_weten}} Per sessie kies je de inhoud: training, techniekanalyse, voedingsadvies of een gesprek over je levensstijl.</p></details>
+<details><summary>Hoe zeg ik {{aanbod.open_gym.naam}} op?</summary><p class="ans">{{aanbod.open_gym.goed_om_te_weten}}</p></details>
+<details><summary>Staat je vraag er niet bij?</summary><p class="ans">Stuur ons een bericht via de <a href="contact.html">contactpagina</a> of bel <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>. Een van de coaches antwoordt je persoonlijk.</p></details>
 </div>
 </div>
 </section>
