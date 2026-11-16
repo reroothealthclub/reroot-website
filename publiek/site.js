@@ -15,62 +15,44 @@
   // 1b. vaste menubalk: doorzichtig bovenaan de pagina, donker zodra je scrolt
   var balk = document.querySelector('.kop .hero-head');
   // 1c. opening van de homepage: beweging gekoppeld aan het scrollen.
-  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift; --r laat de wortels groeien.
+  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift.
   var opening = document.querySelector('.hero');
   var beweeg = opening && opening.querySelector('.hero-word') &&
     !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (beweeg) opening.classList.add('hero-scroll');
-  // De wortels: elke lijn groeit volgens de plaats van de tekening in beeld.
-  // Hoofdwortels krijgen extra lagen (dik aan de stam, dun aan het uiteinde) en een lichtpunt op de groeiende top.
-  var wortelSvg = beweeg ? opening.querySelector('.roots') : null;
-  var wortels = [];
-  if (wortelSvg && wortelSvg.createSVGPoint) {
-    var NS = 'http://www.w3.org/2000/svg';
-    var plan = { r1: { start: 0, duur: 0.55, lagen: [[0.3, 'root-dik'], [0.62, 'root-mid']] },
-                 r2: { start: 0.28, duur: 0.45, lagen: [[0.45, 'root-mid']] },
-                 r3: { start: 0.55, duur: 0.45, lagen: [] } };
-    Object.keys(plan).forEach(function (groep) {
-      var g = wortelSvg.querySelector('.' + groep);
-      if (!g) return;
-      Array.prototype.slice.call(g.querySelectorAll('.root')).forEach(function (pad, nr) {
-        var start = plan[groep].start + (nr % 4) * 0.035;
-        var top = null, gloed = null;
-        if (groep !== 'r3') {
-          gloed = document.createElementNS(NS, 'circle'); gloed.setAttribute('r', '9'); gloed.setAttribute('class', 'root-gloed');
-          top = document.createElementNS(NS, 'circle'); top.setAttribute('r', '3'); top.setAttribute('class', 'root-top');
-          wortelSvg.appendChild(gloed); wortelSvg.appendChild(top);
-        }
-        wortels.push({ el: pad, len: 1, start: start, duur: plan[groep].duur, top: top, gloed: gloed, totaal: pad.getTotalLength() });
-        plan[groep].lagen.forEach(function (laag) {
-          var kopie = pad.cloneNode(false);
-          kopie.setAttribute('class', 'root ' + laag[1]);
-          g.insertBefore(kopie, pad);
-          wortels.push({ el: kopie, len: laag[0], start: start, duur: plan[groep].duur });
-        });
+  // Twee routes: de kop komt woord per woord op en de kaarten schuiven naar elkaar toe, gekoppeld aan het scrollen.
+  var routes = document.querySelector('[data-onthul]');
+  var rustigNu = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var delen = [];
+  if (routes && !rustigNu) {
+    var kop = routes.querySelector('.ways-head h2');
+    if (kop) {
+      var woorden = kop.textContent.trim().split(/\s+/);
+      kop.setAttribute('aria-label', kop.textContent.trim());
+      kop.innerHTML = '';
+      woorden.forEach(function (w, i) {
+        var s = document.createElement('span'); s.className = 'w'; s.setAttribute('aria-hidden', 'true'); s.textContent = w;
+        kop.appendChild(s); if (i < woorden.length - 1) kop.appendChild(document.createTextNode(' '));
+        delen.push({ el: s, start: 0.04 * i, duur: 0.3 });
       });
+    }
+    var lead = routes.querySelector('.ways-head .lead');
+    if (lead) delen.push({ el: lead, start: 0.3, duur: 0.3 });
+    Array.prototype.slice.call(routes.querySelectorAll('.way')).forEach(function (k, i) {
+      delen.push({ el: k, start: 0.38 + i * 0.08, duur: 0.45 });
     });
-    wortels.forEach(function (w) { w.el.style.strokeDasharray = w.len + ' 2'; });
+    routes.classList.add('onthul');
   }
-  var groeiWortels = function () {
-    if (!wortels.length) return;
-    var r = wortelSvg.getBoundingClientRect();
-    if (!r.height) return;
+  var onthul = function () {
+    if (!delen.length) return;
+    var r = routes.getBoundingClientRect();
     var vh = window.innerHeight || 1;
-    var g = Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (r.height * 0.9)));
-    opening.style.setProperty('--k', Math.min(1, Math.max(0, (g - 0.35) * 1.6)).toFixed(3));
-    wortels.forEach(function (w) {
-      var lokaal = Math.min(1, Math.max(0, (g - w.start) / w.duur));
-      w.el.style.strokeDashoffset = (w.len - Math.min(w.len, lokaal)).toFixed(4);
-      if (w.top) {
-        var groeit = lokaal > 0.01 && lokaal < 0.995;
-        if (groeit) {
-          var punt = w.el.getPointAtLength(lokaal * w.totaal);
-          w.top.setAttribute('cx', punt.x); w.top.setAttribute('cy', punt.y);
-          w.gloed.setAttribute('cx', punt.x); w.gloed.setAttribute('cy', punt.y);
-        }
-        w.top.style.opacity = groeit ? '1' : '0';
-        w.gloed.style.opacity = groeit ? '.28' : '0';
-      }
+    // 0 als de bovenkant van de sectie onderaan in beeld komt, 1 als ze tot een kwart van boven geschoven is
+    var g = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75)));
+    delen.forEach(function (d) {
+      var v = Math.min(1, Math.max(0, (g - d.start) / d.duur));
+      v = 1 - Math.pow(1 - v, 3);
+      d.el.style.setProperty('--v', v.toFixed(3));
     });
   };
 
@@ -82,8 +64,8 @@
     if (beweeg) {
       var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
       opening.style.setProperty('--p', p.toFixed(3));
-      groeiWortels();
     }
+    onthul();
   };
   window.addEventListener('scroll', function () {
     if (!bezig) { bezig = true; window.requestAnimationFrame(bijScroll); }

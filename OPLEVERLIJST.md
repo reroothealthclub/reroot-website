@@ -21,6 +21,11 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 - **Weggehaald:** "vrijblijvend" (niet bevestigd, zie hieronder), "fysieke transformatie", "een plan dat in je week past", "training met richting", "het maximum uit je lichaam", "stok achter de deur", "meer dan een fitnesscentrum" en losse slotzinnen zonder inhoud. De testsuite controleert nu dat ze niet terugkomen.
 - **Kennisbank:** alleen de introducties; artikels en afleveringen zijn niet aangeraakt.
 
+**Na je feedback (16 november, later):**
+- De wortels onder "Train zelfstandig of met een coach" zijn weg. In de plaats komt de kop woord per woord op en schuiven de twee kaarten vanuit de zijkanten naar elkaar toe terwijl je scrolt. Bij "minder beweging" staat alles stil.
+- Tarieventabel: de knoppen stonden over "Goed om te weten" omdat een oude regel de tabel op 7 rijen hield. Nu 8 rijen, alles staat weer onder elkaar.
+- Geen lichtgroen meer: "Sterker worden begint met begrijpen", "Je eerste keer bij Reroot" en "Kom langs in Maaseik" zijn bosgroen met beige letters; "Maximaal 150 leden" is beige. Ook de kleine accenten (labels, hovers) zijn beige.
+
 ### Te bevestigen door Simon
 
 | # | Pagina | Vraag |
