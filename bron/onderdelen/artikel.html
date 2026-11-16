@@ -12,7 +12,10 @@
 <div class="in" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
 <div class="art">
 {{#if artikel.beeld}}<div class="rr art-beeld"><img class="cover" src="{{artikel.beeld}}" alt="" decoding="async"></div>
-{{/if}}{{#if artikel.spotify}}<iframe class="art-speler" src="{{artikel.spotify}}" title="Beluister {{artikel.titel}} op Spotify" height="232" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+{{/if}}{{#if artikel.spotify}}<div class="poort art-poort" data-poort-speler="{{artikel.spotify}}" data-poort-titel="Beluister {{artikel.titel}} op Spotify">
+<p>De speler komt van Spotify, dat cookies kan plaatsen. Daarom laden we hem pas als je erom vraagt.</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px"><button type="button" class="btn b-forest" data-poort-knop>Laad de Spotify-speler</button>{{#if links.podcast_spotify}}<a href="{{links.podcast_spotify}}" target="_blank" rel="noopener" class="tlink">Of open de podcast op Spotify</a>{{/if}}</div>
+</div>
 {{/if}}{{{artikel_tekst}}}
 </div>
 

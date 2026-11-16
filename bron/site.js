@@ -159,34 +159,32 @@
     if (m) { m.open = false; m.querySelector('summary').focus(); }
   });
 
-  // 2b. live Google-reviews: de widget wordt pas geladen als de bezoeker in de buurt komt
-  var live = document.querySelector('[data-live-reviews]');
-  if (live) {
-    var laad = function () {
+  // 2b. diensten van anderen (Google-reviews via EmbedSocial, Spotify-speler) laden pas na een klik.
+  // Zo plaatst de site zelf geen cookies van derden zonder dat de bezoeker erom vraagt, en is geen cookiebanner nodig.
+  var revPoort = document.querySelector('[data-poort-reviews]');
+  if (revPoort) {
+    revPoort.querySelector('[data-poort-knop]').addEventListener('click', function () {
+      revPoort.hidden = true;
       if (document.getElementById('EmbedSocialHashtagScript')) return;
       var js = document.createElement('script');
       js.id = 'EmbedSocialHashtagScript';
       js.src = 'https://embedsocial.com/cdn/ht.js';
       document.head.appendChild(js);
-    };
-    var gedaan = false;
-    var nabij = function () {
-      if (gedaan) return;
-      if (live.getBoundingClientRect().top < window.innerHeight + 900) {
-        gedaan = true;
-        window.removeEventListener('scroll', nabij);
-        laad();
-      }
-    };
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (items, kijker) {
-        if (items[0].isIntersecting) { kijker.disconnect(); gedaan = true; laad(); }
-      }, { rootMargin: '900px' }).observe(live);
-    }
-    // vangnet voor browsers waar de kijker niet afgaat
-    window.addEventListener('scroll', nabij, { passive: true });
-    nabij();
+    });
   }
+  var spelers = document.querySelectorAll('[data-poort-speler]');
+  for (var sp = 0; sp < spelers.length; sp++) (function (poort) {
+    poort.querySelector('[data-poort-knop]').addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.className = 'art-speler';
+      f.src = poort.getAttribute('data-poort-speler');
+      f.title = poort.getAttribute('data-poort-titel');
+      f.height = '232';
+      f.allow = 'clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+      poort.parentNode.replaceChild(f, poort);
+      f.focus();
+    });
+  })(spelers[sp]);
 
   // 2c. de club in drie beelden: op desktop één vast beeldvlak dat wisselt tijdens het scrollen.
   // Zonder dit script, op smalle schermen en bij 'minder beweging' blijven het drie gewone beelden met tekst.
