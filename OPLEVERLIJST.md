@@ -170,13 +170,15 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 
 | | Waar | In te vullen of te bevestigen |
 |---|---|---|
-| S | Voorwaarden 4 | Minimumleeftijd om lid te worden. |
-| T | Voorwaarden 5 | Hoe en wanneer er betaald wordt (maandelijks vooraf, automatisch, welke betaalmethodes). |
-| U | Voorwaarden 6 | Opzegtermijn en minimale looptijd van App Coaching en Monthly Online Coaching (= punt F). |
-| V | Voorwaarden 7 | Tot hoeveel uur vooraf een personal-trainingsessie kosteloos verplaatst kan worden, en wat er gebeurt bij later afzeggen. |
-| W | Voorwaarden 16, privacy | Datum waarop de teksten online komen. |
+| S | Voorwaarden 4 | **Bevestigd 16 november:** Open Gym vanaf 12 jaar; onder 18 met toestemming van een ouder of voogd. Staat in de voorwaarden. |
+| T | Voorwaarden 5 | **Bevestigd 16 november:** alle betalingen via Plug&Pay; maandabonnementen worden automatisch aangerekend. |
+| U | Voorwaarden 6 | **Bevestigd 16 november:** App Coaching en Monthly Coaching: opzeggen tot 10 dagen voor de volgende maand ingaat. |
+| V | Voorwaarden 7 | **Bevestigd 16 november:** 24-uursregel: later annuleren of niet komen = sessie aangerekend. |
+| W | Voorwaarden 16, privacy | Ingevuld als "november 2026". Pas aan als de teksten later online komen. |
 | X | Privacy | **Bevestigd 16 november: drie camera's.** Het stuk staat nu in het privacybeleid. Graag nakijken of dit klopt, want de camerawet vraagt het: (1) de camera's zijn aangegeven via politie-aangifteloket.be; (2) aan de ingang hangt het officiële pictogram; (3) er hangen geen camera's in kleedruimtes of toiletten; (4) de beelden worden hoogstens één maand bewaard (tenzij een incident); (5) alleen jij bekijkt ze. Klopt een van die punten niet, zeg het, dan pas ik de tekst aan. |
-| Y | Privacy | Naam van de app waarmee leden binnenkomen en klanten hun dagboek bijhouden. |
-| Z | Voorstellen van mij, graag bevestigen | Opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; bewaartermijnen in het privacybeleid (contactaanvraag 1 jaar, coachinggegevens 1 jaar na het traject, boekhouding 10 jaar); bestaat een pauze bij blessure of zwangerschap? |
+| Y | Privacy | **Bevestigd 16 november:** de Reroot Health Club-app. |
+| Z | Voorstellen van mij, graag bevestigen | **Bewaartermijn bevestigd: 2 jaar** (contactaanvragen, klantgegevens, coachinggegevens; boekhouding blijft 10 jaar, dat is wettelijk). Nog niet uitdrukkelijk bevestigd, wel zo in de teksten: opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; pauze bij blessure of zwangerschap bestaat niet (staat er niet in). |
 
 Tip voor Web3Forms: in hun dashboard kun je instellen hoe lang ze aanvragen bewaren (standaard 3 jaar). Zet dat kort, bv. 30 dagen: de mail staat toch in je eigen mailbox.
+
+**Telefoon verplicht bij een intake** (16 november, op vraag van Simon): bij "Een intakegesprek" en "Het Freteffect" is het telefoonnummer verplicht (minstens 9 cijfers), met de uitleg "We bellen je om een moment af te spreken." Bij andere vragen blijft het optioneel.

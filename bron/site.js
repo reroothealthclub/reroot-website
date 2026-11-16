@@ -278,7 +278,14 @@
     intro.hidden = !intro.textContent;
     // de vraag naar online of in de studio hoort alleen bij een intakegesprek
     var vkVak = document.getElementById('vk-vak');
-    if (vkVak) vkVak.hidden = !(w === 'kennismaking' || w === 'freteffect');
+    var isIntake = (w === 'kennismaking' || w === 'freteffect');
+    if (vkVak) vkVak.hidden = !isIntake;
+    // bij een intake bellen we de aanvrager op: dan is het telefoonnummer verplicht
+    var tel = form.elements.telefoon, telOpt = document.getElementById('tel-opt'), telHint = document.getElementById('tel-hint');
+    if (tel) tel.required = isIntake;
+    if (telOpt) telOpt.hidden = isIntake;
+    if (telHint) telHint.hidden = !isIntake;
+    if (tel && !isIntake) { var tv = tel.closest('.fld'); if (tv) tv.classList.remove('fout'); tel.removeAttribute('aria-invalid'); }
   }
   keuze.addEventListener('change', pasKopAan);
   pasKopAan();
@@ -290,6 +297,11 @@
   }
 
   function controleer(veld) {
+    // een telefoonnummer moet minstens 9 cijfers hebben (0465 07 67 97, +32 465 ...)
+    if (veld.name === 'telefoon') {
+      var cijfers = veld.value.replace(/\D/g, '').length;
+      veld.setCustomValidity(veld.value && cijfers < 9 ? 'Vul een volledig telefoonnummer in.' : '');
+    }
     var ok = veld.checkValidity();
     var vak = veld.closest('.fld');
     if (vak) vak.classList.toggle('fout', !ok);
@@ -297,10 +309,11 @@
     return ok;
   }
 
-  var verplicht = form.querySelectorAll('[required]');
-  for (var j = 0; j < verplicht.length; j++) {
-    verplicht[j].addEventListener('blur', function () { controleer(this); });
-    verplicht[j].addEventListener('change', function () { controleer(this); });
+  // Welke velden verplicht zijn, hangt af van het onderwerp (telefoon bij een intake); daarom telkens opnieuw opzoeken.
+  var teControleren = form.querySelectorAll('input, select, textarea');
+  for (var j = 0; j < teControleren.length; j++) {
+    teControleren[j].addEventListener('blur', function () { if (this.required || this.value) controleer(this); });
+    teControleren[j].addEventListener('change', function () { if (this.required || this.value) controleer(this); });
   }
 
   function gegevens() {
@@ -353,6 +366,7 @@
     toon('melding-mail', false);
 
     var eersteFout = null;
+    var verplicht = form.querySelectorAll('[required], #tel');
     for (var k = 0; k < verplicht.length; k++) {
       if (!controleer(verplicht[k]) && !eersteFout) eersteFout = verplicht[k];
     }
