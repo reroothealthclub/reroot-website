@@ -175,7 +175,7 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 | U | Voorwaarden 6 | Opzegtermijn en minimale looptijd van App Coaching en Monthly Online Coaching (= punt F). |
 | V | Voorwaarden 7 | Tot hoeveel uur vooraf een personal-trainingsessie kosteloos verplaatst kan worden, en wat er gebeurt bij later afzeggen. |
 | W | Voorwaarden 16, privacy | Datum waarop de teksten online komen. |
-| X | Privacy | Hangen er camera's? Zo ja: doel, bewaartermijn, pictogram. |
+| X | Privacy | **Bevestigd 16 november: drie camera's.** Het stuk staat nu in het privacybeleid. Graag nakijken of dit klopt, want de camerawet vraagt het: (1) de camera's zijn aangegeven via politie-aangifteloket.be; (2) aan de ingang hangt het officiële pictogram; (3) er hangen geen camera's in kleedruimtes of toiletten; (4) de beelden worden hoogstens één maand bewaard (tenzij een incident); (5) alleen jij bekijkt ze. Klopt een van die punten niet, zeg het, dan pas ik de tekst aan. |
 | Y | Privacy | Naam van de app waarmee leden binnenkomen en klanten hun dagboek bijhouden. |
 | Z | Voorstellen van mij, graag bevestigen | Opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; bewaartermijnen in het privacybeleid (contactaanvraag 1 jaar, coachinggegevens 1 jaar na het traject, boekhouding 10 jaar); bestaat een pauze bij blessure of zwangerschap? |
 
