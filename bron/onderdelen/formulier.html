@@ -1,19 +1,28 @@
-<div class="form" id="formulier" data-verzend-url="{{formulier.verzend_url}}" data-email="{{contact.email}}" data-intake="{{intakegesprek.zin}}">
+<div class="form" id="formulier" data-verzend-url="{{formulier.verzend_url}}" data-sleutel="{{formulier.web3forms_sleutel}}" data-email="{{contact.email}}" data-intake="{{intakegesprek.zin}}">
 <div class="fields" style="display:flex;flex-direction:column;gap:24px">
 <h2 class="disp" id="form-kop" style="margin:0;font-size:clamp(30px,calc(var(--u)*.028),42px);line-height:1.1;color:#1F3B37">Stuur ons een bericht</h2>
 <p id="form-intro" hidden style="margin:-8px 0 0;max-width:52ch;font-size:17px;line-height:1.6;color:#3F4E47"></p>
 <form id="contactformulier" action="mailto:{{contact.email}}" method="post" enctype="text/plain" novalidate style="display:flex;flex-direction:column;gap:24px">
 <div class="fgrid">
 <div class="fld"><label for="vn">Voornaam</label><input id="vn" name="voornaam" type="text" autocomplete="given-name" required aria-describedby="vn-err"><span class="err" id="vn-err">Vul je voornaam in.</span></div>
-<div class="fld"><label for="em">E-mailadres</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="em-err"><span class="err" id="em-err">Vul een geldig e-mailadres in, zoals naam@voorbeeld.be.</span></div>
+<div class="fld"><label for="an">Achternaam <span class="opt-t">(optioneel)</span></label><input id="an" name="achternaam" type="text" autocomplete="family-name"></div>
 </div>
 <div class="fgrid">
-<div class="fld"><label for="tel">Telefoonnummer <span class="opt-t">(optioneel)</span></label><input id="tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel"></div>
+<div class="fld"><label for="em">E-mailadres</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="em-err"><span class="err" id="em-err">Vul een geldig e-mailadres in, zoals naam@voorbeeld.be.</span></div>
+<div class="fld"><label for="tel">Telefoonnummer <span class="opt-t" id="tel-opt">(optioneel)</span></label><input id="tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="tel-hint tel-err"><span class="hint" id="tel-hint" hidden>We bellen je om een moment af te spreken.</span><span class="err" id="tel-err">Vul je telefoonnummer in, zodat we je kunnen bellen.</span></div>
+</div>
+<div class="fgrid">
 <div class="fld"><label for="ond">Waarover gaat je bericht?</label>
 <select id="ond" name="onderwerp" required aria-describedby="ond-err">
 <option value="" selected disabled>Kies een optie</option>
 {{#each onderwerpen}}<option value="{{dit.sleutel}}">{{dit.tekst}}</option>
 {{/each}}</select><span class="err" id="ond-err">Kies waarover je bericht gaat.</span></div>
+<div class="fld" id="vk-vak" hidden><label for="vk">Waar wil je het gesprek? <span class="opt-t">(optioneel)</span></label>
+<select id="vk" name="voorkeur">
+<option value="" selected>Maakt mij niet uit</option>
+<option value="Online">Online</option>
+<option value="In de studio in Maaseik">In de studio in Maaseik</option>
+</select></div>
 </div>
 <div class="fld"><label for="ber">Je vraag of je doel <span class="opt-t">(optioneel)</span></label><textarea id="ber" name="bericht" rows="5" aria-describedby="ber-hint" placeholder="Bijvoorbeeld: ik wil sterker worden en weet niet welk traject bij me past."></textarea><span class="hint" id="ber-hint">Deel hier geen medische gegevens. Als die van belang zijn, bespreken we ze persoonlijk.</span></div>
 <div class="hp" aria-hidden="true"><label for="web">Laat dit veld leeg</label><input id="web" name="website" type="text" tabindex="-1" autocomplete="off"></div>

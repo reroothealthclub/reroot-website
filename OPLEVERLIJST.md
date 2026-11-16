@@ -161,3 +161,24 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 - Laadsnelheid. LCP en INP kon ik in het testvenster niet meten. Wel gemeten (lab, lokaal): geen layoutverschuiving (CLS 0) vóór en na. Het eerste scherm laadt nu één foto van 125 kB in plaats van 95 kB; de reviewwidget van EmbedSocial wordt niet meer vanzelf na 3,5 seconden geladen.
 - De omleidingen op het echte domein. Ze zijn lokaal getest onder het pad `/reroot-website/`.
 - De Spotify-speler op de afleveringspagina's heb ik in het testvenster niet zien laden.
+
+## Formulier naar je mailbox, algemene voorwaarden en privacybeleid (16 november, nog niet online)
+
+**Formulier.** Het formulier kan nu zelf versturen via Web3Forms. Zodra de sleutel in `gegevens/site.json` staat (`formulier.web3forms_sleutel`), komt elke aanvraag als mail binnen met de onderwerpregel "Nieuwe intake-aanvraag: voornaam achternaam" en daaronder voornaam, achternaam, telefoon, e-mail, onderwerp, voorkeur voor het gesprek (online of in de studio, alleen bij een intake) en vraag of doel. Met "Beantwoorden" antwoord je meteen de aanvrager. Nieuwe velden: achternaam (optioneel) en voorkeur voor het gesprek (optioneel). Getest met een nep-ontvanger op deze Mac: succes verschijnt pas nadat de dienst de aanvraag aanvaardt, en bij een weigering verschijnt de foutmelding met e-mail en telefoon. Sleutel ingevuld op 16 november (aangevraagd met simondirkx@rerootcoaching.com). Eén proefaanvraag ("PROEF Website (mag weg)") verstuurd vanaf de lokale preview: Web3Forms aanvaardde ze. Simon kijkt of ze in Outlook binnenkwam.
+
+**Algemene voorwaarden** (`algemene-voorwaarden.html`, nieuw) en **privacybeleid** (herschreven; het oude was een algemeen sjabloon met beloftes als "we garanderen de veiligheid"). Dit zijn ontwerpen, geen juridisch advies: laat ze bij voorkeur nalezen door een jurist (bv. via UNIZO of je boekhouder). De gele stukken moet je invullen; zolang er één staat, slaagt de test niet en gaat niets online.
+
+| | Waar | In te vullen of te bevestigen |
+|---|---|---|
+| S | Voorwaarden 4 | **Bevestigd 16 november:** Open Gym vanaf 12 jaar; onder 18 met toestemming van een ouder of voogd. Staat in de voorwaarden. |
+| T | Voorwaarden 5 | **Bevestigd 16 november:** alle betalingen via Plug&Pay; maandabonnementen worden automatisch aangerekend. |
+| U | Voorwaarden 6 | **Bevestigd 16 november:** App Coaching en Monthly Coaching: opzeggen tot 10 dagen voor de volgende maand ingaat. |
+| V | Voorwaarden 7 | **Bevestigd 16 november:** 24-uursregel: later annuleren of niet komen = sessie aangerekend. |
+| W | Voorwaarden 16, privacy | Ingevuld als "november 2026". Pas aan als de teksten later online komen. |
+| X | Privacy | **Bevestigd 16 november:** drie camera's (hoek bar, hoek toilet, hoek verwarming/klok), alleen Simon bekijkt de beelden, één maand bewaard. Privacybeleid klopt hiermee. Register opgesteld in `Documenten Reroot/Register camerabewaking.md` (buiten de website, niet publiek). Nog te doen door Simon: aangifte op politie-aangifteloket.be, pictogram aan de ingang, nakijken dat de camera bij het toilet niet in het toilet filmt. |
+| Y | Privacy | **Bevestigd 16 november:** de Reroot Health Club-app. |
+| Z | Voorstellen van mij, graag bevestigen | **Bewaartermijn bevestigd: 2 jaar** (contactaanvragen, klantgegevens, coachinggegevens; boekhouding blijft 10 jaar, dat is wettelijk). Nog niet uitdrukkelijk bevestigd, wel zo in de teksten: opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; pauze bij blessure of zwangerschap bestaat niet (staat er niet in). |
+
+Tip voor Web3Forms: in hun dashboard kun je instellen hoe lang ze aanvragen bewaren (standaard 3 jaar). Zet dat kort, bv. 30 dagen: de mail staat toch in je eigen mailbox.
+
+**Telefoon verplicht bij een intake** (16 november, op vraag van Simon): bij "Een intakegesprek" en "Het Freteffect" is het telefoonnummer verplicht (minstens 9 cijfers), met de uitleg "We bellen je om een moment af te spreken." Bij andere vragen blijft het optioneel.

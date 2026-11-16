@@ -836,3 +836,6 @@ a.chip:focus-visible{outline:3px solid #8DB5A2;outline-offset:3px}
 /* Het Freteffect: prijs in de kaarten */
 .fe-prijs{margin:0;font-size:17px;line-height:1.5;color:#D8D2C7}
 .fe-prijs b{font-family:'Barlow Condensed','DM Sans',sans-serif;font-style:italic;font-weight:700;font-size:30px;color:var(--iv);margin-right:4px}
+
+/* Ontwerpteksten: wat Simon nog moet invullen. test_site.py laat niets online gaan zolang dit voorkomt. */
+mark.invullen{background:#F2D98C;color:#1F3B37;padding:2px 6px;border-radius:4px;font-weight:600}

@@ -14,6 +14,8 @@ cd pad/naar/reroot-website
 | Wat | Bestand |
 |---|---|
 | Prijzen, openingsuren, adres, telefoon, e-mail, alle links, coaches, reviews, merch, artikels | `gegevens/site.json` |
+| Waar formulieraanvragen naartoe gaan: plak de sleutel van Web3Forms in `formulier.web3forms_sleutel` | `gegevens/site.json` |
+| Algemene voorwaarden en privacybeleid (tekst) | `bron/paginas/algemene-voorwaarden.html`, `bron/paginas/privacybeleid.html` |
 | Tekst en opbouw per pagina | `bron/paginas/` (één bestand per pagina) |
 | Menu bovenaan (blijft vast in beeld) en voettekst, op elke pagina hetzelfde | `bron/onderdelen/kop.html` en `bron/onderdelen/voet.html` |
 | Coachkaarten, ervaringen, de drie stappen, contactformulier | `bron/onderdelen/` |

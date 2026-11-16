@@ -276,6 +276,16 @@
       intro.textContent = '';
     }
     intro.hidden = !intro.textContent;
+    // de vraag naar online of in de studio hoort alleen bij een intakegesprek
+    var vkVak = document.getElementById('vk-vak');
+    var isIntake = (w === 'kennismaking' || w === 'freteffect');
+    if (vkVak) vkVak.hidden = !isIntake;
+    // bij een intake bellen we de aanvrager op: dan is het telefoonnummer verplicht
+    var tel = form.elements.telefoon, telOpt = document.getElementById('tel-opt'), telHint = document.getElementById('tel-hint');
+    if (tel) tel.required = isIntake;
+    if (telOpt) telOpt.hidden = isIntake;
+    if (telHint) telHint.hidden = !isIntake;
+    if (tel && !isIntake) { var tv = tel.closest('.fld'); if (tv) tv.classList.remove('fout'); tel.removeAttribute('aria-invalid'); }
   }
   keuze.addEventListener('change', pasKopAan);
   pasKopAan();
@@ -287,6 +297,11 @@
   }
 
   function controleer(veld) {
+    // een telefoonnummer moet minstens 9 cijfers hebben (0465 07 67 97, +32 465 ...)
+    if (veld.name === 'telefoon') {
+      var cijfers = veld.value.replace(/\D/g, '').length;
+      veld.setCustomValidity(veld.value && cijfers < 9 ? 'Vul een volledig telefoonnummer in.' : '');
+    }
     var ok = veld.checkValidity();
     var vak = veld.closest('.fld');
     if (vak) vak.classList.toggle('fout', !ok);
@@ -294,20 +309,44 @@
     return ok;
   }
 
-  var verplicht = form.querySelectorAll('[required]');
-  for (var j = 0; j < verplicht.length; j++) {
-    verplicht[j].addEventListener('blur', function () { controleer(this); });
-    verplicht[j].addEventListener('change', function () { controleer(this); });
+  // Welke velden verplicht zijn, hangt af van het onderwerp (telefoon bij een intake); daarom telkens opnieuw opzoeken.
+  var teControleren = form.querySelectorAll('input, select, textarea');
+  for (var j = 0; j < teControleren.length; j++) {
+    teControleren[j].addEventListener('blur', function () { if (this.required || this.value) controleer(this); });
+    teControleren[j].addEventListener('change', function () { if (this.required || this.value) controleer(this); });
   }
 
   function gegevens() {
+    var vk = form.elements.voorkeur, vkVak = document.getElementById('vk-vak');
     return {
       voornaam: form.elements.voornaam.value.trim(),
+      achternaam: form.elements.achternaam ? form.elements.achternaam.value.trim() : '',
       email: form.elements.email.value.trim(),
       telefoon: form.elements.telefoon.value.trim(),
       onderwerp: keuze.options[keuze.selectedIndex].text,
+      intake: keuze.value === 'kennismaking' || keuze.value === 'freteffect',
+      voorkeur: (vk && vkVak && !vkVak.hidden) ? (vk.value || 'Maakt niet uit') : '',
       bericht: form.elements.bericht.value.trim()
     };
+  }
+
+  // Wat in de mail aan Reroot komt: zo weinig mogelijk blokken, zodat alles in één oogopslag leesbaar is.
+  // Naam en telefoon staan ook in de onderwerpregel: zo zie je in je postvak meteen wie je moet bellen.
+  function mailVoorReroot(d, sleutel) {
+    var naam = d.voornaam + (d.achternaam ? ' ' + d.achternaam : '');
+    var soort = d.intake ? 'Intake' : 'Vraag';
+    var m = {
+      subject: soort + ': ' + naam + (d.telefoon ? ' · ' + d.telefoon : ''),
+      from_name: 'Website Reroot',
+      replyto: d.email
+    };
+    m['Contact'] = naam + ' · ' + (d.telefoon || 'geen telefoon') + ' · ' + d.email;
+    var wat = d.onderwerp.replace(/^Een /, '');
+    m['Aanvraag'] = wat.charAt(0).toUpperCase() + wat.slice(1) + (d.voorkeur ? ' · ' + d.voorkeur : '');
+    m['Vraag of doel'] = d.bericht || '-';
+    m.botcheck = false;
+    if (sleutel) m.access_key = sleutel;
+    return m;
   }
 
   var kopieerknop = document.getElementById('kopieerknop');
@@ -327,6 +366,7 @@
     toon('melding-mail', false);
 
     var eersteFout = null;
+    var verplicht = form.querySelectorAll('[required], #tel');
     for (var k = 0; k < verplicht.length; k++) {
       if (!controleer(verplicht[k]) && !eersteFout) eersteFout = verplicht[k];
     }
@@ -339,8 +379,9 @@
     if (!url) {
       // Geen formulierdienst ingesteld: zet een e-mail klaar en zeg eerlijk dat die nog verstuurd moet worden.
       var tekst = 'Dag Reroot,\n\n' + (d.bericht ? d.bericht + '\n\n' : '') +
-        'Onderwerp: ' + d.onderwerp + '\nNaam: ' + d.voornaam + '\nE-mail: ' + d.email +
-        (d.telefoon ? '\nTelefoon: ' + d.telefoon : '') + '\n';
+        'Onderwerp: ' + d.onderwerp + '\nNaam: ' + d.voornaam + (d.achternaam ? ' ' + d.achternaam : '') +
+        '\nE-mail: ' + d.email + (d.telefoon ? '\nTelefoon: ' + d.telefoon : '') +
+        (d.voorkeur ? '\nVoorkeur gesprek: ' + d.voorkeur : '') + '\n';
       var post = document.createElement('a');
       post.href = 'mailto:' + doos.getAttribute('data-email') +
         '?subject=' + encodeURIComponent('Aanvraag via de website: ' + d.onderwerp) +
@@ -362,9 +403,13 @@
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(d)
+      body: JSON.stringify(mailVoorReroot(d, doos.getAttribute('data-sleutel')))
     }).then(function (antwoord) {
       if (!antwoord.ok) throw new Error('status ' + antwoord.status);
+      return antwoord.json().catch(function () { return {}; });
+    }).then(function (resultaat) {
+      // Web3Forms antwoordt met success: true of false; pas bij true is de mail onderweg.
+      if (resultaat && resultaat.success === false) throw new Error('geweigerd');
       // Pas nu, nadat de dienst de aanvraag heeft aanvaard, tonen we succes.
       doos.setAttribute('data-status', 'verzonden');
       toon('melding-ok', true);
