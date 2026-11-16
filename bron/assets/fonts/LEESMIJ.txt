@@ -1,0 +1,3 @@
+Lettertypes van de site, zelf gehost zodat bezoekers niets bij Google Fonts ophalen.
+- DM Sans (variabel, 400-700), Gloock, Barlow Condensed: alle drie onder de SIL Open Font License 1.1
+  (https://openfontlicense.org). Gratis te gebruiken, ook commercieel. Alleen het Latijnse schrift is meegenomen.

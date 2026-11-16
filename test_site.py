@@ -319,6 +319,11 @@ def main():
         heeft = 'data-live-reviews' in paginas[pag].ruw
         check(heeft == bool(g['reviews'].get('live_widget_embedsocial')), '%s: reviewwidget staat er alleen als hij is ingesteld' % pag)
 
+    # ---- geen cookies of verzoeken naar derden zonder klik: lettertypes zelf gehost, iframes pas na een klik
+    for naam, p in paginas.items():
+        check('fonts.googleapis' not in p.ruw and 'fonts.gstatic' not in p.ruw, '%s: lettertypes komen niet van Google Fonts' % naam)
+        check('<iframe' not in p.ruw, '%s: geen iframe van een externe dienst bij het laden' % naam)
+
     # ---- geen trackers of onverwachte externe scripts
     for naam, p in paginas.items():
         check('<script src="http' not in p.ruw and 'googletagmanager' not in p.ruw and 'facebook.net' not in p.ruw,
