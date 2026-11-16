@@ -83,28 +83,37 @@
     if (!cirkel || dias.length < 2) return;
     var ring = tBlok.querySelector('.toestel-ring');
     var naam = tBlok.querySelector('[data-toestel-naam]');
+    var groep = tBlok.querySelector('[data-toestel-groep]');
+    var uitleg = tBlok.querySelector('[data-toestel-uitleg]');
     var nr = tBlok.querySelector('[data-toestel-nr]');
     var pauzeKnop = tBlok.querySelector('[data-toestel="pauze"]');
     var stil = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var twee = function (n) { return (n < 10 ? '0' : '') + n; };
-    var huidig = -1, spelen = !stil, vast = false, zichtbaar = false, duur = 3200, t = 0, vorige = 0;
+    var huidig = -1, spelen = !stil, vast = false, zichtbaar = false, duur = 4500, t = 0, vorige = 0;
     tBlok.classList.add('js-toestel');
     tBlok.querySelector('.toestel-knoppen').hidden = false;
     tBlok.querySelector('[data-toestel-totaal]').textContent = twee(dias.length);
     var zet = function (i) {
       if (i === huidig) return;
       huidig = i;
-      naam.textContent = dias[i].querySelector('figcaption').textContent;
+      var fc = dias[i].querySelector('figcaption');
+      naam.textContent = fc.querySelector('b').textContent;
+      if (groep) groep.textContent = fc.querySelector('.toestel-g').textContent;
+      if (uitleg) uitleg.textContent = fc.querySelector('.toestel-u').textContent;
       nr.textContent = twee(i + 1);
       [i + 1, i + 2].forEach(function (k) { var img = dias[k % dias.length].querySelector('img'); if (img) img.loading = 'eager'; });
     };
+    var doel = null, doelKlok = 0;
     var ga = function (i) {
       i = (i + dias.length) % dias.length;
+      doel = i; clearTimeout(doelKlok); doelKlok = setTimeout(function () { doel = null; }, 1200);
       cirkel.scrollTo({ left: i * cirkel.clientWidth, behavior: stil ? 'auto' : 'smooth' });
       zet(i); t = 0;
     };
     cirkel.addEventListener('scroll', function () {
-      zet(Math.min(dias.length - 1, Math.max(0, Math.round(cirkel.scrollLeft / (cirkel.clientWidth || 1)))));
+      var i = Math.min(dias.length - 1, Math.max(0, Math.round(cirkel.scrollLeft / (cirkel.clientWidth || 1))));
+      if (doel !== null) { if (i === doel) doel = null; return; }  // tijdens een geplande overgang de tussenstanden negeren
+      zet(i);
     }, { passive: true });
     cirkel.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { e.preventDefault(); ga(huidig + 1); }

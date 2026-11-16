@@ -813,3 +813,11 @@ h1,h2,h3{overflow-wrap:break-word}
 .toestel-knop:hover{background:rgba(236,232,221,.1);border-color:#ECE8DD}
 .toestel-knop:focus-visible{outline:3px solid #8DB5A2;outline-offset:3px}
 .toestel-hint{margin:0;max-width:36ch;font-size:16px;line-height:1.55;color:#C9D2CB}
+
+/* toestellen: groep en uitleg naast de cirkel */
+.toestel-dia figcaption .toestel-g,.toestel-dia figcaption .toestel-u{display:none}
+.toestel-tekst{display:flex;flex-direction:column;gap:8px;min-height:11.5em}
+.toestel-groep{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8DB5A2}
+.toestel-groep:empty{display:none}
+.toestel-uitleg{margin:0;max-width:40ch;font-size:18px;line-height:1.6;color:#D5DCD3}
+@media (max-width:600px){.toestel-tekst{min-height:12.5em}}

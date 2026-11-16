@@ -56,18 +56,18 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 <div class="toestel" data-toestellen>
 <div class="toestel-ring">
 <div class="toestel-cirkel" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="Toestellen in de Health Club">
-{{#each club.toestellen}}<figure class="toestel-dia" role="group" aria-roledescription="dia" aria-label="{{nummer}}: {{dit.naam}}"><img src="{{dit.foto}}" width="640" height="640" alt="{{dit.naam}} in de Health Club" loading="{{#if eerste}}eager{{else}}lazy{{/if}}" decoding="async"><figcaption>{{dit.naam}}</figcaption></figure>
+{{#each club.toestellen}}<figure class="toestel-dia" role="group" aria-roledescription="dia" aria-label="{{nummer}}: {{dit.naam}}"><img src="{{dit.foto}}" width="640" height="640" alt="{{dit.naam}} in de Health Club" loading="{{#if eerste}}eager{{else}}lazy{{/if}}" decoding="async"><figcaption><b>{{dit.naam}}</b><span class="toestel-g">{{dit.groep}}</span><span class="toestel-u">{{dit.uitleg}}</span></figcaption></figure>
 {{/each}}</div>
 </div>
 <div class="toestel-info">
 <span class="toestel-teller" aria-hidden="true"><b class="disp" data-toestel-nr>01</b> / <span data-toestel-totaal></span></span>
-<p class="disp toestel-naam" data-toestel-naam aria-live="polite"></p>
+<div class="toestel-tekst" aria-live="polite"><span class="toestel-groep" data-toestel-groep></span><p class="disp toestel-naam" data-toestel-naam></p><p class="toestel-uitleg" data-toestel-uitleg></p></div>
 <div class="toestel-knoppen" hidden>
 <button type="button" class="toestel-knop" data-toestel="vorige" aria-label="Vorig toestel"><span aria-hidden="true">←</span></button>
 <button type="button" class="toestel-knop" data-toestel="pauze" aria-label="Pauzeer de cirkel"><span aria-hidden="true">❙❙</span></button>
 <button type="button" class="toestel-knop" data-toestel="volgende" aria-label="Volgend toestel"><span aria-hidden="true">→</span></button>
 </div>
-<p class="toestel-hint">Een greep uit wat er in de club staat. Swipe door de cirkel of gebruik de pijlen.</p>
+<p class="toestel-hint">Alle toestellen in de club, van cardio tot vrije gewichten. Swipe door de cirkel of gebruik de pijlen.</p>
 </div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,40px);align-items:end">
