@@ -15,62 +15,44 @@
   // 1b. vaste menubalk: doorzichtig bovenaan de pagina, donker zodra je scrolt
   var balk = document.querySelector('.kop .hero-head');
   // 1c. opening van de homepage: beweging gekoppeld aan het scrollen.
-  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift; --r laat de wortels groeien.
+  //     --p loopt van 0 naar 1 terwijl de opening uit beeld schuift.
   var opening = document.querySelector('.hero');
   var beweeg = opening && opening.querySelector('.hero-word') &&
     !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (beweeg) opening.classList.add('hero-scroll');
-  // De wortels: elke lijn groeit volgens de plaats van de tekening in beeld.
-  // Hoofdwortels krijgen extra lagen (dik aan de stam, dun aan het uiteinde) en een lichtpunt op de groeiende top.
-  var wortelSvg = beweeg ? opening.querySelector('.roots') : null;
-  var wortels = [];
-  if (wortelSvg && wortelSvg.createSVGPoint) {
-    var NS = 'http://www.w3.org/2000/svg';
-    var plan = { r1: { start: 0, duur: 0.55, lagen: [[0.3, 'root-dik'], [0.62, 'root-mid']] },
-                 r2: { start: 0.28, duur: 0.45, lagen: [[0.45, 'root-mid']] },
-                 r3: { start: 0.55, duur: 0.45, lagen: [] } };
-    Object.keys(plan).forEach(function (groep) {
-      var g = wortelSvg.querySelector('.' + groep);
-      if (!g) return;
-      Array.prototype.slice.call(g.querySelectorAll('.root')).forEach(function (pad, nr) {
-        var start = plan[groep].start + (nr % 4) * 0.035;
-        var top = null, gloed = null;
-        if (groep !== 'r3') {
-          gloed = document.createElementNS(NS, 'circle'); gloed.setAttribute('r', '9'); gloed.setAttribute('class', 'root-gloed');
-          top = document.createElementNS(NS, 'circle'); top.setAttribute('r', '3'); top.setAttribute('class', 'root-top');
-          wortelSvg.appendChild(gloed); wortelSvg.appendChild(top);
-        }
-        wortels.push({ el: pad, len: 1, start: start, duur: plan[groep].duur, top: top, gloed: gloed, totaal: pad.getTotalLength() });
-        plan[groep].lagen.forEach(function (laag) {
-          var kopie = pad.cloneNode(false);
-          kopie.setAttribute('class', 'root ' + laag[1]);
-          g.insertBefore(kopie, pad);
-          wortels.push({ el: kopie, len: laag[0], start: start, duur: plan[groep].duur });
-        });
+  // Twee routes: de kop komt woord per woord op en de kaarten schuiven naar elkaar toe, gekoppeld aan het scrollen.
+  var routes = document.querySelector('[data-onthul]');
+  var rustigNu = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var delen = [];
+  if (routes && !rustigNu) {
+    var kop = routes.querySelector('.ways-head h2');
+    if (kop) {
+      var woorden = kop.textContent.trim().split(/\s+/);
+      kop.setAttribute('aria-label', kop.textContent.trim());
+      kop.innerHTML = '';
+      woorden.forEach(function (w, i) {
+        var s = document.createElement('span'); s.className = 'w'; s.setAttribute('aria-hidden', 'true'); s.textContent = w;
+        kop.appendChild(s); if (i < woorden.length - 1) kop.appendChild(document.createTextNode(' '));
+        delen.push({ el: s, start: 0.04 * i, duur: 0.3 });
       });
+    }
+    var lead = routes.querySelector('.ways-head .lead');
+    if (lead) delen.push({ el: lead, start: 0.3, duur: 0.3 });
+    Array.prototype.slice.call(routes.querySelectorAll('.way')).forEach(function (k, i) {
+      delen.push({ el: k, start: 0.38 + i * 0.08, duur: 0.45 });
     });
-    wortels.forEach(function (w) { w.el.style.strokeDasharray = w.len + ' 2'; });
+    routes.classList.add('onthul');
   }
-  var groeiWortels = function () {
-    if (!wortels.length) return;
-    var r = wortelSvg.getBoundingClientRect();
-    if (!r.height) return;
+  var onthul = function () {
+    if (!delen.length) return;
+    var r = routes.getBoundingClientRect();
     var vh = window.innerHeight || 1;
-    var g = Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (r.height * 0.9)));
-    opening.style.setProperty('--k', Math.min(1, Math.max(0, (g - 0.35) * 1.6)).toFixed(3));
-    wortels.forEach(function (w) {
-      var lokaal = Math.min(1, Math.max(0, (g - w.start) / w.duur));
-      w.el.style.strokeDashoffset = (w.len - Math.min(w.len, lokaal)).toFixed(4);
-      if (w.top) {
-        var groeit = lokaal > 0.01 && lokaal < 0.995;
-        if (groeit) {
-          var punt = w.el.getPointAtLength(lokaal * w.totaal);
-          w.top.setAttribute('cx', punt.x); w.top.setAttribute('cy', punt.y);
-          w.gloed.setAttribute('cx', punt.x); w.gloed.setAttribute('cy', punt.y);
-        }
-        w.top.style.opacity = groeit ? '1' : '0';
-        w.gloed.style.opacity = groeit ? '.28' : '0';
-      }
+    // 0 als de bovenkant van de sectie onderaan in beeld komt, 1 als ze tot een kwart van boven geschoven is
+    var g = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75)));
+    delen.forEach(function (d) {
+      var v = Math.min(1, Math.max(0, (g - d.start) / d.duur));
+      v = 1 - Math.pow(1 - v, 3);
+      d.el.style.setProperty('--v', v.toFixed(3));
     });
   };
 
@@ -82,8 +64,8 @@
     if (beweeg) {
       var p = Math.min(1, Math.max(0, y / (opening.offsetHeight || 1)));
       opening.style.setProperty('--p', p.toFixed(3));
-      groeiWortels();
     }
+    onthul();
   };
   window.addEventListener('scroll', function () {
     if (!bezig) { bezig = true; window.requestAnimationFrame(bijScroll); }
@@ -91,6 +73,84 @@
   var mnav = document.querySelector('details.mnav');
   if (mnav) mnav.addEventListener('toggle', bijScroll);
   bijScroll();
+
+  // 1d. toestellen op de clubpagina: een cirkel die vanzelf van toestel naar toestel draait.
+  //     Pauze bij aanwijzen of focus, en met de pauzeknop. Bij 'minder beweging' draait hij niet vanzelf.
+  var tBlok = document.querySelector('[data-toestellen]');
+  if (tBlok) (function () {
+    var cirkel = tBlok.querySelector('.toestel-cirkel');
+    var dias = Array.prototype.slice.call(tBlok.querySelectorAll('.toestel-dia'));
+    if (!cirkel || dias.length < 2) return;
+    var ring = tBlok.querySelector('.toestel-ring');
+    var naam = tBlok.querySelector('[data-toestel-naam]');
+    var groep = tBlok.querySelector('[data-toestel-groep]');
+    var uitleg = tBlok.querySelector('[data-toestel-uitleg]');
+    var nr = tBlok.querySelector('[data-toestel-nr]');
+    var pauzeKnop = tBlok.querySelector('[data-toestel="pauze"]');
+    var stil = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var twee = function (n) { return (n < 10 ? '0' : '') + n; };
+    var huidig = -1, spelen = !stil, vast = false, zichtbaar = false, duur = 4500, t = 0, vorige = 0;
+    tBlok.classList.add('js-toestel');
+    tBlok.querySelector('.toestel-knoppen').hidden = false;
+    tBlok.querySelector('[data-toestel-totaal]').textContent = twee(dias.length);
+    var zet = function (i) {
+      if (i === huidig) return;
+      huidig = i;
+      var fc = dias[i].querySelector('figcaption');
+      naam.textContent = fc.querySelector('b').textContent;
+      if (groep) groep.textContent = fc.querySelector('.toestel-g').textContent;
+      if (uitleg) uitleg.textContent = fc.querySelector('.toestel-u').textContent;
+      nr.textContent = twee(i + 1);
+      [i + 1, i + 2].forEach(function (k) { var img = dias[k % dias.length].querySelector('img'); if (img) img.loading = 'eager'; });
+    };
+    var doel = null, doelKlok = 0;
+    var ga = function (i) {
+      i = (i + dias.length) % dias.length;
+      doel = i; clearTimeout(doelKlok); doelKlok = setTimeout(function () { doel = null; }, 1200);
+      cirkel.scrollTo({ left: i * cirkel.clientWidth, behavior: stil ? 'auto' : 'smooth' });
+      zet(i); t = 0;
+    };
+    cirkel.addEventListener('scroll', function () {
+      var i = Math.min(dias.length - 1, Math.max(0, Math.round(cirkel.scrollLeft / (cirkel.clientWidth || 1))));
+      if (doel !== null) { if (i === doel) doel = null; return; }  // tijdens een geplande overgang de tussenstanden negeren
+      zet(i);
+    }, { passive: true });
+    cirkel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); ga(huidig + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); ga(huidig - 1); }
+    });
+    var toonPauze = function () {
+      pauzeKnop.setAttribute('aria-label', spelen ? 'Pauzeer de cirkel' : 'Laat de cirkel draaien');
+      pauzeKnop.firstElementChild.textContent = spelen ? '❙❙' : '▶';
+    };
+    tBlok.addEventListener('click', function (e) {
+      var k = e.target.closest('[data-toestel]');
+      if (!k) return;
+      var w = k.getAttribute('data-toestel');
+      if (w === 'vorige') ga(huidig - 1);
+      if (w === 'volgende') ga(huidig + 1);
+      if (w === 'pauze') { spelen = !spelen; toonPauze(); }
+    });
+    ring.addEventListener('mouseenter', function () { vast = true; });
+    ring.addEventListener('mouseleave', function () { vast = false; });
+    cirkel.addEventListener('focusin', function () { vast = true; });
+    cirkel.addEventListener('focusout', function () { vast = false; });
+    cirkel.addEventListener('touchstart', function () { t = 0; }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { zichtbaar = es[0].isIntersecting; }, { threshold: 0.4 }).observe(ring);
+    } else { zichtbaar = true; }
+    var tik = function (nu) {
+      var dt = vorige ? nu - vorige : 0; vorige = nu;
+      if (spelen && !vast && zichtbaar && !document.hidden) {
+        t += dt / duur;
+        if (t >= 1) ga(huidig + 1);
+      }
+      ring.style.setProperty('--t', (spelen ? Math.min(1, t) : 0).toFixed(3));
+      window.requestAnimationFrame(tik);
+    };
+    zet(0); toonPauze();
+    window.requestAnimationFrame(tik);
+  })();
 
   // 2. menu
   document.addEventListener('keydown', function (e) {
@@ -201,11 +261,11 @@
     if (!kop || !intro) return;
     var w = keuze.value, naam = keuze.options[keuze.selectedIndex].text;
     if (w === 'kennismaking') {
-      kop.textContent = 'Boek je intakegesprek';
-      intro.textContent = 'Laat je gegevens achter. Een van de coaches neemt persoonlijk contact op om een moment vast te leggen. Het gesprek is vrijblijvend.';
+      kop.textContent = 'Vraag een intakegesprek aan';
+      intro.textContent = 'Dit is een aanvraag, nog geen afspraak. Een van de coaches neemt contact met je op om een moment af te spreken. In het gesprek bespreken jullie je doel, je trainingservaring en hoe je week eruitziet.';
     } else if (w === 'freteffect') {
-      kop.textContent = 'Boek je intakegesprek bij Het Freteffect';
-      intro.textContent = 'Laat je gegevens achter en vertel kort waar je naartoe wil. We nemen persoonlijk contact op om een moment vast te leggen.';
+      kop.textContent = 'Vraag een intakegesprek aan bij Het Freteffect';
+      intro.textContent = 'Vertel kort waar je nu staat en waar je naartoe wil. Dit is een aanvraag, nog geen afspraak: we nemen contact met je op om een moment af te spreken.';
     } else if (w && w !== 'anders') {
       kop.textContent = 'Je vraag over ' + naam;
       intro.textContent = 'Stel je vraag of vertel kort wat je zoekt. Een van de coaches antwoordt je persoonlijk.';

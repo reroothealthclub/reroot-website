@@ -24,9 +24,9 @@
   },
 
   "intakegesprek": {
-    "uitleg": "De hoofdknop van de site. 'knoptekst' staat op alle knoppen, 'knoptekst_kort' in de menubalk op mobiel.",
-    "knoptekst": "Boek je intakegesprek nu",
-    "knoptekst_kort": "Boek intake"
+    "uitleg": "De hoofdknop van de site. Het formulier verstuurt een aanvraag, geen geboekte afspraak; houd de knoptekst daarom bij 'aanvragen'. 'knoptekst_kort' staat in de menubalk op mobiel.",
+    "knoptekst": "Vraag een intake aan",
+    "knoptekst_kort": "Intake aanvragen"
   },
 
   "bedrijf": {
@@ -81,7 +81,56 @@
       "meebrengen": ""
     },
     "merken": ["Nautilus", "Panatta", "Technogym", "ATX", "Sterling", "Marbo Sport", "StairMaster", "Xebex"],
-    "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"]
+    "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"],
+    "uitleg_toestellen": "De draaiende cirkel op de clubpagina. Volgorde = volgorde in de cirkel. groep = het kleine label boven de naam; uitleg = één of twee zinnen onder de naam. Foto: vierkant, in bron/assets/toestellen/.",
+    "toestellen": [
+      { "groep": "Cardio", "naam": "Loopband", "uitleg": "Wandelen of lopen op een snelheid en helling die je zelf instelt. Om op te warmen of voor rustige conditietraining.", "foto": "assets/toestellen/loopband.jpg" },
+      { "groep": "Cardio", "naam": "Trappenmachine", "uitleg": "Je klimt treden die blijven doordraaien. Zwaar voor je conditie, en je benen en bilspieren werken mee.", "foto": "assets/toestellen/trappenmachine.jpg" },
+      { "groep": "Cardio", "naam": "Roeimachine", "uitleg": "Conditietraining waarbij benen, rug en armen samenwerken. Hoe harder je trekt, hoe groter de weerstand.", "foto": "assets/toestellen/roeimachine.jpg" },
+      { "groep": "Cardio", "naam": "Air bike", "uitleg": "Een fiets met een ventilator en bewegende armen. Hoe harder je trapt en duwt, hoe zwaarder het wordt: geschikt voor korte, intensieve intervallen.", "foto": "assets/toestellen/airbike.jpg" },
+      { "groep": "Cardio", "naam": "Hometrainer", "uitleg": "Fietsen met instelbare weerstand. Om op te warmen of voor langere conditietraining.", "foto": "assets/toestellen/hometrainer.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Half rack", "uitleg": "Een rek met verstelbare steunen voor de stang. Voor squats, bankdrukken en schouderdrukken met vrije gewichten.", "foto": "assets/toestellen/half-rack.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Power racks", "uitleg": "Rekken met veiligheidssteunen aan beide kanten, zodat je zwaar kunt squatten of drukken, ook als niemand je kan opvangen.", "foto": "assets/toestellen/power-racks.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Smith machine", "uitleg": "Een stang die in een vaste geleiding op en neer gaat. Je kunt ze op elke hoogte vastzetten.", "foto": "assets/toestellen/smith-machine.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Bankdrukbank", "uitleg": "Een vlakke bank met steunen voor de stang, om te bankdrukken met een halterstang.", "foto": "assets/toestellen/bankdrukbank.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Verstelbare banken", "uitleg": "Banken die je vlak, schuin of rechtop zet, voor oefeningen met dumbbells of een stang.", "foto": "assets/toestellen/verstelbare-banken.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Halterstangen", "uitleg": "Stangen in verschillende soorten en gewichten, voor squats, deadlifts, bankdrukken en roeien.", "foto": "assets/toestellen/halterstangen.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Halterschijven", "uitleg": "Rubberen schijven in verschillende gewichten. Ze vangen de klap op als je de stang op de grond laat zakken.", "foto": "assets/toestellen/halterschijven.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Trap bar", "uitleg": "Een zeshoekige stang waar je in gaat staan, zodat het gewicht naast je lichaam hangt. Voor deadlifts en om zwaar te dragen.", "foto": "assets/toestellen/trap-bar.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Landmine", "uitleg": "Een stang die aan één kant scharniert bij de vloer. Voor drukken, roeien en draaibewegingen langs een vaste boog.", "foto": "assets/toestellen/landmine.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Dumbbells", "uitleg": "Een volledige rij dumbbells, zodat je per oefening het gewicht kiest dat past.", "foto": "assets/toestellen/dumbbells.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Lichte gewichten en foamrollers", "uitleg": "Lichte dumbbells, kleine schijven en foamrollers voor opwarming, techniekwerk en mobiliteit.", "foto": "assets/toestellen/lichte-gewichten.jpg" },
+      { "groep": "Rekken en vrije gewichten", "naam": "Kettlebells", "uitleg": "Voor swings, goblet squats en dragen. Het gewicht hangt onder je hand, waardoor je grip en romp extra moeten werken.", "foto": "assets/toestellen/kettlebells.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Beenpers", "uitleg": "Je duwt een slede met gewicht schuin van je weg, met je rug gesteund. Traint je benen en bilspieren.", "foto": "assets/toestellen/beenpers.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Belt squat", "uitleg": "Je squat met het gewicht aan een heupgordel in plaats van op je schouders. Zware beentraining zonder last op je rug.", "foto": "assets/toestellen/belt-squat.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Hip thrust-toestel", "uitleg": "Je duwt je heupen omhoog tegen een kussen met gewicht. Gericht op je bilspieren.", "foto": "assets/toestellen/hip-thrust.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Borstpress met schijven", "uitleg": "Zittend twee armen van je af duwen, elke kant apart. Traint borst, schouders en triceps.", "foto": "assets/toestellen/borstpress.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Roeitoestel met schijven", "uitleg": "Zittend roeien met je borst tegen een steun. Traint je rugspieren, elke kant apart.", "foto": "assets/toestellen/roeitoestel.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Lat pulldown met schijven", "uitleg": "Je trekt twee armen van boven naar beneden. Traint de brede rugspieren, ook per kant.", "foto": "assets/toestellen/lat-pulldown-schijven.jpg" },
+      { "groep": "Krachttoestellen", "naam": "T-bar row", "uitleg": "Voorovergebogen roeien met een stang die aan één kant vastzit. Voor je bovenrug.", "foto": "assets/toestellen/t-bar-row.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Kabelstation", "uitleg": "Twee verstelbare katrollen voor talloze oefeningen, van flyes en face pulls tot oefeningen op één been.", "foto": "assets/toestellen/kabelstation.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Kabeltoren met bank", "uitleg": "Een kabeltoestel met bank voor pulldowns en roeien aan de kabel.", "foto": "assets/toestellen/kabeltoren.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Optrek- en dipmachine", "uitleg": "Optrekken en dippen met een kniekussen dat een deel van je gewicht draagt. Zo werk je naar optrekken op eigen kracht.", "foto": "assets/toestellen/optrek-dipmachine.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Adductor en abductor", "uitleg": "Je duwt je benen naar buiten of brengt ze naar binnen tegen gewicht. Traint de binnen- en buitenkant van je heupen.", "foto": "assets/toestellen/adductor-abductor.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Beenstrekker", "uitleg": "Zittend je knie strekken tegen gewicht. Traint de voorkant van je dijen.", "foto": "assets/toestellen/beenstrekker.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Beencurl, zittend", "uitleg": "Zittend je knie buigen tegen gewicht. Traint de achterkant van je dijen.", "foto": "assets/toestellen/beencurl.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Beencurl, staand", "uitleg": "Eén been tegelijk buigen terwijl je staat. Traint de achterkant van je dijen, per kant.", "foto": "assets/toestellen/staande-beencurl.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Kuitentoestel, zittend", "uitleg": "Zittend je hielen omhoog duwen met het gewicht op je knieën. Traint je kuiten.", "foto": "assets/toestellen/kuitentoestel.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Pullover", "uitleg": "Je brengt je armen in een boog van boven je hoofd naar beneden. Traint de brede rugspieren.", "foto": "assets/toestellen/pullover.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Tricepsextensie", "uitleg": "Je strekt je ellebogen tegen gewicht, met je bovenarmen gesteund. Traint de achterkant van je armen.", "foto": "assets/toestellen/tricepsextensie.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Bank voor bicepscurls", "uitleg": "Bicepscurls met je bovenarmen op een schuin kussen, zodat je niet kunt meezwaaien.", "foto": "assets/toestellen/curlbank.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Rugstrekbank", "uitleg": "Schuin voorover zakken en weer omhoog komen. Traint onderrug, bilspieren en de achterkant van je dijen.", "foto": "assets/toestellen/rugstrekbank.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Power tower", "uitleg": "Optrekken, dippen en benen heffen aan één station.", "foto": "assets/toestellen/power-tower.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Bank voor hip thrusts", "uitleg": "Een stevig kussen om je rug tegen te leggen bij hip thrusts met een stang.", "foto": "assets/toestellen/hip-thrustbank.jpg" },
+      { "groep": "Krachttoestellen", "naam": "Buikspierbank", "uitleg": "Voor sit-ups en andere buikoefeningen, met je voeten vast onder de rollen.", "foto": "assets/toestellen/buikspierbank.jpg" },
+      { "groep": "Functionele training", "naam": "Grepen en stangen", "uitleg": "Grepen, stangen en touwen om de kabeltoestellen aan te passen aan je oefening.", "foto": "assets/toestellen/handgrepen.jpg" },
+      { "groep": "Functionele training", "naam": "Weerstandsbanden en lifting belts", "uitleg": "Elastische banden voor opwarming en extra weerstand, en riemen voor zware sets.", "foto": "assets/toestellen/banden-riemen.jpg" },
+      { "groep": "Functionele training", "naam": "Fitnessballen en battle rope", "uitleg": "Fitnessballen voor romp- en stabiliteitsoefeningen; het zware touw voor korte, intensieve intervallen.", "foto": "assets/toestellen/ballen-touw.jpg" },
+      { "groep": "Functionele training", "naam": "Balansballen", "uitleg": "Halve ballen voor balans- en stabiliteitsoefeningen.", "foto": "assets/toestellen/balansballen.jpg" },
+      { "groep": "Functionele training", "naam": "Plyobox", "uitleg": "Een stevige box om op te springen of op te stappen, met een andere hoogte aan elke kant.", "foto": "assets/toestellen/plyobox.jpg" },
+      { "groep": "Functionele training", "naam": "Step", "uitleg": "Een lage step voor opstapoefeningen en om op te warmen.", "foto": "assets/toestellen/step.jpg" },
+      { "groep": "Functionele training", "naam": "Sprinttrack", "uitleg": "Een strook kunstgras voor sprints, sledewerk en loopoefeningen.", "foto": "assets/toestellen/sprinttrack.jpg" }
+    ]
   },
 
   "links": {
@@ -97,7 +146,7 @@
     "uitleg_algemene_voorwaarden": "Leeg = er wordt nergens naar algemene voorwaarden verwezen. Vul het adres in zodra je echte voorwaarden online hebt staan."
   },
 
-  "aanbod_uitleg": "checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
+  "aanbod_uitleg": "niet_inbegrepen = wat de klant bij deze formule niet krijgt; leeg = de rij blijft leeg. checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",
   "aanbod": {
     "open_gym": {
       "naam": "Open Gym",
@@ -107,39 +156,42 @@
       "prijs_detail": "incl. 6% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroothealthclub-athlete",
       "knoptekst_kopen": "Word lid",
-      "beschrijving": "Toegang tot de Health Club, zeven dagen per week. Voor wie zijn eigen schema volgt en daar een rustige, goed uitgeruste plek voor zoekt.",
-      "voor_wie": "Je traint zelfstandig en zoekt een goed uitgeruste club.",
-      "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren.",
-      "contact_met_coach": "Geen persoonlijke opvolging. Wil je die later toch, dan stap je over naar coaching.",
+      "beschrijving": "Toegang tot de Health Club, zeven dagen per week. Je volgt je eigen schema. Een trainingsschema, voedingsbegeleiding of opvolging door een coach zit er niet in.",
+      "voor_wie": "Je weet hoe je wil trainen en zoekt een goed uitgeruste club om dat te doen.",
+      "wat_je_krijgt": "Toegang tot de Health Club via de app, binnen de openingsuren, met alle toestellen en vrije gewichten.",
+      "contact_met_coach": "Geen. Je traint zelfstandig.",
+      "niet_inbegrepen": "Een trainingsschema, voedingsbegeleiding en opvolging door een coach. Wil je dat later wel, dan kun je coaching nemen.",
       "goed_om_te_weten": "Maandelijks abonnement, zonder jaarcontract en zonder inschrijfkosten. Opzeggen kan tot 10 dagen voor het einde van de maand."
     },
     "app_coaching": {
       "naam": "App Coaching",
-      "ondertitel": "Online begeleiding",
+      "ondertitel": "Wekelijkse opvolging via de app",
       "prijs": "99",
       "eenheid": "per maand",
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-appcoaching-21",
       "knoptekst_kopen": "Start App Coaching",
-      "beschrijving": "Je coach stuurt je training, voeding en levensstijl bij via de app. Voor wie richting wil, zonder vaste afspraken in de gym.",
-      "voor_wie": "Je traint zelf, maar wil dat iemand meekijkt en bijstuurt.",
-      "wat_je_krijgt": "Feedback op je training, voeding en levensstijl, via de app.",
-      "contact_met_coach": "Elke week een check-up met je coach, via de app.",
-      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
+      "beschrijving": "Je traint zelf. Elke week bekijkt je coach in de app hoe je training, voeding en levensstijl lopen, geeft feedback en stuurt bij waar het nodig is.",
+      "voor_wie": "Je traint al zelfstandig en wil dat een coach elke week meekijkt en bijstuurt.",
+      "wat_je_krijgt": "Elke week feedback van je coach op je training, voeding en levensstijl.",
+      "contact_met_coach": "Elke week een check-up, altijd via de app.",
+      "niet_inbegrepen": "Live check-ups en toegang tot de Health Club.",
+      "goed_om_te_weten": "Maandelijks abonnement. Wil je ook zelfstandig in de club trainen, dan neem je daarnaast Open Gym."
     },
     "monthly_coaching": {
       "naam": "Monthly Online Coaching",
-      "ondertitel": "Persoonlijke coaching",
+      "ondertitel": "Persoonlijk plan, ook live opgevolgd",
       "prijs": "185",
       "eenheid": "per maand",
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-onlinetraject-21",
       "knoptekst_kopen": "Start Monthly Online Coaching",
-      "beschrijving": "Persoonlijke coaching met elke week een check-up: één keer per maand live, de andere weken via de app. Voor wie een vast plan en nauwe opvolging wil.",
-      "voor_wie": "Je wil een vast plan en een coach die je van dichtbij opvolgt.",
-      "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek dat je coach opvolgt.",
+      "beschrijving": "Je krijgt een persoonlijk plan voor training, voeding en levensstijl en houdt een dagboek bij in de app. Elke week een check-up met je coach: één keer per maand live, de andere weken via de app.",
+      "voor_wie": "Je wil een plan dat voor jou gemaakt is, en een coach die je elke week opvolgt en je één keer per maand live spreekt.",
+      "wat_je_krijgt": "Een persoonlijk plan voor training, voeding en levensstijl, met een dagboek in de app dat je coach opvolgt.",
       "contact_met_coach": "Elke week een check-up: één keer per maand live, de andere weken via de app.",
-      "goed_om_te_weten": "Maandelijks abonnement. Toegang tot de Health Club is niet inbegrepen."
+      "niet_inbegrepen": "Toegang tot de Health Club en training met een coach in de gym.",
+      "goed_om_te_weten": "Maandelijks abonnement. Wil je ook zelfstandig in de club trainen, dan neem je daarnaast Open Gym."
     },
     "personal_training": {
       "naam": "Personal Training",
@@ -149,10 +201,11 @@
       "prijs_detail": "10-beurtenkaart: € 640, incl. 6% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-personal-640",
       "knoptekst_kopen": "Koop een 10-beurtenkaart",
-      "beschrijving": "Tien sessies met een coach in de gym, één-op-één of in een kleine groep. Voor wie live begeleiding wil, ingepland rond de eigen week.",
-      "voor_wie": "Je wil live begeleiding van een coach, in de gym.",
-      "wat_je_krijgt": "Tien sessies die je invult volgens wat je nodig hebt: training, voedingsadvies, techniekanalyse of een gesprek over je levensstijl.",
-      "contact_met_coach": "Tijdens elke sessie, één-op-één of in een kleine groep.",
+      "beschrijving": "Je traint in de Health Club met een coach naast je, één-op-één of in een kleine groep. Je koopt tien sessies en bepaalt per sessie wat je nodig hebt.",
+      "voor_wie": "Je wil dat een coach live naar je uitvoering kijkt en je in de gym begeleidt.",
+      "wat_je_krijgt": "Tien sessies met een coach in de gym. Per sessie kies je de inhoud: training, techniekanalyse, voedingsadvies of een gesprek over je levensstijl.",
+      "contact_met_coach": "Tijdens de sessies, één-op-één of in een kleine groep.",
+      "niet_inbegrepen": "",
       "goed_om_te_weten": "Eén sessie per week. De kaart is één jaar geldig."
     }
   },
@@ -161,8 +214,8 @@
     {
       "naam": "Simon",
       "volledige_naam": "Simon Dirkx",
-      "focus": "Ontwikkeling als geheel",
-      "bio": "Simon kijkt naar je hele ontwikkeling, met als doel dat lichaam en hoofd ook later bestand zijn tegen wat er op je pad komt. Hij stelt je huidige aanpak in vraag en helpt je gerichte keuzes te maken.",
+      "focus": "Training, voeding en herstel samen",
+      "bio": "Simon begint bij de vraag wat je nu het meest tegenhoudt. Hij legt je trainingen, je eetpatroon en je slaap naast elkaar, kiest wat eerst moet veranderen en legt uit waarom. Zo leer je zelf bijsturen.",
       "foto": "assets/simon.webp",
       "foto_alt": "Simon Dirkx, coach bij Reroot, in de gym",
       "sociale_links": [
@@ -172,8 +225,8 @@
     {
       "naam": "Kevin",
       "volledige_naam": "Kevin Fret",
-      "focus": "Zichtbare resultaten",
-      "bio": "Kevin haalt op een onderbouwde manier het maximum uit je lichaam. Hij is de stok achter de deur voor wie discipline en hard werk wil volhouden.",
+      "focus": "Spieropbouw en bodybuilding",
+      "bio": "Kevin werkt met wie spiermassa wil opbouwen. Hij kijkt hoe je een oefening uitvoert en of de juiste spier het werk doet, en stuurt je training bij op basis van wat je bijhoudt.",
       "foto": "assets/kevin.jpg",
       "foto_alt": "Kevin Fret, coach bij Reroot, in de gym",
       "pagina": "freteffect.html",

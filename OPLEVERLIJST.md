@@ -1,10 +1,65 @@
-# Opleverlijst Reroot-website (bijgewerkt op 13 november 2026, na het herontwerp)
+# Opleverlijst Reroot-website (bijgewerkt op 16 november 2026, na de redactieronde)
 
 Het herontwerp staat op de tak `herontwerp`, alleen op je Mac. De gepubliceerde versie is ongewijzigd.
 
 ## Oordeel
 
 **Klaar voor je publicatieakkoord als testversie** op het GitHub-testadres. **Nog niet klaar om je echte domein te vervangen**: daarvoor ontbreken algemene voorwaarden en een beslissing over het formulier (zie "Blokkeert").
+
+## Redactieronde (16 november)
+
+Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. Ontwerp, kleuren, logo, foto's, animaties, routes, formulierlogica en betaallinks zijn ongewijzigd. Staat lokaal op de tak `herontwerp`, niet gepubliceerd. Herstelpunt: tag `voor-redactie-2026-11-16`.
+
+- **Knop:** "Vraag een intake aan" (menubalk op mobiel: "Intake aanvragen"). "Vraag een intakegesprek aan" brak op telefoons over twee regels; de kortere tekst past overal op één regel. De formulierkop zegt wel voluit "Vraag een intakegesprek aan". Het formulier verstuurt een aanvraag, geen boeking. De formulierkop zegt nu letterlijk: "Dit is een aanvraag, nog geen afspraak."
+- **Homepage:** kop "Train zelfstandig of met een coach"; bovenaan staat wat Reroot is en waar. De pijlers leggen uit hoe ze elkaar beïnvloeden. Het coachingvoorbeeld (ploegenwerk) heeft een scherpere beslissing en een vierde stap "Opvolging": wat er bijgehouden wordt en wanneer de coach opnieuw beslist. Geen resultaat toegevoegd.
+- **Tarieven:** per formule een nieuwe rij "Niet inbegrepen", en een vraag met de totaalprijs als je coaching combineert met Open Gym (€ 134 en € 220, berekend uit de prijzen in `site.json`).
+- **Health Club:** duidelijk dat Open Gym een lidmaatschap is, geen coachingtraject: geen schema, geen voedingsbegeleiding, geen opvolging.
+- **Coaching:** "Wat een coach opvolgt" en de stappen tonen per formule wat je bij de start krijgt.
+- **Over Reroot:** dezelfde drie pijlers als op de homepage (in plaats van vier andere), concrete waarden in plaats van labels.
+- **Coachprofielen:** Simon en Kevin hebben een concreet label en een nieuwe tekst over hoe ze werken.
+- **Het Freteffect:** concrete beschrijving van online coaching en technieksessies; nieuw blok "Sporters van Kevin" met de tien foto's van 16 november (zeven wedstrijdfoto's, Kevin achter de schermen, twee voor-en-nafoto's). Geen namen, wedstrijden of klasseringen, wel de zin "Resultaten verschillen per persoon". Camera- en locatiegegevens zijn uit de foto's gehaald.
+- **Weggehaald:** "vrijblijvend" (niet bevestigd, zie hieronder), "fysieke transformatie", "een plan dat in je week past", "training met richting", "het maximum uit je lichaam", "stok achter de deur", "meer dan een fitnesscentrum" en losse slotzinnen zonder inhoud. De testsuite controleert nu dat ze niet terugkomen.
+- **Kennisbank:** alleen de introducties; artikels en afleveringen zijn niet aangeraakt.
+
+**Na je feedback (16 november, later):**
+- De wortels onder "Train zelfstandig of met een coach" zijn weg. In de plaats komt de kop woord per woord op en schuiven de twee kaarten vanuit de zijkanten naar elkaar toe terwijl je scrolt. Bij "minder beweging" staat alles stil.
+- Tarieventabel: de knoppen stonden over "Goed om te weten" omdat een oude regel de tabel op 7 rijen hield. Nu 8 rijen, alles staat weer onder elkaar.
+- Geen lichtgroen meer: "Sterker worden begint met begrijpen", "Je eerste keer bij Reroot" en "Kom langs in Maaseik" zijn bosgroen met beige letters; "Maximaal 150 leden" is beige. Ook de kleine accenten (labels, hovers) zijn beige.
+
+**Toestellencirkel op de clubpagina (16 november):** in "Wat je er vindt" draait een cirkel langs alle 46 toestellen uit je map `Gym` (bureaublad). Naast de cirkel staan de groep (Cardio, Rekken en vrije gewichten, Krachttoestellen, Functionele training), de naam en één of twee zinnen uitleg. Om de 4,5 seconden komt het volgende toestel. Een mintgroene boog rond de cirkel loopt vol tot het volgende toestel. Er zijn knoppen voor vorige, pauze en volgende; je kunt ook swipen of de pijltjestoetsen gebruiken. De cirkel pauzeert als je erop wijst en draait niet vanzelf bij "minder beweging". De foto's zijn vierkant uitgesneden en zonder camera- of locatiegegevens. Namen en volgorde pas je aan in `gegevens/site.json` → `club` → `toestellen`.
+
+**Kenniscentrum (16 november):** de Kennisbank heet nu Kenniscentrum, in het menu, de voettekst, het kruimelpad en alle verwijzingen. De pagina heeft vier delen met knoppen bovenaan: Voeding (de vijf artikels), Beweging (afleveringen 1, 3 en 5), Levensstijl (afleveringen 2 en 4) en Recepten (nieuw). De CoachCabin Podcast blijft onderaan met de Spotify-knop. Het adres blijft `kennisbank.html`, zodat gedeelde links blijven werken.
+
+### Te bevestigen door Simon
+
+| # | Pagina | Vraag |
+|---|---|---|
+| A | Alle pagina's, contact | Is het intakegesprek kosteloos en vrijblijvend? Geldt dat ook voor Het Freteffect? Tot je het bevestigt, staat "vrijblijvend" nergens meer. |
+| B | Contact, intakeband | Met wie is het gesprek (Simon, Kevin, wie vrij is), waar (in de club, telefonisch, video) en hoe lang? Binnen welke termijn nemen jullie contact op na een aanvraag? |
+| C | Tarieven, coaching | **App Coaching:** krijgt de klant bij de start een trainingsschema of voedingsplan, of alleen wekelijkse feedback op wat hij zelf doet? Nu staat alleen het laatste er. |
+| D | Tarieven, coaching | **App Coaching en Monthly Online Coaching:** volgt altijd dezelfde coach op? Kan de klant kiezen tussen Simon en Kevin? |
+| E | Tarieven, coaching | **Monthly Online Coaching:** waar vindt de maandelijkse live check-up plaats (in de club of via video) en hoe lang duurt die? |
+| F | Tarieven | **App Coaching en Monthly Online Coaching:** opzegtermijn en eventuele minimale looptijd. Nu staat er alleen "Maandelijks abonnement". |
+| G | Tarieven | **Monthly Online Coaching:** klopt "Niet inbegrepen: training met een coach in de gym"? |
+| H | Tarieven, coaching | **Personal Training:** hoe lang duurt een sessie? Kost een sessie in een kleine groep ook € 64? Hoort er opvolging buiten de sessies bij? Mag je met een beurtenkaart buiten je sessies zelfstandig trainen zonder Open Gym? Daarom is de rij "Niet inbegrepen" bij Personal Training nog leeg. |
+| I | Tarieven | Bestaat er een combinatiekorting voor coaching plus Open Gym? Nu staan de twee prijzen gewoon opgeteld. |
+| J | Health Club, tarieven | **Open Gym:** klopt "geen schema, geen voedingsbegeleiding, geen opvolging"? Krijgt een nieuw lid bij de start uitleg of een rondleiding? Dan vermelden we dat. |
+| K | Het Freteffect | Prijzen van Kevins online coaching en technieksessies; hoe vaak en via welk kanaal Kevin opvolgt; hoe lang een technieksessie duurt. Zonder prijs staat er geen bedrag en gaat elke knop naar het aanvraagformulier. |
+| L | Het Freteffect | **Foto's van de sporters:** zijn ze allemaal door Kevin begeleid en akkoord met publicatie op de site? Mogen namen, wedstrijden en klasseringen erbij? Op één foto staat het watermerk "JP" van een fotograaf en op de wedstrijdfoto's logo's van organisatoren en sponsors: hebben jullie het recht ze te gebruiken? De voor-en-nafoto met "Athlete: Frederik" toont een voornaam; is Frederik daarmee akkoord? |
+| M | Homepage, coaching, Over Reroot | Laat Simon en Kevin hun nieuwe profieltekst nalezen. Ik heb geen specialisaties toegevoegd, maar de beschrijving van hoe ze werken komt van mij. |
+| N | Homepage | Coachingvoorbeeld: klopt de beslissing (tijdelijk van vier naar drie trainingen, een vaste maaltijd twee à drie uur voor de training, na een paar weken opnieuw bekijken) met hoe jullie in zo'n geval beslissen? |
+| P | Health Club | **Toestellencirkel:** lees de 46 namen en uitlegzinnen na in `gegevens/site.json` → `club` → `toestellen`. Het minst zeker ben ik van: Belt squat (foto 7189), Hip thrust-toestel (7190), Lat pulldown met schijven (7186), Pullover (7208), Kuitentoestel zittend (7204), Bank voor hip thrusts (7216), Buikspierbank (7225) en Kabeltoren met bank (7220). Twee toestellen staan er nog niet in omdat ik ze niet kon benoemen: foto 7188 (zwarte ATX-bank met twee pressarmen erboven) en foto 7207 (toestel met zitje en een hendel met kussen laag achteraan). Geef hun naam door en ik voeg ze toe. Overzichtsfoto's, uitlegbordjes en dubbele foto's (meer dumbbells, schijven en de tweede curlbank) zijn weggelaten. |
+| Q | Kenniscentrum | **Recepten:** de vier recepten (overnight oats met skyr, rijstbowl met kip, omelet met spinazie en feta, platte kaas met banaan en noten) heb ik zelf geschreven als start. Eiwit en calorieën zijn schattingen op basis van gangbare productwaarden, en dat staat ook bij elk recept. Lees ze na, of vervang ze door jullie eigen recepten. Foto's zijn er nog niet. |
+| R | Kenniscentrum | **Indeling:** Beweging en Levensstijl bevatten nu alleen podcastafleveringen; artikels over training en levensstijl zijn er nog niet. Klopt de indeling van de afleveringen (1, 3, 5 bij Beweging; 2, 4 bij Levensstijl)? |
+| O | Plug&Pay (buiten de site) | Nog altijd open: "maximum van 200 Leden" en "Reroot Online Coaching" op je verkooppagina wijken af van de site (150 leden, "Monthly Online Coaching"). |
+
+### Wat ik gecontroleerd heb
+
+- `python3 test_site.py`: 4478 controles geslaagd, waaronder nieuwe controles dat afgekeurde formuleringen en "vrijblijvend" niet op de pagina's staan en dat de knop niet "boeken" zegt.
+- Gebouwde tarievenpagina nagelezen: per formule voor wie, wat je krijgt, opvolging, niet inbegrepen, voorwaarden, prijs en knop; combinatieprijzen € 134 en € 220.
+- Formulenamen: overal Open Gym, App Coaching, Monthly Online Coaching en Personal Training; "trajecten" in knoppen en koppen is "formules" geworden.
+- Op 320 en 375 pixels breed (Chromium, in een verborgen venster): geen horizontale overloop op acht pagina's; elke intakeknop op één regel, behalve "Twijfel je? Vraag een intake aan" op 320. Het nieuwe fotoblok laadt alle tien foto's, de voor-en-nafoto's staan op telefoon onder elkaar en op desktop naast elkaar.
+- Niet gedaan: echte telefoons en Safari; de animaties kon ik in het verborgen venster niet zien bewegen (ze zijn niet aangeraakt).
 
 ## Blokkeert de overstap naar je eigen domein
 
@@ -34,11 +89,11 @@ Wat ik niet wist en daarom niet op de pagina staat. Vul aan of laat Kevin naleze
 
 ## Het intakegesprek als hoofdknop
 
-"Boek je intakegesprek nu" is nu de hoofdknop van de site: in de menubalk (op mobiel als "Boek intake"), in het mobiele menu, in elk slotblok en in een eigen oproepband op de homepage, de clubpagina en de tarievenpagina. "Word lid" staat er als gewone link naast. Het woord "kennismaking" is overal "intakegesprek" geworden.
+"Vraag een intake aan" is de hoofdknop van de site (sinds 16 november; daarvoor "Boek je intakegesprek nu"): in de menubalk (op mobiel als "Intake aanvragen"), in het mobiele menu, in elk slotblok en in een eigen oproepband op de homepage, de clubpagina en de tarievenpagina. "Word lid" staat er als gewone link naast. Het woord "kennismaking" is overal "intakegesprek" geworden.
 
 Twee dingen om te weten:
 
-- **De knop zegt "boek", maar er is geen boekingssysteem.** De bezoeker komt op het formulier "Boek je intakegesprek" en leest daar dat een coach contact opneemt om een moment vast te leggen. Dat is eerlijk, maar het is geen directe boeking.
+- **Er is geen boekingssysteem.** Daarom zegt de knop "aanvragen" en staat op het formulier dat een aanvraag nog geen afspraak is.
 - **Het formulier is de zwakke schakel van deze funnel.** Zonder formulierdienst zet het alleen een mail klaar. Wie die mail niet verstuurt, laat geen gegevens achter en jij ziet die persoon nooit. Wil je dat elke aanvraag binnenkomt, dan heb je een formulierdienst of een afsprakentool nodig. Dat is één regel in `site.json` zodra je er een kiest.
 
 Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoegd.

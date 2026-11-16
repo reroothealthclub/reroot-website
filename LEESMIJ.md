@@ -20,6 +20,10 @@ cd pad/naar/reroot-website
 | Foto's en logo | `bron/assets/` |
 | Kleuren, lettertypes, opmaak | `bron/stijl.css` |
 | Het Freteffect (de bodybuildingafdeling van Kevin): tekst, foto's en logo's | `bron/paginas/freteffect.html` en `bron/assets/freteffect/`; de opmaak staat onderaan in `bron/stijl.css` onder "Het Freteffect" |
+| De foto's van Kevins sporters (blok "Sporters van Kevin") | `bron/assets/freteffect/sporter-1.jpg` t.e.m. `sporter-7.jpg`, `backstage.jpg`, `voor-na-1.jpg` en `voor-na-2.jpg`; de originelen staan in `aangeleverd/kevin-resultaten/` |
+| Een artikel of aflevering in een ander deel van het Kenniscentrum zetten | in het bestand in `bron/artikels/`: de regel `pijler:` (Voeding, Beweging of Levensstijl) |
+| Een recept toevoegen | kopieer een `recept-...html` in `bron/artikels/` en pas de tekst en de regels `titel`, `beschrijving`, `categorie`, `porties`, `tijd`, `eiwit` en `kcal` aan; de nieuwe pagina verschijnt vanzelf onder Recepten |
+| Wat er per formule niet inbegrepen is (rij "Niet inbegrepen" op de tarievenpagina) | `gegevens/site.json` → `aanbod` → `niet_inbegrepen` |
 | De gebouwde site die online komt | `publiek/` (niet met de hand aanpassen, wordt telkens opnieuw gemaakt) |
 | De versie waarmee we begonnen | `origineel/` |
 | Schermafbeeldingen vóór en na het herontwerp | `vergelijking/` |
