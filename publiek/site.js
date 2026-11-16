@@ -74,6 +74,75 @@
   if (mnav) mnav.addEventListener('toggle', bijScroll);
   bijScroll();
 
+  // 1d. toestellen op de clubpagina: een cirkel die vanzelf van toestel naar toestel draait.
+  //     Pauze bij aanwijzen of focus, en met de pauzeknop. Bij 'minder beweging' draait hij niet vanzelf.
+  var tBlok = document.querySelector('[data-toestellen]');
+  if (tBlok) (function () {
+    var cirkel = tBlok.querySelector('.toestel-cirkel');
+    var dias = Array.prototype.slice.call(tBlok.querySelectorAll('.toestel-dia'));
+    if (!cirkel || dias.length < 2) return;
+    var ring = tBlok.querySelector('.toestel-ring');
+    var naam = tBlok.querySelector('[data-toestel-naam]');
+    var nr = tBlok.querySelector('[data-toestel-nr]');
+    var pauzeKnop = tBlok.querySelector('[data-toestel="pauze"]');
+    var stil = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var twee = function (n) { return (n < 10 ? '0' : '') + n; };
+    var huidig = -1, spelen = !stil, vast = false, zichtbaar = false, duur = 3200, t = 0, vorige = 0;
+    tBlok.classList.add('js-toestel');
+    tBlok.querySelector('.toestel-knoppen').hidden = false;
+    tBlok.querySelector('[data-toestel-totaal]').textContent = twee(dias.length);
+    var zet = function (i) {
+      if (i === huidig) return;
+      huidig = i;
+      naam.textContent = dias[i].querySelector('figcaption').textContent;
+      nr.textContent = twee(i + 1);
+      [i + 1, i + 2].forEach(function (k) { var img = dias[k % dias.length].querySelector('img'); if (img) img.loading = 'eager'; });
+    };
+    var ga = function (i) {
+      i = (i + dias.length) % dias.length;
+      cirkel.scrollTo({ left: i * cirkel.clientWidth, behavior: stil ? 'auto' : 'smooth' });
+      zet(i); t = 0;
+    };
+    cirkel.addEventListener('scroll', function () {
+      zet(Math.min(dias.length - 1, Math.max(0, Math.round(cirkel.scrollLeft / (cirkel.clientWidth || 1)))));
+    }, { passive: true });
+    cirkel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); ga(huidig + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); ga(huidig - 1); }
+    });
+    var toonPauze = function () {
+      pauzeKnop.setAttribute('aria-label', spelen ? 'Pauzeer de cirkel' : 'Laat de cirkel draaien');
+      pauzeKnop.firstElementChild.textContent = spelen ? '❙❙' : '▶';
+    };
+    tBlok.addEventListener('click', function (e) {
+      var k = e.target.closest('[data-toestel]');
+      if (!k) return;
+      var w = k.getAttribute('data-toestel');
+      if (w === 'vorige') ga(huidig - 1);
+      if (w === 'volgende') ga(huidig + 1);
+      if (w === 'pauze') { spelen = !spelen; toonPauze(); }
+    });
+    ring.addEventListener('mouseenter', function () { vast = true; });
+    ring.addEventListener('mouseleave', function () { vast = false; });
+    cirkel.addEventListener('focusin', function () { vast = true; });
+    cirkel.addEventListener('focusout', function () { vast = false; });
+    cirkel.addEventListener('touchstart', function () { t = 0; }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { zichtbaar = es[0].isIntersecting; }, { threshold: 0.4 }).observe(ring);
+    } else { zichtbaar = true; }
+    var tik = function (nu) {
+      var dt = vorige ? nu - vorige : 0; vorige = nu;
+      if (spelen && !vast && zichtbaar && !document.hidden) {
+        t += dt / duur;
+        if (t >= 1) ga(huidig + 1);
+      }
+      ring.style.setProperty('--t', (spelen ? Math.min(1, t) : 0).toFixed(3));
+      window.requestAnimationFrame(tik);
+    };
+    zet(0); toonPauze();
+    window.requestAnimationFrame(tik);
+  })();
+
   // 2. menu
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;

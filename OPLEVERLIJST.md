@@ -26,6 +26,8 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 - Tarieventabel: de knoppen stonden over "Goed om te weten" omdat een oude regel de tabel op 7 rijen hield. Nu 8 rijen, alles staat weer onder elkaar.
 - Geen lichtgroen meer: "Sterker worden begint met begrijpen", "Je eerste keer bij Reroot" en "Kom langs in Maaseik" zijn bosgroen met beige letters; "Maximaal 150 leden" is beige. Ook de kleine accenten (labels, hovers) zijn beige.
 
+**Toestellencirkel op de clubpagina (16 november):** in "Wat je er vindt" draait een cirkel langs 15 toestellen uit je map `Gym` (bureaublad), met naam en teller ernaast. Een mintgroene boog rond de cirkel loopt vol tot het volgende toestel. Er zijn knoppen voor vorige, pauze en volgende; je kunt ook swipen of de pijltjestoetsen gebruiken. De cirkel pauzeert als je erop wijst en draait niet vanzelf bij "minder beweging". De foto's zijn vierkant uitgesneden en zonder camera- of locatiegegevens. Namen en volgorde pas je aan in `gegevens/site.json` → `club` → `toestellen`.
+
 ### Te bevestigen door Simon
 
 | # | Pagina | Vraag |
@@ -44,6 +46,7 @@ Alle commerciële en informatieve teksten herschreven in de bestaande pagina's. 
 | L | Het Freteffect | **Foto's van de sporters:** zijn ze allemaal door Kevin begeleid en akkoord met publicatie op de site? Mogen namen, wedstrijden en klasseringen erbij? Op één foto staat het watermerk "JP" van een fotograaf en op de wedstrijdfoto's logo's van organisatoren en sponsors: hebben jullie het recht ze te gebruiken? De voor-en-nafoto met "Athlete: Frederik" toont een voornaam; is Frederik daarmee akkoord? |
 | M | Homepage, coaching, Over Reroot | Laat Simon en Kevin hun nieuwe profieltekst nalezen. Ik heb geen specialisaties toegevoegd, maar de beschrijving van hoe ze werken komt van mij. |
 | N | Homepage | Coachingvoorbeeld: klopt de beslissing (tijdelijk van vier naar drie trainingen, een vaste maaltijd twee à drie uur voor de training, na een paar weken opnieuw bekijken) met hoe jullie in zo'n geval beslissen? |
+| P | Health Club | **Namen in de toestellencirkel:** kloppen ze? Ik gebruikte algemene namen (Squatrek, Beenpers, Krachttoestel met halterschijven, Kabelstation, Beenstrekker, Beencurl, Bank voor bicepscurls, Dumbbells, Kettlebells, Halterschijven, Roeimachine, Air bike, Loopband, Loopband en trappenmachine, Sprinttrack). Toestellen die ik niet zeker kon benoemen (de witte Nautilus-toestellen, de hack squat, de hip-thrustbank) staan er nog niet in; geef hun namen door en ik voeg ze toe. Ook de belt squat heb ik op geen enkele foto herkend. |
 | O | Plug&Pay (buiten de site) | Nog altijd open: "maximum van 200 Leden" en "Reroot Online Coaching" op je verkooppagina wijken af van de site (150 leden, "Monthly Online Coaching"). |
 
 ### Wat ik gecontroleerd heb

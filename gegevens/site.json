@@ -81,7 +81,25 @@
       "meebrengen": ""
     },
     "merken": ["Nautilus", "Panatta", "Technogym", "ATX", "Sterling", "Marbo Sport", "StairMaster", "Xebex"],
-    "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"]
+    "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"],
+    "uitleg_toestellen": "De draaiende cirkel op de clubpagina. Volgorde = volgorde in de cirkel. Foto: vierkant, in bron/assets/toestellen/.",
+    "toestellen": [
+      { "naam": "Squatrek", "foto": "assets/toestellen/squatrek.jpg" },
+      { "naam": "Beenpers", "foto": "assets/toestellen/beenpers.jpg" },
+      { "naam": "Krachttoestel met halterschijven", "foto": "assets/toestellen/schijventoestel.jpg" },
+      { "naam": "Kabelstation", "foto": "assets/toestellen/kabelstation.jpg" },
+      { "naam": "Beenstrekker", "foto": "assets/toestellen/beenstrekker.jpg" },
+      { "naam": "Beencurl", "foto": "assets/toestellen/beencurl.jpg" },
+      { "naam": "Bank voor bicepscurls", "foto": "assets/toestellen/curlbank.jpg" },
+      { "naam": "Dumbbells", "foto": "assets/toestellen/dumbbells.jpg" },
+      { "naam": "Kettlebells", "foto": "assets/toestellen/kettlebells.jpg" },
+      { "naam": "Halterschijven", "foto": "assets/toestellen/halterschijven.jpg" },
+      { "naam": "Roeimachine", "foto": "assets/toestellen/roeimachine.jpg" },
+      { "naam": "Air bike", "foto": "assets/toestellen/airbike.jpg" },
+      { "naam": "Loopband", "foto": "assets/toestellen/loopband.jpg" },
+      { "naam": "Loopband en trappenmachine", "foto": "assets/toestellen/trappenmachine.jpg" },
+      { "naam": "Sprinttrack", "foto": "assets/toestellen/sprinttrack.jpg" }
+    ]
   },
 
   "links": {

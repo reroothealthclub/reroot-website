@@ -51,6 +51,25 @@ beschrijving: Reroot Health Club in Maaseik: een Open Gym van 250 m² met maxima
 <div style="display:flex;flex-wrap:wrap;gap:10px">
 {{#each club.uitrusting}}<span class="pill pill-d">{{dit}}</span>{{/each}}
 </div>
+<!-- TOESTELLEN: draaiende cirkel. Zonder JavaScript kun je er met de vinger of de pijltjestoetsen door schuiven.
+     site.js laat de cirkel vanzelf verder draaien (niet bij 'minder beweging'); de lijst staat in gegevens/site.json → club → toestellen. -->
+<div class="toestel" data-toestellen>
+<div class="toestel-ring">
+<div class="toestel-cirkel" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="Toestellen in de Health Club">
+{{#each club.toestellen}}<figure class="toestel-dia" role="group" aria-roledescription="dia" aria-label="{{nummer}}: {{dit.naam}}"><img src="{{dit.foto}}" width="640" height="640" alt="{{dit.naam}} in de Health Club" loading="{{#if eerste}}eager{{else}}lazy{{/if}}" decoding="async"><figcaption>{{dit.naam}}</figcaption></figure>
+{{/each}}</div>
+</div>
+<div class="toestel-info">
+<span class="toestel-teller" aria-hidden="true"><b class="disp" data-toestel-nr>01</b> / <span data-toestel-totaal></span></span>
+<p class="disp toestel-naam" data-toestel-naam aria-live="polite"></p>
+<div class="toestel-knoppen" hidden>
+<button type="button" class="toestel-knop" data-toestel="vorige" aria-label="Vorig toestel"><span aria-hidden="true">←</span></button>
+<button type="button" class="toestel-knop" data-toestel="pauze" aria-label="Pauzeer de cirkel"><span aria-hidden="true">❙❙</span></button>
+<button type="button" class="toestel-knop" data-toestel="volgende" aria-label="Volgend toestel"><span aria-hidden="true">→</span></button>
+</div>
+<p class="toestel-hint">Een greep uit wat er in de club staat. Swipe door de cirkel of gebruik de pijlen.</p>
+</div>
+</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,40px);align-items:end">
 <div class="arch45" style="max-width:480px;width:100%"><img class="cover" loading="lazy" decoding="async" src="assets/hcarch.webp" alt="De sprinttrack in de Health Club" style="object-position:50% 50%"></div>
 <div class="rr" style="aspect-ratio:4/3"><img class="cover" loading="lazy" decoding="async" src="assets/hcwide.webp" alt="Een lid traint op de beenpers naast de sprinttrack" style="object-position:50% 50%"></div>
