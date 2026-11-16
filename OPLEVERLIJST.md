@@ -182,3 +182,32 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 Tip voor Web3Forms: in hun dashboard kun je instellen hoe lang ze aanvragen bewaren (standaard 3 jaar). Zet dat kort, bv. 30 dagen: de mail staat toch in je eigen mailbox.
 
 **Telefoon verplicht bij een intake** (16 november, op vraag van Simon): bij "Een intakegesprek" en "Het Freteffect" is het telefoonnummer verplicht (minstens 9 cijfers), met de uitleg "We bellen je om een moment af te spreken." Bij andere vragen blijft het optioneel.
+
+## Cookies (16 november)
+Lettertypes staan nu op de eigen site (geen Google Fonts meer). De live Google-reviews (EmbedSocial) en de Spotify-speler laden pas na een klik op een knop, met een korte uitleg. Bij het openen van een pagina gaat er dus geen enkel verzoek naar een andere dienst: geen cookiebanner nodig. Privacybeleid aangepast. Getest op de lokale preview (reviews en speler laden na de klik).
+
+## Verhuis naar www.rerootcoaching.com: stappenplan
+Alles staat klaar op de git-tak `verhuis` (adres www.rerootcoaching.com, zoekmachines toegelaten). Nog niet samengevoegd. Oude Webflow-adressen (/about, /coaching/..., /contact, /content/..., /privacybeleid, /algemene-voorwaarden, /intakeformulier, /podcast, /blog) leiden naar de juiste nieuwe pagina. Opgelet: de huidige Webflow-pagina /algemene-voorwaarden toont alleen voorbeeldtekst (lorem ipsum).
+
+**Huidige DNS bij Combell (16 november nagekeken):**
+| Record | Nu | Wat ermee gebeurt |
+|---|---|---|
+| MX @ | rerootcoaching-com.mail.protection.outlook.com | **blijft** (je e-mail) |
+| TXT @ | v=spf1 include:spf.protection.outlook.com -all | **blijft** |
+| TXT @ | google-site-verification=... | **blijft** (Google Search Console) |
+| CNAME autodiscover | autodiscover.outlook.com | **blijft** |
+| CNAME checkout | plugandpay.com | **blijft** (betaalpagina) |
+| A @ | 198.202.211.1 (Webflow) | **vervangen** door 185.199.108.153, 185.199.109.153, 185.199.110.153 en 185.199.111.153 (vier A-records) |
+| CNAME www | cdn.webflow.com | **wijzigen** naar reroothealthclub.github.io |
+| TXT @ | proxy-ssl.webflow.com | **weg**, na de verhuis |
+
+**Volgorde (samen, Simon ingelogd bij GitHub en Combell):**
+1. GitHub: organisatie reroothealthclub → Settings → Pages → domein rerootcoaching.com verifiëren (GitHub geeft een TXT-record `_github-pages-challenge-reroothealthclub`; dat zetten we bij Combell). Zo kan niemand anders het domein op GitHub gebruiken.
+2. GitHub: repository → Settings → Pages → Custom domain: `www.rerootcoaching.com` → Save.
+3. Combell: DNS-records aanpassen zoals in de tabel. Alleen de A-records van @ en de CNAME van www; de rest niet aanraken.
+4. Tak `verhuis` samenvoegen in `main` en publiceren.
+5. Wachten tot GitHub het domein ziet en een certificaat maakt (meestal binnen een uur), dan "Enforce HTTPS" aanzetten.
+6. Controleren: site, formulier (één proefaanvraag), oude adressen, e-mail ontvangen en versturen, checkout.rerootcoaching.com.
+7. Daarna: in Plug&Pay de link naar de algemene voorwaarden zetten; sitemap indienen in Google Search Console; na een paar dagen Webflow opzeggen en de Webflow-TXT verwijderen; Wix en Google Workspace opzeggen.
+
+Tijdens het uur tussen stap 3 en 5 kan https://www.rerootcoaching.com kort een certificaatmelding tonen. Doe de omschakeling daarom op een rustig moment, bijvoorbeeld 's avonds.
