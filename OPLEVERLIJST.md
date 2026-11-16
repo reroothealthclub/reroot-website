@@ -161,3 +161,22 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 - Laadsnelheid. LCP en INP kon ik in het testvenster niet meten. Wel gemeten (lab, lokaal): geen layoutverschuiving (CLS 0) vóór en na. Het eerste scherm laadt nu één foto van 125 kB in plaats van 95 kB; de reviewwidget van EmbedSocial wordt niet meer vanzelf na 3,5 seconden geladen.
 - De omleidingen op het echte domein. Ze zijn lokaal getest onder het pad `/reroot-website/`.
 - De Spotify-speler op de afleveringspagina's heb ik in het testvenster niet zien laden.
+
+## Formulier naar je mailbox, algemene voorwaarden en privacybeleid (16 november, nog niet online)
+
+**Formulier.** Het formulier kan nu zelf versturen via Web3Forms. Zodra de sleutel in `gegevens/site.json` staat (`formulier.web3forms_sleutel`), komt elke aanvraag als mail binnen met de onderwerpregel "Nieuwe intake-aanvraag: voornaam achternaam" en daaronder voornaam, achternaam, telefoon, e-mail, onderwerp, voorkeur voor het gesprek (online of in de studio, alleen bij een intake) en vraag of doel. Met "Beantwoorden" antwoord je meteen de aanvrager. Nieuwe velden: achternaam (optioneel) en voorkeur voor het gesprek (optioneel). Getest met een nep-ontvanger op deze Mac: succes verschijnt pas nadat de dienst de aanvraag aanvaardt, en bij een weigering verschijnt de foutmelding met e-mail en telefoon. Nog niet getest met de echte sleutel; dat doen we samen met één proefaanvraag.
+
+**Algemene voorwaarden** (`algemene-voorwaarden.html`, nieuw) en **privacybeleid** (herschreven; het oude was een algemeen sjabloon met beloftes als "we garanderen de veiligheid"). Dit zijn ontwerpen, geen juridisch advies: laat ze bij voorkeur nalezen door een jurist (bv. via UNIZO of je boekhouder). De gele stukken moet je invullen; zolang er één staat, slaagt de test niet en gaat niets online.
+
+| | Waar | In te vullen of te bevestigen |
+|---|---|---|
+| S | Voorwaarden 4 | Minimumleeftijd om lid te worden. |
+| T | Voorwaarden 5 | Hoe en wanneer er betaald wordt (maandelijks vooraf, automatisch, welke betaalmethodes). |
+| U | Voorwaarden 6 | Opzegtermijn en minimale looptijd van App Coaching en Monthly Online Coaching (= punt F). |
+| V | Voorwaarden 7 | Tot hoeveel uur vooraf een personal-trainingsessie kosteloos verplaatst kan worden, en wat er gebeurt bij later afzeggen. |
+| W | Voorwaarden 16, privacy | Datum waarop de teksten online komen. |
+| X | Privacy | Hangen er camera's? Zo ja: doel, bewaartermijn, pictogram. |
+| Y | Privacy | Naam van de app waarmee leden binnenkomen en klanten hun dagboek bijhouden. |
+| Z | Voorstellen van mij, graag bevestigen | Opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; bewaartermijnen in het privacybeleid (contactaanvraag 1 jaar, coachinggegevens 1 jaar na het traject, boekhouding 10 jaar); bestaat een pauze bij blessure of zwangerschap? |
+
+Tip voor Web3Forms: in hun dashboard kun je instellen hoe lang ze aanvragen bewaren (standaard 3 jaar). Zet dat kort, bv. 30 dagen: de mail staat toch in je eigen mailbox.

@@ -1,0 +1,104 @@
+---
+titel: Algemene voorwaarden | Reroot Health Club & Coaching
+beschrijving: De algemene voorwaarden van Reroot Health Club & Coaching in Maaseik: lidmaatschap, coaching, personal training, betaling, opzeggen en herroepingsrecht.
+---
+<!-- ALGEMENE VOORWAARDEN – ONTWERP. Alles tussen <mark class="invullen"> moet Simon nog invullen of bevestigen.
+     Zolang er zo'n markering in staat, slaagt test_site.py niet en gaat de pagina niet online.
+     Prijzen, adres en contactgegevens komen uit gegevens/site.json en lopen dus vanzelf mee. -->
+<section class="ph dk" style="background:#0F1614;position:relative;z-index:2">
+<div class="in" style="padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px) clamp(48px,6vw,88px);display:flex;flex-direction:column;gap:20px;max-width:1100px">
+<h1 class="disp" style="margin:0;font-size:clamp(40px,calc(var(--u)*.07),96px);line-height:1;color:#ECE8DD">Algemene voorwaarden</h1>
+<p class="lead" style="color:#D5DCD3">Wat je van ons mag verwachten, en wat wij van jou verwachten.</p>
+</div>
+</section>
+
+<section class="sec" style="background:#F6F2EA;color:#1F3B37">
+<div class="in">
+<div class="art">
+
+<h2>1. Wie wij zijn</h2>
+<p>{{bedrijf.naam}} is een handelsnaam van {{bedrijf.juridische_naam}}, ondernemingsnummer {{bedrijf.ondernemingsnummer}}, {{adres.straat}}, {{adres.postcode}} {{adres.gemeente}}. Je bereikt ons via <a href="mailto:{{contact.email}}">{{contact.email}}</a> of op <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>.</p>
+<p>Het Freteffect, de bodybuildingcoaching van Kevin Fret, is een afdeling van {{bedrijf.naam}}. Deze voorwaarden gelden ook daarvoor.</p>
+
+<h2>2. Wanneer gelden deze voorwaarden?</h2>
+<p>Deze voorwaarden gelden voor elk lidmaatschap, elk coachingtraject en elke beurtenkaart die je bij ons koopt, via de site, via onze betaalpagina of in de club. Bij de aankoop bevestig je dat je ze gelezen hebt. Spreken we met jou schriftelijk iets anders af, dan geldt die afspraak.</p>
+
+<h2>3. Ons aanbod</h2>
+<ul>
+<li><b>{{aanbod.open_gym.naam}}</b>: toegang tot de Health Club, € {{aanbod.open_gym.prijs}} {{aanbod.open_gym.eenheid}}, {{aanbod.open_gym.prijs_detail}}. Zonder trainingsschema, voedingsbegeleiding of opvolging door een coach.</li>
+<li><b>{{aanbod.app_coaching.naam}}</b>: € {{aanbod.app_coaching.prijs}} {{aanbod.app_coaching.eenheid}}, {{aanbod.app_coaching.prijs_detail}}. {{aanbod.app_coaching.contact_met_coach}}</li>
+<li><b>{{aanbod.monthly_coaching.naam}}</b>: € {{aanbod.monthly_coaching.prijs}} {{aanbod.monthly_coaching.eenheid}}, {{aanbod.monthly_coaching.prijs_detail}}. {{aanbod.monthly_coaching.contact_met_coach}}</li>
+<li><b>{{aanbod.personal_training.naam}}</b>: € {{aanbod.personal_training.prijs}} {{aanbod.personal_training.eenheid}}, als {{aanbod.personal_training.prijs_detail}}. {{aanbod.personal_training.goed_om_te_weten}}</li>
+</ul>
+<p>Wat bij elke formule hoort en wat niet, staat op de pagina <a href="tarieven.html">Tarieven</a>. Toegang tot de Health Club zit alleen in {{aanbod.open_gym.naam}}; bij coaching neem je die er apart bij als je ook zelfstandig in de club wil trainen. Alle prijzen zijn inclusief btw.</p>
+<p>Het intakegesprek is gratis en vrijblijvend. Het verplicht je tot niets.</p>
+
+<h2>4. Wie kan lid worden?</h2>
+<p>Je kunt lid worden vanaf <mark class="invullen">In te vullen: minimumleeftijd (bv. 16 jaar, of jonger met toestemming van een ouder)</mark>. Je bevestigt dat je gezond genoeg bent om te trainen (zie punt 9).</p>
+
+<h2>5. Betalen</h2>
+<p>Je betaalt via onze betaalpagina. <mark class="invullen">In te vullen: hoe en wanneer er betaald wordt, bv. "Een maandabonnement wordt elke maand vooraf automatisch aangerekend via de betaalmethode die je bij de aankoop kiest."</mark> Een beurtenkaart betaal je in één keer bij de aankoop.</p>
+<p>Lukt een betaling niet, dan laten we je dat weten en krijg je de kans om alsnog te betalen. Blijft de betaling uit, dan kunnen we je toegang tot de club of de coaching opschorten tot ze in orde is.</p>
+<p>Passen we een prijs aan, dan laten we je dat minstens 30 dagen vooraf weten. Ga je niet akkoord, dan kun je je abonnement kosteloos opzeggen voor de nieuwe prijs ingaat.</p>
+
+<h2>6. Duur en opzeggen</h2>
+<p><b>{{aanbod.open_gym.naam}}</b> is een maandabonnement, zonder jaarcontract en zonder inschrijfkosten. Het loopt telkens een maand verder tot je opzegt. Opzeggen kan tot 10 dagen voor het einde van de maand; dan stopt je abonnement op het einde van die maand.</p>
+<p><b>{{aanbod.app_coaching.naam}}</b> en <b>{{aanbod.monthly_coaching.naam}}</b> zijn maandabonnementen. <mark class="invullen">In te vullen: opzegtermijn en eventuele minimale looptijd van de coachingabonnementen.</mark></p>
+<p>Opzeggen doe je met een e-mail naar <a href="mailto:{{contact.email}}">{{contact.email}}</a>. We bevestigen je opzegging per e-mail.</p>
+
+<h2>7. De beurtenkaart voor personal training</h2>
+<p>Een beurtenkaart bevat tien sessies en is één jaar geldig vanaf de aankoop. Je plant één sessie per week, in overleg met je coach. Sessies die na een jaar niet gebruikt zijn, vervallen en worden niet terugbetaald.</p>
+<p>Kun je niet komen, laat het je coach dan zo snel mogelijk weten. <mark class="invullen">In te vullen: tot hoeveel uur vooraf je een sessie kosteloos kunt verplaatsen, en wat er gebeurt als je later afzegt of niet komt (bv. "dan telt de sessie als gebruikt").</mark></p>
+
+<h2>8. Herroepingsrecht: 14 dagen bedenktijd</h2>
+<p>Koop je online of op afstand, dan heb je als consument 14 dagen bedenktijd. Die termijn begint op de dag van je aankoop. Binnen die 14 dagen kun je de overeenkomst zonder reden ongedaan maken. Je hoeft geen reden te geven.</p>
+<p>Je laat het ons weten met een duidelijke verklaring, bijvoorbeeld een e-mail naar <a href="mailto:{{contact.email}}">{{contact.email}}</a>. Je mag daarvoor het formulier onderaan deze pagina gebruiken, maar dat hoeft niet. We betalen je uiterlijk 14 dagen nadat we je verklaring kregen terug, met dezelfde betaalmethode die je gebruikte.</p>
+<p>Wil je al binnen die 14 dagen beginnen met trainen of coaching, dan vragen we je uitdrukkelijke toestemming. Herroep je daarna toch, dan betaal je alleen het deel dat al geleverd is, in verhouding tot de volledige prijs.</p>
+
+<h2>9. Je gezondheid</h2>
+<p>Trainen vraagt iets van je lichaam. Twijfel je of je gezond genoeg bent om te trainen, of heb je een aandoening, blessure of zwangerschap, overleg dan eerst met je arts. Vertel je coach wat nodig is om je veilig te begeleiden; dat bespreken we persoonlijk en niet via het contactformulier.</p>
+<p>Onze coaching is begeleiding bij training, voeding en levensstijl. Ze vervangt geen medisch advies of behandeling door een arts, kinesitherapeut of diëtist.</p>
+
+<h2>10. In de Health Club</h2>
+<ul>
+<li>Je komt binnen via de app. Je toegang is persoonlijk: je geeft ze niet door en je laat niemand mee binnen.</li>
+<li>Je volgt de huisregels en de aanwijzingen van onze coaches, gebruikt de toestellen zoals bedoeld en legt gewichten terug na gebruik.</li>
+<li>Schade die je opzettelijk of door onvoorzichtigheid aan toestellen of aan het gebouw toebrengt, kunnen we je aanrekenen.</li>
+<li>Houdt iemand zich herhaaldelijk of ernstig niet aan deze regels, dan kunnen we de toegang na een waarschuwing opschorten of het abonnement beëindigen.</li>
+</ul>
+
+<h2>11. Wat we beloven, en wat niet</h2>
+<p>We begeleiden je met zorg en kennis van zaken. Een resultaat kunnen we niet beloven: wat je bereikt, hangt ook af van hoe je traint, eet, slaapt en herstelt. Foto's en voorbeelden op onze site tonen wat anderen bereikten, geen garantie voor jou.</p>
+
+<h2>12. Aansprakelijkheid</h2>
+<p>Veroorzaken wij of onze coaches schade door een fout, dan zijn we daarvoor aansprakelijk zoals de wet bepaalt. We zijn niet aansprakelijk voor schade die ontstaat doordat je onze aanwijzingen of de huisregels niet volgt, of doordat je ons belangrijke informatie over je gezondheid niet gaf. Voor verlies of diefstal van spullen in de club zijn we alleen aansprakelijk als dat door onze fout gebeurt.</p>
+
+<h2>13. Je persoonsgegevens</h2>
+<p>Hoe we met je gegevens omgaan, lees je in ons <a href="privacybeleid.html">privacybeleid</a>.</p>
+
+<h2>14. Een klacht?</h2>
+<p>Laat het ons eerst weten via <a href="mailto:{{contact.email}}">{{contact.email}}</a> of <a href="tel:{{contact.telefoon_link}}">{{contact.telefoon}}</a>; we zoeken samen met jou een oplossing. Lukt dat niet, dan kun je terecht bij de Consumentenombudsdienst (<a href="https://consumentenombudsdienst.be" target="_blank" rel="noopener">consumentenombudsdienst.be</a>).</p>
+
+<h2>15. Recht en rechtbank</h2>
+<p>Op deze voorwaarden is het Belgisch recht van toepassing. Komen we er samen niet uit, dan is de rechtbank bevoegd die de wet aanwijst.</p>
+
+<h2>16. Wijzigingen</h2>
+<p>We kunnen deze voorwaarden aanpassen. Voor een lopend abonnement laten we je een wijziging minstens 30 dagen vooraf weten; je kunt dan kosteloos opzeggen. Deze versie geldt vanaf <mark class="invullen">In te vullen: de datum waarop deze voorwaarden online komen.</mark></p>
+
+<h2 id="herroeping">Modelformulier voor herroeping</h2>
+<p>Gebruik dit formulier alleen als je de overeenkomst binnen de 14 dagen bedenktijd wilt herroepen. Een gewone e-mail met dezelfde gegevens volstaat ook.</p>
+<blockquote>
+<p>Aan {{bedrijf.juridische_naam}}, {{adres.straat}}, {{adres.postcode}} {{adres.gemeente}}, {{contact.email}}:</p>
+<p>Ik deel u hierbij mee dat ik onze overeenkomst betreffende de levering van de volgende dienst herroep: …</p>
+<p>Gekocht op: …<br>Naam: …<br>Adres: …<br>Handtekening (alleen als je dit formulier op papier bezorgt): …<br>Datum: …</p>
+</blockquote>
+
+</div>
+</div>
+</section>
+
+<section class="sec dk" style="background:#0F1614;color:#ECE8DD;padding-bottom:clamp(48px,6vw,80px)">
+<div class="in">
+{{> voet}}
+</div>
+</section>

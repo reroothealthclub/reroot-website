@@ -169,8 +169,19 @@ def verrijk(g):
     for naam, url in g['links'].items():
         if naam.startswith('uitleg') or naam.endswith('knoptekst'):
             continue
+        if naam == 'algemene_voorwaarden' and re.fullmatch(r'[a-z0-9-]+\.html', url or ''):
+            if not os.path.exists(os.path.join(HIER, 'bron', 'paginas', url)):
+                raise Bouwfout('links.algemene_voorwaarden verwijst naar %s, maar die pagina bestaat niet in bron/paginas/.' % url)
+            continue
         if not _url_ok(url):
             raise Bouwfout('De link "%s" moet beginnen met https:// of leeg zijn.' % naam)
+    sleutel = g['formulier'].get('web3forms_sleutel', '').strip()
+    if sleutel:
+        if not re.fullmatch(r'[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}', sleutel):
+            raise Bouwfout('formulier.web3forms_sleutel ziet er niet uit als een Web3Forms-sleutel '
+                           '(een code als 1a2b3c4d-1a2b-1a2b-1a2b-1a2b3c4d5e6f).')
+        if not g['formulier'].get('verzend_url'):
+            g['formulier']['verzend_url'] = 'https://api.web3forms.com/submit/' + sleutel
     if not _url_ok(g['formulier'].get('verzend_url', '')):
         raise Bouwfout('formulier.verzend_url moet beginnen met https:// of leeg zijn.')
 

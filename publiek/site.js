@@ -276,6 +276,9 @@
       intro.textContent = '';
     }
     intro.hidden = !intro.textContent;
+    // de vraag naar online of in de studio hoort alleen bij een intakegesprek
+    var vkVak = document.getElementById('vk-vak');
+    if (vkVak) vkVak.hidden = !(w === 'kennismaking' || w === 'freteffect');
   }
   keuze.addEventListener('change', pasKopAan);
   pasKopAan();
@@ -301,13 +304,35 @@
   }
 
   function gegevens() {
+    var vk = form.elements.voorkeur, vkVak = document.getElementById('vk-vak');
     return {
       voornaam: form.elements.voornaam.value.trim(),
+      achternaam: form.elements.achternaam ? form.elements.achternaam.value.trim() : '',
       email: form.elements.email.value.trim(),
       telefoon: form.elements.telefoon.value.trim(),
       onderwerp: keuze.options[keuze.selectedIndex].text,
+      intake: keuze.value === 'kennismaking' || keuze.value === 'freteffect',
+      voorkeur: (vk && vkVak && !vkVak.hidden) ? (vk.value || 'Maakt niet uit') : '',
       bericht: form.elements.bericht.value.trim()
     };
+  }
+
+  // Wat in de mail aan Reroot komt: dezelfde volgorde als het formulier, met leesbare namen.
+  function mailVoorReroot(d) {
+    var naam = d.voornaam + (d.achternaam ? ' ' + d.achternaam : '');
+    var m = {
+      subject: (d.intake ? 'Nieuwe intake-aanvraag: ' : 'Nieuw bericht via de website: ') + naam,
+      from_name: 'Website Reroot',
+      'Voornaam': d.voornaam,
+      'Achternaam': d.achternaam || '-',
+      'Telefoon': d.telefoon || '-',
+      email: d.email,
+      'Onderwerp': d.onderwerp
+    };
+    if (d.voorkeur) m['Voorkeur gesprek'] = d.voorkeur;
+    m['Vraag of doel'] = d.bericht || '-';
+    m.botcheck = false;
+    return m;
   }
 
   var kopieerknop = document.getElementById('kopieerknop');
@@ -339,8 +364,9 @@
     if (!url) {
       // Geen formulierdienst ingesteld: zet een e-mail klaar en zeg eerlijk dat die nog verstuurd moet worden.
       var tekst = 'Dag Reroot,\n\n' + (d.bericht ? d.bericht + '\n\n' : '') +
-        'Onderwerp: ' + d.onderwerp + '\nNaam: ' + d.voornaam + '\nE-mail: ' + d.email +
-        (d.telefoon ? '\nTelefoon: ' + d.telefoon : '') + '\n';
+        'Onderwerp: ' + d.onderwerp + '\nNaam: ' + d.voornaam + (d.achternaam ? ' ' + d.achternaam : '') +
+        '\nE-mail: ' + d.email + (d.telefoon ? '\nTelefoon: ' + d.telefoon : '') +
+        (d.voorkeur ? '\nVoorkeur gesprek: ' + d.voorkeur : '') + '\n';
       var post = document.createElement('a');
       post.href = 'mailto:' + doos.getAttribute('data-email') +
         '?subject=' + encodeURIComponent('Aanvraag via de website: ' + d.onderwerp) +
@@ -362,9 +388,13 @@
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(d)
+      body: JSON.stringify(mailVoorReroot(d))
     }).then(function (antwoord) {
       if (!antwoord.ok) throw new Error('status ' + antwoord.status);
+      return antwoord.json().catch(function () { return {}; });
+    }).then(function (resultaat) {
+      // Web3Forms antwoordt met success: true of false; pas bij true is de mail onderweg.
+      if (resultaat && resultaat.success === false) throw new Error('geweigerd');
       // Pas nu, nadat de dienst de aanvraag heeft aanvaard, tonen we succes.
       doos.setAttribute('data-status', 'verzonden');
       toon('melding-ok', true);

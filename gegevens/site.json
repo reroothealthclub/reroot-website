@@ -55,6 +55,8 @@
   },
 
   "formulier": {
+    "web3forms_sleutel": "",
+    "uitleg_web3forms_sleutel": "De Access Key die Web3Forms je mailt (een lange code met streepjes). Ingevuld = elke aanvraag komt als mail binnen op het adres waarmee je de sleutel aanvroeg. Deze sleutel is niet geheim; hij mag in de site staan.",
     "verzend_url": "",
     "uitleg_verzend_url": "Leeg = het formulier zet een e-mail klaar in het mailprogramma van de bezoeker. Vul hier het adres van je formulierdienst in zodra je er een gekozen hebt; dan verstuurt de site zelf en toont ze pas succes nadat de dienst de aanvraag heeft aanvaard."
   },
@@ -144,8 +146,8 @@
     "podcast_spotify": "https://open.spotify.com/show/3LQY25TWVlkJxHMbRcqCDq",
     "google_reviews_lezen": "https://www.google.com/maps/place/Reroot+Coaching/@51.0978014,5.7870323,17z",
     "google_review_schrijven": "https://g.page/r/CXanDYNvS7tdEBE/review",
-    "algemene_voorwaarden": "",
-    "uitleg_algemene_voorwaarden": "Leeg = er wordt nergens naar algemene voorwaarden verwezen. Vul het adres in zodra je echte voorwaarden online hebt staan."
+    "algemene_voorwaarden": "algemene-voorwaarden.html",
+    "uitleg_algemene_voorwaarden": "Leeg = er wordt nergens naar algemene voorwaarden verwezen. algemene-voorwaarden.html = de pagina op deze site (tekst in bron/paginas/algemene-voorwaarden.html). Een volledig adres (https://...) kan ook."
   },
 
   "aanbod_uitleg": "niet_inbegrepen = wat de klant bij deze formule niet krijgt; leeg = de rij blijft leeg. checkout_url leeg = de knop wordt 'Vraag ... aan' en leidt naar het contactformulier met dit aanbod al ingevuld. checkout_url ingevuld = directe koopknop met 'knoptekst_kopen'.",

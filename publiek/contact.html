@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap">
-<link rel="stylesheet" href="stijl.css?v=222f65f4">
+<link rel="stylesheet" href="stijl.css?v=6a161219">
 </head>
 <body class="p-contact">
 <a class="skip" href="#main">Naar de inhoud</a>
@@ -90,10 +90,13 @@
 <form id="contactformulier" action="mailto:hallo@rerootcoaching.com" method="post" enctype="text/plain" novalidate style="display:flex;flex-direction:column;gap:24px">
 <div class="fgrid">
 <div class="fld"><label for="vn">Voornaam</label><input id="vn" name="voornaam" type="text" autocomplete="given-name" required aria-describedby="vn-err"><span class="err" id="vn-err">Vul je voornaam in.</span></div>
-<div class="fld"><label for="em">E-mailadres</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="em-err"><span class="err" id="em-err">Vul een geldig e-mailadres in, zoals naam@voorbeeld.be.</span></div>
+<div class="fld"><label for="an">Achternaam <span class="opt-t">(optioneel)</span></label><input id="an" name="achternaam" type="text" autocomplete="family-name"></div>
 </div>
 <div class="fgrid">
+<div class="fld"><label for="em">E-mailadres</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="em-err"><span class="err" id="em-err">Vul een geldig e-mailadres in, zoals naam@voorbeeld.be.</span></div>
 <div class="fld"><label for="tel">Telefoonnummer <span class="opt-t">(optioneel)</span></label><input id="tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel"></div>
+</div>
+<div class="fgrid">
 <div class="fld"><label for="ond">Waarover gaat je bericht?</label>
 <select id="ond" name="onderwerp" required aria-describedby="ond-err">
 <option value="" selected disabled>Kies een optie</option>
@@ -105,6 +108,12 @@
 <option value="freteffect">Het Freteffect (bodybuilding met Kevin)</option>
 <option value="anders">Ik weet het nog niet / iets anders</option>
 </select><span class="err" id="ond-err">Kies waarover je bericht gaat.</span></div>
+<div class="fld" id="vk-vak" hidden><label for="vk">Waar wil je het gesprek? <span class="opt-t">(optioneel)</span></label>
+<select id="vk" name="voorkeur">
+<option value="" selected>Maakt mij niet uit</option>
+<option value="Online">Online</option>
+<option value="In de studio in Maaseik">In de studio in Maaseik</option>
+</select></div>
 </div>
 <div class="fld"><label for="ber">Je vraag of je doel <span class="opt-t">(optioneel)</span></label><textarea id="ber" name="bericht" rows="5" aria-describedby="ber-hint" placeholder="Bijvoorbeeld: ik wil sterker worden en weet niet welk traject bij me past."></textarea><span class="hint" id="ber-hint">Deel hier geen medische gegevens. Als die van belang zijn, bespreken we ze persoonlijk.</span></div>
 <div class="hp" aria-hidden="true"><label for="web">Laat dit veld leeg</label><input id="web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
@@ -223,7 +232,7 @@
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 28px;font-size:15px;line-height:1.5;color:#9AA79F">
 <span style="display:inline-flex;align-items:center;min-height:32px">© 2026 Reroot Coaching. Ondernemingsnummer BE 0754.790.454</span>
 <a href="privacybeleid.html" class="ln" style="display:inline-flex;align-items:center;min-height:32px;color:#9AA79F">Privacybeleid</a>
-
+<a href="algemene-voorwaarden.html" class="ln" style="display:inline-flex;align-items:center;min-height:32px;color:#9AA79F">Algemene voorwaarden</a>
 </div>
 </div>
 </footer>
@@ -232,6 +241,6 @@
 </section>
 
 </main>
-<script src="site.js?v=36ba0cfc" defer></script>
+<script src="site.js?v=179dda80" defer></script>
 </body>
 </html>

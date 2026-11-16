@@ -118,7 +118,7 @@ def main():
         paginas[b] = p
 
     verwacht = ['index.html', 'health-club.html', 'coaching.html', 'tarieven.html',
-                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', '404.html', 'freteffect.html']
+                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', 'algemene-voorwaarden.html', '404.html', 'freteffect.html']
     for v in verwacht:
         check(v in paginas, 'pagina %s bestaat' % v)
 
@@ -303,6 +303,16 @@ def main():
     check('medische gegevens' in c.ruw, 'contact: formulier vraagt uitdrukkelijk geen medische gegevens')
     if not g['formulier']['verzend_url']:
         check('Verstuur je bericht' not in c.ruw, 'contact: zonder formulierdienst belooft de knop geen verzending')
+    sleutel = g['formulier'].get('web3forms_sleutel', '')
+    if sleutel:
+        check(('data-verzend-url="https://api.web3forms.com/submit/%s"' % sleutel) in c.ruw,
+              'contact: formulier verstuurt via Web3Forms met de ingestelde sleutel')
+    check('name="achternaam"' in c.ruw and 'id="vk-vak"' in c.ruw, 'contact: velden achternaam en voorkeur voor het gesprek aanwezig')
+
+    # ---- ontwerpteksten: niets online met nog in te vullen stukken
+    for naam, p in paginas.items():
+        check('class="invullen"' not in p.ruw,
+              '%s: bevat geen stukken meer die Simon nog moet invullen (gele markering)' % naam)
 
     # ---- live reviews: alleen als de widget is ingesteld
     for pag in ('index.html', 'coaching.html'):
