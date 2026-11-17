@@ -46,6 +46,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid #1F3B37;outline-offset:3
 /* hero + header */
 .hero{position:relative;z-index:2;background:#0F1614;color:#ECE8DD}
 .hero-in{position:relative;max-width:1440px;margin:0 auto}
+.hero-golf{position:absolute;left:0;bottom:-1px;z-index:4;display:block;width:100%;height:clamp(34px,7vw,110px);pointer-events:none}
 .hero-head{display:flex;align-items:center;justify-content:space-between;gap:8px 28px;padding:18px clamp(20px,5vw,64px);position:relative;z-index:5}
 .hero-nav,.hdr-right{display:none}
 .hero-nav{gap:0 2px}
