@@ -180,6 +180,12 @@ a:focus-visible,summary:focus-visible{outline:3px solid #1F3B37;outline-offset:3
 @keyframes grow{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .mask{display:block;overflow:hidden;padding:.04em 0 .22em;margin-bottom:-.22em}
 .rise{display:block;animation:rise 1.1s cubic-bezier(.2,.75,.2,1) .1s both}
+/* openingstitel: "Health Club" en "Coaching" wisselen elkaar af; het ene woord schuift omhoog weg, het andere rijst op */
+.wissel{display:grid;justify-items:center}
+.wissel>span{grid-area:1/1;animation:wissel 8s cubic-bezier(.65,0,.35,1) 1.6s infinite both}
+.wissel>span+span{animation-delay:-2.4s}
+@keyframes wissel{0%,41%{transform:none}50%{transform:translateY(-140%)}50.01%,91%{transform:translateY(140%)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.wissel>span{animation:none}.wissel>span+span{visibility:hidden}}
 .unveil{animation:unveil 1.3s cubic-bezier(.65,0,.2,1) .35s both}
 .fade{animation:fade .9s ease .9s both}
 .root{fill:none;stroke:#1F3B37;stroke-opacity:.42;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;animation:grow 2.6s cubic-bezier(.4,0,.2,1) both}
