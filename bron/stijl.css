@@ -47,6 +47,14 @@ a:focus-visible,summary:focus-visible{outline:3px solid #1F3B37;outline-offset:3
 .hero{position:relative;z-index:2;background:#0F1614;color:#ECE8DD}
 .hero-in{position:relative;max-width:1440px;margin:0 auto}
 .hero-golf{position:absolute;left:0;bottom:-1px;z-index:4;display:block;width:100%;height:clamp(34px,7vw,110px);pointer-events:none}
+/* zachte golven tussen delen met een andere kleur (site.js zet .golf en een vorm a, b of c) */
+.golf{position:relative}
+/* het deel erboven krijgt onderaan evenveel extra ruimte als de golf hoog is, zodat er nooit tekst onder valt */
+.voor-golf{border-bottom:clamp(26px,4.6vw,72px) solid transparent}
+.golf::before{content:"";position:absolute;left:0;right:0;bottom:calc(100% - 1px);z-index:2;height:clamp(26px,4.6vw,72px);background-color:inherit;pointer-events:none;-webkit-mask:var(--golf) 0 0/100% 100% no-repeat;mask:var(--golf) 0 0/100% 100% no-repeat}
+.golf-a{--golf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V72C300 82 520 34 780 28S1190 58 1440 44V100Z'/%3E%3C/svg%3E")}
+.golf-b{--golf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V40C240 30 520 76 840 62S1250 24 1440 54V100Z'/%3E%3C/svg%3E")}
+.golf-c{--golf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V58C380 18 720 26 1000 56S1310 84 1440 70V100Z'/%3E%3C/svg%3E")}
 .hero-head{display:flex;align-items:center;justify-content:space-between;gap:8px 28px;padding:18px clamp(20px,5vw,64px);position:relative;z-index:5}
 .hero-nav,.hdr-right{display:none}
 .hero-nav{gap:0 2px}
