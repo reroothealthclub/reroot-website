@@ -5,6 +5,18 @@
 (function () {
   'use strict';
 
+  // 0. zachte golven: waar een deel een andere achtergrondkleur heeft dan het deel erboven,
+  //    rijst het in een glooiing op in plaats van met een rechte lijn (vormen in stijl.css, ".golf").
+  //    De opening van de homepage heeft haar eigen golf.
+  var vormen = ['golf-a', 'golf-b', 'golf-c'], golfNr = 0;
+  Array.prototype.forEach.call(document.querySelectorAll('section.sec'), function (sec) {
+    var boven = sec.previousElementSibling;
+    if (!boven || boven.tagName !== 'SECTION' || boven.classList.contains('hero')) return;
+    if (getComputedStyle(boven).backgroundColor === getComputedStyle(sec).backgroundColor) return;
+    sec.classList.add('golf', vormen[golfNr++ % vormen.length]);
+    boven.classList.add('voor-golf');
+  });
+
   // 1. oude hash-links van de vorige versie
   var oud = { 'health-club': 'health-club.html', 'coaching': 'coaching.html', 'tarieven': 'tarieven.html',
     'over-reroot': 'over-reroot.html', 'contact': 'contact.html', 'kennisbank': 'kennisbank.html',
