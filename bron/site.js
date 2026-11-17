@@ -250,6 +250,97 @@
     kies();
   }
 
+  // 2d. reviewslider: alle Google-reviews, drie tegelijk (op de computer). Schuift om de 6 seconden door,
+  //     pauzeert bij aanwijzen, focus of aanraken, stopt zodra de bezoeker zelf schuift, en draait niet vanzelf
+  //     bij 'minder beweging'. Data zoals op Google ("3 maanden geleden"), lange teksten met "Meer lezen".
+  (function () {
+    var rv = document.querySelector('[data-rv]');
+    if (!rv) return;
+    var baan = rv.querySelector('[data-rv-baan]');
+    var kaarten = baan.children;
+    var teller = rv.querySelector('[data-rv-teller]');
+    var totaal = kaarten.length;
+
+    // datums zoals Google ze toont
+    var nu = new Date();
+    Array.prototype.forEach.call(rv.querySelectorAll('[data-rv-datum]'), function (t) {
+      var d = new Date(t.getAttribute('datetime') + 'T12:00:00');
+      if (isNaN(d)) return;
+      var dagen = Math.floor((nu - d) / 864e5);
+      var maanden = (nu.getFullYear() - d.getFullYear()) * 12 + nu.getMonth() - d.getMonth() - (nu.getDate() < d.getDate() ? 1 : 0);
+      var tekst;
+      if (dagen < 1) tekst = 'vandaag';
+      else if (dagen < 7) tekst = dagen === 1 ? 'een dag geleden' : dagen + ' dagen geleden';
+      else if (maanden < 1) tekst = Math.floor(dagen / 7) === 1 ? 'een week geleden' : Math.floor(dagen / 7) + ' weken geleden';
+      else if (maanden < 12) tekst = maanden === 1 ? 'een maand geleden' : maanden + ' maanden geleden';
+      else tekst = Math.floor(maanden / 12) === 1 ? 'een jaar geleden' : Math.floor(maanden / 12) + ' jaar geleden';
+      t.title = t.textContent;
+      t.textContent = tekst;
+    });
+
+    // "Meer lezen" alleen waar de tekst echt afgekapt is
+    function meerKnoppen() {
+      Array.prototype.forEach.call(rv.querySelectorAll('[data-rv-tekst]'), function (tk) {
+        var knop = tk.nextElementSibling;
+        if (!knop || tk.parentNode.classList.contains('open')) return;
+        knop.hidden = tk.scrollHeight <= tk.clientHeight + 2;
+      });
+    }
+    rv.addEventListener('click', function (e) {
+      var knop = e.target.closest('[data-rv-meer]');
+      if (!knop) return;
+      var open = knop.parentNode.classList.toggle('open');
+      knop.textContent = open ? 'Minder' : 'Meer lezen';
+      knop.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    function stap() {
+      var k = kaarten[0];
+      return k ? k.getBoundingClientRect().width + parseFloat(getComputedStyle(baan).columnGap || 0) : baan.clientWidth;
+    }
+    function perKeer() { return Math.max(1, Math.round(baan.clientWidth / stap())); }
+    function eerste() { return Math.round(baan.scrollLeft / stap()); }
+    function werkTellerBij() {
+      var a = eerste() + 1, b = Math.min(totaal, a + perKeer() - 1);
+      teller.textContent = (a === b ? 'Review ' + a : 'Reviews ' + a + '–' + b) + ' van ' + totaal;
+    }
+    function ga(richting) {
+      var aanEinde = baan.scrollLeft + baan.clientWidth >= baan.scrollWidth - 4;
+      var aanBegin = baan.scrollLeft <= 4;
+      if (richting > 0 && aanEinde) baan.scrollTo({ left: 0 });
+      else if (richting < 0 && aanBegin) baan.scrollTo({ left: baan.scrollWidth });
+      else baan.scrollBy({ left: richting * perKeer() * stap() });
+    }
+
+    var gestopt = false, pauze = false, inBeeld = false;
+    function stop() { gestopt = true; }
+    rv.querySelector('[data-rv-volgende]').addEventListener('click', function () { stop(); ga(1); });
+    rv.querySelector('[data-rv-vorige]').addEventListener('click', function () { stop(); ga(-1); });
+    baan.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); stop(); ga(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); stop(); ga(-1); }
+    });
+    ['touchstart', 'wheel'].forEach(function (s) { baan.addEventListener(s, stop, { passive: true }); });
+    rv.addEventListener('mouseenter', function () { pauze = true; });
+    rv.addEventListener('mouseleave', function () { pauze = false; });
+    rv.addEventListener('focusin', function () { pauze = true; });
+    rv.addEventListener('focusout', function () { pauze = false; });
+
+    var wacht;
+    baan.addEventListener('scroll', function () { clearTimeout(wacht); wacht = setTimeout(werkTellerBij, 80); }, { passive: true });
+    window.addEventListener('resize', function () { werkTellerBij(); meerKnoppen(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(meerKnoppen);
+    meerKnoppen();
+    werkTellerBij();
+
+    var rustig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (rustig || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (items) { inBeeld = items[0].isIntersecting; }, { threshold: 0.4 }).observe(baan);
+    setInterval(function () {
+      if (!gestopt && !pauze && inBeeld && !document.hidden) ga(1);
+    }, 6000);
+  })();
+
   // 3. formulier
   var doos = document.getElementById('formulier');
   var form = document.getElementById('contactformulier');

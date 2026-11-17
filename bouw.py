@@ -204,6 +204,21 @@ def verrijk(g):
     r = g['reviews']
     r['zichtbaar'] = [c for c in r['citaten'] if c.get('tonen')]
     r['heeft_citaten'] = bool(r['zichtbaar'])
+    # reviewslider: sterren, maand en initiaal klaarzetten zodat de kaarten op Google-reviews lijken
+    maanden = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus',
+               'september', 'oktober', 'november', 'december']
+    for i, s in enumerate(r.get('slider', [])):
+        n = int(s.get('sterren', 5))
+        if not 1 <= n <= 5:
+            raise Bouwfout('reviews.slider: "%s" moet 1 tot 5 sterren hebben.' % s.get('naam'))
+        if not re.match(r'^\d{4}-\d{2}-\d{2}$', s.get('datum', '')):
+            raise Bouwfout('reviews.slider: de datum van "%s" moet de vorm jjjj-mm-dd hebben.' % s.get('naam'))
+        s['sterren_aan'] = '★' * n
+        s['sterren_uit'] = '★' * (5 - n)
+        s['maand'] = '%s %s' % (maanden[int(s['datum'][5:7]) - 1], s['datum'][:4])
+        s['initiaal'] = (s['naam'].strip()[:1] or '?').upper()
+        s['kleur'] = i % 4
+    r['aantal_slider'] = len(r.get('slider', []))
 
     # --- structured data voor zoekmachines (alleen bevestigde gegevens)
     ld = {
