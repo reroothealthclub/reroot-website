@@ -207,7 +207,7 @@ Alles staat klaar op de git-tak `verhuis` (adres www.rerootcoaching.com, zoekmac
 3. Combell: DNS-records aanpassen zoals in de tabel. Alleen de A-records van @ en de CNAME van www; de rest niet aanraken.
 4. Tak `verhuis` samenvoegen in `main` en publiceren.
 5. Wachten tot GitHub het domein ziet en een certificaat maakt (meestal binnen een uur), dan "Enforce HTTPS" aanzetten.
-6. Controleren: site, formulier (één proefaanvraag), oude adressen, e-mail ontvangen en versturen, checkout.rerootcoaching.com.
+6. Controleren: site, formulier (één proefaanvraag), oude adressen, e-mail ontvangen en versturen, checkout.rerootcoaching.com. **Gedaan 17 november 2026:** de site, het slotje, de oude adressen en een echte proefaanvraag (door Kevin) werken.
 7. Daarna: in Plug&Pay de link naar de algemene voorwaarden zetten; sitemap indienen in Google Search Console; na een paar dagen Webflow opzeggen en de Webflow-TXT verwijderen; Wix en Google Workspace opzeggen.
 
 Tijdens het uur tussen stap 3 en 5 kan https://www.rerootcoaching.com kort een certificaatmelding tonen. Doe de omschakeling daarom op een rustig moment, bijvoorbeeld 's avonds.
