@@ -369,6 +369,20 @@ details summary::-webkit-details-marker{display:none}
 .art h2{font-family:'Gloock',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(30px,calc(var(--u)*.026),40px);line-height:1.15;letter-spacing:-.01em;color:#1F3B37;margin-top:16px}
 .art blockquote{padding:6px 0 6px 28px;border-left:3px solid #8DB5A2;font-family:'Gloock',Georgia,'Times New Roman',serif;font-size:clamp(24px,calc(var(--u)*.022),30px);line-height:1.35;color:#1F3B37}
 .art ul{padding-left:22px}
+.art ol{margin:0;padding-left:24px}
+/* tabellen in artikels: rustig opgemaakt; op een smal scherm wordt elke rij een kaartje */
+.art table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.5}
+.art th{padding:10px 14px 10px 0;border-bottom:2px solid #1F3B37;text-align:left;font-size:15px;font-weight:700;letter-spacing:.02em;color:#1F3B37}
+.art td{padding:14px 14px 14px 0;border-bottom:1px solid rgba(31,59,55,.18);vertical-align:top}
+.art td:first-child{white-space:nowrap}
+@media (max-width:699px){
+  .art table,.art tbody,.art tr,.art td{display:block;width:auto}
+  .art thead{display:none}
+  .art tr{padding:16px 0;border-bottom:1px solid rgba(31,59,55,.18)}
+  .art td{padding:2px 0;border:0;white-space:normal}
+  .art td:first-child{font-size:19px;color:#1F3B37}
+  .art td:last-child{color:#4F5D55}
+}
 .art li{margin:8px 0}
 .art .tp{color:#6B7870;font-style:italic}
 .keybox{display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:18px;background:#1F3B37;color:#ECE8DD}
