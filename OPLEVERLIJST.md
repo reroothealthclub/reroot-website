@@ -175,7 +175,7 @@ Ik heb geen kunstmatige schaarste, aftelklokken of beloofde resultaten toegevoeg
 | U | Voorwaarden 6 | **Bevestigd 16 november:** App Coaching en Monthly Coaching: opzeggen tot 10 dagen voor de volgende maand ingaat. |
 | V | Voorwaarden 7 | **Bevestigd 16 november:** 24-uursregel: later annuleren of niet komen = sessie aangerekend. |
 | W | Voorwaarden 16, privacy | Ingevuld als "november 2026". Pas aan als de teksten later online komen. |
-| X | Privacy | **Bevestigd 16 november:** drie camera's (hoek bar, hoek toilet, hoek verwarming/klok), alleen Simon bekijkt de beelden, één maand bewaard. Privacybeleid klopt hiermee. Register opgesteld in `Documenten Reroot/Register camerabewaking.md` (buiten de website, niet publiek). Nog te doen door Simon: aangifte op politie-aangifteloket.be, pictogram aan de ingang, nakijken dat de camera bij het toilet niet in het toilet filmt. |
+| X | Privacy | **Bevestigd 16 november:** drie camera's (hoek bar, hoek toilet, hoek verwarming/klok), alleen Simon bekijkt de beelden, één maand bewaard. Privacybeleid klopt hiermee. Register opgesteld in `Documenten Reroot/Register camerabewaking.md` (buiten de website, niet publiek). Nog te doen door Simon: aangifte op aangiftecamera.be, pictogram aan de ingang, nakijken dat de camera bij het toilet niet in het toilet filmt. |
 | Y | Privacy | **Bevestigd 16 november:** de Reroot Health Club-app. |
 | Z | Voorstellen van mij, graag bevestigen | **Bewaartermijn bevestigd: 2 jaar** (contactaanvragen, klantgegevens, coachinggegevens; boekhouding blijft 10 jaar, dat is wettelijk). Nog niet uitdrukkelijk bevestigd, wel zo in de teksten: opzeggen per e-mail; prijswijziging 30 dagen vooraf met kosteloze opzegging; ongebruikte beurten vervallen na een jaar; toegang opschorten bij uitblijvende betaling; pauze bij blessure of zwangerschap bestaat niet (staat er niet in). |
 
@@ -207,7 +207,7 @@ Alles staat klaar op de git-tak `verhuis` (adres www.rerootcoaching.com, zoekmac
 3. Combell: DNS-records aanpassen zoals in de tabel. Alleen de A-records van @ en de CNAME van www; de rest niet aanraken.
 4. Tak `verhuis` samenvoegen in `main` en publiceren.
 5. Wachten tot GitHub het domein ziet en een certificaat maakt (meestal binnen een uur), dan "Enforce HTTPS" aanzetten.
-6. Controleren: site, formulier (één proefaanvraag), oude adressen, e-mail ontvangen en versturen, checkout.rerootcoaching.com.
+6. Controleren: site, formulier (één proefaanvraag), oude adressen, e-mail ontvangen en versturen, checkout.rerootcoaching.com. **Gedaan 17 november 2026:** de site, het slotje, de oude adressen en een echte proefaanvraag (door Kevin) werken.
 7. Daarna: in Plug&Pay de link naar de algemene voorwaarden zetten; sitemap indienen in Google Search Console; na een paar dagen Webflow opzeggen en de Webflow-TXT verwijderen; Wix en Google Workspace opzeggen.
 
 Tijdens het uur tussen stap 3 en 5 kan https://www.rerootcoaching.com kort een certificaatmelding tonen. Doe de omschakeling daarom op een rustig moment, bijvoorbeeld 's avonds.
