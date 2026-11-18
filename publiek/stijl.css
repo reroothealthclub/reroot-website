@@ -138,6 +138,15 @@ a:focus-visible,summary:focus-visible{outline:3px solid #1F3B37;outline-offset:3
   .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
   .coach-2{margin-top:72px}
 }
+/* drie coaches: op brede schermen naast elkaar, de middelste iets lager */
+@media (min-width:1100px){
+  .team{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .coach-3{margin-top:0}
+  .team .coach-nm{font-size:clamp(56px,calc(var(--u)*.058),88px)}
+}
+@media (min-width:900px) and (max-width:1099px){
+  .coach-3{grid-column:1/-1;max-width:calc(50% - 16px);justify-self:center}
+}
 
 /* merch */
 .mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}

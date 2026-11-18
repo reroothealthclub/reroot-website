@@ -1,7 +1,7 @@
 <div class="team dk">
 {{#each coaches}}
 <article class="coach coach-{{nummer}}">
-<img src="{{dit.foto}}" alt="{{dit.foto_alt}}" loading="lazy" decoding="async" class="cover" style="object-position:50% 14%">
+<img src="{{dit.foto}}" alt="{{dit.foto_alt}}" loading="lazy" decoding="async" class="cover" style="object-position:{{#if dit.foto_positie}}{{dit.foto_positie}}{{else}}50% 14%{{/if}}">
 <div class="coach-fade"></div>
 <div class="coach-txt">
 <span class="coach-tag">{{dit.focus}}</span>

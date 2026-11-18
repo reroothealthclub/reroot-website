@@ -247,6 +247,16 @@
         { "tekst": "Kevin op Instagram", "url": "https://www.instagram.com/kevinnfret/" },
         { "tekst": "Kevin op TikTok", "url": "https://www.tiktok.com/@kevinfret97" }
       ]
+    },
+    {
+      "naam": "Mike",
+      "volledige_naam": "Mike",
+      "focus": "Kracht en uithouding",
+      "bio": "Mike combineert graag kracht en uithouding. Hij brengt positieve energie van 's morgens tot 's avonds, daagt je uit om eens buiten je comfortzone te stappen, en helpt je doelen stellen en halen, hoe groot of klein ze ook zijn.",
+      "foto": "assets/mike.jpg",
+      "foto_alt": "Mike, coach bij Reroot, in de Health Club",
+      "foto_positie": "100% 10%",
+      "sociale_links": []
     }
   ],
 

@@ -192,7 +192,10 @@ def verrijk(g):
         sociale.extend(c.get('sociale_links', []))
     g['coach_links'] = sociale
     g['coach_op_naam'] = {c['naam'].lower(): c for c in g['coaches']}
-    g['coach_namen'] = ' en '.join(c['naam'] for c in g['coaches'])
+    namen = [c['naam'] for c in g['coaches']]
+    g['coach_namen'] = (', '.join(namen[:-1]) + ' en ' + namen[-1]) if len(namen) > 1 else ''.join(namen)
+    g['coach_aantal'] = ['geen', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes'][len(namen)] if len(namen) < 7 else str(len(namen))
+    g['coach_aantal_hoofdletter'] = g['coach_aantal'][:1].upper() + g['coach_aantal'][1:]
     g['merch']['artikels'] = [m for m in g['merch']['artikels']]
     for m in g['merch']['artikels']:
         _controleer_foto(m['foto'], 'merch "%s"' % m['naam'])
