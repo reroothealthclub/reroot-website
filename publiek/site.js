@@ -313,7 +313,19 @@
     }
 
     var gestopt = false, pauze = false, inBeeld = false;
-    function stop() { gestopt = true; }
+    var pauzeKnop = rv.querySelector('[data-rv-pauze]');
+    function stop() {
+      gestopt = true;
+      if (pauzeKnop) { pauzeKnop.textContent = 'Speel af'; pauzeKnop.setAttribute('aria-pressed', 'true'); }
+    }
+    // pauzeknop: wie bewegende inhoud wil stilzetten, kan dat altijd (toegankelijkheid)
+    if (pauzeKnop) pauzeKnop.addEventListener('click', function () {
+      if (gestopt) {
+        gestopt = false;
+        pauzeKnop.textContent = 'Pauzeer';
+        pauzeKnop.setAttribute('aria-pressed', 'false');
+      } else stop();
+    });
     rv.querySelector('[data-rv-volgende]').addEventListener('click', function () { stop(); ga(1); });
     rv.querySelector('[data-rv-vorige]').addEventListener('click', function () { stop(); ga(-1); });
     baan.addEventListener('keydown', function (e) {
@@ -335,6 +347,7 @@
 
     var rustig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (rustig || !('IntersectionObserver' in window)) return;
+    if (pauzeKnop) pauzeKnop.hidden = false;
     new IntersectionObserver(function (items) { inBeeld = items[0].isIntersecting; }, { threshold: 0.4 }).observe(baan);
     setInterval(function () {
       if (!gestopt && !pauze && inBeeld && !document.hidden) ga(1);
