@@ -22,7 +22,7 @@
     'over-reroot': 'over-reroot.html', 'contact': 'contact.html', 'kennisbank': 'kennisbank.html',
     'podcast': 'kennisbank.html#podcast', 'home': 'index.html' };
   var hash = (location.hash || '').slice(1);
-  if (document.querySelector('.hero-word') && oud[hash]) { location.replace(oud[hash]); return; }
+  if (document.querySelector('.hero-word') && Object.prototype.hasOwnProperty.call(oud, hash)) { location.replace(oud[hash]); return; }
 
   // 1b. vaste menubalk: doorzichtig bovenaan de pagina, donker zodra je scrolt
   var balk = document.querySelector('.kop .hero-head');
