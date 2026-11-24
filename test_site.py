@@ -140,7 +140,7 @@ def main():
 
         for img in p.imgs:
             src = img.get('src', '')
-            check(os.path.isfile(os.path.join(uit, src)), '%s: beeld %s bestaat' % (naam, src))
+            check(os.path.isfile(os.path.join(uit, src.split('?')[0])), '%s: beeld %s bestaat' % (naam, src))
             check('alt' in img, '%s: beeld %s heeft een alt-attribuut (leeg mag alleen bij decoratie)' % (naam, src))
 
         # koppen: geen niveau overslaan (h2 -> h4)
@@ -151,7 +151,7 @@ def main():
         # metadata voor delen en zoeken
         check(p.meta.get('og:image', '').startswith('https://'), '%s: deelbeeld (og:image) met volledig adres' % naam)
         check(p.meta.get('og:url', '').startswith(g['publicatie']['basis_url']), '%s: og:url wijst naar het publicatieadres' % naam)
-        check(os.path.isfile(os.path.join(uit, p.rels.get('icon', 'x'))), '%s: favicon bestaat' % naam)
+        check(os.path.isfile(os.path.join(uit, p.rels.get('icon', 'x').split('?')[0])), '%s: favicon bestaat' % naam)
         heeft_noindex = 'noindex' in p.meta.get('robots', '')
         heeft_canoniek = 'canonical' in p.rels
         check(heeft_noindex != heeft_canoniek, '%s: ofwel noindex (testadres) ofwel een canonieke link, nooit allebei' % naam)
