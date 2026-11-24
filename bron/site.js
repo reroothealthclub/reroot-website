@@ -171,6 +171,30 @@
     if (m) { m.open = false; m.querySelector('summary').focus(); }
   });
 
+  // 2a. knop 'naar boven': verschijnt zodra je ruim een scherm naar beneden gescrold hebt.
+  (function () {
+    var knop = document.querySelector('[data-naar-boven]');
+    if (!knop) return;
+    knop.hidden = false;
+    var bezig = false;
+    function kijk() {
+      bezig = false;
+      var aan = window.pageYOffset > window.innerHeight * 1.2;
+      knop.classList.toggle('zichtbaar', aan);
+      knop.tabIndex = aan ? 0 : -1;
+      knop.setAttribute('aria-hidden', aan ? 'false' : 'true');
+    }
+    window.addEventListener('scroll', function () {
+      if (!bezig) { bezig = true; window.requestAnimationFrame(kijk); }
+    }, { passive: true });
+    kijk();
+    knop.addEventListener('click', function () {
+      window.scrollTo(0, 0); // zacht of meteen: html{scroll-behavior} volgt 'minder beweging'
+      var eerste = document.querySelector('.hero-head a');
+      if (eerste) eerste.focus({ preventScroll: true });
+    });
+  })();
+
   // 2b. diensten van anderen (Google-reviews via EmbedSocial, Spotify-speler) laden pas na een klik.
   // Zo plaatst de site zelf geen cookies van derden zonder dat de bezoeker erom vraagt, en is geen cookiebanner nodig.
   var revPoort = document.querySelector('[data-poort-reviews]');
