@@ -10,6 +10,7 @@ Er wordt nooit iets besteld of betaald: van betaalpagina's wordt alleen
 nagekeken of ze bestaan.
 """
 import os
+import re
 import sys
 import tempfile
 import urllib.error
@@ -325,9 +326,22 @@ def main():
         check('<iframe' not in p.ruw, '%s: geen iframe van een externe dienst bij het laden' % naam)
 
     # ---- geen trackers of onverwachte externe scripts
+    st = g['statistieken']
+    toegelaten = {st['script_url']} if st['actief'] else set()
     for naam, p in paginas.items():
-        check('<script src="http' not in p.ruw and 'googletagmanager' not in p.ruw and 'facebook.net' not in p.ruw,
-              '%s: geen trackers of externe scripts' % naam)
+        extern_js = set(re.findall(r'<script[^>]*\ssrc="((?:https?:)?//[^"]+)"', p.ruw))
+        check(extern_js <= toegelaten and 'googletagmanager' not in p.ruw and 'facebook.net' not in p.ruw,
+              '%s: geen trackers of externe scripts, behalve de ingestelde cookieloze teller' % naam)
+        if st['actief']:
+            check(st['script_url'] in p.ruw, '%s: bezoekersteller geladen' % naam)
+    privacy = ' '.join(paginas['privacybeleid.html'].ruw.split())
+    if st['actief']:
+        check(('Umami' if st['umami'] else 'GoatCounter') in privacy and 'zonder cookies' in privacy,
+              'privacybeleid: vermeldt de bezoekersteller')
+    else:
+        check('gebruiken we geen statistieken' in privacy, 'privacybeleid: zegt dat er geen statistieken zijn')
+    check("meetAanvraag(d.intake ? 'intake-aanvraag' : 'contact-aanvraag')" in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bron', 'site.js'), encoding='utf-8').read(),
+          'formulier: telt alleen het soort aanvraag, na succes')
 
     # ---- externe links (optioneel)
     waarschuwingen = []

@@ -454,6 +454,16 @@
     teControleren[j].addEventListener('change', function () { if (this.required || this.value) controleer(this); });
   }
 
+  // Telt een geslaagde aanvraag in de bezoekersteller (als die ingesteld is). Alleen het soort
+  // aanvraag, nooit naam, e-mail of andere ingevulde gegevens. Een fout hier stoort het formulier nooit.
+  function meetAanvraag(naam) {
+    try {
+      if (window.umami && typeof window.umami.track === 'function') window.umami.track(naam);
+      else if (window.goatcounter && typeof window.goatcounter.count === 'function')
+        window.goatcounter.count({ path: naam, title: naam, event: true });
+    } catch (e) { /* teller onbereikbaar: niets aan de hand */ }
+  }
+
   function gegevens() {
     var vk = form.elements.voorkeur, vkVak = document.getElementById('vk-vak');
     return {
@@ -550,6 +560,7 @@
       if (resultaat && resultaat.success === false) throw new Error('geweigerd');
       // Pas nu, nadat de dienst de aanvraag heeft aanvaard, tonen we succes.
       doos.setAttribute('data-status', 'verzonden');
+      meetAanvraag(d.intake ? 'intake-aanvraag' : 'contact-aanvraag');
       toon('melding-ok', true);
       document.getElementById('melding-ok').focus();
     }).catch(function () {
