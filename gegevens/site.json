@@ -29,6 +29,11 @@
     "coaching/sportspecifiek": "coaching.html"
   },
 
+  "zoekmachines": {
+    "uitleg": "google_verificatie = de bestandsnaam die Google Search Console geeft, zonder .html. Leeg = geen bestand.",
+    "google_verificatie": "googlee5513781ba862852"
+  },
+
   "intakegesprek": {
     "uitleg": "De hoofdknop van de site. Het formulier verstuurt een aanvraag, geen geboekte afspraak; houd de knoptekst daarom bij 'aanvragen'. 'knoptekst_kort' staat in de menubalk op mobiel.",
     "knoptekst": "Vraag een intake aan",
