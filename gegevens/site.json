@@ -67,6 +67,13 @@
     "uitleg_verzend_url": "Leeg = het formulier zet een e-mail klaar in het mailprogramma van de bezoeker. Vul hier het adres van je formulierdienst in zodra je er een gekozen hebt; dan verstuurt de site zelf en toont ze pas succes nadat de dienst de aanvraag heeft aanvaard."
   },
 
+  "statistieken": {
+    "dienst": "umami",
+    "code": "4927662a-6062-44c3-a8e4-da9b845a18ba",
+    "script_url": "",
+    "uitleg": "Bezoekersteller zonder cookies. Leeg = de site meet niets en laadt geen enkel extern script. dienst = \"umami\" of \"goatcounter\". code = bij Umami de Website ID (een lange code met streepjes), bij GoatCounter je eigen naam uit het adres (bv. reroot uit reroot.goatcounter.com). script_url leeg laten, tenzij Umami je een ander scriptadres geeft (bv. voor de EU-regio). Het formulier telt elke geslaagde intake-aanvraag als gebeurtenis 'intake-aanvraag', andere vragen als 'contact-aanvraag'. Het privacybeleid past zich vanzelf aan."
+  },
+
   "openingsuren": {
     "uitleg": "Pas de uren per dag aan. Laat 'open' en 'sluit' leeg voor een sluitingsdag. De zinnen op de site ('Elke dag van ... tot ...') worden hieruit afgeleid.",
     "dagen": [

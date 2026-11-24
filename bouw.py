@@ -185,6 +185,32 @@ def verrijk(g):
     if not _url_ok(g['formulier'].get('verzend_url', '')):
         raise Bouwfout('formulier.verzend_url moet beginnen met https:// of leeg zijn.')
 
+    # --- statistieken: cookieloze bezoekersteller, alleen als dienst en code ingevuld zijn
+    st = g.setdefault('statistieken', {})
+    dienst = (st.get('dienst') or '').strip().lower()
+    code = (st.get('code') or '').strip()
+    st.update(actief=False, umami=False, goatcounter=False, dienst=dienst, code=code)
+    if dienst and code:
+        if dienst == 'umami':
+            if not re.fullmatch(r'[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}', code):
+                raise Bouwfout('statistieken.code: de Website ID van Umami ziet eruit als 1a2b3c4d-1a2b-1a2b-1a2b-1a2b3c4d5e6f.')
+            st['script_url'] = (st.get('script_url') or '').strip() or 'https://cloud.umami.is/script.js'
+            st['umami'] = True
+        elif dienst == 'goatcounter':
+            if not re.fullmatch(r'[a-z0-9][a-z0-9-]{1,49}', code):
+                raise Bouwfout('statistieken.code: bij GoatCounter alleen je naam uit het adres, bv. reroot (kleine letters, cijfers, streepjes).')
+            st['script_url'] = (st.get('script_url') or '').strip() or 'https://gc.zgo.at/count.js'
+            st['teller_url'] = 'https://%s.goatcounter.com/count' % code
+            st['goatcounter'] = True
+        else:
+            raise Bouwfout('statistieken.dienst moet "umami", "goatcounter" of leeg zijn.')
+        if not st['script_url'].startswith('https://'):
+            raise Bouwfout('statistieken.script_url moet beginnen met https:// of leeg zijn.')
+        st['domein'] = re.sub(r'^https?://([^/]+).*$', r'\1', g['publicatie'].get('basis_url', ''))
+        st['actief'] = True
+    elif dienst or code:
+        raise Bouwfout('statistieken: vul zowel "dienst" als "code" in, of laat beide leeg.')
+
     # --- coaches, merch: foto's moeten bestaan
     sociale = []
     for c in g['coaches']:

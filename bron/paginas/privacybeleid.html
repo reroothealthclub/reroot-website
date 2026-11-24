@@ -52,7 +52,8 @@ beschrijving: Welke gegevens Reroot Health Club & Coaching van je verwerkt, waar
 <li>De site staat bij <b>GitHub Pages</b>. Zoals elke webserver ziet die je IP-adres wanneer je een pagina opvraagt.</li>
 <li>De lettertypes staan op onze eigen site; je browser haalt niets op bij Google Fonts.</li>
 <li>De Google-reviews op deze site staan op onze eigen server: bij het bekijken ervan maakt je browser geen verbinding met Google. De podcastspeler van <b>Spotify</b> laadt pas als je zelf op de knop klikt. Pas dan kan Spotify zijn eigen cookies plaatsen; daarvoor geldt het eigen privacybeleid van Spotify.</li>
-<li>Zelf plaatsen we geen cookies en gebruiken we geen statistieken of advertentiecookies.</li>
+{{#if statistieken.actief}}<li>Om te weten hoeveel mensen de site bezoeken en hoeveel aanvragen er via het formulier binnenkomen, gebruiken we {{#if statistieken.umami}}<b>Umami</b>{{/if}}{{#if statistieken.goatcounter}}<b>GoatCounter</b>{{/if}}. Die teller werkt zonder cookies, bewaart niets op je toestel en maakt geen profiel van je. We zien alleen totalen: hoeveel bezoeken per pagina, via welke site of zoekmachine bezoekers binnenkomen, uit welk land en met welk soort toestel. Van het formulier tellen we alleen dát er een aanvraag verstuurd is, nooit wat je invulde.{{#if statistieken.umami}} Stuur je browser het signaal 'Do Not Track' mee, dan tellen we je bezoek niet.{{/if}}</li>
+<li>Zelf plaatsen we geen cookies en gebruiken we geen advertentiecookies.</li>{{else}}<li>Zelf plaatsen we geen cookies en gebruiken we geen statistieken of advertentiecookies.</li>{{/if}}
 </ul>
 
 <h2>Hoe lang we je gegevens bewaren</h2>
