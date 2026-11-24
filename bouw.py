@@ -495,6 +495,13 @@ def bouw(uit=UIT, stil=False, gegevens=None):
                     ignore=shutil.ignore_patterns('.DS_Store'))
     for bestand in ('stijl.css', 'site.js'):
         shutil.copy(os.path.join(BRON, bestand), os.path.join(uit, bestand))
+    # Bewijs voor Google Search Console dat de site van ons is (site.json -> zoekmachines).
+    code = (g.get('zoekmachines') or {}).get('google_verificatie', '').strip()
+    if code:
+        if not re.fullmatch(r'google[0-9a-f]+', code):
+            raise Bouwfout('zoekmachines.google_verificatie moet er uitzien als "google" + letters/cijfers, zonder .html.')
+        with open(os.path.join(uit, code + '.html'), 'w', encoding='utf-8') as f:
+            f.write('google-site-verification: %s.html' % code)
 
     artikels = lees_artikels()
     g['kennis'] = {
