@@ -33,7 +33,7 @@
     "uitleg": "De hoofdknop van de site. Het formulier verstuurt een aanvraag, geen geboekte afspraak; houd de knoptekst daarom bij 'aanvragen'. 'knoptekst_kort' staat in de menubalk op mobiel.",
     "knoptekst": "Vraag een intake aan",
     "knoptekst_kort": "Intake aanvragen",
-    "zin": "Het gesprek is gratis en vrijblijvend, duurt 30 tot 60 minuten en kan online of in onze studio in Maaseik.",
+    "zin": "Het gesprek is gratis en vrijblijvend, duurt 30 tot 60 minuten en kan online of in onze studio in Maaseik. Je krijgt binnen 24 uur antwoord op je aanvraag.",
     "uitleg_zin": "Staat op de site overal waar het intakegesprek uitgelegd wordt, ook boven het formulier."
   },
 
@@ -93,9 +93,9 @@
     "max_leden": "150",
     "eerste_keer": {
       "uitleg": "Extra uitleg voor het blok 'Je eerste keer bij Reroot' op de clubpagina. Wat je leeg laat, verschijnt niet.",
-      "ingang": "",
+      "ingang": "Parkeren kan voor de deur: we hebben vijf eigen parkeerplaatsen.",
       "toegang_na_inschrijving": "",
-      "meebrengen": ""
+      "meebrengen": "Sportkleren en water. Een handdoek mag, maar hoeft niet: in de club liggen handdoeken die je mag gebruiken."
     },
     "merken": ["Nautilus", "Panatta", "Technogym", "ATX", "Sterling", "Marbo Sport", "StairMaster", "Xebex"],
     "uitrusting": ["Belt squat", "Roeimachine", "Sprinttrack", "Vrije gewichten", "Krachttoestellen"],
@@ -189,9 +189,9 @@
       "prijs_detail": "incl. 21% btw",
       "checkout_url": "https://checkout.rerootcoaching.com/checkout/reroot-appcoaching-21",
       "knoptekst_kopen": "Start App Coaching",
-      "beschrijving": "Je traint zelf. Elke week bekijkt je coach in de app hoe je training, voeding en levensstijl lopen, geeft feedback en stuurt bij waar het nodig is.",
+      "beschrijving": "Je krijgt bij de start een trainings- en voedingsplan en traint daarna zelf. Elke week bekijkt je coach in de app hoe je training, voeding en levensstijl lopen, geeft feedback en stuurt bij waar het nodig is.",
       "voor_wie": "Je traint al zelfstandig en wil dat een coach elke week meekijkt en bijstuurt.",
-      "wat_je_krijgt": "Elke week feedback van je coach op je training, voeding en levensstijl.",
+      "wat_je_krijgt": "Bij de start een trainingsplan en een voedingsplan. Daarna elke week feedback van je coach op je training, voeding en levensstijl.",
       "contact_met_coach": "Elke week een check-up, altijd via de app.",
       "niet_inbegrepen": "Fysieke check-ups en toegang tot de Health Club.",
       "goed_om_te_weten": "Maandelijks abonnement. Wil je ook zelfstandig in de club trainen, dan neem je daarnaast Open Gym."
@@ -224,7 +224,7 @@
       "wat_je_krijgt": "Tien sessies met een coach in de gym. Per sessie kies je de inhoud: training, techniekanalyse, voedingsadvies of een gesprek over je levensstijl.",
       "contact_met_coach": "Tijdens de sessies, één-op-één of in een kleine groep.",
       "niet_inbegrepen": "",
-      "goed_om_te_weten": "Eén sessie per week. De kaart is één jaar geldig."
+      "goed_om_te_weten": "Een sessie duurt 60 minuten. Eén sessie per week. De kaart is één jaar geldig."
     }
   },
 
