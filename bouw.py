@@ -444,6 +444,19 @@ def _hash(pad):
         return hashlib.md5(f.read()).hexdigest()[:8]
 
 
+_BEELD = re.compile(r'(src|href)="(assets/[^"?#]+\.(?:jpg|jpeg|png|webp|svg|gif))"')
+
+
+def _merk_beelden(html):
+    """Zet achter elk eigen beeld ?v=<inhoud>, zodat browsers een vervangen foto meteen opnieuw laden."""
+    def vervang(m):
+        pad = os.path.join(BRON, m.group(2))
+        if not os.path.isfile(pad):
+            return m.group(0)
+        return '%s="%s?v=%s"' % (m.group(1), m.group(2), _hash(pad))
+    return _BEELD.sub(vervang, html)
+
+
 def bouw(uit=UIT, stil=False, gegevens=None):
     g = verrijk(gegevens if gegevens is not None else lees_gegevens())
     sj = Sjablonen(os.path.join(BRON, 'onderdelen'))
@@ -497,7 +510,7 @@ def bouw(uit=UIT, stil=False, gegevens=None):
         scopes.append({'inhoud': pagina_html})
         volledig = sj.toon(sj.onderdeel('basis'), scopes, 'bron/onderdelen/basis.html')
         with open(os.path.join(uit, bestand), 'w', encoding='utf-8') as f:
-            f.write(volledig)
+            f.write(_merk_beelden(volledig))
         gebouwd.append(bestand)
     # elk artikel en elke podcastaflevering krijgt een eigen pagina
     for a in artikels:
@@ -520,7 +533,7 @@ def bouw(uit=UIT, stil=False, gegevens=None):
         scopes.append({'inhoud': pagina_html})
         volledig = sj.toon(sj.onderdeel('basis'), scopes, 'bron/onderdelen/basis.html')
         with open(os.path.join(uit, a['url']), 'w', encoding='utf-8') as f:
-            f.write(volledig)
+            f.write(_merk_beelden(volledig))
         gebouwd.append(a['url'])
     # Oude adressen van de vorige site: een klein doorstuurbestand per adres.
     # GitHub Pages kan zelf niet omleiden; dit werkt op elke eenvoudige webruimte.
