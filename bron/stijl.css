@@ -938,3 +938,52 @@ mark.invullen{background:#F2D98C;color:#1F3B37;padding:2px 6px;border-radius:4px
 .naar-boven:focus-visible{outline:3px solid #8DB5A2;outline-offset:3px}
 @media (min-width:900px){.naar-boven{right:28px;bottom:28px}}
 @media (prefers-reduced-motion:reduce){.naar-boven,.naar-boven.zichtbaar{transition:none;transform:none}}
+
+/* ---------- De app: schermen van de app in 3D-telefoons ---------- */
+.app-ey{margin:0 0 12px;font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:#8DB5A2}
+.app-hero{overflow:hidden;padding-top:clamp(40px,6vw,96px)}
+.app-hero-in{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:center}
+.app-ph{position:relative;aspect-ratio:1170/2532;border-radius:13% / 6%;background:#0B100E;padding:2.4%;box-shadow:0 0 0 1.5px #2E3D37,0 40px 80px -20px rgba(0,0,0,.7),0 18px 40px -18px rgba(141,181,162,.25)}
+.app-ph img{display:block;width:100%;height:100%;object-fit:cover;border-radius:11% / 5%}
+.app-ph::before{content:"";position:absolute;z-index:2;top:3.6%;left:50%;width:28%;height:2.6%;transform:translateX(-50%);border-radius:999px;background:#0B100E}
+.app-stage{position:relative;height:clamp(420px,62vw,640px);perspective:1400px;max-width:620px;width:100%;margin:0 auto}
+.app-stage .app-ph{position:absolute;width:clamp(150px,30%,230px)}
+.app-ph-m{left:50%;top:0;z-index:3;transform:translateX(-50%) rotateY(-12deg) rotateX(4deg)}
+.app-ph-l{left:2%;top:10%;z-index:2;transform:rotateY(26deg) rotateZ(-3deg) scale(.88);filter:brightness(.8)}
+.app-ph-r{right:2%;top:12%;z-index:1;transform:rotateY(-30deg) rotateZ(3deg) scale(.86);filter:brightness(.78)}
+.app-steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.app-steps li{border:1px solid rgba(31,59,55,.2);border-radius:22px;padding:26px 26px 22px;background:#FFFDF8}
+.app-steps span{display:block;font-size:44px;line-height:1;color:#4F6B5C}
+.app-steps h3{margin:14px 0 6px;font-size:21px;font-weight:700}
+.app-steps p{margin:0;font-size:17px;line-height:1.6;color:#3F4E47}
+.app-row{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center;padding:clamp(32px,5vw,72px) 0;border-top:1px solid rgba(236,232,221,.12)}
+.app-row:first-child{border-top:0;padding-top:0}
+.app-one{perspective:1200px;display:flex;justify-content:center}
+.app-one .app-ph{width:clamp(200px,60vw,290px)}
+.app-tilt-l{transform:rotateY(-16deg) rotateX(5deg)}
+.app-tilt-r{transform:rotateY(16deg) rotateX(5deg)}
+.app-vid-in{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+.app-vid{display:flex;justify-content:center}
+.app-vid video{width:min(100%,330px);height:auto;aspect-ratio:9/16;border-radius:28px;background:#0B100E;box-shadow:0 0 0 1.5px #2E3D37,0 30px 70px -20px rgba(0,0,0,.7)}
+.app-lid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:36px}
+.app-lid>div{background:#FFFDF8;border:1px solid rgba(31,59,55,.2);border-radius:22px;padding:24px}
+.app-lid h3{margin:0 0 10px;font-size:21px;font-weight:700}
+.app-lid ul{margin:0;padding-left:20px;font-size:17px;line-height:1.7;color:#3F4E47}
+.app-trust{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.app-trust li{border:1px solid rgba(236,232,221,.16);border-radius:22px;padding:24px}
+.app-trust h3{margin:0 0 6px;font-size:20px;font-weight:700;color:#8DB5A2}
+.app-trust p{margin:0;font-size:17px;line-height:1.6;color:#C9D2CB}
+.app-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:40px;padding:clamp(24px,4vw,40px);border-radius:26px;background:#1F3B37}
+@media (min-width:900px){
+  .app-hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .app-steps,.app-lid,.app-trust{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .app-row{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .app-row-rev .app-row-txt{order:2}
+  .app-vid-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){
+  .app-ph-m{animation:app-zweef 7s ease-in-out infinite}
+  @keyframes app-zweef{0%,100%{transform:translateX(-50%) rotateY(-12deg) rotateX(4deg) translateY(0)}50%{transform:translateX(-50%) rotateY(-9deg) rotateX(3deg) translateY(-10px)}}
+}
+/* link naar De app in het menu: pas zichtbaar als er plaats is (net als Het Freteffect) */
+@media (min-width:1100px) and (max-width:1219px){.hero-nav a.nav-app{display:none}}

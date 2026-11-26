@@ -119,7 +119,7 @@ def main():
         paginas[b] = p
 
     verwacht = ['index.html', 'health-club.html', 'coaching.html', 'tarieven.html',
-                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', 'algemene-voorwaarden.html', '404.html', 'freteffect.html']
+                'over-reroot.html', 'kennisbank.html', 'contact.html', 'privacybeleid.html', 'algemene-voorwaarden.html', '404.html', 'freteffect.html', 'de-app.html']
     for v in verwacht:
         check(v in paginas, 'pagina %s bestaat' % v)
 
