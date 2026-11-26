@@ -843,7 +843,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .fe-klein a{color:var(--iv)}
 /* link naar Het Freteffect in het menu: pas zichtbaar als er plaats is */
 .hero-nav a.nav-fe{display:none}
-@media (min-width:1320px){.hero-nav a.nav-fe{display:inline-flex}}
+@media (min-width:1440px){.hero-nav a.nav-fe{display:inline-flex}}
 .coach-txt .tlink{align-self:flex-start;color:#ECE8DD}
 @media (prefers-reduced-motion:reduce){.fe-btn{transition:none}}
 
@@ -985,5 +985,8 @@ mark.invullen{background:#F2D98C;color:#1F3B37;padding:2px 6px;border-radius:4px
   .app-ph-m{animation:app-zweef 7s ease-in-out infinite}
   @keyframes app-zweef{0%,100%{transform:translateX(-50%) rotateY(-12deg) rotateX(4deg) translateY(0)}50%{transform:translateX(-50%) rotateY(-9deg) rotateX(3deg) translateY(-10px)}}
 }
-/* link naar De app in het menu: pas zichtbaar als er plaats is (net als Het Freteffect) */
-@media (min-width:1100px) and (max-width:1219px){.hero-nav a.nav-app{display:none}}
+/* menu: elke link op één regel */
+.hero-nav a{white-space:nowrap}
+.hdr-right .btn{white-space:nowrap;flex-shrink:0}
+.hero-head .logo-link{flex-shrink:0}
+@media (min-width:1100px) and (max-width:1299px){.hero-nav a{padding:0 8px;font-size:15px}.hero-head{gap:8px 16px}}
